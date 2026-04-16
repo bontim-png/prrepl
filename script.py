@@ -4,7 +4,6 @@ import pandas as pd
 import re
 import time
 
-
 def extract_features(text):
     data = {
         'Plaats': 'Onbekend',
@@ -55,9 +54,8 @@ def extract_features(text):
 
 
 def run_real_estate_scraper():
-
     configs = [
-        {"id": "ladresse_tournon", "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com", "pattern": "/achat/"},
+       {"id": "ladresse_tournon", "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com", "pattern": "/achat/"},
         {"id": "beauxvillages", "url": "https://beauxvillages.com/fr/nouveau-sur-le-march%C3%A9?hotsheet=1", "base": "https://beauxvillages.com", "pattern": "/property/"},
         {"id": "lot_immoco", "url": "https://www.lot-immoco.net/a-vendre/1", "base": "https://www.lot-immoco.net", "pattern": "\\.html$"},
         {"id": "pouget", "url": "https://www.agencespouget.com/nos-biens", "base": "https://www.agencespouget.com", "pattern": "/vente/"},
@@ -83,7 +81,7 @@ def run_real_estate_scraper():
     ]
 
     headers = {
-        "User-Agent": "Mozilla/5.0"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
     }
 
     all_results = []
@@ -94,7 +92,7 @@ def run_real_estate_scraper():
             print(f"Scraping: {conf['id']}")
 
             res = requests.get(conf['url'], headers=headers, timeout=15)
-            res.raise_for_status()
+            res.raise_for_status()  # 🔥 belangrijke toevoeging
 
             soup = BeautifulSoup(res.text, 'html.parser')
             links = soup.find_all('a', href=True)
@@ -136,7 +134,7 @@ def run_real_estate_scraper():
                 if count >= 6:
                     break
 
-            time.sleep(2)
+            time.sleep(2)  # iets rustiger → minder kans op blokkade
 
         except Exception as e:
             print(f"Fout bij {conf['id']}: {e}")
@@ -150,6 +148,7 @@ df_final = run_real_estate_scraper()
 print(f"Totaal gevonden: {len(df_final)}")
 print(df_final.head())
 
+# Opslaan
 df_final.to_csv('huizen_met_plaats.csv', index=False)
 df_final.to_json("data.json", orient="records", indent=2)
 
