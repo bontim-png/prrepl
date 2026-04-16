@@ -180,16 +180,6 @@
     "URL":"https:\/\/www.agencespouget.com\/vente\/64-mazeyrolles\/terrain-a-batir\/7155-terrain-en-campagne"
   },
   {
-    "Bron":"human",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.human-immobilier.fr\/annonce-achat-appartement-tours_453-538"
-  },
-  {
     "Bron":"letuc",
     "Plaats":"Regio 31190",
     "Nieuw?":"Nee",
@@ -888,5 +878,105 @@
     "m2 Buiten":"N\/A",
     "Slaapkamers":"N\/A",
     "URL":"https:\/\/www.pleinsudimmo.fr\/detail\/maison-en-pierres-denviron-140m2-habitables-avec-dependances-sur-un-terrain-de-1612-m2-6504747.html"
+  },
+  {
+    "Bron":"albatros",
+    "Plaats":"Regio 47500",
+    "Nieuw?":"Nee",
+    "Prijs":"N\/A",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.albatros-immo.fr\/vente\/47-lot-et-garonne\/56-blanquefort-sur-briolance\/1-maison\/t5\/11947-ancien-corps-de-ferme-et-son-etang\/"
+  },
+  {
+    "Bron":"albatros",
+    "Plaats":"Regio 47500",
+    "Nieuw?":"Nee",
+    "Prijs":"N\/A",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.albatros-immo.fr\/vente\/47-lot-et-garonne\/33-monsempron-libos\/1-maison\/t5\/12267-charmante-maison-en-pierre-en-plein-centre-de-monsempron-libos\/"
+  },
+  {
+    "Bron":"albatros",
+    "Plaats":"Regio 24250",
+    "Nieuw?":"JA",
+    "Prijs":"N\/A",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.albatros-immo.fr\/vente\/24-dordogne\/1054-daglan\/22-propriete\/t13\/12279-belle-propriete-en-perigord-noir-avec-deux-gites-et-piscine-avec-presque-9-hectares-prestige\/"
+  },
+  {
+    "Bron":"lot_garonne_immo",
+    "Plaats":"Onbekend",
+    "Nieuw?":"Nee",
+    "Prijs":"N\/A",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/biens"
+  },
+  {
+    "Bron":"lot_garonne_immo",
+    "Plaats":"Onbekend",
+    "Nieuw?":"Nee",
+    "Prijs":"22 000 \u20ac",
+    "m2 Binnen":"3000",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/terrain\/terrain-a-batir-de-3000-m-situe-en-campagne-possibilite-de-plus-de-terrain\/1008"
+  },
+  {
+    "Bron":"lot_garonne_immo",
+    "Plaats":"Onbekend",
+    "Nieuw?":"Nee",
+    "Prijs":"22 500 \u20ac",
+    "m2 Binnen":"3120",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/terrain\/gignac-terrain-de-3120-m-en-partie-constructible\/962"
+  },
+  {
+    "Bron":"lot_garonne_immo",
+    "Plaats":"Onbekend",
+    "Nieuw?":"Nee",
+    "Prijs":"27 000 \u20ac",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/terrain\/terrains-constructibles-entierement-viabilises-situes-au-calme-a-la-sortie-du-village-de-mauroux\/969"
+  },
+  {
+    "Bron":"lot_garonne_immo",
+    "Plaats":"Onbekend",
+    "Nieuw?":"Nee",
+    "Prijs":"33 000 \u20ac",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/terrain\/fumel-terrain-constructible-de-2595-m-clos-avec-portail\/987"
+  },
+  {
+    "Bron":"lot_garonne_immo",
+    "Plaats":"Onbekend",
+    "Nieuw?":"Nee",
+    "Prijs":"86 000 \u20ac",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/maison\/monsempron-maison-de-plain-pied-avec-garage-et-caves-sur-514-m-de-terrain\/1033"
+  },
+  {
+    "Bron":"signature_agenaise",
+    "Plaats":"Regio 47510",
+    "Nieuw?":"Nee",
+    "Prijs":"N\/A",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.la-signature-agenaise.fr\/fr\/vente\/maison-individuelle\/foulayronnes\/47510"
   }
 ]
