@@ -53,6 +53,8 @@ def extract_features(text):
     return data
 
 
+
+
 def run_real_estate_scraper():
     configs = [
        {"id": "ladresse_tournon", "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com", "pattern": "/achat/"},
@@ -77,9 +79,8 @@ def run_real_estate_scraper():
         {"id": "arobase", "url": "https://www.arobaseimmobilier.fr/vente/1", "base": "https://www.arobaseimmobilier.fr", "pattern": "/[0-9]+-"},
         {"id": "immo46", "url": "https://www.immo46.com/fr/a-vendre", "base": "https://www.immo46.com", "pattern": ",P[0-9]"},
         {"id": "pleinsud", "url": "https://www.pleinsudimmo.fr/nos-biens-immobiliers", "base": "https://www.pleinsudimmo.fr", "pattern": "\\.html$"},
-        {"id": "ledil", "url": "https://ledil.immo/recherche/tous-types/46+47+82?", "base": "https://ledil.immo", "pattern": "/bien/"}
-    ]
-
+        {"id": "ledil", "url": "https://ledil.immo/recherche/tous-types/46+47+82?", "base": "https://ledil.immo", "pattern": "/bien/"},]
+    
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
     }
