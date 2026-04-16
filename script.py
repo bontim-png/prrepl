@@ -57,7 +57,7 @@ def extract_features(text):
 
 def run_real_estate_scraper():
     configs = [
-       {"id": "ladresse_tournon", "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com", "pattern": "/achat/"},
+        {"id": "ladresse_tournon", "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com", "pattern": "/achat/"},
         {"id": "beauxvillages", "url": "https://beauxvillages.com/fr/nouveau-sur-le-march%C3%A9?hotsheet=1", "base": "https://beauxvillages.com", "pattern": "/property/"},
         {"id": "lot_immoco", "url": "https://www.lot-immoco.net/a-vendre/1", "base": "https://www.lot-immoco.net", "pattern": "\\.html$"},
         {"id": "pouget", "url": "https://www.agencespouget.com/nos-biens", "base": "https://www.agencespouget.com", "pattern": "/vente/"},
@@ -79,6 +79,15 @@ def run_real_estate_scraper():
         {"id": "arobase", "url": "https://www.arobaseimmobilier.fr/vente/1", "base": "https://www.arobaseimmobilier.fr", "pattern": "/[0-9]+-"},
         {"id": "immo46", "url": "https://www.immo46.com/fr/a-vendre", "base": "https://www.immo46.com", "pattern": ",P[0-9]"},
         {"id": "pleinsud", "url": "https://www.pleinsudimmo.fr/nos-biens-immobiliers", "base": "https://www.pleinsudimmo.fr", "pattern": "\\.html$"},
+        {"id": "albatros", "url": "https://www.albatros-immo.fr/vente", "base": "https://www.albatros-immo.fr", "pattern": "vente"},
+        {"id": "lot_garonne_immo", "url": "https://www.immobilier-lot-garonne.com/fr/biens", "base": "https://www.immobilier-lot-garonne.com", "pattern": "/fr"},
+        {"id": "maisondelimmobilier", "url": "https://www.maisondelimmobilier.com/catalog/advanced_search_result.php?C_28=Vente", "base": "https://www.maisondelimmobilier.com", "pattern": "transaction/Vente"},
+        {"id": "orpi", "url": "https://www.orpi.com/recherche/buy?sort=date-down", "base": "https://www.orpi.com", "pattern": "annonce-vente"},
+        {"id": "guy_hoquet", "url": "https://www.guy-hoquet.com/biens/result", "base": "https://www.guy-hoquet.com", "pattern": "/maison/"},
+        {"id": "signature_agenaise", "url": "https://www.la-signature-agenaise.fr/fr/vente/tournon-d-agenais/47370?orderBy=2", "base": "https://www.la-signature-agenaise.fr", "pattern": "/fr/vente/"},
+        {"id": "eleonor", "url": "https://www.agence-eleonor.fr/fr/vente?orderBy=2", "base": "https://www.agence-eleonor.fr", "pattern": "/fr/vente/"},
+        {"id": "charles_loftie", "url": "https://charles-loftie-immo.com/fr/recherche", "base": "https://charles-loftie-immo.com", "pattern": "/fr/selection"},
+        {"id": "prada_prestige", "url": "https://prada-prestige-immo.fr/nos-biens-de-prestige", "base": "https://prada-prestige-immo.fr", "pattern": "detail"},
         {"id": "ledil", "url": "https://ledil.immo/recherche/tous-types/46+47+82?", "base": "https://ledil.immo", "pattern": "/bien/"},]
     
     headers = {
