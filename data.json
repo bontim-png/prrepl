@@ -73,7 +73,7 @@
     "Bron":"lot_immoco",
     "Plaats":"Onbekend",
     "Nieuw?":"Nee",
-    "Prijs":"530 000 \u20ac",
+    "Prijs":"480 000 \u20ac",
     "m2 Binnen":"500",
     "m2 Buiten":"N\/A",
     "Slaapkamers":"N\/A",
@@ -187,27 +187,17 @@
     "m2 Binnen":"N\/A",
     "m2 Buiten":"N\/A",
     "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.human-immobilier.fr\/annonce-achat-maison-la-rochelle_407-717"
+    "URL":"https:\/\/www.human-immobilier.fr\/annonce-achat-appartement-tours_453-538"
   },
   {
-    "Bron":"human",
-    "Plaats":"Onbekend",
+    "Bron":"letuc",
+    "Plaats":"Regio 31190",
     "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.human-immobilier.fr\/annonce-achat-maison-la-rochelle_407-716"
-  },
-  {
-    "Bron":"human",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.human-immobilier.fr\/annonce-achat-appartement-toulouse_526-619"
+    "Prijs":"525 192 000 \u20ac",
+    "m2 Binnen":"6",
+    "m2 Buiten":"78",
+    "Slaapkamers":"2",
+    "URL":"https:\/\/www.letuc.com\/vente\/31-haute-garonne\/3929-auterive\/27-rez-de-villa\/t3\/18332-auterive-maison-de-ville-3-pieces-78-m\/"
   },
   {
     "Bron":"letuc",
@@ -260,24 +250,14 @@
     "URL":"https:\/\/www.letuc.com\/vente\/2a-corse-du-sud\/1085-ajaccio\/2-appartement\/t3\/18319-ajaccio-aspretto-superbe-t3-recent-vue-mer\/"
   },
   {
-    "Bron":"letuc",
-    "Plaats":"BEAUMONT DU GATINAIS",
-    "Nieuw?":"JA",
-    "Prijs":"149 000 \u20ac",
-    "m2 Binnen":"31",
-    "m2 Buiten":"1505",
-    "Slaapkamers":"3",
-    "URL":"https:\/\/www.letuc.com\/vente\/77-seine-et-marne\/4462-beaumont-du-gatinais\/1-maison\/t4\/18327-a-vendre-maison-de-115-m-habitables-sur-la-commune-de-beaumont-du-gatinais\/"
-  },
-  {
     "Bron":"nestenn",
     "Plaats":"EXCLU",
     "Nieuw?":"Nee",
-    "Prijs":"179 000 \u20ac",
-    "m2 Binnen":"140",
+    "Prijs":"109 000 \u20ac",
+    "m2 Binnen":"106",
     "m2 Buiten":"N\/A",
-    "Slaapkamers":"4",
-    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/maison-5-pieces-140-m-sainte-livrade-sur-lot-ref-39301525"
+    "Slaapkamers":"2",
+    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/appartement-villeneuve-sur-lot-4-piece-s-105-48-m2-ref-39490020"
   },
   {
     "Bron":"nestenn",
@@ -288,6 +268,16 @@
     "m2 Buiten":"N\/A",
     "Slaapkamers":"0",
     "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/immeuble-47300-bias-villeneuve-sur-lot-3-piece-s-600-m2-ref-39301665"
+  },
+  {
+    "Bron":"nestenn",
+    "Plaats":"EXCLU",
+    "Nieuw?":"Nee",
+    "Prijs":"179 000 \u20ac",
+    "m2 Binnen":"140",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"4",
+    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/maison-5-pieces-140-m-sainte-livrade-sur-lot-ref-39301525"
   },
   {
     "Bron":"nestenn",
@@ -320,16 +310,6 @@
     "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/maison-villeneuve-sur-lot-7-piece-s-300-m2-ref-39395768"
   },
   {
-    "Bron":"nestenn",
-    "Plaats":"EXCLU",
-    "Nieuw?":"Nee",
-    "Prijs":"77 000 \u20ac",
-    "m2 Binnen":"85",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"2",
-    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/maison-de-ville-a-vendre-avec-jardin-2-chambres-cave-et-grenier-ref-39346554"
-  },
-  {
     "Bron":"lot_et_garonne",
     "Plaats":"Onbekend",
     "Nieuw?":"Nee",
@@ -343,51 +323,81 @@
     "Bron":"lot_et_garonne",
     "Plaats":"Regio 44870",
     "Nieuw?":"JA",
-    "Prijs":"194 900 \u20ac",
+    "Prijs":"93 400 \u20ac",
     "m2 Binnen":"0",
     "m2 Buiten":"280000",
-    "Slaapkamers":"3",
+    "Slaapkamers":"2",
+    "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/a-vendre-maison-individuelle-sur-sous-sol-a-monclar-lot-et-garonne-47--59634569.html"
+  },
+  {
+    "Bron":"lot_et_garonne",
+    "Plaats":"Regio 44870",
+    "Nieuw?":"JA",
+    "Prijs":"93 400 \u20ac",
+    "m2 Binnen":"0",
+    "m2 Buiten":"280000",
+    "Slaapkamers":"2",
     "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/maison-de-plain-pied-3-chambres-a-montastruc-60351613.html"
   },
   {
     "Bron":"lot_et_garonne",
     "Plaats":"Regio 44870",
     "Nieuw?":"JA",
-    "Prijs":"194 900 \u20ac",
+    "Prijs":"93 400 \u20ac",
     "m2 Binnen":"0",
     "m2 Buiten":"280000",
-    "Slaapkamers":"3",
+    "Slaapkamers":"2",
     "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/immeuble-compose-de-5-appartements-loues-rentabilite-11--60324770.html"
   },
   {
     "Bron":"lot_et_garonne",
     "Plaats":"Regio 44870",
     "Nieuw?":"JA",
-    "Prijs":"194 900 \u20ac",
+    "Prijs":"93 400 \u20ac",
     "m2 Binnen":"0",
     "m2 Buiten":"280000",
-    "Slaapkamers":"3",
+    "Slaapkamers":"2",
     "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/propriete-en-pierre-avec-dependances-a-proximite-de-villeneuve-sur-lot-59266830.html"
   },
   {
     "Bron":"lot_et_garonne",
     "Plaats":"Regio 44870",
     "Nieuw?":"JA",
-    "Prijs":"194 900 \u20ac",
+    "Prijs":"93 400 \u20ac",
     "m2 Binnen":"0",
     "m2 Buiten":"280000",
-    "Slaapkamers":"3",
+    "Slaapkamers":"2",
     "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/maison-de-plain-pied-a-vendre-a-pujols-60056474.html"
   },
   {
-    "Bron":"lot_et_garonne",
-    "Plaats":"Regio 44870",
-    "Nieuw?":"JA",
-    "Prijs":"194 900 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"280000",
+    "Bron":"valadie",
+    "Plaats":"Onbekend",
+    "Nieuw?":"Nee",
+    "Prijs":"140\u202f000 \u20ac",
+    "m2 Binnen":"58",
+    "m2 Buiten":"90",
+    "Slaapkamers":"2",
+    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8835"
+  },
+  {
+    "Bron":"valadie",
+    "Plaats":"Onbekend",
+    "Nieuw?":"Nee",
+    "Prijs":"149\u202f000 \u20ac",
+    "m2 Binnen":"150",
+    "m2 Buiten":"6500",
     "Slaapkamers":"3",
-    "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/maison-de-ville-a-vendre-a-villeneuve-sur-lot-59140846.html"
+    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8821"
+  },
+  {
+    "Bron":"valadie",
+    "Plaats":"Onbekend",
+    "Nieuw?":"Nee",
+    "Prijs":"590\u202f000 \u20ac",
+    "m2 Binnen":"363",
+    "m2 Buiten":"363",
+    "Slaapkamers":"5",
+    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8808"
   },
   {
     "Bron":"valadie",
@@ -418,36 +428,6 @@
     "m2 Buiten":"451",
     "Slaapkamers":"3",
     "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8794"
-  },
-  {
-    "Bron":"valadie",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"275\u202f600 \u20ac",
-    "m2 Binnen":"48",
-    "m2 Buiten":"2577",
-    "Slaapkamers":"3",
-    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8829"
-  },
-  {
-    "Bron":"valadie",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"480\u202f000 \u20ac",
-    "m2 Binnen":"500",
-    "m2 Buiten":"21735",
-    "Slaapkamers":"10",
-    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8827"
-  },
-  {
-    "Bron":"valadie",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"88\u202f000 \u20ac",
-    "m2 Binnen":"75",
-    "m2 Buiten":"75",
-    "Slaapkamers":"3",
-    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8823"
   },
   {
     "Bron":"quercygascogne",
@@ -541,6 +521,16 @@
   },
   {
     "Bron":"mouly",
+    "Plaats":"Regio 46160",
+    "Nieuw?":"Nee",
+    "Prijs":"480 000 \u20ac",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.mouly-immobilier.com\/vente\/46-lot\/155-cajarc\/22-propriete\/t8\/2328-manoir-de-caractere-avec-vue-exceptionnelle-sur-le-lot\/"
+  },
+  {
+    "Bron":"mouly",
     "Plaats":"Regio 46000",
     "Nieuw?":"Nee",
     "Prijs":"1 300 \u20ac",
@@ -588,16 +578,6 @@
     "m2 Buiten":"N\/A",
     "Slaapkamers":"N\/A",
     "URL":"https:\/\/www.mouly-immobilier.com\/location\/46-lot\/1-cahors\/2-appartement\/t1\/2319-t1-avec-grande-terrasse-centre-ville-cahors\/"
-  },
-  {
-    "Bron":"mouly",
-    "Plaats":"Regio 46000",
-    "Nieuw?":"Nee",
-    "Prijs":"135 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.mouly-immobilier.com\/vente\/46-lot\/1-cahors\/2-appartement\/t3\/2318-appartement-t3-lumineux-hypercentre-cahors\/"
   },
   {
     "Bron":"soleil47",
@@ -661,6 +641,16 @@
   },
   {
     "Bron":"marin",
+    "Plaats":"Regio 46090",
+    "Nieuw?":"Nee",
+    "Prijs":"369 000 \u20ac",
+    "m2 Binnen":"116",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.immobilier-marin.com\/vente\/564-le-montat\/maison\/t4\/106-maison-contemporaine-de-plain-pied-a-proximite-de-cahors\/"
+  },
+  {
+    "Bron":"marin",
     "Plaats":"Regio 46230",
     "Nieuw?":"Nee",
     "Prijs":"449 000 \u20ac",
@@ -710,16 +700,6 @@
     "URL":"https:\/\/www.immobilier-marin.com\/vente\/1-castelnau-montratier\/maison\/t5\/95-maison-de-plain-pied-avec-jardin-a-proximite-du-centre-bourg\/"
   },
   {
-    "Bron":"marin",
-    "Plaats":"Regio 46170",
-    "Nieuw?":"Nee",
-    "Prijs":"396 000 \u20ac",
-    "m2 Binnen":"141",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-marin.com\/vente\/1-castelnau-montratier\/maison\/t5\/94-tres-belle-maison-d-architecte-a-castelnau-montratier\/"
-  },
-  {
     "Bron":"pousset",
     "Plaats":"Regio 46700",
     "Nieuw?":"Nee",
@@ -728,16 +708,6 @@
     "m2 Buiten":"N\/A",
     "Slaapkamers":"N\/A",
     "URL":"https:\/\/www.immobilier-pousset.fr\/vente\/46-lot\/1-puy-l-eveque\/1-maison\/t5\/10070-\/"
-  },
-  {
-    "Bron":"arobase",
-    "Plaats":"Regio 47400",
-    "Nieuw?":"Nee",
-    "Prijs":"1 470 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.arobaseimmobilier.fr\/vente\/47-lot-et-garonne\/1-tonneins\/22-propriete\/t21\/7123-propriete-d-exception-dans-un-environnement-calme-avec-vue-prestige\/"
   },
   {
     "Bron":"arobase",
@@ -788,6 +758,16 @@
     "m2 Buiten":"N\/A",
     "Slaapkamers":"N\/A",
     "URL":"https:\/\/www.arobaseimmobilier.fr\/vente\/47-lot-et-garonne\/165-galapian\/1-maison\/t8\/7733-grande-maison-en-pierre-avec-vue-panoramique\/"
+  },
+  {
+    "Bron":"arobase",
+    "Plaats":"Regio 47190",
+    "Nieuw?":"Nee",
+    "Prijs":"295 000 \u20ac",
+    "m2 Binnen":"N\/A",
+    "m2 Buiten":"N\/A",
+    "Slaapkamers":"N\/A",
+    "URL":"https:\/\/www.arobaseimmobilier.fr\/vente\/47-lot-et-garonne\/6-aiguillon\/1-maison\/t7\/7704-maison-d-exception-dans-un-parc-de-2-hectares\/"
   },
   {
     "Bron":"immo46",
