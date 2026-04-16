@@ -87,8 +87,7 @@ def run_real_estate_scraper():
     {"id": "eleonor", "url": "https://www.agence-eleonor.fr/fr/vente?orderBy=2", "base": "https://www.agence-eleonor.fr", "pattern": "/fr/vente/"},
     {"id": "charles_loftie", "url": "https://charles-loftie-immo.com/fr/recherche", "base": "https://charles-loftie-immo.com", "pattern": "/fr/selection"},
     {"id": "prada_prestige", "url": "https://prada-prestige-immo.fr/nos-biens-de-prestige", "base": "https://prada-prestige-immo.fr", "pattern": "detail"},
-    {"id": "ledil", "url": "https://ledil.immo/recherche/tous-types/46+47+82?", "base": "https://ledil.immo", "pattern": "/bien/"} # NB: Ledil kan nog steeds 0 geven door JS blokkade
-]
+    {"id": "ledil", "url": "https://ledil.immo/recherche/tous-types/46+47+82?", "base": "https://ledil.immo", "pattern": "/bien/"} 
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
