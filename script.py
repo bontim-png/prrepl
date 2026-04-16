@@ -4,6 +4,7 @@ import pandas as pd
 import re
 import time
 
+
 def extract_features(text):
     data = {
         'Plaats': 'Onbekend',
@@ -55,39 +56,39 @@ def extract_features(text):
 
 def run_real_estate_scraper():
     configs = [
-        SCRAPER_CONFIG = [
-    {"id": "ladresse_tournon", "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com", "pattern": "/achat/"},
-    {"id": "beauxvillages", "url": "https://beauxvillages.com/fr/nouveau-sur-le-march%C3%A9?hotsheet=1", "base": "https://beauxvillages.com", "pattern": "/property/"},
-    {"id": "lot_immoco", "url": "https://www.lot-immoco.net/a-vendre/1", "base": "https://www.lot-immoco.net", "pattern": "\\.html$"},
-    {"id": "pouget", "url": "https://www.agencespouget.com/nos-biens", "base": "https://www.agencespouget.com", "pattern": "/vente/"},
-    {"id": "human", "url": "https://www.human-immobilier.fr/achat-maison-tarn-et-garonne?og=0&sort=date-desc", "base": "https://www.human-immobilier.fr", "pattern": "/annonce-"},
-    {"id": "letuc", "url": "https://www.letuc.com/recherche/", "base": "https://www.letuc.com", "pattern": "/t[0-9]+/"},
-    {"id": "nestenn", "url": "https://immobilier-villeneuve-sur-lot.nestenn.com/achat-immobilier", "base": "https://immobilier-villeneuve-sur-lot.nestenn.com", "pattern": "ref-"},
-    {"id": "century21", "url": "https://www.century21-bg-villeneuve.com/annonces/achat/", "base": "https://www.century21-bg-villeneuve.com", "pattern": "/detail/"},
-    {"id": "lot_et_garonne", "url": "https://www.lot-et-garonne-immobilier.com/bien-a-acheter.html", "base": "https://www.lot-et-garonne-immobilier.com", "pattern": "\\.html$"},
-    {"id": "valadie", "url": "https://valadie-immobilier.com/fr/biens/a_vendre/1", "base": "https://valadie-immobilier.com", "pattern": "/fiche/"},
-    {"id": "villereal", "url": "https://www.immobilier-villereal.com/fr/nos-biens-tous", "base": "https://www.immobilier-villereal.com", "pattern": "/property/"},
-    {"id": "quercygascogne", "url": "https://www.quercygascogne.fr/ventes/1", "base": "https://www.quercygascogne.fr", "pattern": "/[0-9]+-"},
-    {"id": "xavier", "url": "https://xavierimmobilier.fr/gb/15-properties-up-to-350000", "base": "https://xavierimmobilier.fr", "pattern": "/[0-9]+-"},
-    {"id": "wheeler", "url": "https://wheeler-property.com/for-sale/", "base": "https://wheeler-property.com", "pattern": "/properties/"},
-    {"id": "mouly", "url": "https://www.mouly-immobilier.com/recherche/", "base": "https://www.mouly-immobilier.com", "pattern": "/[0-9]+-"},
-    {"id": "soleil47", "url": "https://www.soleil-immobilier-47.com/vente/1", "base": "https://www.soleil-immobilier-47.com", "pattern": "/[0-9]+-"},
-    {"id": "marin", "url": "https://www.immobilier-marin.com/vente/1", "base": "https://www.immobilier-marin.com", "pattern": "/[0-9]+-"},
-    {"id": "factor", "url": "https://www.factorimmo.com/nos-biens/", "base": "https://www.factorimmo.com", "pattern": "/[0-9]+-"},
-    {"id": "pousset", "url": "https://www.immobilier-pousset.fr/vente/1", "base": "https://www.immobilier-pousset.fr", "pattern": "/[0-9]+-/"},
-    {"id": "arobase", "url": "https://www.arobaseimmobilier.fr/vente/1", "base": "https://www.arobaseimmobilier.fr", "pattern": "/[0-9]+-"},
-    {"id": "immo46", "url": "https://www.immo46.com/fr/a-vendre", "base": "https://www.immo46.com", "pattern": ",P[0-9]"},
-    {"id": "pleinsud", "url": "https://www.pleinsudimmo.fr/nos-biens-immobiliers", "base": "https://www.pleinsudimmo.fr", "pattern": "\\.html$"},
-    {"id": "albatros", "url": "https://www.albatros-immo.fr/vente", "base": "https://www.albatros-immo.fr", "pattern": "vente"},
-    {"id": "lot_garonne_immo", "url": "https://www.immobilier-lot-garonne.com/fr/biens", "base": "https://www.immobilier-lot-garonne.com", "pattern": "/fr"},
-    {"id": "maisondelimmobilier", "url": "https://www.maisondelimmobilier.com/catalog/advanced_search_result.php?C_28=Vente", "base": "https://www.maisondelimmobilier.com", "pattern": "transaction/Vente"},
-    {"id": "orpi", "url": "https://www.orpi.com/recherche/buy?sort=date-down", "base": "https://www.orpi.com", "pattern": "annonce-vente"},
-    {"id": "guy_hoquet", "url": "https://www.guy-hoquet.com/biens/result", "base": "https://www.guy-hoquet.com", "pattern": "/maison/"},
-    {"id": "signature_agenaise", "url": "https://www.la-signature-agenaise.fr/fr/vente/tournon-d-agenais/47370?orderBy=2", "base": "https://www.la-signature-agenaise.fr", "pattern": "/fr/vente/"},
-    {"id": "eleonor", "url": "https://www.agence-eleonor.fr/fr/vente?orderBy=2", "base": "https://www.agence-eleonor.fr", "pattern": "/fr/vente/"},
-    {"id": "charles_loftie", "url": "https://charles-loftie-immo.com/fr/recherche", "base": "https://charles-loftie-immo.com", "pattern": "/fr/selection"},
-    {"id": "prada_prestige", "url": "https://prada-prestige-immo.fr/nos-biens-de-prestige", "base": "https://prada-prestige-immo.fr", "pattern": "detail"},
-    {"id": "ledil", "url": "https://ledil.immo/recherche/tous-types/46+47+82?", "base": "https://ledil.immo", "pattern": "/bien/"} 
+        {"id": "ladresse_tournon", "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com", "pattern": "/achat/"},
+        {"id": "beauxvillages", "url": "https://beauxvillages.com/fr/nouveau-sur-le-march%C3%A9?hotsheet=1", "base": "https://beauxvillages.com", "pattern": "/property/"},
+        {"id": "lot_immoco", "url": "https://www.lot-immoco.net/a-vendre/1", "base": "https://www.lot-immoco.net", "pattern": "\\.html$"},
+        {"id": "pouget", "url": "https://www.agencespouget.com/nos-biens", "base": "https://www.agencespouget.com", "pattern": "/vente/"},
+        {"id": "human", "url": "https://www.human-immobilier.fr/achat-maison-tarn-et-garonne?og=0&sort=date-desc", "base": "https://www.human-immobilier.fr", "pattern": "/annonce-"},
+        {"id": "letuc", "url": "https://www.letuc.com/recherche/", "base": "https://www.letuc.com", "pattern": "/t[0-9]+/"},
+        {"id": "nestenn", "url": "https://immobilier-villeneuve-sur-lot.nestenn.com/achat-immobilier", "base": "https://immobilier-villeneuve-sur-lot.nestenn.com", "pattern": "ref-"},
+        {"id": "century21", "url": "https://www.century21-bg-villeneuve.com/annonces/achat/", "base": "https://www.century21-bg-villeneuve.com", "pattern": "/detail/"},
+        {"id": "lot_et_garonne", "url": "https://www.lot-et-garonne-immobilier.com/bien-a-acheter.html", "base": "https://www.lot-et-garonne-immobilier.com", "pattern": "\\.html$"},
+        {"id": "valadie", "url": "https://valadie-immobilier.com/fr/biens/a_vendre/1", "base": "https://valadie-immobilier.com", "pattern": "/fiche/"},
+        {"id": "villereal", "url": "https://www.immobilier-villereal.com/fr/nos-biens-tous", "base": "https://www.immobilier-villereal.com", "pattern": "/property/"},
+        {"id": "quercygascogne", "url": "https://www.quercygascogne.fr/ventes/1", "base": "https://www.quercygascogne.fr", "pattern": "/[0-9]+-"},
+        {"id": "xavier", "url": "https://xavierimmobilier.fr/gb/15-properties-up-to-350000", "base": "https://xavierimmobilier.fr", "pattern": "/[0-9]+-"},
+        {"id": "wheeler", "url": "https://wheeler-property.com/for-sale/", "base": "https://wheeler-property.com", "pattern": "/properties/"},
+        {"id": "mouly", "url": "https://www.mouly-immobilier.com/recherche/", "base": "https://www.mouly-immobilier.com", "pattern": "/[0-9]+-"},
+        {"id": "soleil47", "url": "https://www.soleil-immobilier-47.com/vente/1", "base": "https://www.soleil-immobilier-47.com", "pattern": "/[0-9]+-"},
+        {"id": "marin", "url": "https://www.immobilier-marin.com/vente/1", "base": "https://www.immobilier-marin.com", "pattern": "/[0-9]+-"},
+        {"id": "factor", "url": "https://www.factorimmo.com/nos-biens/", "base": "https://www.factorimmo.com", "pattern": "/[0-9]+-"},
+        {"id": "pousset", "url": "https://www.immobilier-pousset.fr/vente/1", "base": "https://www.immobilier-pousset.fr", "pattern": "/[0-9]+-/"},
+        {"id": "arobase", "url": "https://www.arobaseimmobilier.fr/vente/1", "base": "https://www.arobaseimmobilier.fr", "pattern": "/[0-9]+-"},
+        {"id": "immo46", "url": "https://www.immo46.com/fr/a-vendre", "base": "https://www.immo46.com", "pattern": ",P[0-9]"},
+        {"id": "pleinsud", "url": "https://www.pleinsudimmo.fr/nos-biens-immobiliers", "base": "https://www.pleinsudimmo.fr", "pattern": "\\.html$"},
+        {"id": "albatros", "url": "https://www.albatros-immo.fr/vente", "base": "https://www.albatros-immo.fr", "pattern": "vente"},
+        {"id": "lot_garonne_immo", "url": "https://www.immobilier-lot-garonne.com/fr/biens", "base": "https://www.immobilier-lot-garonne.com", "pattern": "/fr"},
+        {"id": "maisondelimmobilier", "url": "https://www.maisondelimmobilier.com/catalog/advanced_search_result.php?C_28=Vente", "base": "https://www.maisondelimmobilier.com", "pattern": "transaction/Vente"},
+        {"id": "orpi", "url": "https://www.orpi.com/recherche/buy?sort=date-down", "base": "https://www.orpi.com", "pattern": "annonce-vente"},
+        {"id": "guy_hoquet", "url": "https://www.guy-hoquet.com/biens/result", "base": "https://www.guy-hoquet.com", "pattern": "/maison/"},
+        {"id": "signature_agenaise", "url": "https://www.la-signature-agenaise.fr/fr/vente/tournon-d-agenais/47370?orderBy=2", "base": "https://www.la-signature-agenaise.fr", "pattern": "/fr/vente/"},
+        {"id": "eleonor", "url": "https://www.agence-eleonor.fr/fr/vente?orderBy=2", "base": "https://www.agence-eleonor.fr", "pattern": "/fr/vente/"},
+        {"id": "charles_loftie", "url": "https://charles-loftie-immo.com/fr/recherche", "base": "https://charles-loftie-immo.com", "pattern": "/fr/selection"},
+        {"id": "prada_prestige", "url": "https://prada-prestige-immo.fr/nos-biens-de-prestige", "base": "https://prada-prestige-immo.fr", "pattern": "detail"},
+        {"id": "ledil", "url": "https://ledil.immo/recherche/tous-types/46+47+82?", "base": "https://ledil.immo", "pattern": "/bien/"}
+    ]
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
@@ -101,7 +102,7 @@ def run_real_estate_scraper():
             print(f"Scraping: {conf['id']}")
 
             res = requests.get(conf['url'], headers=headers, timeout=15)
-            res.raise_for_status()  # 🔥 belangrijke toevoeging
+            res.raise_for_status()
 
             soup = BeautifulSoup(res.text, 'html.parser')
             links = soup.find_all('a', href=True)
@@ -143,7 +144,7 @@ def run_real_estate_scraper():
                 if count >= 6:
                     break
 
-            time.sleep(2)  # iets rustiger → minder kans op blokkade
+            time.sleep(2)
 
         except Exception as e:
             print(f"Fout bij {conf['id']}: {e}")
@@ -157,7 +158,6 @@ df_final = run_real_estate_scraper()
 print(f"Totaal gevonden: {len(df_final)}")
 print(df_final.head())
 
-# Opslaan
 df_final.to_csv('huizen_met_plaats.csv', index=False)
 df_final.to_json("data.json", orient="records", indent=2)
 
