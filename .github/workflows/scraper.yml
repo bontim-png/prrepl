@@ -5,6 +5,9 @@ on:
     - cron: '0 8 * * *' # Draait elke dag om 08:00 UTC (09:00 of 10:00 NL tijd)
   workflow_dispatch: # Knop om handmatig te starten
 
+permissions:
+  contents: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
