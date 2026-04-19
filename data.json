@@ -1,982 +1,2292 @@
 [
   {
-    "Bron":"ladresse_tournon",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"285 000 \u20ac",
-    "m2 Binnen":"197",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"5",
-    "URL":"https:\/\/www.ladresse.com\/annonce\/achat\/maison\/montayral-47500\/10957330"
-  },
-  {
-    "Bron":"ladresse_tournon",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"137 600 \u20ac",
-    "m2 Binnen":"192",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"2",
-    "URL":"https:\/\/www.ladresse.com\/annonce\/achat\/immeuble\/fumel-47500\/12918358"
-  },
-  {
-    "Bron":"ladresse_tournon",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"223 000 \u20ac",
-    "m2 Binnen":"171",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"5",
-    "URL":"https:\/\/www.ladresse.com\/annonce\/achat\/maison\/masquieres-47370\/12918888"
-  },
-  {
-    "Bron":"ladresse_tournon",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"129 000 \u20ac",
-    "m2 Binnen":"100",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"3",
-    "URL":"https:\/\/www.ladresse.com\/annonce\/achat\/maison\/sauveterre-la-lemance-47500\/12949673"
-  },
-  {
-    "Bron":"ladresse_tournon",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"359 000 \u20ac",
-    "m2 Binnen":"230",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"5",
-    "URL":"https:\/\/www.ladresse.com\/annonce\/achat\/maison\/fumel-47500\/12959574"
-  },
-  {
-    "Bron":"ladresse_tournon",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"276 000 \u20ac",
-    "m2 Binnen":"200",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"5",
-    "URL":"https:\/\/www.ladresse.com\/annonce\/achat\/maison\/monsempron-libos-47500\/12998969"
-  },
-  {
-    "Bron":"lot_immoco",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"735 000 \u20ac",
-    "m2 Binnen":"530",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.lot-immoco.net\/7010757-domaine-touristique-de-charme-du-18eme-1765-en-pierre-avec-une-maison-tres-spacieuse-et-un-grand-gites.html"
-  },
-  {
-    "Bron":"lot_immoco",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"480 000 \u20ac",
-    "m2 Binnen":"500",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.lot-immoco.net\/7010663-ensemble-immobilier-aux-portes-de-la-dordogne.html"
-  },
-  {
-    "Bron":"lot_immoco",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"472 500 \u20ac",
-    "m2 Binnen":"170",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.lot-immoco.net\/7010756-magnifique-villa.html"
-  },
-  {
-    "Bron":"lot_immoco",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"440 000 \u20ac",
-    "m2 Binnen":"220",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.lot-immoco.net\/7010635-maison-en-pierre-et-ses-dependances.html"
-  },
-  {
-    "Bron":"lot_immoco",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"380 000 \u20ac",
-    "m2 Binnen":"220",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.lot-immoco.net\/7010646-propriete-en-pierre.html"
-  },
-  {
-    "Bron":"lot_immoco",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"368 000 \u20ac",
-    "m2 Binnen":"280",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.lot-immoco.net\/7010753-maison-en-pierre-avec-3-ha-de-terrain.html"
-  },
-  {
-    "Bron":"pouget",
-    "Plaats":"Regio 47290",
-    "Nieuw?":"Nee",
-    "Prijs":"117 150 \u20ac",
-    "m2 Binnen":"93",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.agencespouget.com\/vente\/386-cancon\/appartement\/t5\/7167-maison-familiale-a-cancon\/"
-  },
-  {
-    "Bron":"pouget",
-    "Plaats":"Regio 47500",
-    "Nieuw?":"Nee",
-    "Prijs":"4 245 000 \u20ac",
-    "m2 Binnen":"148",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.agencespouget.com\/vente\/8-montayral\/villa\/t6\/7166-exclusivite-villa-de-plain-pied-de-type-f4\/"
-  },
-  {
-    "Bron":"pouget",
-    "Plaats":"Regio 46700",
-    "Nieuw?":"Nee",
-    "Prijs":"54 000 \u20ac",
-    "m2 Binnen":"40",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.agencespouget.com\/vente\/17-puy-l-eveque\/appartement\/t2\/7164-appartement-t2-renove\/"
-  },
-  {
-    "Bron":"pouget",
-    "Plaats":"Regio 24170",
-    "Nieuw?":"Nee",
-    "Prijs":"133 000 \u20ac",
-    "m2 Binnen":"70",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.agencespouget.com\/vente\/3271-pays-de-belves\/maison-de-village\/7163-maison-en-pierre-avec-dependance-et-vue-sur-belves-perigord-noir"
-  },
-  {
-    "Bron":"pouget",
-    "Plaats":"Regio 47370",
-    "Nieuw?":"Nee",
-    "Prijs":"109 000 \u20ac",
-    "m2 Binnen":"108",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.agencespouget.com\/vente\/18-bourlens\/maison-de-village\/7159-maison-de-village-avec-jardin-dependances-et-grand-garage"
-  },
-  {
-    "Bron":"pouget",
-    "Plaats":"Regio 46700",
-    "Nieuw?":"JA",
-    "Prijs":"52 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.agencespouget.com\/vente\/13-mauroux\/terrain\/7157-exclusivite-en-campagne-ruine-avec-fort-potentiel"
-  },
-  {
-    "Bron":"letuc",
-    "Plaats":"Regio 30240",
-    "Nieuw?":"JA",
-    "Prijs":"2650115463 217 000 \u20ac",
-    "m2 Binnen":"15",
-    "m2 Buiten":"50",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.letuc.com\/vente\/30-gard\/1099-le-grau-du-roi\/18-duplex\/t3\/18349-grand-duplex-de-50-m-avec-vue-sur-piscine-dans-residence-avec-prestations-multiples\/"
-  },
-  {
-    "Bron":"letuc",
-    "Plaats":"Regio 83370",
-    "Nieuw?":"JA",
-    "Prijs":"14050115439 690 000 \u20ac",
-    "m2 Binnen":"94",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"2",
-    "URL":"https:\/\/www.letuc.com\/vente\/83-var\/1278-frejus\/2-appartement\/t4\/18345-frejus-t4-recent-de-94-64-m-dernier-etage-a-300m-de-la-mer-avec-garage\/"
-  },
-  {
-    "Bron":"letuc",
-    "Plaats":"Regio 30340",
-    "Nieuw?":"JA",
-    "Prijs":"259 000 \u20ac",
-    "m2 Binnen":"37",
-    "m2 Buiten":"1777",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.letuc.com\/vente\/30-gard\/97-st-privat-des-vieux\/1-maison\/t6\/18341-maison-type-6-terrain-1777-m2\/"
-  },
-  {
-    "Bron":"letuc",
-    "Plaats":"Regio 73000",
-    "Nieuw?":"Nee",
-    "Prijs":"110115433 421,77 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.letuc.com\/location\/73-savoie\/1094-chambery\/2-appartement\/t4\/18342-chambre-disponible-en-colocation-etudiante\/"
-  },
-  {
-    "Bron":"letuc",
-    "Plaats":"Regio 33860",
-    "Nieuw?":"Nee",
-    "Prijs":"231 000 \u20ac",
-    "m2 Binnen":"3700",
-    "m2 Buiten":"3700",
-    "Slaapkamers":"5",
-    "URL":"https:\/\/www.letuc.com\/vente\/33-gironde\/1600-reignac\/1-maison\/t7\/18344-maison-5-chambres-avec-piscine-sur-3700-m-de-terrain-clos\/"
-  },
-  {
-    "Bron":"letuc",
-    "Plaats":"TERRIER",
-    "Nieuw?":"JA",
-    "Prijs":"150\u20ac",
-    "m2 Binnen":"15",
-    "m2 Buiten":"720",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.letuc.com\/vente\/2a-corse-du-sud\/1085-ajaccio\/25-villa\/t6\/18340-ajaccio-mezzavia-superbe-villa-f4-f2-avec-piscine\/"
-  },
-  {
-    "Bron":"nestenn",
-    "Plaats":"EXCLU",
-    "Nieuw?":"Nee",
-    "Prijs":"109 000 \u20ac",
-    "m2 Binnen":"106",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"2",
-    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/appartement-villeneuve-sur-lot-4-piece-s-105-48-m2-ref-39490020"
-  },
-  {
-    "Bron":"nestenn",
-    "Plaats":"EXCLU",
-    "Nieuw?":"Nee",
-    "Prijs":"179 000 \u20ac",
-    "m2 Binnen":"140",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"4",
-    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/maison-5-pieces-140-m-sainte-livrade-sur-lot-ref-39301525"
-  },
-  {
-    "Bron":"nestenn",
-    "Plaats":"EXCLU",
-    "Nieuw?":"Nee",
-    "Prijs":"440 000 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"5",
-    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/2-immeubles-villeneuve-sur-lot-avec-beau-rendement-locatif-ref-39281610"
-  },
-  {
-    "Bron":"nestenn",
-    "Plaats":"EXCLU",
-    "Nieuw?":"Nee",
-    "Prijs":"114 000 \u20ac",
-    "m2 Binnen":"85",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"3",
-    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/maison-villeneuve-sur-lot-3-piece-s-85-m2-ref-39432465"
-  },
-  {
-    "Bron":"nestenn",
-    "Plaats":"EXCLU",
-    "Nieuw?":"Nee",
-    "Prijs":"318 000 \u20ac",
-    "m2 Binnen":"270",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"6",
-    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/maison-villeneuve-sur-lot-7-piece-s-300-m2-ref-39395768"
-  },
-  {
-    "Bron":"nestenn",
-    "Plaats":"EXCLU",
-    "Nieuw?":"Nee",
-    "Prijs":"139 500 \u20ac",
-    "m2 Binnen":"100",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"2",
-    "URL":"https:\/\/immobilier-villeneuve-sur-lot.nestenn.com\/maison-de-100-m-5-pieces-a-villeneuve-sur-lot-ref-39403113"
-  },
-  {
-    "Bron":"lot_et_garonne",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/translate.google.com\/translate?hl=en&sl=fr&u=https%3A%2F%2Fwww.lot-et-garonne-immobilier.com%2Fbien-a-acheter.html"
-  },
-  {
-    "Bron":"lot_et_garonne",
-    "Plaats":"Regio 13660",
-    "Nieuw?":"JA",
-    "Prijs":"249 900 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"280000",
-    "Slaapkamers":"6",
-    "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/ensemble-immobilier-en-pierre-en-peripherie-de-villeneuve-sur-lot-58248497.html"
-  },
-  {
-    "Bron":"lot_et_garonne",
-    "Plaats":"Regio 13660",
-    "Nieuw?":"JA",
-    "Prijs":"249 900 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"280000",
-    "Slaapkamers":"6",
-    "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/appartement-t3-avec-terrasse-a-vendre-a-villeneuve-sur-lot--58359643.html"
-  },
-  {
-    "Bron":"lot_et_garonne",
-    "Plaats":"Regio 13660",
-    "Nieuw?":"JA",
-    "Prijs":"249 900 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"280000",
-    "Slaapkamers":"6",
-    "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/terrain-constructible-en-zone-d-activite-commerciale-43201940.html"
-  },
-  {
-    "Bron":"lot_et_garonne",
-    "Plaats":"Regio 13660",
-    "Nieuw?":"JA",
-    "Prijs":"249 900 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"280000",
-    "Slaapkamers":"6",
-    "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/villa-de-caractere-a-vendre-a-pujols-59209535.html"
-  },
-  {
-    "Bron":"lot_et_garonne",
-    "Plaats":"Regio 13660",
-    "Nieuw?":"JA",
-    "Prijs":"249 900 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"280000",
-    "Slaapkamers":"6",
-    "URL":"https:\/\/www.lot-et-garonne-immobilier.com\/a-vendre-maison-individuelle-sur-sous-sol-a-monclar-lot-et-garonne-47--59634569.html"
-  },
-  {
-    "Bron":"valadie",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"960\u202f000 \u20ac",
-    "m2 Binnen":"253",
-    "m2 Buiten":"300",
-    "Slaapkamers":"4",
-    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8847"
-  },
-  {
-    "Bron":"valadie",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"295\u202f000 \u20ac",
-    "m2 Binnen":"148",
-    "m2 Buiten":"207",
-    "Slaapkamers":"3",
-    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8836"
-  },
-  {
-    "Bron":"valadie",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"299\u202f980 \u20ac",
-    "m2 Binnen":"40",
-    "m2 Buiten":"160",
-    "Slaapkamers":"3",
-    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8701"
-  },
-  {
-    "Bron":"valadie",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"171\u202f200 \u20ac",
-    "m2 Binnen":"150",
-    "m2 Buiten":"2800",
-    "Slaapkamers":"2",
-    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8842"
-  },
-  {
-    "Bron":"valadie",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"271\u202f300 \u20ac",
-    "m2 Binnen":"122",
-    "m2 Buiten":"5863",
-    "Slaapkamers":"3",
-    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8834"
-  },
-  {
-    "Bron":"valadie",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"140\u202f000 \u20ac",
-    "m2 Binnen":"58",
-    "m2 Buiten":"90",
-    "Slaapkamers":"2",
-    "URL":"https:\/\/valadie-immobilier.com\/fr\/biens\/fiche\/8835"
-  },
-  {
-    "Bron":"quercygascogne",
-    "Plaats":"Regio 82150",
-    "Nieuw?":"JA",
-    "Prijs":"134288 289 000 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"5138",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.quercygascogne.fr\/vente\/-\/2-montaigu-de-quercy\/-villa\/t6\/2330-maison-contemporaine-avec-piscine-et-jardin-boise-de-plus-de-5000m\/"
-  },
-  {
-    "Bron":"quercygascogne",
-    "Plaats":"Regio 46170",
-    "Nieuw?":"Nee",
-    "Prijs":"114284 87 200 \u20ac",
-    "m2 Binnen":"1",
-    "m2 Buiten":"40",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.quercygascogne.fr\/vente\/-\/2657-pern-lhospitalet\/-maison-de-village\/2328-charmante-maison-de-village-a-renover\/"
-  },
-  {
-    "Bron":"quercygascogne",
-    "Plaats":"Regio 82190",
-    "Nieuw?":"JA",
-    "Prijs":"124279 399 000 \u20ac",
-    "m2 Binnen":"3",
-    "m2 Buiten":"15479",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.quercygascogne.fr\/vente\/-\/203-brassac\/-propriete\/t6\/2325-jolie-propriete-avec-une-maison-renovee-avec-gout-une-grange-en-pierre-une-piscine-et-15479-m-de-terrain\/"
-  },
-  {
-    "Bron":"quercygascogne",
-    "Plaats":"Regio 82150",
-    "Nieuw?":"JA",
-    "Prijs":"134285 149 999 \u20ac",
-    "m2 Binnen":"16",
-    "m2 Buiten":"1788",
-    "Slaapkamers":"2",
-    "URL":"https:\/\/www.quercygascogne.fr\/vente\/-\/2-montaigu-de-quercy\/-maison-de-village\/2321-charmante-maison-a-renover-avec-dependances\/"
-  },
-  {
-    "Bron":"quercygascogne",
-    "Plaats":"Regio 46800",
-    "Nieuw?":"Nee",
-    "Prijs":"114273 249 000 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"3199",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.quercygascogne.fr\/vente\/-\/492-montcuq-en-quercy-blanc\/-maison\/t6\/2318-maison-restauree-et-agrandie-avec-grande-dependance-vue\/"
-  },
-  {
-    "Bron":"quercygascogne",
-    "Plaats":"Regio 82110",
-    "Nieuw?":"Nee",
-    "Prijs":"154275 229 900 \u20ac",
-    "m2 Binnen":"0",
-    "m2 Buiten":"2047",
-    "Slaapkamers":"4",
-    "URL":"https:\/\/www.quercygascogne.fr\/vente\/-\/231-lauzerte\/-maison\/t6\/2312-maison-contemporaine-de-plain-pied-de-105-m-avec-grand-hangar-de-180-m-lauzerte\/"
-  },
-  {
-    "Bron":"wheeler",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/wheeler-property.com\/properties\/village-house-with-garden-roof-terrace-and-parking\/"
-  },
-  {
-    "Bron":"wheeler",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/wheeler-property.com\/properties\/village-house-with-courtyard-garden-and-annexe\/"
-  },
-  {
-    "Bron":"wheeler",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/wheeler-property.com\/properties\/country-property-with-pool-annexe-land-garaging-and-lake\/"
-  },
-  {
-    "Bron":"mouly",
-    "Plaats":"Regio 46160",
-    "Nieuw?":"Nee",
-    "Prijs":"480 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.mouly-immobilier.com\/vente\/46-lot\/155-cajarc\/22-propriete\/t8\/2328-chateau-avec-vue-exceptionnelle-sur-le-lot\/"
-  },
-  {
-    "Bron":"mouly",
-    "Plaats":"Regio 46000",
-    "Nieuw?":"Nee",
-    "Prijs":"1 300 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.mouly-immobilier.com\/location\/46-lot\/1-cahors\/1-maison\/t5\/2327-maison-de-ville-cahors-centre-entierement-restauree\/"
-  },
-  {
-    "Bron":"mouly",
-    "Plaats":"Regio 46220",
-    "Nieuw?":"Nee",
-    "Prijs":"460 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.mouly-immobilier.com\/vente\/46-lot\/90-prayssac\/22-propriete\/t6\/2323-belle-maison-de-caractere-donnant-sur-cour-avec-pigeonnier-et-dependances\/"
-  },
-  {
-    "Bron":"mouly",
-    "Plaats":"Regio 46000",
-    "Nieuw?":"Nee",
-    "Prijs":"500 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.mouly-immobilier.com\/location\/46-lot\/1-cahors\/2-appartement\/t2\/1464-appartement-t2-avec-emplacement-de-parking\/"
-  },
-  {
-    "Bron":"mouly",
-    "Plaats":"Regio 46800",
-    "Nieuw?":"Nee",
-    "Prijs":"617 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.mouly-immobilier.com\/vente\/46-lot\/703-montcuq-en-quercy-blanc\/22-propriete\/t10\/2321-grande-propriete-de-campagne-avec-dependances\/"
-  },
-  {
-    "Bron":"mouly",
-    "Plaats":"Regio 46000",
-    "Nieuw?":"Nee",
-    "Prijs":"490 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.mouly-immobilier.com\/location\/46-lot\/1-cahors\/2-appartement\/t1\/2319-t1-avec-grande-terrasse-centre-ville-cahors\/"
-  },
-  {
-    "Bron":"soleil47",
-    "Plaats":"Regio 47170",
-    "Nieuw?":"Nee",
-    "Prijs":"895 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.soleil-immobilier-47.com\/vente\/1427-mezin\/maison\/t14\/35408-domaine-de-caractere-sur-15-hectares-aux-portes-du-gers\/"
-  },
-  {
-    "Bron":"soleil47",
-    "Plaats":"Regio 47300",
-    "Nieuw?":"Nee",
-    "Prijs":"145 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.soleil-immobilier-47.com\/vente\/1-villeneuve-sur-lot\/maison\/t3\/35052-maison-de-ville-avec-jardin\/"
-  },
-  {
-    "Bron":"soleil47",
-    "Plaats":"Regio 47300",
-    "Nieuw?":"Nee",
-    "Prijs":"3... 399 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.soleil-immobilier-47.com\/vente\/1334-ledat\/maison\/t5\/34852-magnifique-maison-de-type-grange-prestations-haut-de-gamme-sur-3-hectares\/"
-  },
-  {
-    "Bron":"soleil47",
-    "Plaats":"Regio 47140",
-    "Nieuw?":"Nee",
-    "Prijs":"199 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.soleil-immobilier-47.com\/vente\/5-penne-d-agenais\/maison\/t7\/34590-maison-de-caractere-7-pieces-au-coeur-de-penne-d-agenais\/"
-  },
-  {
-    "Bron":"soleil47",
-    "Plaats":"Regio 47300",
-    "Nieuw?":"Nee",
-    "Prijs":"450 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.soleil-immobilier-47.com\/vente\/1-villeneuve-sur-lot\/maison\/t5\/34304-propriete-en-pierre-avec-vue-degagee\/"
-  },
-  {
-    "Bron":"soleil47",
-    "Plaats":"Regio 24540",
-    "Nieuw?":"Nee",
-    "Prijs":"149 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.soleil-immobilier-47.com\/vente\/274-monpazier\/maison-de-village\/33820-maison-avec-jardin-au-coeur-de-monpazier"
-  },
-  {
-    "Bron":"marin",
-    "Plaats":"Regio 46090",
-    "Nieuw?":"Nee",
-    "Prijs":"369 000 \u20ac",
-    "m2 Binnen":"116",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-marin.com\/vente\/564-le-montat\/maison\/t4\/106-maison-contemporaine-de-plain-pied-a-proximite-de-cahors\/"
-  },
-  {
-    "Bron":"marin",
-    "Plaats":"Regio 46230",
-    "Nieuw?":"Nee",
-    "Prijs":"449 000 \u20ac",
-    "m2 Binnen":"137",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-marin.com\/vente\/563-lalbenque\/maison\/t5\/104-magnifique-maison-avec-piscine\/"
-  },
-  {
-    "Bron":"marin",
-    "Plaats":"Regio 82000",
-    "Nieuw?":"Nee",
-    "Prijs":"169 900 \u20ac",
-    "m2 Binnen":"60",
-    "m2 Buiten":"60",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-marin.com\/vente\/45-montauban\/appartement\/t3\/102-appartement-de-60m-a-vendre-a-montauban\/"
-  },
-  {
-    "Bron":"marin",
-    "Plaats":"Regio 46800",
-    "Nieuw?":"Nee",
-    "Prijs":"350 000 \u20ac",
-    "m2 Binnen":"150",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-marin.com\/vente\/39-lendou-en-quercy\/propriete\/t5\/81-ensemble-quercynois-avec-dependances-et-16-hectares-de-bois-et-taillis\/"
-  },
-  {
-    "Bron":"marin",
-    "Plaats":"Regio 46170",
-    "Nieuw?":"Nee",
-    "Prijs":"108 500 \u20ac",
-    "m2 Binnen":"66",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-marin.com\/vente\/1-castelnau-montratier\/maison-de-village\/96-coquette-maison-de-village-en-pierre"
-  },
-  {
-    "Bron":"marin",
-    "Plaats":"Regio 46170",
-    "Nieuw?":"Nee",
-    "Prijs":"145 000 \u20ac",
-    "m2 Binnen":"83",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-marin.com\/vente\/1-castelnau-montratier\/maison\/t5\/95-maison-de-plain-pied-avec-jardin-a-proximite-du-centre-bourg\/"
-  },
-  {
-    "Bron":"pousset",
-    "Plaats":"Regio 46700",
-    "Nieuw?":"Nee",
-    "Prijs":"27 500 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-pousset.fr\/vente\/46-lot\/1-puy-l-eveque\/1-maison\/t5\/10070-\/"
-  },
-  {
-    "Bron":"arobase",
-    "Plaats":"Regio 47400",
-    "Nieuw?":"Nee",
-    "Prijs":"640 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.arobaseimmobilier.fr\/vente\/47-lot-et-garonne\/38-fauillet\/1-maison\/t9\/7643-propriete-au-charme-fou\/"
-  },
-  {
-    "Bron":"arobase",
-    "Plaats":"Regio 47400",
-    "Nieuw?":"Nee",
-    "Prijs":"619 500 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.arobaseimmobilier.fr\/vente\/47-lot-et-garonne\/141-grateloup-st-gayrand\/22-propriete\/t8\/7737-propriete\/"
-  },
-  {
-    "Bron":"arobase",
-    "Plaats":"Regio 47130",
-    "Nieuw?":"Nee",
-    "Prijs":"479 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.arobaseimmobilier.fr\/vente\/47-lot-et-garonne\/80-clermont-dessous\/1-maison\/t14\/7756-maison-de-caractere-avec-plus-de-8-hectares-ecuries-piscine-et-vue-panoramique\/"
-  },
-  {
-    "Bron":"arobase",
-    "Plaats":"Regio 47400",
-    "Nieuw?":"Nee",
-    "Prijs":"379 900 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.arobaseimmobilier.fr\/vente\/47-lot-et-garonne\/1-tonneins\/1-maison\/t5\/7468-maison-familiale\/"
-  },
-  {
-    "Bron":"arobase",
-    "Plaats":"Regio 47190",
-    "Nieuw?":"Nee",
-    "Prijs":"350 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.arobaseimmobilier.fr\/vente\/47-lot-et-garonne\/165-galapian\/1-maison\/t8\/7733-grande-maison-en-pierre-avec-vue-panoramique\/"
-  },
-  {
-    "Bron":"arobase",
-    "Plaats":"Regio 47190",
-    "Nieuw?":"Nee",
-    "Prijs":"295 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.arobaseimmobilier.fr\/vente\/47-lot-et-garonne\/6-aiguillon\/1-maison\/t7\/7704-maison-d-exception-dans-un-parc-de-2-hectares\/"
-  },
-  {
-    "Bron":"immo46",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"77.760 \u20ac",
-    "m2 Binnen":"105",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immo46.comachat,maison-maison-de-village-secteur-prayssac,P4579P"
-  },
-  {
-    "Bron":"immo46",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"350.000 \u20ac",
-    "m2 Binnen":"188",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immo46.comachat,maison-maison-t6-de-plain-pied-avec-piscine,P5050PM"
-  },
-  {
-    "Bron":"immo46",
-    "Plaats":"Onbekend",
-    "Nieuw?":"JA",
-    "Prijs":"119.840 \u20ac",
-    "m2 Binnen":"62",
-    "m2 Buiten":"680",
-    "Slaapkamers":"1",
-    "URL":"https:\/\/www.immo46.comachat,maison-maison-1-chambre-de-plain-pied-de-62m-habitables-avec-garage-et-jardin-de-680m,P4894V"
-  },
-  {
-    "Bron":"immo46",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"381.600 \u20ac",
-    "m2 Binnen":"109",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immo46.comachat,maison-propriete-d-exception-sur-11-hectares-de-terrain,P4648A"
-  },
-  {
-    "Bron":"immo46",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"275.600 \u20ac",
-    "m2 Binnen":"140",
-    "m2 Buiten":"400",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immo46.comachat,maison-maison-de-140m-habitables-avec-dependance-et-garage-sur-6-400m-de-terrain,P4911V"
-  },
-  {
-    "Bron":"immo46",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"339.200 \u20ac",
-    "m2 Binnen":"189",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immo46.comachat,maison-ensemble-immobilier-en-pierre-sur-57ha,P4868P"
-  },
-  {
-    "Bron":"pleinsud",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"699 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.pleinsudimmo.fr\/detail\/dans-la-vallee-de-la-vezere-patrimoine-de-lunesco-propriete-de-caractere-avec-piscine-lensemble-sur-un-grand-jardin-paysage-de-3200-m2-avec-une-tres-belle-vue-sur-un-chateau-6504799.html"
-  },
-  {
-    "Bron":"pleinsud",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"318 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.pleinsudimmo.fr\/detail\/en-perigord-noir-entre-perigueux-et-brive-a-20-minutes-de-montignac-propriete-sur-3ha3-de-terrain-arbore-avec-une-maison-principale-dhabitation-un-gite-une-piscine-et-un-petit-etang-a-voir-6502561.html"
-  },
-  {
-    "Bron":"pleinsud",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"132 500 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.pleinsudimmo.fr\/detail\/fermette-a-renover-sur-les-hauteurs-du-charmant-village-de-la-cassagne-en-perigord-noir-jardin-de-2000-m2-6504698.html"
-  },
-  {
-    "Bron":"pleinsud",
-    "Plaats":"Onbekend",
-    "Nieuw?":"JA",
-    "Prijs":"690 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.pleinsudimmo.fr\/detail\/propriete-de-charme-3-maisons-sur-2-ha-sans-vis-a-vis-piscine-gites-prets-a-exploiter-6504779.html"
-  },
-  {
-    "Bron":"pleinsud",
-    "Plaats":"SECTEUR GOURDON",
-    "Nieuw?":"Nee",
-    "Prijs":"265 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.pleinsudimmo.fr\/detail\/secteur-gourdon-au-calme-agreable-maison-de-plain-pied-avec-dependance-garage-sur-2500-m2-arbores-6504766.html"
-  },
-  {
-    "Bron":"pleinsud",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"420 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.pleinsudimmo.fr\/detail\/secteur-coeur-de-causse-superbe-propriete-contemporaine-avec-piscine-dans-un-cadre-de-vie-privilegie-6504765.html"
-  },
-  {
-    "Bron":"albatros",
-    "Plaats":"Regio 47500",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.albatros-immo.fr\/vente\/47-lot-et-garonne\/56-blanquefort-sur-briolance\/1-maison\/t5\/11947-ancien-corps-de-ferme-et-son-etang\/"
-  },
-  {
-    "Bron":"albatros",
-    "Plaats":"Regio 47500",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.albatros-immo.fr\/vente\/47-lot-et-garonne\/33-monsempron-libos\/1-maison\/t5\/12267-charmante-maison-en-pierre-en-plein-centre-de-monsempron-libos\/"
-  },
-  {
-    "Bron":"albatros",
-    "Plaats":"Regio 24250",
-    "Nieuw?":"JA",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.albatros-immo.fr\/vente\/24-dordogne\/1054-daglan\/22-propriete\/t13\/12279-belle-propriete-en-perigord-noir-avec-deux-gites-et-piscine-avec-presque-9-hectares-prestige\/"
-  },
-  {
-    "Bron":"lot_garonne_immo",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/biens"
-  },
-  {
-    "Bron":"lot_garonne_immo",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"22 000 \u20ac",
-    "m2 Binnen":"3000",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/terrain\/terrain-a-batir-de-3000-m-situe-en-campagne-possibilite-de-plus-de-terrain\/1008"
-  },
-  {
-    "Bron":"lot_garonne_immo",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"22 500 \u20ac",
-    "m2 Binnen":"3120",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/terrain\/gignac-terrain-de-3120-m-en-partie-constructible\/962"
-  },
-  {
-    "Bron":"lot_garonne_immo",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"27 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/terrain\/terrains-constructibles-entierement-viabilises-situes-au-calme-a-la-sortie-du-village-de-mauroux\/969"
-  },
-  {
-    "Bron":"lot_garonne_immo",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"33 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/terrain\/fumel-terrain-constructible-de-2595-m-clos-avec-portail\/987"
-  },
-  {
-    "Bron":"lot_garonne_immo",
-    "Plaats":"Onbekend",
-    "Nieuw?":"Nee",
-    "Prijs":"86 000 \u20ac",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.immobilier-lot-garonne.com\/fr\/maison\/monsempron-maison-de-plain-pied-avec-garage-et-caves-sur-514-m-de-terrain\/1033"
-  },
-  {
-    "Bron":"signature_agenaise",
-    "Plaats":"Regio 47510",
-    "Nieuw?":"Nee",
-    "Prijs":"N\/A",
-    "m2 Binnen":"N\/A",
-    "m2 Buiten":"N\/A",
-    "Slaapkamers":"N\/A",
-    "URL":"https:\/\/www.la-signature-agenaise.fr\/fr\/vente\/maison-individuelle\/foulayronnes\/47510"
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/montayral-47500/10957330"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/immeuble/fumel-47500/12918358"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/masquieres-47370/12918888"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/sauveterre-la-lemance-47500/12949673"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/fumel-47500/12959574"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/monsempron-libos-47500/12998969"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/montaigu-de-quercy-82150/13012071"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/soturac-46700/13090972"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/fumel-47500/13184648"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/sauveterre-la-lemance-47500/13208638"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/340834-BVI61480"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/317531-BVI76324"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/344937-BVI82618"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/341527-BVI76578"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/349525-BVI85151"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/333492-BVI80057"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/349532-BVI84552"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/349523-BVI84238"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/349530-BVI85156"
+  },
+  {
+    "Bron": "beauxvillages",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://beauxvillages.com/en/latest-properties/property/349529-BVI82727"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/alerte-email.html"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/estimation.html"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/contact.html"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010757-domaine-touristique-de-charme-du-18eme-1765-en-pierre-avec-une-maison-tres-spacieuse-et-un-grand-gites.html"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010663-ensemble-immobilier-aux-portes-de-la-dordogne.html"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010756-magnifique-villa.html"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010635-maison-en-pierre-et-ses-dependances.html"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010646-propriete-en-pierre.html"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010753-maison-en-pierre-avec-3-ha-de-terrain.html"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010713-belle-propriete-a-la-campagne.html"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/1"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/maison/1"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/appartement/1"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/terrain/1"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/immeubles/1"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/autre/1"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/386-cancon/appartement/t5/7167-maison-familiale-a-cancon/"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/8-montayral/villa/t6/7166-exclusivite-villa-de-plain-pied-de-type-f4/"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/17-puy-l-eveque/appartement/t2/7164-appartement-t2-renove/"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/3271-pays-de-belves/maison-de-village/7163-maison-en-pierre-avec-dependance-et-vue-sur-belves-perigord-noir"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/30-gard/1099-le-grau-du-roi/18-duplex/t3/18349-grand-duplex-de-50-m-avec-vue-sur-piscine-dans-residence-avec-prestations-multiples/"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/83-var/1278-frejus/2-appartement/t4/18345-frejus-t4-recent-de-94-64-m-dernier-etage-a-300m-de-la-mer-avec-garage/"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/30-gard/97-st-privat-des-vieux/1-maison/t6/18341-maison-type-6-terrain-1777-m2/"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/location/73-savoie/1094-chambery/2-appartement/t4/18342-chambre-disponible-en-colocation-etudiante/"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/33-gironde/1600-reignac/1-maison/t7/18344-maison-5-chambres-avec-piscine-sur-3700-m-de-terrain-clos/"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/2a-corse-du-sud/1085-ajaccio/25-villa/t6/18340-ajaccio-mezzavia-superbe-villa-f4-f2-avec-piscine/"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/31-haute-garonne/3929-auterive/27-rez-de-villa/t3/18332-auterive-maison-de-ville-3-pieces-78-m/"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/30-gard/1099-le-grau-du-roi/26-rez-de-jardin/t3/18331-rez-de-jardin-de-50-m-entierement-renove-proche-centre-ville/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/15179198964/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/15179198964/?came_from=/annonces/achat/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/14737510257/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/14737510257/?came_from=/annonces/achat/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/14472797021/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/14472797021/?came_from=/annonces/achat/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/13932299530/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/13932299530/?came_from=/annonces/achat/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/13913099104/"
+  },
+  {
+    "Bron": "century21",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/13913099104/?came_from=/annonces/achat/"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-et-garonne-immobilier.com/mes-biens-favoris.html"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://translate.google.com/translate?hl=en&sl=fr&u=https%3A%2F%2Fwww.lot-et-garonne-immobilier.com%2Fbien-a-acheter.html"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-et-garonne-immobilier.com/bien-a-acheter.html"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-et-garonne-immobilier.com/acheter-bien-prestige.html"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-et-garonne-immobilier.com/agence-immobiliere.html"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-et-garonne-immobilier.com/estimation.html"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-et-garonne-immobilier.com/ensemble-immobilier-en-pierre-en-peripherie-de-villeneuve-sur-lot-58248497.html"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-et-garonne-immobilier.com/appartement-t3-avec-terrasse-a-vendre-a-villeneuve-sur-lot--58359643.html"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-et-garonne-immobilier.com/terrain-constructible-en-zone-d-activite-commerciale-43201940.html"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-et-garonne-immobilier.com/villa-de-caractere-a-vendre-a-pujols-59209535.html"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8847"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8836"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8701"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8842"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8834"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8835"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8821"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8808"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8832"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8817"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1117-Manoir-avec-3-Gîtes-et-2-piscines-Villefranche-du-Perigord"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1116-Superbe-appartement-de-120-m²--avec-vue-exceptionnelle-sur-golf-et-lac"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1118-Maison-avec-dépendances-à-Villeneuve-Sur-Lot"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1105-Villa-180-m²-avec-piscine-terrasse-120-m²-et-dépendance--Terrain-3500-m²"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/981-Maison-au-coeur-de-Villeréal"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1111-Chalet-en-bois-avec-piscine-secteur-Monflanquin"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1079-Maison-de-maître---Casseneuil"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1042-Maison-avec-chambre-damis-et-dépendances-Castillonnès"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1103-Maison-rénovée-avec-gîte---Beaumontois-En-Perigord"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1075-Maison-en-campagne-avec-parc-arboré--Montastruc-(Lot-et-Garonne)"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/2-montaigu-de-quercy/-villa/t6/2330-maison-contemporaine-avec-piscine-et-jardin-boise-de-plus-de-5000m/"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/2657-pern-lhospitalet/-maison-de-village/2328-charmante-maison-de-village-a-renover/"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/203-brassac/-propriete/t6/2325-jolie-propriete-avec-une-maison-renovee-avec-gout-une-grange-en-pierre-une-piscine-et-15479-m-de-terrain/"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/2-montaigu-de-quercy/-maison-de-village/2321-charmante-maison-a-renover-avec-dependances/"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/492-montcuq-en-quercy-blanc/-maison/t6/2318-maison-restauree-et-agrandie-avec-grande-dependance-vue/"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/231-lauzerte/-maison/t6/2312-maison-contemporaine-de-plain-pied-de-105-m-avec-grand-hangar-de-180-m-lauzerte/"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/2-montaigu-de-quercy/-maison/t9/2306-maison-en-pierre-avec-chalet-independant-sauna-et-terrain-de-1-5-ha-vue-degagee/"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/231-lauzerte/-maison/t4/2302-belle-maison-neuve-de-95-m-avec-vue-imprenable-sur-la-campagne-environnante/"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/492-montcuq-en-quercy-blanc/-maison-de-village/2298-situe-au-coeur-du-village-immeuble-comprenant-7-appartements-caves-et-combles/"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/159-st-maurin/-propriete/t8/2291-magnifique-maison-en-pierre-de-227-m-entierement-restauree-et-ses-dependances/"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/fr/15-les-biens-a-moins-de-350000"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/nl/15-ons-aanbod-tot-350000"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/15-properties-up-to-350000"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/16-properties-over-350000"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/properties-up-to-350000/595-2010"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/properties-up-to-350000/587-2002"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/properties-up-to-350000/563-1978"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/properties-up-to-350000/592-2007"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/properties-up-to-350000/590-2005"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/properties-up-to-350000/588-2003"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/country-house-with-pool-21/"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/village-house-with-garden-roof-terrace-and-parking/"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/country-property-12/"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/village-house-with-courtyard-garden-and-annexe/"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/country-property-with-pool-annexe-land-garaging-and-lake/"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/country-property-with-its-own-hamlet/"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/village-house-with-pool-4/"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/village-house-with-terrace-cellar-and-workshop/"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/country-property-in-a-small-hamlet/"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/village-house-14/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/vente/46-lot/155-cajarc/22-propriete/t8/2328-chateau-avec-vue-exceptionnelle-sur-le-lot/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/location/46-lot/1-cahors/1-maison/t5/2327-maison-de-ville-cahors-centre-entierement-restauree/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/vente/46-lot/90-prayssac/22-propriete/t6/2323-belle-maison-de-caractere-donnant-sur-cour-avec-pigeonnier-et-dependances/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/location/46-lot/1-cahors/2-appartement/t2/1464-appartement-t2-avec-emplacement-de-parking/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/vente/46-lot/703-montcuq-en-quercy-blanc/22-propriete/t10/2321-grande-propriete-de-campagne-avec-dependances/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/location/46-lot/1-cahors/2-appartement/t1/2319-t1-avec-grande-terrasse-centre-ville-cahors/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/vente/46-lot/1-cahors/2-appartement/t3/2318-appartement-t3-lumineux-hypercentre-cahors/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/vente/46-lot/7-arcambal/1-maison/t6/2317-maison-de-charme-dans-un-joli-village-a-10mn-de-cahors/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/location/46-lot/1-cahors/2-appartement/t2/2263-charmant-t2-meuble-boulevard-gambetta/"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/vente/46-lot/1-cahors/38-maison-de-ville/2315-centre-ville-cahors-maison-avec-jardin-et-garage/"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/1427-mezin/maison/t14/35408-domaine-de-caractere-sur-15-hectares-aux-portes-du-gers/"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/1-villeneuve-sur-lot/maison/t3/35052-maison-de-ville-avec-jardin/"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/1334-ledat/maison/t5/34852-magnifique-maison-de-type-grange-prestations-haut-de-gamme-sur-3-hectares/"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/5-penne-d-agenais/maison/t7/34590-maison-de-caractere-7-pieces-au-coeur-de-penne-d-agenais/"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/1-villeneuve-sur-lot/maison/t5/34304-propriete-en-pierre-avec-vue-degagee/"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/274-monpazier/maison-de-village/33820-maison-avec-jardin-au-coeur-de-monpazier"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/1-villeneuve-sur-lot/immeuble/33653-immeuble-entierement-renove-en-2024-ideal-investissement-locatif"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/140-casseneuil/maison/t4/33387-maison-de-ville-avec-jardin/"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/162-sauvagnas/maison/t5/33386-maison-de-plain-pied-4-chambres-avec-jardin-a-15-min-d-agen/"
+  },
+  {
+    "Bron": "soleil47",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.soleil-immobilier-47.com/vente/116-castelsagrat/maison/t9/33384-havre-de-paix-au-coeur-de-la-nature-propriete-d-exception-sans-voisinage/"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/564-le-montat/maison/t4/106-maison-contemporaine-de-plain-pied-a-proximite-de-cahors/"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/563-lalbenque/maison/t5/104-magnifique-maison-avec-piscine/"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/45-montauban/appartement/t3/102-appartement-de-60m-a-vendre-a-montauban/"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/39-lendou-en-quercy/propriete/t5/81-ensemble-quercynois-avec-dependances-et-16-hectares-de-bois-et-taillis/"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/1-castelnau-montratier/maison-de-village/96-coquette-maison-de-village-en-pierre"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/1-castelnau-montratier/maison/t5/95-maison-de-plain-pied-avec-jardin-a-proximite-du-centre-bourg/"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/1-castelnau-montratier/maison/t5/94-tres-belle-maison-d-architecte-a-castelnau-montratier/"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/818-arcachon/villa/t4/93-a-arcachon-centre-villa-avec-terrasse-3-chambres-a-acheter-1473500/"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/1-castelnau-montratier/maison/t6/89-maiosn-de-plain-pied-avec-jardin/"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/45-montauban/terrain/87-terrain-2019m"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/3-fumel/maison/328-belle-maison-contemporaine-a-la-campagne-aux-abords-de-fumel-un-cadre-de-vie-ideal"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/101-prayssac/appartement/327-a-vendre-prayssac-appartement-t3-a-l-etage-avec-grande-terrasse"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/101-prayssac/maison/326-belle-maison-proche-du-centre-prayssac"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/1-puy-l-eveque/maison/325-exclusivite-maison-contemporaine-avec-tres-belle-vue"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/1-puy-l-eveque/maison/322-belle-maison-contemporaine-de-127-m-sur-plus-de-800-m-de-terrain-environnement-calme"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/101-prayssac/maison/319-exclusivite-prayssac-charmante-maison-en-pierre-de-plain-pied-avec-dependance"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/1-puy-l-eveque/maison/317-elegante-maison-familiale-de-220-m-avec-piscine-vue-campagne"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/101-prayssac/appartement/303-bel-appartement-dans-residence-de-vacances"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/1-puy-l-eveque/maison/302-maison-au-coeur-du-village"
+  },
+  {
+    "Bron": "factor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.factorimmo.com/vente/1-puy-l-eveque/maison/301-tres-belle-maison-des-annees-1970-de-construction-traditionnelle-offrant-de-beaux-volumes-et-un-fort-potenti"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/1"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/66-soturac/5-terrain/t/5339-terrain-a-batir-de-1197m-en-partie-borne/"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/108-montcabrier/43-terrain-a-batir/t/11581-terrain-a-batir-de-2021-m-avec-cu-positif-boise-et-en-partie-borne-situation-dominante-en-campagne/"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/1-maison/t5/10070-/"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/1-maison/t2/14213-un-local-commercial-de-31-m-au-coeur-d-un-magnifique-village-medieval-tous-commerces-de-la-belle-vallee-du/"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/43-terrain-a-batir/t/11316-terrain-a-batir-de-2024m-compteurs-d-eau-d-electricite-et-fosse-septique-a-installer/"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/1-maison/t2/14214-immeuble-commercial-comprenant-un-grand-bureau-et-parking-attenant-tres-belle-situation-proche-de-la-rivi/"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/43-terrain-a-batir/t/11315-terrain-a-batir-de-2121-m-avec-fondation-et-compteur-d-eau-sur-place-compteur-d-electricite-et-fosse-septiqu/"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/1-maison/t5/10069-ancienne-maison-de-bourg-en-pierre-a-restaurer-amenageable-sur-3-niveaux-belle-situation-au-coeur-d-un-villa/"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/1-maison/t3/7864-ancienne-maison-de-bourg-en-pierre-restauree-situation-au-c-ur-d-un-centre-tous-commerces-et-touristique-de/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/38-fauillet/1-maison/t9/7643-propriete-au-charme-fou/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/141-grateloup-st-gayrand/22-propriete/t8/7737-propriete/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/80-clermont-dessous/1-maison/t14/7756-maison-de-caractere-avec-plus-de-8-hectares-ecuries-piscine-et-vue-panoramique/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/1-tonneins/1-maison/t5/7468-maison-familiale/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/165-galapian/1-maison/t8/7733-grande-maison-en-pierre-avec-vue-panoramique/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/6-aiguillon/1-maison/t7/7704-maison-d-exception-dans-un-parc-de-2-hectares/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/1-tonneins/1-maison/t6/7620-maison-de-ville/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/42-labretonie/1-maison/t6/7469-maison-de-campagne/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/8-damazan/1-maison/t5/7675-maison-en-pierre-au-calme-de-plain-pied-avec-piscine/"
+  },
+  {
+    "Bron": "arobase",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.arobaseimmobilier.fr/vente/47-lot-et-garonne/8-damazan/1-maison/t6/7412-maison-de-charme-a-pied-des-commerces/"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-de-maitre-sur-19-hectares-de-terrain,P5107V"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-de-village-secteur-prayssac,P4579P"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-t6-de-plain-pied-avec-piscine,P5050PM"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-1-chambre-de-plain-pied-de-62m-habitables-avec-garage-et-jardin-de-680m,P4894V"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-propriete-d-exception-sur-11-hectares-de-terrain,P4648A"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-de-140m-habitables-avec-dependance-et-garage-sur-6-400m-de-terrain,P4911V"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-ensemble-immobilier-en-pierre-sur-57ha,P4868P"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-de-village-proche-prayssac-avec-piscine,P5103P"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-de-village-a-renover-avec-jardinet-et-garage,P4637V"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-4-chambres-en-pierre-avec-agrandissement,P4932V"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/gourdon-belle-et-spacieuse-maison-de-ville-en-pierre-proche-de-tous-commerces-102563.html"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/dans-la-vallee-de-la-vezere-patrimoine-de-lunesco-propriete-de-caractere-avec-piscine-lensemble-sur-un-grand-jardin-paysage-de-3200-m2-avec-une-tres-belle-vue-sur-un-chateau-6504799.html"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/en-perigord-noir-entre-perigueux-et-brive-a-20-minutes-de-montignac-propriete-sur-3ha3-de-terrain-arbore-avec-une-maison-principale-dhabitation-un-gite-une-piscine-et-un-petit-etang-a-voir-6502561.html"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/fermette-a-renover-sur-les-hauteurs-du-charmant-village-de-la-cassagne-en-perigord-noir-jardin-de-2000-m2-6504698.html"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/propriete-de-charme-3-maisons-sur-2-ha-sans-vis-a-vis-piscine-gites-prets-a-exploiter-6504779.html"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/secteur-gourdon-au-calme-agreable-maison-de-plain-pied-avec-dependance-garage-sur-2500-m2-arbores-6504766.html"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/secteur-coeur-de-causse-superbe-propriete-contemporaine-avec-piscine-dans-un-cadre-de-vie-privilegie-6504765.html"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/secteur-gourdon-belle-propriete-en-pierre-renovee-avec-dependances-au-calme-sur-3260-m2-arbores-6504763.html"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/maison-en-pierres-denviron-140m2-habitables-avec-dependances-sur-un-terrain-de-1612-m2-6504747.html"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/maison-de-ville-3-chambres-avec-jardin-et-terrasses-au-coeur-de-souillac-6504752.html"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-ancienne-6-pieces-pin-balma-31130,VM1809"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-8-pieces-lavardac-47230,VM1162"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-individuelle-5-pieces-boe-47550,VM1800"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-plain-pied-5-pieces-serignac-sur-garonne-47310,VM1740"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-individuelle-4-pieces-astaffort-47220,VM1779"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-4-pieces-le-passage-47520,VM1508"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-5-pieces-bon-encontre-47240,VM1494"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-5-pieces-aubiac-47310,VM1762"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/appartement-t3-3-pieces-agen-47000,VA2236"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/appartement-t3-3-pieces-agen-47000,VA2220"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-12-pieces-cales-24150,VM17654"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-contemporaine-5-pieces-bergerac-24100,VM17590"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-3-pieces-fumel-47500,VM17066"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-8-pieces-eglise-neuve-d-issac-24400,VM16660"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-6-pieces-monbahus-47290,VM16214"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/terrain-constructible-1203-m2-villereal-47210,VT1090"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/terrain-constructible-1608-m2-villereal-47210,VT1091"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-7-pieces-villereal-47210,VM15966"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-6-pieces-fraisse-24130,VM14848"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-10-pieces-issigeac-24560,VM17507"
+  },
+  {
+    "Bron": "charles_loftie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://charles-loftie-immo.com/fr/selection"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-lyon-5-69005-e004e837-629d-409d-b3d6-1770944e86f5/"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-lyon-5-69005-e004e837-629d-409d-b3d6-1770944e86f5/?contact=true"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-oberhausbergen-67205-29396468-abb5-47c1-9313-86f52bc0a787/"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-oberhausbergen-67205-29396468-abb5-47c1-9313-86f52bc0a787/?contact=true"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-peronville-28140-26ce9124-b6ab-4691-8880-9e15d4ab74bf/"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-peronville-28140-26ce9124-b6ab-4691-8880-9e15d4ab74bf/?contact=true"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-senlis-60300-be05fa12-871c-45a7-882e-3394ae68a360/"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-senlis-60300-be05fa12-871c-45a7-882e-3394ae68a360/?contact=true"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-tourtour-83690-c230bfa2-ed1a-4d93-8ed3-ccab88ef67a2/"
+  },
+  {
+    "Bron": "orpi",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-tourtour-83690-c230bfa2-ed1a-4d93-8ed3-ccab88ef67a2/?contact=true"
   }
 ]
