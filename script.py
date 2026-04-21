@@ -241,7 +241,7 @@ async def main():
 
         flat = [item for sub in all_results for item in sub]
 
-        with open("data.json", "w", encoding="utf-8") as f:
+        with open("data2.json", "w", encoding="utf-8") as f:
             json.dump(flat, f, ensure_ascii=False, indent=2)
 
         print(f"\n✅ Klaar! Totaal {len(flat)} huizen gescraped.")
