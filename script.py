@@ -168,7 +168,8 @@ SCRAPER_CONFIG = [
         "id": "eleonor",
         "url": "https://www.agence-eleonor.fr/fr/vente",
         "base": "https://www.agence-eleonor.fr",
-        "pattern": r"/fr/vente/",
+        # belangrijk: hun detail-URL's zijn /fr/propriete/...
+        "pattern": r"/fr/propriete/",
     },
     {
         "id": "ledil",
@@ -195,6 +196,7 @@ SCRAPER_CONFIG = [
         "pattern": r"annonce-vente",
     },
 ]
+
 # ---------------------------------------------------------
 # URL FIX
 # ---------------------------------------------------------
@@ -210,7 +212,7 @@ def fix_url(url, base):
 
 
 # ---------------------------------------------------------
-# PRICE EXTRACTION (NIEUWE SUPER-REGEX)
+# PRICE EXTRACTION
 # ---------------------------------------------------------
 def extract_price(text):
     if not text:
@@ -232,24 +234,20 @@ def is_bad_image(src):
 
 
 def extract_image(card, base):
-    # data-src
     img = card.find("img", attrs={"data-src": True})
     if img and img.get("data-src") and not is_bad_image(img["data-src"]):
         return fix_url(img["data-src"], base)
 
-    # src
     img = card.find("img", src=True)
     if img and img.get("src") and not is_bad_image(img["src"]):
         return fix_url(img["src"], base)
 
-    # srcset
     img = card.find("img", srcset=True)
     if img and img.get("srcset"):
         first = img["srcset"].split(",")[0].split()[0]
         if not is_bad_image(first):
             return fix_url(first, base)
 
-    # background-image
     for d in card.find_all("div", style=True):
         m = re.search(r'url\((.*?)\)', d.get("style", ""))
         if m:
@@ -354,7 +352,11 @@ def parse_wheeler(card, base):
     title_el = card.select_one(".wmc-listing-title .jet-listing-dynamic-link__label")
     titel = title_el.get_text(strip=True) if title_el else "Onbekend"
 
-    price_el = card.select_one(".jet-listing-dynamic-field__content")
+    price_el = None
+    for el in card.select(".jet-listing-dynamic-field__content"):
+        if "€" in el.get_text():
+            price_el = el
+            break
     prijs = extract_price(price_el.get_text(" ", strip=True)) if price_el else "N/A"
 
     img = card.select_one("img")
@@ -378,7 +380,9 @@ def parse_eleonor(card, base):
     if title_el:
         titel += title_el.get_text(" ", strip=True)
     if subtitle_el:
-        titel += " – " + subtitle_el.get_text(" ", strip=True)
+        if titel:
+            titel += " – "
+        titel += subtitle_el.get_text(" ", strip=True)
     titel = titel.strip() if titel else "Onbekend"
 
     price_el = card.select_one(".price")
@@ -409,7 +413,6 @@ def find_card_for_anchor(soup, a, config):
             if card.find("a", href=a.get("href")):
                 return card
 
-    # fallback: climb
     node = a
     for _ in range(8):
         if not node.parent:
@@ -428,17 +431,26 @@ async def scrape_list_page(browser, config):
 
     context = await browser.new_context(
         viewport={"width": 1400, "height": 900},
-        user_agent="Mozilla/5.0"
+        user_agent="Mozilla/5.0",
     )
     page = await context.new_page()
 
-    await page.goto(config["url"], wait_until="domcontentloaded", timeout=30000)
+    try:
+        await page.goto(config["url"], wait_until="domcontentloaded", timeout=45000)
+    except Exception as e:
+        print(f"  {config['id']}: fout bij goto: {e}")
+        await context.close()
+        return []
 
     for _ in range(4):
-        await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
+        try:
+            await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
+        except Exception:
+            break
         await asyncio.sleep(1)
 
-    soup = BeautifulSoup(await page.content(), "html.parser")
+    html = await page.content()
+    soup = BeautifulSoup(html, "html.parser")
 
     pattern = re.compile(config["pattern"], re.I)
 
