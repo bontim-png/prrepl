@@ -17,12 +17,14 @@ SCRAPER_CONFIG = [
         "base": "https://www.ladresse.com",
         "pattern": r"/annonce/",
     },
-    {
+     {
         "id": "beauxvillages",
         "url": "https://beauxvillages.com/en/latest-properties?hotsheet=1",
         "base": "https://beauxvillages.com",
         "pattern": r"/property/",
+        "card_selector": ".jet-listing-grid__item",
     },
+
     {
         "id": "lot_immoco",
         "url": "https://www.lot-immoco.net/a-vendre/1",
@@ -347,12 +349,34 @@ def parse_eleonor(card, base):
     prijs = price_el.get_text(" ", strip=True) if price_el else card.get_text(" ", strip=True)
     return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
+def parse_beauxvillages(card, base):
+    a = card.select_one("a.jet-listing-dynamic-link__link")
+    url = fix_url(a["href"], base) if a else None
+
+    title_el = card.select_one(".jet-listing-dynamic-link__label")
+    titel = title_el.get_text(strip=True) if title_el else ""
+
+    price_el = card.select_one(".jet-listing-dynamic-field__content")
+    prijs = price_el.get_text(" ", strip=True) if price_el else ""
+
+    img = card.select_one("img")
+    foto = fix_url(img.get("src"), base) if img else None
+
+    return {
+        "Titel": titel,
+        "PrijsRaw": prijs,
+        "Foto": foto,
+        "URL": url,
+    }
+
+
 SITE_PARSERS = {
     "lot_immoco": parse_lot_immoco,
     "quercygascogne": parse_quercygascogne,
     "mouly": parse_mouly,
     "wheeler": parse_wheeler,
     "eleonor": parse_eleonor,
+    "beauxvillages" = parse_beauxvillages,
 }
 
 # ---------------------------------------------------------
@@ -537,13 +561,29 @@ async def scrape_list_page(browser, config):
         await context.close()
         return []
 
-    # SAFE SCROLL
+   # SCROLL STRATEGY
+if site_id == "beauxvillages":
+    # infinite scroll until no new items
+    last_height = 0
+    for _ in range(12):
+        try:
+            await page.mouse.wheel(0, 3000)
+            await asyncio.sleep(1.5)
+            new_height = await page.evaluate("document.body.scrollHeight")
+            if new_height == last_height:
+                break
+            last_height = new_height
+        except:
+            break
+else:
+    # normal scroll for all other sites
     for _ in range(4):
         try:
-            await page.mouse.wheel(0,2000)
+            await page.mouse.wheel(0, 2000)
             await asyncio.sleep(1)
         except:
             break
+
 
     html = await page.content()
     soup = BeautifulSoup(html, "html.parser")
