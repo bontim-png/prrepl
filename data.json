@@ -1,632 +1,1146 @@
-import asyncio
-import json
-import re
-from playwright.async_api import async_playwright
-from bs4 import BeautifulSoup
-
-MAX_LISTINGS_PER_SITE = 6
-MAX_CONCURRENT_SITES = 3
-
-SCRAPER_CONFIG = [
-    {
-        "id": "ladresse_tournon",
-        "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc",
-        "base": "https://www.ladresse.com",
-        "pattern": r"/annonce/",
-    },
-    {
-        "id": "beauxvillages",
-        "url": "https://beauxvillages.com/en/latest-properties?hotsheet=1",
-        "base": "https://beauxvillages.com",
-        "pattern": r"/property/",
-    },
-    {
-        "id": "lot_immoco",
-        "url": "https://www.lot-immoco.net/a-vendre/1",
-        "base": "https://www.lot-immoco.net",
-        "pattern": r"\.html$",
-        "card_selector": "div.panel.panel-default",
-    },
-    {
-        "id": "pouget",
-        "url": "https://www.agencespouget.com/vente/1",
-        "base": "https://www.agencespouget.com",
-        "pattern": r"/vente/",
-    },
-    {
-        "id": "human",
-        "url": "https://www.human-immobilier.fr/achat-maison-tarn-et-garonne?og=0&sort=date-desc",
-        "base": "https://www.human-immobilier.fr",
-        "pattern": r"/annonce-",
-    },
-    {
-        "id": "letuc",
-        "url": "https://www.letuc.com/recherche/",
-        "base": "https://www.letuc.com",
-        "pattern": r"/t[0-9]+/",
-    },
-    {
-        "id": "nestenn",
-        "url": "https://immobilier-villeneuve-sur-lot.nestenn.com/achat-immobilier",
-        "base": "https://immobilier-villeneuve-sur-lot.nestenn.com",
-        "pattern": r"ref-",
-    },
-    {
-        "id": "century21",
-        "url": "https://www.century21-bg-villeneuve.com/annonces/achat/",
-        "base": "https://www.century21-bg-villeneuve.com",
-        "pattern": r"/detail/",
-    },
-    {
-        "id": "lot_et_garonne",
-        "url": "https://www.lot-et-garonne-immobilier.com/bien-a-acheter.html",
-        "base": "https://www.lot-et-garonne-immobilier.com",
-        "pattern": r"\.html$",
-    },
-    {
-        "id": "valadie",
-        "url": "https://valadie-immobilier.com/fr/biens/a_vendre/1",
-        "base": "https://valadie-immobilier.com",
-        "pattern": r"/fiche/",
-    },
-    {
-        "id": "villereal",
-        "url": "https://www.immobilier-villereal.com/fr/nos-biens-tous",
-        "base": "https://www.immobilier-villereal.com",
-        "pattern": r"/property/",
-    },
-    {
-        "id": "quercygascogne",
-        "url": "https://www.quercygascogne.fr/ventes/1",
-        "base": "https://www.quercygascogne.fr",
-        "pattern": r"/[0-9]+-",
-        "card_selector": "article.property",
-    },
-    {
-        "id": "xavier",
-        "url": "https://xavierimmobilier.fr/gb/15-properties-up-to-350000",
-        "base": "https://xavierimmobilier.fr",
-        "pattern": r"/[0-9]+-",
-    },
-    {
-        "id": "wheeler",
-        "url": "https://wheeler-property.com/for-sale/",
-        "base": "https://wheeler-property.com",
-        "pattern": r"/properties/",
-        "card_selector": "div.e-con-inner",
-    },
-    {
-        "id": "mouly",
-        "url": "https://www.mouly-immobilier.com/recherche/",
-        "base": "https://www.mouly-immobilier.com",
-        "pattern": r"/[0-9]+-",
-        "card_selector": "article.property-listing-v2__container",
-    },
-    {
-        "id": "soleil47",
-        "url": "https://www.soleil-immobilier-47.com/vente/1",
-        "base": "https://www.soleil-immobilier-47.com",
-        "pattern": r"/[0-9]+-",
-    },
-    {
-        "id": "marin",
-        "url": "https://www.immobilier-marin.com/recherche/",
-        "base": "https://www.immobilier-marin.com",
-        "pattern": r"/[0-9]+-",
-    },
-    {
-        "id": "factor",
-        "url": "https://www.factorimmo.com/nouveautes/1",
-        "base": "https://www.factorimmo.com",
-        "pattern": r"/[0-9]+-",
-    },
-    {
-        "id": "pousset",
-        "url": "https://www.immobilier-pousset.fr/vente/1",
-        "base": "https://www.immobilier-pousset.fr",
-        "pattern": r"/vente/",
-    },
-    {
-        "id": "arobase",
-        "url": "https://www.arobaseimmobilier.fr/vente/1",
-        "base": "https://www.arobaseimmobilier.fr",
-        "pattern": r"/[0-9]+-",
-    },
-    {
-        "id": "immo46",
-        "url": "https://www.immo46.com/fr/a-vendre",
-        "base": "https://www.immo46.com",
-        "pattern": r",P[0-9]",
-    },
-    {
-        "id": "pleinsud",
-        "url": "https://www.pleinsudimmo.fr/nos-biens-immobiliers",
-        "base": "https://www.pleinsudimmo.fr",
-        "pattern": r"\.html$",
-    },
-    {
-        "id": "signature_agenaise",
-        "url": "https://www.la-signature-agenaise.fr/fr/vente?orderBy=2",
-        "base": "https://www.la-signature-agenaise.fr",
-        "pattern": r"/fr/vente/",
-    },
-    {
-        "id": "maisondelimmobilier",
-        "url": "https://www.maisondelimmobilier.com/catalog/advanced_search_result.php?C_28=Vente",
-        "base": "https://www.maisondelimmobilier.com",
-        "pattern": r"fiches",
-    },
-    {
-        "id": "guy_hoquet",
-        "url": "https://www.guy-hoquet.com/biens/result#1&f20=46_c2,47_c2,82_c2",
-        "base": "https://www.guy-hoquet.com",
-        "pattern": r"/bien/",
-    },
-    {
-        "id": "eleonor",
-        "url": "https://www.agence-eleonor.fr/fr/vente",
-        "base": "https://www.agence-eleonor.fr",
-        "pattern": r"/fr/vente/",
-    },
-    {
-        "id": "ledil",
-        "url": "https://ledil.immo/recherche/tous-types/47+46+82?",
-        "base": "https://ledil.immo",
-        "pattern": r"/bien/",
-    },
-    {
-        "id": "charles_loftie",
-        "url": "https://charles-loftie-immo.com/fr/recherche",
-        "base": "https://charles-loftie-immo.com",
-        "pattern": r"/fr/selection",
-    },
-    {
-        "id": "prada_prestige",
-        "url": "https://prada-prestige-immo.fr/notre-selection",
-        "base": "https://prada-prestige-immo.fr",
-        "pattern": r"detail",
-    },
-    {
-        "id": "orpi",
-        "url": "https://www.orpi.com/recherche/buy?sort=date-down",
-        "base": "https://www.orpi.com",
-        "pattern": r"annonce-vente",
-    },
+[
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "5 chambres 197.00 m² Avec jardin Voir le bien",
+    "Nieuw?": "Ja",
+    "Prijs": "000 €",
+    "m2 Binnen": "00",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "5",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/montayral-47500/10957330",
+    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/0/9/5/7/3/3/0/10957330a.jpg?version=1760881642"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "2 chambres 192.00 m² Voir le bien",
+    "Nieuw?": "Nee",
+    "Prijs": "600 €",
+    "m2 Binnen": "00",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "2",
+    "URL": "https://www.ladresse.com/annonce/achat/immeuble/fumel-47500/12918358",
+    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/2/9/1/8/3/5/8/12918358a.jpg?version=1742287440"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "5 chambres 171.00 m² Voir le bien",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "00",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "5",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/masquieres-47370/12918888",
+    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/2/9/1/8/8/8/8/12918888a.jpg?version=1769769706"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "garage/box Voir le bien",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "00",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "3",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/sauveterre-la-lemance-47500/12949673",
+    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/2/9/4/9/6/7/3/12949673a.jpg?version=1742282244"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "5 chambres 230.00 m² Avec jardin Voir le bien",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "00",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "5",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/fumel-47500/12959574",
+    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/2/9/5/9/5/7/4/12959574a.jpg?version=1692283071"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "5 chambres 200.00 m² Avec jardin Voir le bien",
+    "Nieuw?": "Ja",
+    "Prijs": "000 €",
+    "m2 Binnen": "00",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "5",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/monsempron-libos-47500/12998969",
+    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/2/9/9/8/9/6/9/12998969a.jpg?version=1742288951"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Domaine",
+    "Nieuw?": "Nee",
+    "Prijs": "735000 €",
+    "m2 Binnen": "530",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "7",
+    "URL": "https://www.lot-immoco.net/7010757-domaine-touristique-de-charme-du-18eme-1765-en-pierre-avec-une-maison-tres-spacieuse-et-un-grand-gites.html",
+    "Foto": "https://beausejour.staticlbi.com/600xauto/images/biens/1/434226a4d115f68ca03c83d626b0bb16/photo_cf5c54188f807e492605ce0fc8b82271.jpg"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Ensemble",
+    "Nieuw?": "Nee",
+    "Prijs": "480000 €",
+    "m2 Binnen": "500",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "2",
+    "URL": "https://www.lot-immoco.net/7010663-ensemble-immobilier-aux-portes-de-la-dordogne.html",
+    "Foto": "https://beausejour.staticlbi.com/600xauto/images/biens/1/507a8d7e47321424f9c4039c9683b15e/photo_de3c2f030f232b4cf92de9fd5fb8ebf4.jpg"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Magnifique",
+    "Nieuw?": "Ja",
+    "Prijs": "472500 €",
+    "m2 Binnen": "170",
+    "m2 Buiten": "4070",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010756-magnifique-villa.html",
+    "Foto": "https://beausejour.staticlbi.com/600xauto/images/biens/1/3b39cdc301e41b2b9a9c5f5500072b2e/photo_c51a4df47e64b76b09fcc95ec8c36d2c.jpg"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "440000 €",
+    "m2 Binnen": "220",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010635-maison-en-pierre-et-ses-dependances.html",
+    "Foto": "https://beausejour.staticlbi.com/600xauto/images/biens/1/ddaac57a9bcfcf4fcb495e5543179ec1/photo_5cca207780214ed232ccf1eff66b51d1.jpg"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "Propriété",
+    "Nieuw?": "Ja",
+    "Prijs": "380000 €",
+    "m2 Binnen": "220",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010646-propriete-en-pierre.html",
+    "Foto": "https://beausejour.staticlbi.com/600xauto/images/biens/1/3e0149fd0bb0317853d6c207d04d4d62/photo_c8d01fde22bdcbb7d97edbe670dfac7f.jpg"
+  },
+  {
+    "Bron": "lot_immoco",
+    "Plaats": "MAISON",
+    "Nieuw?": "Nee",
+    "Prijs": "368000 €",
+    "m2 Binnen": "280",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.lot-immoco.net/7010753-maison-en-pierre-avec-3-ha-de-terrain.html",
+    "Foto": "https://beausejour.staticlbi.com/600xauto/images/biens/1/b68ebad286fc70092b71085704244bf7/original/photo_d692964953766e75adc4b8a5ad415990.jpg"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "60",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/17-puy-l-eveque/maison-de-village/7169-maison-de-village-a-renover-fort-potentiel",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "150 €",
+    "m2 Binnen": "32",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/386-cancon/appartement/t5/7167-maison-familiale-a-cancon/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "EXCLUSIVITE",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "148",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/8-montayral/villa/t6/7166-exclusivite-villa-de-plain-pied-de-type-f4/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Appartement",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "40",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/17-puy-l-eveque/appartement/t2/7164-appartement-t2-renove/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "70",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/3271-pays-de-belves/maison-de-village/7163-maison-en-pierre-avec-dependance-et-vue-sur-belves-perigord-noir",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "dépendances et grand garage",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "108",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/18-bourlens/maison-de-village/7159-maison-de-village-avec-jardin-dependances-et-grand-garage",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "GRANDE",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "19",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/34-herault/1186-la-grande-motte/26-rez-de-jardin/t3/18362-grande-motte-en-1ere-ligne-rez-de-jardin-avec-garage/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "FREJUS",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "65",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "2",
+    "URL": "https://www.letuc.com/vente/83-var/1278-frejus/2-appartement/t3/18359-frejus-t3-recent-de-65m-a-300-m-de-la-mer-avec-box/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "AUTERIVE",
+    "Nieuw?": "Nee",
+    "Prijs": "900 €",
+    "m2 Binnen": "95",
+    "m2 Buiten": "300",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/location/31-haute-garonne/3929-auterive/2-appartement/t4/18361-auterive-31190-appartement-95-m2-4-pieces-jardin/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "bel appartement T2 MEUBLE de 36 m² au 1er étage",
+    "Nieuw?": "Nee",
+    "Prijs": "580 €",
+    "m2 Binnen": "36",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/location/01-ain/595-lagnieu/2-appartement/t2/18355-a-lagnieu-bel-appartement-t2-meuble-de-36-m-au-1er-etage/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Grand",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "50",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/30-gard/1099-le-grau-du-roi/18-duplex/t3/18349-grand-duplex-de-50-m-avec-vue-sur-piscine-dans-residence-avec-prestations-multiples/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "62 m² dernier étage  à 300m de la mer avec...",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "62",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "2",
+    "URL": "https://www.letuc.com/vente/83-var/1278-frejus/2-appartement/t4/18345-frejus-t4-recent-de-77-62-m-dernier-etage-a-300m-de-la-mer-avec-garage/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "nestenn",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "80",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "3",
+    "URL": "https://immobilier-villeneuve-sur-lot.nestenn.com/maison-4-pieces-avec-jardin-a-villeneuve-sur-lot-ref-39395292",
+    "Foto": "https://media-nestenn.immo-facile.com/office15/nestennvilleneuve_080221/catalog/images/pr_p/3/9/3/9/5/2/9/2/39395292a.jpg"
+  },
+  {
+    "Bron": "nestenn",
+    "Plaats": "Appartement",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "106",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "2",
+    "URL": "https://immobilier-villeneuve-sur-lot.nestenn.com/appartement-villeneuve-sur-lot-4-piece-s-105-48-m2-ref-39490020",
+    "Foto": "https://media-nestenn.immo-facile.com/office15/nestennvilleneuve_080221/catalog/images/pr_p/3/9/4/9/0/0/2/0/39490020a.jpg"
+  },
+  {
+    "Bron": "nestenn",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "140",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://immobilier-villeneuve-sur-lot.nestenn.com/maison-5-pieces-140-m-sainte-livrade-sur-lot-ref-39301525",
+    "Foto": "https://media-nestenn.immo-facile.com/office15/nestennvilleneuve_080221/catalog/images/pr_p/3/9/3/0/1/5/2/5/39301525a.jpg"
+  },
+  {
+    "Bron": "nestenn",
+    "Plaats": "Immeuble",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "5",
+    "URL": "https://immobilier-villeneuve-sur-lot.nestenn.com/2-immeubles-villeneuve-sur-lot-avec-beau-rendement-locatif-ref-39281610",
+    "Foto": "https://media-nestenn.immo-facile.com/office15/nestennvilleneuve_080221/catalog/images/pr_p/3/9/2/8/1/6/1/0/39281610a.jpg"
+  },
+  {
+    "Bron": "nestenn",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "85",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "3",
+    "URL": "https://immobilier-villeneuve-sur-lot.nestenn.com/maison-villeneuve-sur-lot-3-piece-s-85-m2-ref-39432465",
+    "Foto": "https://media-nestenn.immo-facile.com/office15/nestennvilleneuve_080221/catalog/images/pr_p/3/9/4/3/2/4/6/5/39432465a.jpg"
+  },
+  {
+    "Bron": "nestenn",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "270",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "6",
+    "URL": "https://immobilier-villeneuve-sur-lot.nestenn.com/maison-villeneuve-sur-lot-7-piece-s-300-m2-ref-39395768",
+    "Foto": "https://media-nestenn.immo-facile.com/office15/nestennvilleneuve_080221/catalog/images/pr_p/3/9/3/9/5/7/6/8/39395768a.jpg"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Estimation",
+    "Nieuw?": "Ja",
+    "Prijs": "900 €",
+    "m2 Binnen": "250",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "6",
+    "URL": "https://www.lot-et-garonne-immobilier.com/ensemble-immobilier-en-pierre-en-peripherie-de-villeneuve-sur-lot-58248497.html",
+    "Foto": "https://media.immo-facile.com/office/agence-cabalet/catalog/images/pr_p/5/8/2/4/8/4/9/7/58248497a.jpg?DATEMAJ=14/06/2025-18:07:41"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Estimation",
+    "Nieuw?": "Ja",
+    "Prijs": "900 €",
+    "m2 Binnen": "250",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "6",
+    "URL": "https://www.lot-et-garonne-immobilier.com/appartement-t3-avec-terrasse-a-vendre-a-villeneuve-sur-lot--58359643.html",
+    "Foto": "https://media.immo-facile.com/office/agence-cabalet/catalog/images/pr_p/5/8/2/4/8/4/9/7/58248497a.jpg?DATEMAJ=14/06/2025-18:07:41"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Estimation",
+    "Nieuw?": "Ja",
+    "Prijs": "900 €",
+    "m2 Binnen": "250",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "6",
+    "URL": "https://www.lot-et-garonne-immobilier.com/terrain-constructible-en-zone-d-activite-commerciale-43201940.html",
+    "Foto": "https://media.immo-facile.com/office/agence-cabalet/catalog/images/pr_p/5/8/2/4/8/4/9/7/58248497a.jpg?DATEMAJ=14/06/2025-18:07:41"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Estimation",
+    "Nieuw?": "Ja",
+    "Prijs": "900 €",
+    "m2 Binnen": "250",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "6",
+    "URL": "https://www.lot-et-garonne-immobilier.com/villa-de-caractere-a-vendre-a-pujols-59209535.html",
+    "Foto": "https://media.immo-facile.com/office/agence-cabalet/catalog/images/pr_p/5/8/2/4/8/4/9/7/58248497a.jpg?DATEMAJ=14/06/2025-18:07:41"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Estimation",
+    "Nieuw?": "Ja",
+    "Prijs": "900 €",
+    "m2 Binnen": "250",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "6",
+    "URL": "https://www.lot-et-garonne-immobilier.com/a-vendre-maison-individuelle-sur-sous-sol-a-monclar-lot-et-garonne-47--59634569.html",
+    "Foto": "https://media.immo-facile.com/office/agence-cabalet/catalog/images/pr_p/5/8/2/4/8/4/9/7/58248497a.jpg?DATEMAJ=14/06/2025-18:07:41"
+  },
+  {
+    "Bron": "lot_et_garonne",
+    "Plaats": "Estimation",
+    "Nieuw?": "Ja",
+    "Prijs": "900 €",
+    "m2 Binnen": "250",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "6",
+    "URL": "https://www.lot-et-garonne-immobilier.com/maison-de-plain-pied-3-chambres-a-montastruc-60351613.html",
+    "Foto": "https://media.immo-facile.com/office/agence-cabalet/catalog/images/pr_p/5/8/2/4/8/4/9/7/58248497a.jpg?DATEMAJ=14/06/2025-18:07:41"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "600 €",
+    "m2 Binnen": "280",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "5",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8837",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9240/semi_Maison_Castillonnes_8837_209256.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Maison",
+    "Nieuw?": "Ja",
+    "Prijs": "000 €",
+    "m2 Binnen": "324",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8856",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9251/semi_Maison_Laroque-Timbaut_8856_209244.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Appartement",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "56",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "1",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8839",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9241/semi_Appartement_Sarlat-la-Caneda_8839_209148.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Appartement",
+    "Nieuw?": "Nee",
+    "Prijs": "800 €",
+    "m2 Binnen": "63",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "1",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8840",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9242/semi_Appartement_Sarlat-la-Caneda_8840_209154.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Appartements",
+    "Nieuw?": "Nee",
+    "Prijs": "500 €",
+    "m2 Binnen": "159",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "3",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8841",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9243/semi_Appartement_Sarlat-la-Caneda_8841_208964.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "600 €",
+    "m2 Binnen": "147",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "3",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8852",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9250/semi_Maison_Castillonnes_8852_209224.jpg"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "avec un  joli...",
+    "Nieuw?": "Ja",
+    "Prijs": "000 €",
+    "m2 Binnen": "180",
+    "m2 Buiten": "1350",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/221-bouloc/-maison-de-village/2331-charmante-maison-en-pierre-situee-dans-un-village-avec-un-joli-jardin-clos-une-maison-a-restaurer-et-grange/",
+    "Foto": "https://quercygascone.staticlbi.com/original/images/biens/1/682bd65dd7c4ef05916dc21ba3750215/photo_572521b1fa92932f2176edfeef1cee5f.jpg"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Maison",
+    "Nieuw?": "Ja",
+    "Prijs": "000 €",
+    "m2 Binnen": "5000",
+    "m2 Buiten": "5000",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/2-montaigu-de-quercy/-villa/t6/2330-maison-contemporaine-avec-piscine-et-jardin-boise-de-plus-de-5000m/",
+    "Foto": "https://quercygascone.staticlbi.com/original/images/biens/1/0d10d320ace22f2a3960e5453aea5dc0/photo_da031fb6324f34a62666479b803c0266.jpg"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Charmante",
+    "Nieuw?": "Nee",
+    "Prijs": "200 €",
+    "m2 Binnen": "40",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/2657-pern-lhospitalet/-maison-de-village/2328-charmante-maison-de-village-a-renover/",
+    "Foto": "https://quercygascone.staticlbi.com/original/images/biens/1/ec4269648de19ac48d9bce9acf5ddf3c/photo_1c91c44a5fe91cef43177322cb60f4da.jpg"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "une grange en...",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "152",
+    "m2 Buiten": "15479",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/203-brassac/-propriete/t6/2325-jolie-propriete-avec-une-maison-renovee-avec-gout-une-grange-en-pierre-une-piscine-et-15479-m-de-terrain/",
+    "Foto": "https://quercygascone.staticlbi.com/original/images/biens/1/fb076b73e7ba0c88af5cda4c506cb9cc/photo_caf4e882688d8abe1f88e54461ddbc4d.jpg"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Charmante",
+    "Nieuw?": "Nee",
+    "Prijs": "999 €",
+    "m2 Binnen": "788",
+    "m2 Buiten": "1788",
+    "Slaapkamers": "2",
+    "URL": "https://www.quercygascogne.fr/vente/-/2-montaigu-de-quercy/-maison-de-village/2321-charmante-maison-a-renover-avec-dependances/",
+    "Foto": "https://quercygascone.staticlbi.com/original/images/biens/1/dd0b75da928e43134ebe5885c4fd75f6/photo_75eac441e10f3c3efb72267cebed243b.png"
+  },
+  {
+    "Bron": "quercygascogne",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "000",
+    "m2 Buiten": "3199",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.quercygascogne.fr/vente/-/492-montcuq-en-quercy-blanc/-maison/t6/2318-maison-restauree-et-agrandie-avec-grande-dependance-vue/",
+    "Foto": "https://quercygascone.staticlbi.com/original/images/biens/1/39c18cb1f41987ff52ee7f9f83faa043/photo_f58ccd0a685053776c71eefa6e3b6125.jpg"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Properties",
+    "Nieuw?": "Nee",
+    "Prijs": "350000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/15-properties-up-to-350000",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "xavier",
+    "Plaats": "Properties",
+    "Nieuw?": "Nee",
+    "Prijs": "350000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://xavierimmobilier.fr/gb/16-properties-over-350000",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Country",
+    "Nieuw?": "Ja",
+    "Prijs": "385 000 €",
+    "m2 Binnen": "312",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://wheeler-property.com/properties/country-house-with-pool-21/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/04/drone-2-wmc709.jpg"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Country",
+    "Nieuw?": "Ja",
+    "Prijs": "385 000 €",
+    "m2 Binnen": "312",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://wheeler-property.com/properties/country-house-with-pool-21/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/04/drone-2-wmc709.jpg"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Country",
+    "Nieuw?": "Ja",
+    "Prijs": "385 000 €",
+    "m2 Binnen": "312",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://wheeler-property.com/properties/country-house-with-pool-21/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/04/drone-2-wmc709.jpg"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Country",
+    "Nieuw?": "Ja",
+    "Prijs": "385 000 €",
+    "m2 Binnen": "312",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://wheeler-property.com/properties/country-house-with-pool-21/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/04/drone-2-wmc709.jpg"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Country",
+    "Nieuw?": "Ja",
+    "Prijs": "385 000 €",
+    "m2 Binnen": "312",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://wheeler-property.com/properties/country-house-with-pool-21/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/04/drone-2-wmc709.jpg"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Country",
+    "Nieuw?": "Ja",
+    "Prijs": "385 000 €",
+    "m2 Binnen": "312",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://wheeler-property.com/properties/country-house-with-pool-21/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/04/drone-2-wmc709.jpg"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "APPARTEMENT",
+    "Nieuw?": "Ja",
+    "Prijs": "630 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/location/46-lot/1-cahors/2-appartement/t3/2337-appartement-t3-en-centre-ville-de-cahors-avec-balcon/",
+    "Foto": "https://girma-mouly.staticlbi.com/original/images/biens/1/4bd34d41f702c2d9070281d583971228/photo_2d87d36ce6caf8dccd1de66e0ab7d5c4.jpg"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "PROPRIETE",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/vente/46-lot/125-figeac/22-propriete/t15/2332-propriete-equestre-d-exception-sur-19h-proche-figeac/",
+    "Foto": "https://girma-mouly.staticlbi.com/original/images/biens/1/e6707f6fd0d88e6896713544cd5b3872/photo_acc2affa0108ae57440752dec72decd7.jpg"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "CHATEAU",
+    "Nieuw?": "Ja",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/vente/46-lot/155-cajarc/22-propriete/t8/2328-chateau-avec-vue-exceptionnelle-sur-le-lot/",
+    "Foto": "https://girma-mouly.staticlbi.com/original/images/biens/1/0809c237652ad958dd4f0f551ebf0b64/photo_e7acd5f7a24556a9f7b252df1a6c8273.jpg"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "MAISON",
+    "Nieuw?": "Ja",
+    "Prijs": "300 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/location/46-lot/1-cahors/1-maison/t5/2327-maison-de-ville-cahors-centre-entierement-restauree/",
+    "Foto": "https://girma-mouly.staticlbi.com/original/images/biens/1/3187df24f13908bd79742c04485ec38b/photo_1e3fc000de8ea32948b897a411d3912c.jpg"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "CAHORS",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/vente/46-lot/1-cahors/25-villa/t5/2326-cahors-centre-belle-maison-de-ville-avec-jardin/",
+    "Foto": "https://girma-mouly.staticlbi.com/original/images/biens/1/edb6b3dd7ec3b0d150448594ee11f438/photo_fda677a2f0ec9478d3bdd2601107ea56.jpg"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "CHARMANTE",
+    "Nieuw?": "Ja",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "2",
+    "URL": "https://www.mouly-immobilier.com/vente/82-tarn-et-garonne/25-trejouls/1-maison/t3/2325-charmante-maison-de-campagne-avec-vues-dominantes-et-coucher-de-soleil/",
+    "Foto": "https://girma-mouly.staticlbi.com/original/images/biens/1/7508c3bd717bbf228f98d35bb4782deb/photo_a71eb755c584a0f9e8024ea096512846.jpg"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "116",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/564-le-montat/maison/t4/106-maison-contemporaine-de-plain-pied-a-proximite-de-cahors/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "MAGNIFIQUE",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "137",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/563-lalbenque/maison/t5/104-magnifique-maison-avec-piscine/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Appartement",
+    "Nieuw?": "Nee",
+    "Prijs": "900 €",
+    "m2 Binnen": "60",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/45-montauban/appartement/t3/102-appartement-de-60m-a-vendre-a-montauban/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Ensemble",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "150",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/39-lendou-en-quercy/propriete/t5/81-ensemble-quercynois-avec-dependances-et-16-hectares-de-bois-et-taillis/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Coquette",
+    "Nieuw?": "Nee",
+    "Prijs": "500 €",
+    "m2 Binnen": "60",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/1-castelnau-montratier/maison-de-village/96-coquette-maison-de-village-en-pierre",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "marin",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "83",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-marin.com/vente/1-castelnau-montratier/maison/t5/95-maison-de-plain-pied-avec-jardin-a-proximite-du-centre-bourg/",
+    "Foto": "N/A"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Exclusif",
+    "Nieuw?": "Ja",
+    "Prijs": "470 €",
+    "m2 Binnen": "1197",
+    "m2 Buiten": "1197",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/66-soturac/5-terrain/t/5339-terrain-a-batir-de-1197m-en-partie-borne/",
+    "Foto": "https://puylevequeimmo.staticlbi.com/1000xauto/images/biens/1/15dfa419764a43a7a5d9e4462bce465a/original/6fc18257d0233a3f6d62d6949f597b02.jpg"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Exclusif",
+    "Nieuw?": "Ja",
+    "Prijs": "000 €",
+    "m2 Binnen": "2021",
+    "m2 Buiten": "2021",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/108-montcabrier/43-terrain-a-batir/t/11581-terrain-a-batir-de-2021-m-avec-cu-positif-boise-et-en-partie-borne-situation-dominante-en-campagne/",
+    "Foto": "https://puylevequeimmo.staticlbi.com/1000xauto/images/biens/1/7a0dd2653ab53f64024814bee0ac5cc6/photo_d12a2bfcb722a0f63903f399ce3755e3.jpg"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Puy-l'Évêque",
+    "Nieuw?": "Nee",
+    "Prijs": "500 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/1-maison/t5/10070-/",
+    "Foto": "https://puylevequeimmo.staticlbi.com/1000xauto/images/biens/1/059fdbca0fb4a39b3ddb0f0279b41af9/photo_c978585a9ed00483134c8197b476b40c.jpg"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Exclusif",
+    "Nieuw?": "Ja",
+    "Prijs": "000 €",
+    "m2 Binnen": "31",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/1-maison/t2/14213-un-local-commercial-de-31-m-au-coeur-d-un-magnifique-village-medieval-tous-commerces-de-la-belle-vallee-du/",
+    "Foto": "https://puylevequeimmo.staticlbi.com/1000xauto/images/biens/1/0297ae168d431f43f1b9728deb330d89/photo_5147c067d1403557aceb2871aebe5e4c.jpg"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Puy-l'Évêque",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "2024",
+    "m2 Buiten": "2024",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/43-terrain-a-batir/t/11316-terrain-a-batir-de-2024m-compteurs-d-eau-d-electricite-et-fosse-septique-a-installer/",
+    "Foto": "https://puylevequeimmo.staticlbi.com/1000xauto/images/biens/1/3a31f41e8b6c629de6210a51e73a6738/photo_1484dceb7e091013e08be66b673dec7f.jpg"
+  },
+  {
+    "Bron": "pousset",
+    "Plaats": "Exclusif",
+    "Nieuw?": "Ja",
+    "Prijs": "500 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-pousset.fr/vente/46-lot/1-puy-l-eveque/1-maison/t2/14214-immeuble-commercial-comprenant-un-grand-bureau-et-parking-attenant-tres-belle-situation-proche-de-la-rivi/",
+    "Foto": "https://puylevequeimmo.staticlbi.com/1000xauto/images/biens/1/cf4b60666c420218cfb018a8dcdc05ad/photo_717781427cb90d9ac01f4bb375ec66ae.jpg"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "LE",
+    "Nieuw?": "Nee",
+    "Prijs": "85 600 €",
+    "m2 Binnen": "156",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://www.immo46.com/achat,maison-maison-4-chambres-en-pierre-avec-agrandissement,P4932V",
+    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b2569913-r6595.jpg?emptyCache"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "CATUS",
+    "Nieuw?": "Nee",
+    "Prijs": "159 000 €",
+    "m2 Binnen": "90",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "2",
+    "URL": "https://www.immo46.com/achat,maison-maison-2-chambres-de-90m-habitables-avec-piscine,P5021V",
+    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b2810836-r9668.jpg?emptyCache"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "PUY",
+    "Nieuw?": "Ja",
+    "Prijs": "840 000 €",
+    "m2 Binnen": "452",
+    "m2 Buiten": "452",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.com/achat,maison-maison-de-maitre-sur-19-hectares-de-terrain,P5107V",
+    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b3173688-r2554.jpg?emptyCache"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "PRAYSSAC",
+    "Nieuw?": "Nee",
+    "Prijs": "77 760 €",
+    "m2 Binnen": "105",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.com/achat,maison-maison-de-village-secteur-prayssac,P4579P",
+    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b2492502-r3251.jpg?emptyCache"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "LAGARDELLE",
+    "Nieuw?": "Nee",
+    "Prijs": "350 000 €",
+    "m2 Binnen": "188",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.com/achat,maison-maison-t6-de-plain-pied-avec-piscine,P5050PM",
+    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b2875424-r5202.jpg?emptyCache"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "PUY",
+    "Nieuw?": "Ja",
+    "Prijs": "119 840 €",
+    "m2 Binnen": "62",
+    "m2 Buiten": "680",
+    "Slaapkamers": "1",
+    "URL": "https://www.immo46.com/achat,maison-maison-1-chambre-de-plain-pied-de-62m-habitables-avec-garage-et-jardin-de-680m,P4894V",
+    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b2568087-r3950.jpg?emptyCache"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "GOURDON",
+    "Nieuw?": "Nee",
+    "Prijs": "400 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/gourdon-belle-et-spacieuse-maison-de-ville-en-pierre-proche-de-tous-commerces-102563.html",
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/01gildc102563p71964.jpg"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "propriété de …",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/dans-la-vallee-de-la-vezere-patrimoine-de-lunesco-propriete-de-caractere-avec-piscine-lensemble-sur-un-grand-jardin-paysage-de-3200-m2-avec-une-tres-belle-vue-sur-un-chateau-6504799.html",
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6504799p2469e23ba9aca24.jpg"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "En",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/en-perigord-noir-entre-perigueux-et-brive-a-20-minutes-de-montignac-propriete-sur-3ha3-de-terrain-arbore-avec-une-maison-principale-dhabitation-un-gite-une-piscine-et-un-petit-etang-a-voir-6502561.html",
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6502561p6050729wtsrm.jpg"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "SECTEUR",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/secteur-castelnaud-maison-de-plain-pied-avec-vue-degagee-et-piscine-6504796.html",
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/lvt246504796p2169de020f85061.jpg"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "sans …",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "4",
+    "URL": "https://www.pleinsudimmo.fr/detail/maison-4-chambres-avec-grand-terrain-et-vue-campagne-sans-vis-a-vis-6504787.html",
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/17gildc6504787p969e5d8a1588ad.jpg"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Fermette",
+    "Nieuw?": "Nee",
+    "Prijs": "500 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/fermette-a-renover-sur-les-hauteurs-du-charmant-village-de-la-cassagne-en-perigord-noir-jardin-de-2000-m2-6504698.html",
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6504698p2469d8bcff386c5.jpg"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "MAISON",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "180",
+    "m2 Buiten": "5000",
+    "Slaapkamers": "4",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-mitoyenne-1-cote-6-pieces-aubiac-47310,VM1012",
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1012/maison-mitoyenne-1-cote-6-pieces-aubiac-47310-1771276026-VM1012_3_l.jpg"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "MAISON",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "180",
+    "m2 Buiten": "5000",
+    "Slaapkamers": "4",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-5-pieces-clairac-47320,VM1783",
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1012/maison-mitoyenne-1-cote-6-pieces-aubiac-47310-1771276026-VM1012_3_l.jpg"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "MAISON",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "180",
+    "m2 Buiten": "5000",
+    "Slaapkamers": "4",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-11-pieces-montpezat-47360,VM568",
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1012/maison-mitoyenne-1-cote-6-pieces-aubiac-47310-1771276026-VM1012_3_l.jpg"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "MAISON",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "180",
+    "m2 Buiten": "5000",
+    "Slaapkamers": "4",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-ancienne-6-pieces-pin-balma-31130,VM1809",
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1012/maison-mitoyenne-1-cote-6-pieces-aubiac-47310-1771276026-VM1012_3_l.jpg"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "MAISON",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "180",
+    "m2 Buiten": "5000",
+    "Slaapkamers": "4",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-8-pieces-lavardac-47230,VM1162",
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1012/maison-mitoyenne-1-cote-6-pieces-aubiac-47310-1771276026-VM1012_3_l.jpg"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "MAISON",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "180",
+    "m2 Buiten": "5000",
+    "Slaapkamers": "4",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-individuelle-5-pieces-boe-47550,VM1800",
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1012/maison-mitoyenne-1-cote-6-pieces-aubiac-47310-1771276026-VM1012_3_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "le tout dans un cadre de jardin idyllique.",
+    "Nieuw?": "Ja",
+    "Prijs": "125 €",
+    "m2 Binnen": "100",
+    "m2 Buiten": "850",
+    "Slaapkamers": "3",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-individuelle-6-pieces-lauzun-47410,VM17514",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17514/maison-individuelle-6-pieces-lauzun-47410-1776255073-VM17514_26_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "le tout dans un cadre de jardin idyllique.",
+    "Nieuw?": "Ja",
+    "Prijs": "125 €",
+    "m2 Binnen": "100",
+    "m2 Buiten": "850",
+    "Slaapkamers": "3",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-individuelle-6-pieces-lauzun-47410,VM17514",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17514/maison-individuelle-6-pieces-lauzun-47410-1776255073-VM17514_26_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "le tout dans un cadre de jardin idyllique.",
+    "Nieuw?": "Ja",
+    "Prijs": "125 €",
+    "m2 Binnen": "100",
+    "m2 Buiten": "850",
+    "Slaapkamers": "3",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-individuelle-6-pieces-lauzun-47410,VM17514",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17514/maison-individuelle-6-pieces-lauzun-47410-1776255073-VM17514_26_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "le tout dans un cadre de jardin idyllique.",
+    "Nieuw?": "Ja",
+    "Prijs": "125 €",
+    "m2 Binnen": "100",
+    "m2 Buiten": "850",
+    "Slaapkamers": "3",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-individuelle-6-pieces-lauzun-47410,VM17514",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17514/maison-individuelle-6-pieces-lauzun-47410-1776255073-VM17514_26_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "le tout dans un cadre de jardin idyllique.",
+    "Nieuw?": "Ja",
+    "Prijs": "125 €",
+    "m2 Binnen": "100",
+    "m2 Buiten": "850",
+    "Slaapkamers": "3",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-individuelle-6-pieces-lauzun-47410,VM17514",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17514/maison-individuelle-6-pieces-lauzun-47410-1776255073-VM17514_26_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "le tout dans un cadre de jardin idyllique.",
+    "Nieuw?": "Ja",
+    "Prijs": "125 €",
+    "m2 Binnen": "100",
+    "m2 Buiten": "850",
+    "Slaapkamers": "3",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-individuelle-6-pieces-lauzun-47410,VM17514",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17514/maison-individuelle-6-pieces-lauzun-47410-1776255073-VM17514_26_l.jpg"
+  },
+  {
+    "Bron": "ledil",
+    "Plaats": "Cession",
+    "Nieuw?": "Nee",
+    "Prijs": "6 001 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://ledil.immo/bien/fonds-de-commerce/agen-47000/9177",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9177/ChatGPT%20Image%2017%20avr.%202026%2C%2011_52_46-69e202ff59b5d.png"
+  },
+  {
+    "Bron": "ledil",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "90 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://ledil.immo/bien/maison/st-pardoux-isaac-47800/9176",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9176/facade%20avant%20bis-69e1e8433cbbc.jpg"
+  },
+  {
+    "Bron": "ledil",
+    "Plaats": "MAISON",
+    "Nieuw?": "Nee",
+    "Prijs": "211 500 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://ledil.immo/bien/maison/le-passage-47520/9172",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9172/hoqi-photo%20%281%29-69e10ed97b09e.jpg"
+  },
+  {
+    "Bron": "ledil",
+    "Plaats": "Ensemble",
+    "Nieuw?": "Nee",
+    "Prijs": "263 500 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://ledil.immo/bien/maison/moissac-82200/9171",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9171/Offre%20valid%C3%A9e%20%2810%29-69e3303c2239d.png"
+  },
+  {
+    "Bron": "ledil",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "575 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://ledil.immo/bien/maison/agen-47000/9170",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9170/IMG_0236-69e0e7c360d42.jpg"
+  },
+  {
+    "Bron": "ledil",
+    "Plaats": "Maison",
+    "Nieuw?": "Nee",
+    "Prijs": "240 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://ledil.immo/bien/maison/casteljaloux-47700/9167",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9167/AVENDREPOUSSIGNACSARAHLAMOTHE12-69dffb8915f13.jpg"
+  }
 ]
-
-# ---------------------------------------------------------
-# URL FIX
-# ---------------------------------------------------------
-def fix_url(url, base):
-    if not url:
-        return None
-    url = url.strip()
-    if url.startswith("//"):
-        return "https:" + url
-    if not url.startswith("http"):
-        return base.rstrip("/") + "/" + url.lstrip("/")
-    return url
-
-# ---------------------------------------------------------
-# IMAGE FILTERING
-# ---------------------------------------------------------
-def is_bad_image(src):
-    src = src.lower()
-    bad = ["logo", "icon", "svg", "placeholder", "sprite", "loader", "blank"]
-    return any(b in src for b in bad)
-
-def extract_image(card, base):
-    img = card.find("img", attrs={"data-src": True})
-    if img and img.get("data-src") and not is_bad_image(img["data-src"]):
-        return fix_url(img["data-src"], base)
-
-    img = card.find("img", src=True)
-    if img and img.get("src") and not is_bad_image(img["src"]):
-        return fix_url(img["src"], base)
-
-    img = card.find("img", srcset=True)
-    if img and img.get("srcset"):
-        first = img["srcset"].split(",")[0].split()[0]
-        if not is_bad_image(first):
-            return fix_url(first, base)
-
-    for d in card.find_all("div", style=True):
-        m = re.search(r'url\((.*?)\)', d.get("style", ""))
-        if m:
-            src = m.group(1).strip('"\'')
-            if not is_bad_image(src):
-                return fix_url(src, base)
-
-    return None
-
-# ---------------------------------------------------------
-# GENERIC TITLE (alleen nog nodig voor Plaats-fallback)
-# ---------------------------------------------------------
-def extract_title(card, a):
-    for tag in ["h1", "h2", "h3"]:
-        h = card.find(tag)
-        if h and h.get_text(strip=True):
-            return h.get_text(strip=True)
-
-    for tag in ["strong", "b"]:
-        h = card.find(tag)
-        if h and h.get_text(strip=True):
-            return h.get_text(strip=True)
-
-    t = a.get_text(" ", strip=True)
-    if t and len(t.split()) > 2:
-        return t
-
-    txt = card.get_text(" ", strip=True)
-    if txt and len(txt.split()) > 3:
-        return txt[:120]
-
-    return ""
-
-# ---------------------------------------------------------
-# LISTING VALIDATION
-# ---------------------------------------------------------
-def looks_like_listing(text):
-    return bool(re.search(r"[\d\.\,\s ]+€", text)) or "chambre" in text.lower() or "pièce" in text.lower()
-
-# ---------------------------------------------------------
-# SITE-SPECIFIEKE PARSERS (zoals je al had)
-# ---------------------------------------------------------
-def parse_lot_immoco(card, base):
-    a = card.select_one("h1 a")
-    url = fix_url(a["href"], base) if a else None
-    titel = a.get_text(strip=True) if a else ""
-    price_el = card.select_one("span[itemprop='price']")
-    prijs = price_el.get("content") + " €" if price_el else "N/A"
-    img = card.select_one("div.panel-heading img")
-    foto = fix_url(img["src"], base) if img else "N/A"
-    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
-
-def parse_quercygascogne(card, base):
-    a = card.select_one("a.property__link")
-    url = fix_url(a["href"], base) if a else None
-    title_el = card.select_one(".property__title h2 span")
-    titel = title_el.get_text(strip=True) if title_el else ""
-    price_el = card.select_one(".property__price span")
-    prijs = price_el.get_text(strip=True) if price_el else "N/A"
-    img = card.select_one(".property__visual img")
-    foto = fix_url(img.get("data-src") or img.get("src"), base) if img else "N/A"
-    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
-
-def parse_mouly(card, base):
-    a = card.select_one("a.item__title")
-    url = fix_url(a["href"], base) if a else None
-    title_el = card.select_one(".title__content-2")
-    titel = title_el.get_text(strip=True) if title_el else ""
-    price_el = card.select_one(".item__price .__price-value")
-    prijs = price_el.get_text(strip=True) if price_el else "N/A"
-    img = card.select_one(".decorate__img")
-    foto = fix_url(img["src"], base) if img else "N/A"
-    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
-
-def parse_wheeler(card, base):
-    a = card.select_one("a.jet-listing-dynamic-link__link")
-    url = fix_url(a["href"], base) if a else None
-    title_el = card.select_one(".wmc-listing-title .jet-listing-dynamic-link__label")
-    titel = title_el.get_text(strip=True) if title_el else ""
-    price_el = card.select_one(".jet-listing-dynamic-field__content")
-    prijs = price_el.get_text(" ", strip=True) if price_el else "N/A"
-    img = card.select_one("img")
-    foto = fix_url(img["src"], base) if img else "N/A"
-    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
-
-def parse_eleonor(card, base):
-    a = card if card.name == "a" else card.find("a", href=True)
-    url = fix_url(a["href"], base) if a else None
-    img = card.select_one("img.propertiesPicture")
-    foto = fix_url(img["src"], base) if img else "N/A"
-    title_el = card.select_one(".title")
-    subtitle_el = card.select_one(".subtitle")
-    titel = ""
-    if title_el:
-        titel += title_el.get_text(" ", strip=True)
-    if subtitle_el:
-        titel += " – " + subtitle_el.get_text(" ", strip=True)
-    titel = titel.strip()
-    price_el = card.select_one(".price")
-    prijs = price_el.get_text(" ", strip=True) if price_el else "N/A"
-    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
-
-SITE_PARSERS = {
-    "lot_immoco": parse_lot_immoco,
-    "quercygascogne": parse_quercygascogne,
-    "mouly": parse_mouly,
-    "wheeler": parse_wheeler,
-    "eleonor": parse_eleonor,
-}
-
-# ---------------------------------------------------------
-# PLAATS-DETECTIE
-# ---------------------------------------------------------
-FORBIDDEN_PLACE_WORDS = {
-    "maison", "appartement", "immeuble", "terrain", "propriete", "propriété",
-    "villa", "ensemble", "magnifique", "charmante", "charmant", "belle", "grand",
-    "estimation", "country", "propriete", "propriété", "chateau", "château",
-    "exclusif", "exclusifs", "exclusivité", "exclusivite",
-    "garage", "jardin", "piscine", "dependances", "dépendances", "vue", "boisé",
-    "boise", "maisonnette", "studio"
-}
-
-def normalize_word(w: str) -> str:
-    w = w.strip(" ,.;:!?\t\n").lower()
-    w = w.replace("’", "'")
-    w = w.replace("é", "e").replace("è", "e").replace("ê", "e")
-    w = w.replace("à", "a").replace("â", "a")
-    w = w.replace("ô", "o").replace("ù", "u").replace("û", "u")
-    return w
-
-def is_valid_place_word(w: str) -> bool:
-    if not w:
-        return False
-    w_norm = normalize_word(w)
-    if not w_norm:
-        return False
-    if w_norm in FORBIDDEN_PLACE_WORDS:
-        return False
-    if any(c.isdigit() for c in w_norm):
-        return False
-    if len(w_norm) < 3:
-        return False
-    return True
-
-def format_place(words):
-    return " ".join(w.capitalize() for w in words)
-
-def detect_place_from_url(url: str | None) -> str | None:
-    if not url:
-        return None
-    parts = url.split("/")
-    for p in reversed(parts):
-        if "-" in p and not p.isdigit():
-            raw = p.split("-")
-            words = [w for w in raw if is_valid_place_word(w)]
-            if words:
-                return format_place(words)
-    return None
-
-def detect_place_from_title(title: str | None) -> str | None:
-    if not title:
-        return None
-    parts = re.split(r"[,\-–|/]", title)
-    for p in parts:
-        words = [w for w in p.split() if is_valid_place_word(w)]
-        if words:
-            return format_place(words)
-    return None
-
-def detect_place_from_text(text: str | None) -> str | None:
-    if not text:
-        return None
-    words = [w for w in text.split() if is_valid_place_word(w)]
-    if words:
-        return words[0].capitalize()
-    return None
-
-def detect_place(url, title, text):
-    return (
-        detect_place_from_url(url)
-        or detect_place_from_title(title)
-        or detect_place_from_text(text)
-        or "Onbekend"
-    )
-
-# ---------------------------------------------------------
-# PRIJS-DETECTIE
-# ---------------------------------------------------------
-def extract_price(text: str | None) -> str:
-    if not text:
-        return "N/A"
-    # alle getallen gevolgd door €
-    matches = re.findall(r"(\d[\d\s \.]*\d)\s*€", text)
-    if not matches:
-        return "N/A"
-    # neem de EERSTE (niet de laatste) om "000 €" te vermijden
-    price = matches[0]
-    price = price.replace(" ", " ").replace(" ", "").replace(".", "")
-    # herformat: 285000 -> "285 000 €"
-    try:
-        n = int(price)
-        return f"{n:,}".replace(",", " ") + " €"
-    except ValueError:
-        return matches[0].strip() + " €"
-
-# ---------------------------------------------------------
-# m2 BINNEN / BUITEN
-# ---------------------------------------------------------
-OUTSIDE_HINTS = ["terrain", "jardin", "parcelle", "parc", "land", "plot", "boise", "boisé", "hectares", "ha"]
-
-def extract_m2(text: str | None):
-    if not text:
-        return ("N/A", "N/A")
-    tokens = text.split()
-    inside = None
-    outside = None
-
-    for i, tok in enumerate(tokens):
-        m = re.match(r"(\d+)\s*(m²|m2)", tok.replace("mÂ²", "m²"))
-        if not m:
-            # soms "197.00" en dan "m²" apart
-            if i + 1 < len(tokens) and re.match(r"m²|m2", tokens[i + 1]):
-                m = re.match(r"(\d+)", tok)
-            else:
-                continue
-        if not m:
-            continue
-        val = m.group(1)
-        # context: woorden ervoor
-        window_start = max(0, i - 5)
-        context = " ".join(tokens[window_start:i]).lower()
-        is_outside = any(h in context for h in OUTSIDE_HINTS)
-        if is_outside:
-            if outside is None:
-                outside = val
-        else:
-            if inside is None:
-                inside = val
-
-    return (inside or "N/A", outside or "N/A")
-
-# ---------------------------------------------------------
-# SLAAPKAMERS
-# ---------------------------------------------------------
-def extract_bedrooms(text: str | None) -> str:
-    if not text:
-        return "N/A"
-    m = re.search(r"(\d+)\s*(chambres?|ch\.|chb|bedrooms?|bed)", text, re.I)
-    if m:
-        return m.group(1)
-    return "N/A"
-
-# ---------------------------------------------------------
-# NIEUW?
-# ---------------------------------------------------------
-def detect_new(text: str | None) -> str:
-    if not text:
-        return "Nee"
-    t = text.lower()
-    if any(w in t for w in ["nouveaute", "nouveauté", "new", "recent", "récent"]):
-        return "Ja"
-    if "exclusiv" in t:
-        # jij mag dit aanpassen naar wens; nu telt exclusif als "nieuw"
-        return "Ja"
-    return "Nee"
-
-# ---------------------------------------------------------
-# CARD DETECTION
-# ---------------------------------------------------------
-def find_card_for_anchor(soup, a, config):
-    sel = config.get("card_selector")
-    if sel:
-        for card in soup.select(sel):
-            if card.find("a", href=a.get("href")):
-                return card
-
-    node = a
-    for _ in range(8):
-        if not node.parent:
-            break
-        node = node.parent
-        if node.name in ("article", "li", "section", "div"):
-            return node
-    return a.parent
-
-# ---------------------------------------------------------
-# SCRAPE LIST PAGE
-# ---------------------------------------------------------
-async def scrape_list_page(browser, config):
-    site_id = config["id"]
-    print(f"--- Start: {site_id} ---")
-
-    context = await browser.new_context(
-        viewport={"width": 1400, "height": 900},
-        user_agent="Mozilla/5.0"
-    )
-    page = await context.new_page()
-
-    await page.goto(config["url"], wait_until="domcontentloaded", timeout=30000)
-
-    # veilige scroll: navigation changes → try/except
-    for _ in range(4):
-        try:
-            await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
-            await asyncio.sleep(1)
-        except Exception:
-            break
-
-    html = await page.content()
-    soup = BeautifulSoup(html, "html.parser")
-
-    pattern = re.compile(config["pattern"], re.I)
-
-    anchors = []
-    for a in soup.find_all("a", href=True):
-        if pattern.search(a["href"]):
-            anchors.append((a, fix_url(a["href"], config["base"])))
-
-    seen = set()
-    unique = []
-    for a, href in anchors:
-        if href not in seen:
-            seen.add(href)
-            unique.append((a, href))
-
-    listings = []
-    for a, href in unique:
-        card = find_card_for_anchor(soup, a, config)
-        if not card:
-            continue
-
-        text = card.get_text(" ", strip=True)
-        if not looks_like_listing(text):
-            continue
-
-        parser = SITE_PARSERS.get(site_id)
-        if parser:
-            parsed = parser(card, config["base"])
-            titel = parsed.get("Titel", "") or ""
-            prijs_raw = parsed.get("PrijsRaw", "") or text
-            foto = parsed.get("Foto") or extract_image(card, config["base"]) or "N/A"
-            url = parsed.get("URL") or href
-        else:
-            titel = extract_title(card, a)
-            prijs_raw = text
-            foto = extract_image(card, config["base"]) or "N/A"
-            url = href
-
-        prijs = extract_price(prijs_raw or text)
-        m2_binnen, m2_buiten = extract_m2(text)
-        slaapkamers = extract_bedrooms(text)
-        nieuw = detect_new(text + " " + titel)
-
-        plaats = detect_place(url, titel, text)
-
-        data = {
-            "Bron": site_id,
-            "Plaats": plaats,
-            "Nieuw?": nieuw,
-            "Prijs": prijs,
-            "m2 Binnen": m2_binnen,
-            "m2 Buiten": m2_buiten,
-            "Slaapkamers": slaapkamers,
-            "URL": url,
-            "Foto": foto,
-        }
-
-        listings.append(data)
-        if len(listings) >= MAX_LISTINGS_PER_SITE:
-            break
-
-    print(f"  {site_id}: {len(listings)} listings")
-    await context.close()
-    return listings
-
-# ---------------------------------------------------------
-# MAIN
-# ---------------------------------------------------------
-async def main():
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-
-        sem = asyncio.Semaphore(MAX_CONCURRENT_SITES)
-
-        async def run(conf):
-            async with sem:
-                return await scrape_list_page(browser, conf)
-
-        results = await asyncio.gather(*[run(c) for c in SCRAPER_CONFIG])
-        flat = [x for sub in results for x in sub]
-
-        with open("data.json", "w", encoding="utf-8") as f:
-            json.dump(flat, f, ensure_ascii=False, indent=2)
-
-        print(f"\n✅ Klaar! {len(flat)} panden gescraped.")
-
-        await browser.close()
-
-if __name__ == "__main__":
-    asyncio.run(main())
