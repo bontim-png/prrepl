@@ -971,51 +971,52 @@ else:
     listings = []
     parser = SITE_PARSERS.get(site_id)
 
-    for a,href in unique:
-        card = find_card_for_anchor(soup, a, config)
-        if not card:
-            continue
+    for a, href in unique:
+    card = find_card_for_anchor(soup, a, config)
+    if not card:
+        continue
 
-        text = card.get_text(" ", strip=True)
-        if not looks_like_listing(text):
-            continue
+    text = card.get_text(" ", strip=True)
+    if not looks_like_listing(text):
+        continue
 
-        if parser:
-            parsed = parser(card, config["base"])
-            titel = parsed.get("Titel","")
-            prijs_raw = parsed.get("PrijsRaw", text)
-            foto = parsed.get("Foto") or extract_image(card, config["base"]) or "N/A"
-            url = parsed.get("URL") or href
-        else:
-            titel = extract_title(card, a)
-            prijs_raw = text
-            foto = extract_image(card, config["base"]) or "N/A"
-            url = href
-         if any(x in prijs_raw.lower() for x in ["cc", "hc", "/mois", "mois", "€/mois"]):
-            continue
-        prijs = extract_price(prijs_raw)
-        m2_binnen, m2_buiten = extract_m2(text)
-        slaapkamers = extract_bedrooms(text)
-        nieuw = detect_new(text + " " + titel)
-        plaats = detect_place(url, titel, text)
-        # FILTER: huur uitsluiten
-    
-       
+    if parser:
+        parsed = parser(card, config["base"])
+        titel = parsed.get("Titel", "")
+        prijs_raw = parsed.get("PrijsRaw", text)
+        foto = parsed.get("Foto") or extract_image(card, config["base"]) or "N/A"
+        url = parsed.get("URL") or href
+    else:
+        titel = extract_title(card, a)
+        prijs_raw = text
+        foto = extract_image(card, config["base"]) or "N/A"
+        url = href
 
-        listings.append({
-            "Bron": site_id,
-            "Plaats": plaats,
-            "Nieuw?": nieuw,
-            "Prijs": prijs,
-            "m2 Binnen": m2_binnen,
-            "m2 Buiten": m2_buiten,
-            "Slaapkamers": slaapkamers,
-            "URL": url,
-            "Foto": foto,
-        })
+    # FILTER: huur uitsluiten
+    if any(x in prijs_raw.lower() for x in ["cc", "hc", "/mois", "mois", "€/mois"]):
+        continue
 
-        if len(listings) >= MAX_LISTINGS_PER_SITE:
-            break
+    prijs = extract_price(prijs_raw)
+    m2_binnen, m2_buiten = extract_m2(text)
+    slaapkamers = extract_bedrooms(text)
+    nieuw = detect_new(text + " " + titel)
+    plaats = detect_place(url, titel, text)
+
+    listings.append({
+        "Bron": site_id,
+        "Plaats": plaats,
+        "Nieuw?": nieuw,
+        "Prijs": prijs,
+        "m2 Binnen": m2_binnen,
+        "m2 Buiten": m2_buiten,
+        "Slaapkamers": slaapkamers,
+        "URL": url,
+        "Foto": foto,
+    })
+
+    if len(listings) >= MAX_LISTINGS_PER_SITE:
+        break
+
 
     print(f"{site_id}: {len(listings)} listings")
     await context.close()
