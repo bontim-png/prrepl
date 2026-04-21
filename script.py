@@ -46,121 +46,158 @@ def fix_url(url, base_url):
         return None
     if not url.startswith("http"):
         url = base_url.rstrip("/") + "/" + url.lstrip("/")
-    parsed = urlparse(url)
-    if not parsed.path:
-        return url
     return url
 
+# -------------------------------------------------------------
+# PRICE EXTRACTION (beste versie)
+# -------------------------------------------------------------
 def extract_price(text: str) -> str:
     if not text:
         return "N/A"
-    m = re.search(r"(\d[\d\s\.]{3,})\s*€", text)
-    if not m:
-        m = re.search(r"€\s*(\d[\d\s\.]{3,})", text)
-    if not m:
+    matches = re.findall(r"(\d[\d\s\.]{3,})\s*€", text)
+    if not matches:
+        matches = re.findall(r"€\s*(\d[\d\s\.]{3,})", text)
+    if not matches:
         return "N/A"
-    raw = m.group(0)
-    return raw.strip()
+    return f"{matches[-1].strip()} €"   # laatste bedrag is echte prijs
 
-def extract_image_from_card(card, base_url):
+# -------------------------------------------------------------
+# IMAGE FILTERING (voorkomt logo’s/icons)
+# -------------------------------------------------------------
+def is_bad_image(src: str) -> bool:
+    src = src.lower()
+    bad = [
+        "logo", "icon", "icons", "svg", "placeholder",
+        "sprite", "loader", "blank", "ondulation"
+    ]
+    return any(b in src for b in bad)
+
+def extract_image(card, base_url):
     # 1. data-src
     img = card.find("img", attrs={"data-src": True})
-    if img and img.get("data-src"):
+    if img and img.get("data-src") and not is_bad_image(img["data-src"]):
         return fix_url(img["data-src"], base_url)
+
     # 2. src
     img = card.find("img", src=True)
-    if img and img.get("src"):
+    if img and img.get("src") and not is_bad_image(img["src"]):
         return fix_url(img["src"], base_url)
-    # 3. srcset (pak eerste)
+
+    # 3. srcset
     img = card.find("img", srcset=True)
     if img and img.get("srcset"):
         first = img["srcset"].split(",")[0].split()[0]
-        return fix_url(first, base_url)
+        if not is_bad_image(first):
+            return fix_url(first, base_url)
+
     return None
 
+# -------------------------------------------------------------
+# TITLE EXTRACTION
+# -------------------------------------------------------------
+def extract_title(card, a):
+    # 1. headings
+    for tag in ["h1", "h2", "h3"]:
+        h = card.find(tag)
+        if h and h.get_text(strip=True):
+            return h.get_text(strip=True)
+
+    # 2. linktekst
+    t = a.get_text(" ", strip=True)
+    if t and len(t.split()) > 2:
+        return t
+
+    # 3. fallback: cardtekst
+    card_text = card.get_text(" ", strip=True)
+    if card_text and len(card_text.split()) > 3:
+        return card_text[:120]
+
+    return "Onbekend"
+
+# -------------------------------------------------------------
+# LISTING VALIDATION
+# -------------------------------------------------------------
+def looks_like_listing(card_text: str) -> bool:
+    # moet een prijs bevatten
+    return bool(re.search(r"\d[\d\s\.]{3,}\s*€", card_text))
+
+# -------------------------------------------------------------
+# SCRAPE LIST PAGE
+# -------------------------------------------------------------
 async def scrape_list_page(browser, config):
     print(f"--- Start: {config['id']} ---")
 
     context = await browser.new_context(
         viewport={"width": 1280, "height": 800},
-        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36"
     )
     page = await context.new_page()
-    page.set_default_timeout(25000)
-    page.set_default_navigation_timeout(25000)
 
-    results = []
+    await page.goto(config["url"], wait_until="domcontentloaded", timeout=25000)
 
-    try:
-        await page.goto(config["url"], wait_until="domcontentloaded", timeout=25000)
+    # lazy-load scroll
+    for _ in range(4):
+        await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
+        await asyncio.sleep(1.0)
 
-        # simpele lazy-load scroll
+    html = await page.content()
+    soup = BeautifulSoup(html, "html.parser")
+
+    pattern = re.compile(config["pattern"], re.I)
+
+    anchors = []
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if pattern.search(href):
+            anchors.append((a, fix_url(href, config["base"])))
+
+    # dedupe
+    seen = set()
+    unique = []
+    for a, href in anchors:
+        if href not in seen:
+            seen.add(href)
+            unique.append((a, href))
+
+    listings = []
+    for a, href in unique:
+        # klim naar card
+        card = a
         for _ in range(4):
-            await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
-            await asyncio.sleep(1.0)
+            if not card.parent:
+                break
+            card = card.parent
+            if card.name in ("article", "li", "div", "section"):
+                break
 
-        html = await page.content()
-        soup = BeautifulSoup(html, "html.parser")
+        card_text = card.get_text(" ", strip=True) if card else a.get_text(" ", strip=True)
 
-        pattern = re.compile(config["pattern"], re.I)
+        # skip menu/CTA
+        if not looks_like_listing(card_text):
+            continue
 
-        # alle anchors met matching href in DOM-volgorde
-        anchors = []
-        for a in soup.find_all("a", href=True):
-            href = a["href"]
-            if pattern.search(href):
-                full = fix_url(href, config["base"])
-                anchors.append((a, full))
+        prijs = extract_price(card_text)
+        foto = extract_image(card, config["base"]) or "N/A"
+        titel = extract_title(card, a)
 
-        # dedupe op URL, behoud volgorde
-        seen = set()
-        unique = []
-        for a, href in anchors:
-            if href not in seen:
-                seen.add(href)
-                unique.append((a, href))
+        listings.append({
+            "Bron": config["id"],
+            "Titel": titel,
+            "Prijs": prijs,
+            "Foto": foto,
+            "URL": href
+        })
 
-        unique = unique[:MAX_LISTINGS_PER_SITE]
-        print(f"  {config['id']}: {len(unique)} listings gevonden")
+        if len(listings) >= MAX_LISTINGS_PER_SITE:
+            break
 
-        for a, href in unique:
-            # probeer een "card" te vinden rond de link
-            card = a
-            for _ in range(4):
-                if card.parent is None:
-                    break
-                card = card.parent
-                if card.name in ("article", "li", "div", "section"):
-                    break
-
-            card_text = card.get_text(" ", strip=True) if card else a.get_text(" ", strip=True)
-            prijs = extract_price(card_text)
-
-            foto = extract_image_from_card(card, config["base"]) if card else None
-            if not foto:
-                # fallback: zoek img direct onder de link
-                img = a.find("img")
-                if img and img.get("src"):
-                    foto = fix_url(img["src"], config["base"])
-
-            titel = a.get_text(" ", strip=True)
-            if not titel and card:
-                titel = card_text[:120]
-
-            results.append({
-                "Bron": config["id"],
-                "Titel": titel or "Onbekend",
-                "Prijs": prijs,
-                "Foto": foto or "N/A",
-                "URL": href,
-            })
-
-    except Exception as e:
-        print(f"  ! Fout bij {config['id']}: {e}")
-
+    print(f"  {config['id']}: {len(listings)} listings gevonden")
     await context.close()
-    return results
+    return listings
 
+# -------------------------------------------------------------
+# MAIN
+# -------------------------------------------------------------
 async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(
