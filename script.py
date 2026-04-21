@@ -7,6 +7,9 @@ from bs4 import BeautifulSoup
 MAX_LISTINGS_PER_SITE = 6
 MAX_CONCURRENT_SITES = 3
 
+# ---------------------------------------------------------
+# CONFIG
+# ---------------------------------------------------------
 SCRAPER_CONFIG = [
     {
         "id": "ladresse_tournon",
@@ -216,20 +219,24 @@ def is_bad_image(src):
     return any(b in src for b in bad)
 
 def extract_image(card, base):
+    # data-src
     img = card.find("img", attrs={"data-src": True})
-    if img and img.get("data-src") and not is_bad_image(img["data-src"]):
+    if img and not is_bad_image(img["data-src"]):
         return fix_url(img["data-src"], base)
 
+    # src
     img = card.find("img", src=True)
-    if img and img.get("src") and not is_bad_image(img["src"]):
+    if img and not is_bad_image(img["src"]):
         return fix_url(img["src"], base)
 
+    # srcset
     img = card.find("img", srcset=True)
-    if img and img.get("srcset"):
+    if img:
         first = img["srcset"].split(",")[0].split()[0]
         if not is_bad_image(first):
             return fix_url(first, base)
 
+    # background-image
     for d in card.find_all("div", style=True):
         m = re.search(r'url\((.*?)\)', d.get("style", ""))
         if m:
@@ -240,26 +247,30 @@ def extract_image(card, base):
     return None
 
 # ---------------------------------------------------------
-# GENERIC TITLE (alleen nog nodig voor Plaats-fallback)
+# GENERIC TITLE (alleen voor plaats-detectie)
 # ---------------------------------------------------------
 def extract_title(card, a):
     for tag in ["h1", "h2", "h3"]:
         h = card.find(tag)
-        if h and h.get_text(strip=True):
-            return h.get_text(strip=True)
+        if h:
+            t = h.get_text(strip=True)
+            if t:
+                return t
 
     for tag in ["strong", "b"]:
         h = card.find(tag)
-        if h and h.get_text(strip=True):
-            return h.get_text(strip=True)
+        if h:
+            t = h.get_text(strip=True)
+            if t:
+                return t
 
     t = a.get_text(" ", strip=True)
-    if t and len(t.split()) > 2:
+    if len(t.split()) > 2:
         return t
 
     txt = card.get_text(" ", strip=True)
-    if txt and len(txt.split()) > 3:
-        return txt[:120]
+    if len(txt.split()) > 3:
+        return txt[:200]
 
     return ""
 
@@ -267,19 +278,24 @@ def extract_title(card, a):
 # LISTING VALIDATION
 # ---------------------------------------------------------
 def looks_like_listing(text):
-    return bool(re.search(r"[\d\.\,\s ]+€", text)) or "chambre" in text.lower() or "pièce" in text.lower()
+    return (
+        "€" in text
+        or "chambre" in text.lower()
+        or "pièce" in text.lower()
+        or "bed" in text.lower()
+    )
 
 # ---------------------------------------------------------
-# SITE-SPECIFIEKE PARSERS (zoals je al had)
+# SITE-SPECIFIEKE PARSERS
 # ---------------------------------------------------------
 def parse_lot_immoco(card, base):
     a = card.select_one("h1 a")
     url = fix_url(a["href"], base) if a else None
     titel = a.get_text(strip=True) if a else ""
     price_el = card.select_one("span[itemprop='price']")
-    prijs = price_el.get("content") + " €" if price_el else "N/A"
+    prijs = price_el.get("content") + " €" if price_el else card.get_text(" ", strip=True)
     img = card.select_one("div.panel-heading img")
-    foto = fix_url(img["src"], base) if img else "N/A"
+    foto = fix_url(img["src"], base) if img else extract_image(card, base)
     return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_quercygascogne(card, base):
@@ -288,9 +304,9 @@ def parse_quercygascogne(card, base):
     title_el = card.select_one(".property__title h2 span")
     titel = title_el.get_text(strip=True) if title_el else ""
     price_el = card.select_one(".property__price span")
-    prijs = price_el.get_text(strip=True) if price_el else "N/A"
+    prijs = price_el.get_text(strip=True) if price_el else card.get_text(" ", strip=True)
     img = card.select_one(".property__visual img")
-    foto = fix_url(img.get("data-src") or img.get("src"), base) if img else "N/A"
+    foto = fix_url(img.get("data-src") or img.get("src"), base) if img else extract_image(card, base)
     return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_mouly(card, base):
@@ -299,9 +315,9 @@ def parse_mouly(card, base):
     title_el = card.select_one(".title__content-2")
     titel = title_el.get_text(strip=True) if title_el else ""
     price_el = card.select_one(".item__price .__price-value")
-    prijs = price_el.get_text(strip=True) if price_el else "N/A"
+    prijs = price_el.get_text(strip=True) if price_el else card.get_text(" ", strip=True)
     img = card.select_one(".decorate__img")
-    foto = fix_url(img["src"], base) if img else "N/A"
+    foto = fix_url(img["src"], base) if img else extract_image(card, base)
     return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_wheeler(card, base):
@@ -310,16 +326,16 @@ def parse_wheeler(card, base):
     title_el = card.select_one(".wmc-listing-title .jet-listing-dynamic-link__label")
     titel = title_el.get_text(strip=True) if title_el else ""
     price_el = card.select_one(".jet-listing-dynamic-field__content")
-    prijs = price_el.get_text(" ", strip=True) if price_el else "N/A"
+    prijs = price_el.get_text(" ", strip=True) if price_el else card.get_text(" ", strip=True)
     img = card.select_one("img")
-    foto = fix_url(img["src"], base) if img else "N/A"
+    foto = fix_url(img["src"], base) if img else extract_image(card, base)
     return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_eleonor(card, base):
     a = card if card.name == "a" else card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
     img = card.select_one("img.propertiesPicture")
-    foto = fix_url(img["src"], base) if img else "N/A"
+    foto = fix_url(img["src"], base) if img else extract_image(card, base)
     title_el = card.select_one(".title")
     subtitle_el = card.select_one(".subtitle")
     titel = ""
@@ -327,9 +343,8 @@ def parse_eleonor(card, base):
         titel += title_el.get_text(" ", strip=True)
     if subtitle_el:
         titel += " – " + subtitle_el.get_text(" ", strip=True)
-    titel = titel.strip()
     price_el = card.select_one(".price")
-    prijs = price_el.get_text(" ", strip=True) if price_el else "N/A"
+    prijs = price_el.get_text(" ", strip=True) if price_el else card.get_text(" ", strip=True)
     return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 SITE_PARSERS = {
@@ -344,28 +359,25 @@ SITE_PARSERS = {
 # PLAATS-DETECTIE
 # ---------------------------------------------------------
 FORBIDDEN_PLACE_WORDS = {
-    "maison", "appartement", "immeuble", "terrain", "propriete", "propriété",
-    "villa", "ensemble", "magnifique", "charmante", "charmant", "belle", "grand",
-    "estimation", "country", "propriete", "propriété", "chateau", "château",
-    "exclusif", "exclusifs", "exclusivité", "exclusivite",
-    "garage", "jardin", "piscine", "dependances", "dépendances", "vue", "boisé",
-    "boise", "maisonnette", "studio"
+    "maison","appartement","immeuble","terrain","propriete","propriété",
+    "villa","ensemble","magnifique","charmante","charmant","belle","grand",
+    "estimation","country","chateau","château","exclusif","exclusivité",
+    "garage","jardin","piscine","dependances","dépendances","vue","boisé",
+    "boise","studio","local","commerce","commercial"
 }
 
-def normalize_word(w: str) -> str:
+def normalize_word(w):
     w = w.strip(" ,.;:!?\t\n").lower()
-    w = w.replace("’", "'")
-    w = w.replace("é", "e").replace("è", "e").replace("ê", "e")
-    w = w.replace("à", "a").replace("â", "a")
-    w = w.replace("ô", "o").replace("ù", "u").replace("û", "u")
+    w = w.replace("’","'")
+    w = w.replace("é","e").replace("è","e").replace("ê","e")
+    w = w.replace("à","a").replace("â","a")
+    w = w.replace("ô","o").replace("ù","u").replace("û","u")
     return w
 
-def is_valid_place_word(w: str) -> bool:
+def is_valid_place_word(w):
     if not w:
         return False
     w_norm = normalize_word(w)
-    if not w_norm:
-        return False
     if w_norm in FORBIDDEN_PLACE_WORDS:
         return False
     if any(c.isdigit() for c in w_norm):
@@ -377,7 +389,7 @@ def is_valid_place_word(w: str) -> bool:
 def format_place(words):
     return " ".join(w.capitalize() for w in words)
 
-def detect_place_from_url(url: str | None) -> str | None:
+def detect_place_from_url(url):
     if not url:
         return None
     parts = url.split("/")
@@ -389,7 +401,7 @@ def detect_place_from_url(url: str | None) -> str | None:
                 return format_place(words)
     return None
 
-def detect_place_from_title(title: str | None) -> str | None:
+def detect_place_from_title(title):
     if not title:
         return None
     parts = re.split(r"[,\-–|/]", title)
@@ -399,7 +411,7 @@ def detect_place_from_title(title: str | None) -> str | None:
             return format_place(words)
     return None
 
-def detect_place_from_text(text: str | None) -> str | None:
+def detect_place_from_text(text):
     if not text:
         return None
     words = [w for w in text.split() if is_valid_place_word(w)]
@@ -418,66 +430,57 @@ def detect_place(url, title, text):
 # ---------------------------------------------------------
 # PRIJS-DETECTIE
 # ---------------------------------------------------------
-def extract_price(text: str | None) -> str:
+def extract_price(text):
     if not text:
         return "N/A"
-    # alle getallen gevolgd door €
     matches = re.findall(r"(\d[\d\s \.]*\d)\s*€", text)
     if not matches:
         return "N/A"
-    # neem de EERSTE (niet de laatste) om "000 €" te vermijden
     price = matches[0]
-    price = price.replace(" ", " ").replace(" ", "").replace(".", "")
-    # herformat: 285000 -> "285 000 €"
+    price = price.replace(" "," ").replace(" ","").replace(".","")
     try:
         n = int(price)
         return f"{n:,}".replace(",", " ") + " €"
-    except ValueError:
+    except:
         return matches[0].strip() + " €"
 
 # ---------------------------------------------------------
 # m2 BINNEN / BUITEN
 # ---------------------------------------------------------
-OUTSIDE_HINTS = ["terrain", "jardin", "parcelle", "parc", "land", "plot", "boise", "boisé", "hectares", "ha"]
+OUTSIDE_HINTS = ["terrain","jardin","parcelle","land","plot","boise","boisé","hectares","ha"]
 
-def extract_m2(text: str | None):
+def extract_m2(text):
     if not text:
-        return ("N/A", "N/A")
+        return ("N/A","N/A")
     tokens = text.split()
     inside = None
     outside = None
-
-    for i, tok in enumerate(tokens):
-        m = re.match(r"(\d+)\s*(m²|m2)", tok.replace("mÂ²", "m²"))
+    for i,tok in enumerate(tokens):
+        m = re.match(r"(\d+)\s*(m²|m2)", tok.replace("mÂ²","m²"))
         if not m:
-            # soms "197.00" en dan "m²" apart
-            if i + 1 < len(tokens) and re.match(r"m²|m2", tokens[i + 1]):
+            if i+1 < len(tokens) and re.match(r"m²|m2", tokens[i+1]):
                 m = re.match(r"(\d+)", tok)
             else:
                 continue
         if not m:
             continue
         val = m.group(1)
-        # context: woorden ervoor
-        window_start = max(0, i - 5)
-        context = " ".join(tokens[window_start:i]).lower()
-        is_outside = any(h in context for h in OUTSIDE_HINTS)
-        if is_outside:
+        context = " ".join(tokens[max(0,i-5):i]).lower()
+        if any(h in context for h in OUTSIDE_HINTS):
             if outside is None:
                 outside = val
         else:
             if inside is None:
                 inside = val
-
     return (inside or "N/A", outside or "N/A")
 
 # ---------------------------------------------------------
 # SLAAPKAMERS
 # ---------------------------------------------------------
-def extract_bedrooms(text: str | None) -> str:
+def extract_bedrooms(text):
     if not text:
         return "N/A"
-    m = re.search(r"(\d+)\s*(chambres?|ch\.|chb|bedrooms?|bed)", text, re.I)
+    m = re.search(r"(\d+)\s*(chambres?|ch\.|bedrooms?|bed)", text, re.I)
     if m:
         return m.group(1)
     return "N/A"
@@ -485,14 +488,13 @@ def extract_bedrooms(text: str | None) -> str:
 # ---------------------------------------------------------
 # NIEUW?
 # ---------------------------------------------------------
-def detect_new(text: str | None) -> str:
+def detect_new(text):
     if not text:
         return "Nee"
     t = text.lower()
-    if any(w in t for w in ["nouveaute", "nouveauté", "new", "recent", "récent"]):
+    if any(w in t for w in ["nouveaute","nouveauté","new","recent","récent"]):
         return "Ja"
     if "exclusiv" in t:
-        # jij mag dit aanpassen naar wens; nu telt exclusif als "nieuw"
         return "Ja"
     return "Nee"
 
@@ -505,13 +507,12 @@ def find_card_for_anchor(soup, a, config):
         for card in soup.select(sel):
             if card.find("a", href=a.get("href")):
                 return card
-
     node = a
     for _ in range(8):
         if not node.parent:
             break
         node = node.parent
-        if node.name in ("article", "li", "section", "div"):
+        if node.name in ("article","li","section","div"):
             return node
     return a.parent
 
@@ -523,19 +524,25 @@ async def scrape_list_page(browser, config):
     print(f"--- Start: {site_id} ---")
 
     context = await browser.new_context(
-        viewport={"width": 1400, "height": 900},
+        viewport={"width":1400,"height":900},
         user_agent="Mozilla/5.0"
     )
     page = await context.new_page()
 
-    await page.goto(config["url"], wait_until="domcontentloaded", timeout=30000)
+    # SAFE GOTO
+    try:
+        await page.goto(config["url"], wait_until="networkidle", timeout=60000)
+    except:
+        print(f"{site_id}: timeout, skipping")
+        await context.close()
+        return []
 
-    # veilige scroll: navigation changes → try/except
+    # SAFE SCROLL
     for _ in range(4):
         try:
-            await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
+            await page.mouse.wheel(0,2000)
             await asyncio.sleep(1)
-        except Exception:
+        except:
             break
 
     html = await page.content()
@@ -550,13 +557,15 @@ async def scrape_list_page(browser, config):
 
     seen = set()
     unique = []
-    for a, href in anchors:
+    for a,href in anchors:
         if href not in seen:
             seen.add(href)
-            unique.append((a, href))
+            unique.append((a,href))
 
     listings = []
-    for a, href in unique:
+    parser = SITE_PARSERS.get(site_id)
+
+    for a,href in unique:
         card = find_card_for_anchor(soup, a, config)
         if not card:
             continue
@@ -565,11 +574,10 @@ async def scrape_list_page(browser, config):
         if not looks_like_listing(text):
             continue
 
-        parser = SITE_PARSERS.get(site_id)
         if parser:
             parsed = parser(card, config["base"])
-            titel = parsed.get("Titel", "") or ""
-            prijs_raw = parsed.get("PrijsRaw", "") or text
+            titel = parsed.get("Titel","")
+            prijs_raw = parsed.get("PrijsRaw", text)
             foto = parsed.get("Foto") or extract_image(card, config["base"]) or "N/A"
             url = parsed.get("URL") or href
         else:
@@ -578,14 +586,13 @@ async def scrape_list_page(browser, config):
             foto = extract_image(card, config["base"]) or "N/A"
             url = href
 
-        prijs = extract_price(prijs_raw or text)
+        prijs = extract_price(prijs_raw)
         m2_binnen, m2_buiten = extract_m2(text)
         slaapkamers = extract_bedrooms(text)
         nieuw = detect_new(text + " " + titel)
-
         plaats = detect_place(url, titel, text)
 
-        data = {
+        listings.append({
             "Bron": site_id,
             "Plaats": plaats,
             "Nieuw?": nieuw,
@@ -595,13 +602,12 @@ async def scrape_list_page(browser, config):
             "Slaapkamers": slaapkamers,
             "URL": url,
             "Foto": foto,
-        }
+        })
 
-        listings.append(data)
         if len(listings) >= MAX_LISTINGS_PER_SITE:
             break
 
-    print(f"  {site_id}: {len(listings)} listings")
+    print(f"{site_id}: {len(listings)} listings")
     await context.close()
     return listings
 
@@ -611,7 +617,6 @@ async def scrape_list_page(browser, config):
 async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-
         sem = asyncio.Semaphore(MAX_CONCURRENT_SITES)
 
         async def run(conf):
@@ -621,11 +626,10 @@ async def main():
         results = await asyncio.gather(*[run(c) for c in SCRAPER_CONFIG])
         flat = [x for sub in results for x in sub]
 
-        with open("data.json", "w", encoding="utf-8") as f:
-            json.dump(flat, f, ensure_ascii=False, indent=2)
+        with open("data.json","w",encoding="utf-8") as f:
+            json.dump(flat,f,ensure_ascii=False,indent=2)
 
         print(f"\n✅ Klaar! {len(flat)} panden gescraped.")
-
         await browser.close()
 
 if __name__ == "__main__":
