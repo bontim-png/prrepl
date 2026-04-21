@@ -40,7 +40,9 @@ SCRAPER_CONFIG = [
 
 async def scrape_site(browser, config):
     site_id = config["id"]
-    context = await browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+    context = await browser.new_context(
+        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    )
     page = await context.new_page()
     results = []
 
@@ -49,37 +51,81 @@ async def scrape_site(browser, config):
         await asyncio.sleep(2)
         content = await page.content()
         soup = BeautifulSoup(content, 'html.parser')
-        
+
         links = soup.find_all('a', href=True)
+
         for a in links:
-            if len(results) >= 10: break # LIMIET VAN 10
-            
+            if len(results) >= 10:
+                break
+
             href = a['href']
-            if re.search(config["pattern"], href, re.IGNORECASE):
-                full_url = href if href.startswith('http') else config["base"] + href
-                
-                # We vullen de velden in als "N/A" of "Onbekend" conform jouw verzoek
-                # Diepere data-extractie per pagina kan later worden toegevoegd
-                entry = {
-                    "Bron": site_id,
-                    "Plaats": "Onbekend",
-                    "Nieuw?": "Nee",
-                    "Prijs": "N/A",
-                    "m2 Binnen": "N/A",
-                    "m2 Buiten": "N/A",
-                    "Slaapkamers": "N/A",
-                    "URL": full_url
-                }
-                if entry not in results:
-                    results.append(entry)
-        
+            if not re.search(config["pattern"], href, re.IGNORECASE):
+                continue
+
+            full_url = href if href.startswith('http') else config["base"] + href
+
+            # -----------------------------
+            # PRIJS DETECTIE
+            # -----------------------------
+            raw_text = a.get_text(" ", strip=True)
+            parent_text = a.parent.get_text(" ", strip=True) if a.parent else ""
+            combined = raw_text + " " + parent_text
+
+            price_match = re.search(r"(\d[\d\s\.]*\d)\s*€", combined)
+            prijs = price_match.group(0) if price_match else "N/A"
+
+            # -----------------------------
+            # FOTO DETECTIE
+            # -----------------------------
+            foto = None
+
+            # 1) img binnen de link
+            img = a.find("img")
+            if img and img.get("src"):
+                foto = img["src"]
+
+            # 2) img in de parent
+            if not foto and a.parent:
+                img = a.parent.find("img")
+                if img and img.get("src"):
+                    foto = img["src"]
+
+            # 3) fallback: zoek eerste img in de buurt
+            if not foto:
+                img = soup.find("img")
+                if img and img.get("src"):
+                    foto = img["src"]
+
+            # 4) absolute URL maken
+            if foto and not foto.startswith("http"):
+                foto = config["base"].rstrip("/") + "/" + foto.lstrip("/")
+
+            entry = {
+                "Bron": site_id,
+                "Plaats": "Onbekend",
+                "Nieuw?": "Nee",
+                "Prijs": prijs,
+                "m2 Binnen": "N/A",
+                "m2 Buiten": "N/A",
+                "Slaapkamers": "N/A",
+                "URL": full_url,
+                "Foto": foto or "N/A"
+            }
+
+            if entry not in results:
+                results.append(entry)
+
         print(f"✓ {site_id}: {len(results)} gevonden.")
+
     except Exception as e:
         print(f"✗ Fout bij {site_id}: {e}")
+
     finally:
         await page.close()
         await context.close()
+
     return results
+
 
 async def main():
     async with async_playwright() as p:
