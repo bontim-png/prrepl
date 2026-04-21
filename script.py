@@ -1,12 +1,11 @@
 import asyncio
 import json
 import re
-from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 
 MAX_LISTINGS_PER_SITE = 8
-MAX_CONCURRENT_SITES = 3  # mag wat hoger, we doen alleen lijstpagina's
+MAX_CONCURRENT_SITES = 3
 
 SCRAPER_CONFIG = [
     {
@@ -196,34 +195,39 @@ SCRAPER_CONFIG = [
         "pattern": r"annonce-vente",
     },
 ]
-
-
+# ---------------------------------------------------------
+# URL FIX
+# ---------------------------------------------------------
 def fix_url(url, base):
     if not url:
         return None
+    url = url.strip()
+    if url.startswith("//"):
+        return "https:" + url
     if not url.startswith("http"):
         return base.rstrip("/") + "/" + url.lstrip("/")
     return url
 
 
-# ------------------------------
-# PRICE EXTRACTION
-# ------------------------------
+# ---------------------------------------------------------
+# PRICE EXTRACTION (NIEUWE SUPER-REGEX)
+# ---------------------------------------------------------
 def extract_price(text):
     if not text:
         return "N/A"
-    matches = re.findall(r"(\d[\d\s\.]{3,})\s*€", text)
+    # pakt: 385,000 € / 1 490 000 € / 129 000 € / 552.500 €
+    matches = re.findall(r"([\d\.\,\s ]+)\s*€", text)
     if not matches:
         return "N/A"
-    return f"{matches[-1].strip()} €"
+    return matches[-1].replace(" ", " ").strip() + " €"
 
 
-# ------------------------------
+# ---------------------------------------------------------
 # IMAGE FILTERING
-# ------------------------------
+# ---------------------------------------------------------
 def is_bad_image(src):
     src = src.lower()
-    bad = ["logo", "icon", "svg", "placeholder", "sprite", "loader", "blank", "ondulation"]
+    bad = ["logo", "icon", "svg", "placeholder", "sprite", "loader", "blank"]
     return any(b in src for b in bad)
 
 
@@ -246,10 +250,8 @@ def extract_image(card, base):
             return fix_url(first, base)
 
     # background-image
-    divs = card.find_all("div", style=True)
-    for d in divs:
-        style = d.get("style", "")
-        m = re.search(r'url\((.*?)\)', style)
+    for d in card.find_all("div", style=True):
+        m = re.search(r'url\((.*?)\)', d.get("style", ""))
         if m:
             src = m.group(1).strip('"\'')
             if not is_bad_image(src):
@@ -258,9 +260,9 @@ def extract_image(card, base):
     return None
 
 
-# ------------------------------
-# TITLE EXTRACTION
-# ------------------------------
+# ---------------------------------------------------------
+# GENERIC TITLE
+# ---------------------------------------------------------
 def extract_title(card, a):
     for tag in ["h1", "h2", "h3"]:
         h = card.find(tag)
@@ -283,79 +285,167 @@ def extract_title(card, a):
     return "Onbekend"
 
 
-# ------------------------------
+# ---------------------------------------------------------
 # LISTING VALIDATION
-# ------------------------------
-def looks_like_listing(card_text):
-    return bool(re.search(r"\d[\d\s\.]{3,}\s*€", card_text))
+# ---------------------------------------------------------
+def looks_like_listing(text):
+    return bool(re.search(r"[\d\.\,\s ]+€", text))
 
 
-# ------------------------------
-# FIND CARD FOR ANCHOR
-# ------------------------------
+# ---------------------------------------------------------
+# SITE-SPECIFIEKE PARSERS
+# ---------------------------------------------------------
+
+# --- LOT IMMOCO ---
+def parse_lot_immoco(card, base):
+    a = card.select_one("h1 a")
+    url = fix_url(a["href"], base) if a else None
+
+    titel = a.get_text(strip=True) if a else "Onbekend"
+
+    price_el = card.select_one("span[itemprop='price']")
+    prijs = price_el.get("content") + " €" if price_el else "N/A"
+
+    img = card.select_one("div.panel-heading img")
+    foto = fix_url(img["src"], base) if img else "N/A"
+
+    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+
+
+# --- QUERCY GASC OGNE ---
+def parse_quercygascogne(card, base):
+    a = card.select_one("a.property__link")
+    url = fix_url(a["href"], base) if a else None
+
+    title_el = card.select_one(".property__title h2 span")
+    titel = title_el.get_text(strip=True) if title_el else "Onbekend"
+
+    price_el = card.select_one(".property__price span")
+    prijs = price_el.get_text(strip=True) if price_el else "N/A"
+
+    img = card.select_one(".property__visual img")
+    foto = fix_url(img.get("data-src") or img.get("src"), base) if img else "N/A"
+
+    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+
+
+# --- MOULY ---
+def parse_mouly(card, base):
+    a = card.select_one("a.item__title")
+    url = fix_url(a["href"], base) if a else None
+
+    title_el = card.select_one(".title__content-2")
+    titel = title_el.get_text(strip=True) if title_el else "Onbekend"
+
+    price_el = card.select_one(".item__price .__price-value")
+    prijs = price_el.get_text(strip=True) if price_el else "N/A"
+
+    img = card.select_one(".decorate__img")
+    foto = fix_url(img["src"], base) if img else "N/A"
+
+    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+
+
+# --- WHEELER PROPERTY ---
+def parse_wheeler(card, base):
+    a = card.select_one("a.jet-listing-dynamic-link__link")
+    url = fix_url(a["href"], base) if a else None
+
+    title_el = card.select_one(".wmc-listing-title .jet-listing-dynamic-link__label")
+    titel = title_el.get_text(strip=True) if title_el else "Onbekend"
+
+    price_el = card.select_one(".jet-listing-dynamic-field__content")
+    prijs = extract_price(price_el.get_text(" ", strip=True)) if price_el else "N/A"
+
+    img = card.select_one("img")
+    foto = fix_url(img["src"], base) if img else "N/A"
+
+    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+
+
+# --- AGENCE ELEONOR ---
+def parse_eleonor(card, base):
+    a = card if card.name == "a" else card.find("a", href=True)
+    url = fix_url(a["href"], base) if a else None
+
+    img = card.select_one("img.propertiesPicture")
+    foto = fix_url(img["src"], base) if img else "N/A"
+
+    title_el = card.select_one(".title")
+    subtitle_el = card.select_one(".subtitle")
+
+    titel = ""
+    if title_el:
+        titel += title_el.get_text(" ", strip=True)
+    if subtitle_el:
+        titel += " – " + subtitle_el.get_text(" ", strip=True)
+    titel = titel.strip() if titel else "Onbekend"
+
+    price_el = card.select_one(".price")
+    prijs = extract_price(price_el.get_text(" ", strip=True)) if price_el else "N/A"
+
+    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+
+
+# ---------------------------------------------------------
+# DISPATCHER
+# ---------------------------------------------------------
+SITE_PARSERS = {
+    "lot_immoco": parse_lot_immoco,
+    "quercygascogne": parse_quercygascogne,
+    "mouly": parse_mouly,
+    "wheeler": parse_wheeler,
+    "eleonor": parse_eleonor,
+}
+
+
+# ---------------------------------------------------------
+# CARD DETECTION
+# ---------------------------------------------------------
 def find_card_for_anchor(soup, a, config):
-    # 1) site-specifieke selector
     sel = config.get("card_selector")
     if sel:
-        # neem de dichtstbijzijnde ancestor die aan de selector voldoet
-        parent = a
-        for _ in range(12):
-            if not parent:
-                break
-            if getattr(parent, "select_one", None):
-                # check of deze parent zelf matcht
-                if parent.name and parent.get("class"):
-                    # simpele check via CSS selector op het hele document
-                    # maar we willen alleen deze parent testen
-                    # daarom: vergelijk classes handmatig
-                    # (we gaan ervan uit dat sel een simpele class selector is)
-                    pass
-            parent = parent.parent
-
-        # eenvoudiger: direct via soup.find_all en kijken of a erin zit
         for card in soup.select(sel):
             if card.find("a", href=a.get("href")):
                 return card
 
-    # 2) generiek: omhoog klimmen
-    card = a
-    for _ in range(6):
-        if not card.parent:
+    # fallback: climb
+    node = a
+    for _ in range(8):
+        if not node.parent:
             break
-        card = card.parent
-        if card.name in ("article", "li", "div", "section"):
-            break
-    return card
+        node = node.parent
+        if node.name in ("article", "li", "section"):
+            return node
+    return a.parent
 
 
-# ------------------------------
+# ---------------------------------------------------------
 # SCRAPE LIST PAGE
-# ------------------------------
+# ---------------------------------------------------------
 async def scrape_list_page(browser, config):
     print(f"--- Start: {config['id']} ---")
 
     context = await browser.new_context(
-        viewport={"width": 1280, "height": 800},
-        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        viewport={"width": 1400, "height": 900},
+        user_agent="Mozilla/5.0"
     )
     page = await context.new_page()
 
-    await page.goto(config["url"], wait_until="domcontentloaded", timeout=25000)
+    await page.goto(config["url"], wait_until="domcontentloaded", timeout=30000)
 
     for _ in range(4):
         await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
         await asyncio.sleep(1)
 
-    html = await page.content()
-    soup = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(await page.content(), "html.parser")
 
     pattern = re.compile(config["pattern"], re.I)
 
     anchors = []
     for a in soup.find_all("a", href=True):
-        href = a["href"]
-        if pattern.search(href):
-            anchors.append((a, fix_url(href, config["base"])))
+        if pattern.search(a["href"]):
+            anchors.append((a, fix_url(a["href"], config["base"])))
 
     seen = set()
     unique = []
@@ -370,56 +460,52 @@ async def scrape_list_page(browser, config):
         if not card:
             continue
 
-        card_text = card.get_text(" ", strip=True)
-
-        if not looks_like_listing(card_text):
+        text = card.get_text(" ", strip=True)
+        if not looks_like_listing(text):
             continue
 
-        prijs = extract_price(card_text)
-        foto = extract_image(card, config["base"]) or "N/A"
-        titel = extract_title(card, a)
-
-        listings.append(
-            {
-                "Bron": config["id"],
-                "Titel": titel,
-                "Prijs": prijs,
-                "Foto": foto,
+        parser = SITE_PARSERS.get(config["id"])
+        if parser:
+            data = parser(card, config["base"])
+        else:
+            data = {
+                "Titel": extract_title(card, a),
+                "Prijs": extract_price(text),
+                "Foto": extract_image(card, config["base"]) or "N/A",
                 "URL": href,
             }
-        )
+
+        data["Bron"] = config["id"]
+        listings.append(data)
 
         if len(listings) >= MAX_LISTINGS_PER_SITE:
             break
 
-    print(f"  {config['id']}: {len(listings)} listings gevonden")
+    print(f"  {config['id']}: {len(listings)} listings")
     await context.close()
     return listings
 
 
-# ------------------------------
+# ---------------------------------------------------------
 # MAIN
-# ------------------------------
+# ---------------------------------------------------------
 async def main():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(
-            headless=True,
-            args=["--no-sandbox", "--disable-dev-shm-usage"],
-        )
+        browser = await p.chromium.launch(headless=True)
 
         sem = asyncio.Semaphore(MAX_CONCURRENT_SITES)
 
-        async def sem_task(conf):
+        async def run(conf):
             async with sem:
                 return await scrape_list_page(browser, conf)
 
-        all_results = await asyncio.gather(*[sem_task(c) for c in SCRAPER_CONFIG])
-        flat = [item for sub in all_results for item in sub]
+        results = await asyncio.gather(*[run(c) for c in SCRAPER_CONFIG])
+        flat = [x for sub in results for x in sub]
 
         with open("data.json", "w", encoding="utf-8") as f:
             json.dump(flat, f, ensure_ascii=False, indent=2)
 
-        print(f"\n✅ Klaar! Totaal {len(flat)} panden gescraped.")
+        print(f"\n✅ Klaar! {len(flat)} panden gescraped.")
 
         await browser.close()
 
