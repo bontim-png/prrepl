@@ -11,7 +11,7 @@ MAX_CONCURRENT_SITES = 3  # mag wat hoger, we doen alleen lijstpagina's
 SCRAPER_CONFIG = [
     {"id": "ladresse_tournon",    "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com",                          "pattern": r"/annonce/"},
     {"id": "beauxvillages",       "url": "https://beauxvillages.com/en/latest-properties?hotsheet=1",                              "base": "https://beauxvillages.com",                         "pattern": r"/property/"},
-    {"id": "lot_immoco",          "url": "https://www.lot-immoco.net/a-vendre/1",                                                  "base": "https://www.lot-immoco.net",                        "pattern": r"\.html$"},
+    {"id": "lot_immoco",          "url": "https://www.lot-immoco.net/a-vendre/1",                                                  "base": "https://www.lot-immoco.net",                        "pattern": r"^/[0-9]+-.*\.html$"},
     {"id": "pouget",              "url": "https://www.agencespouget.com/vente/1",                                                  "base": "https://www.agencespouget.com",                     "pattern": r"/vente/"},
     {"id": "human",               "url": "https://www.human-immobilier.fr/achat-maison-tarn-et-garonne?og=0&sort=date-desc",       "base": "https://www.human-immobilier.fr",                   "pattern": r"/annonce-"},
     {"id": "letuc",               "url": "https://www.letuc.com/recherche/",                                                       "base": "https://www.letuc.com",                             "pattern": r"/t[0-9]+/"},
@@ -49,7 +49,7 @@ def fix_url(url, base):
     return url
 
 # ------------------------------
-# PRICE EXTRACTION (beste versie)
+# PRICE EXTRACTION
 # ------------------------------
 def extract_price(text):
     if not text:
@@ -68,24 +68,20 @@ def is_bad_image(src):
     return any(b in src for b in bad)
 
 def extract_image(card, base):
-    # data-src
     img = card.find("img", attrs={"data-src": True})
     if img and img.get("data-src") and not is_bad_image(img["data-src"]):
         return fix_url(img["data-src"], base)
 
-    # src
     img = card.find("img", src=True)
     if img and img.get("src") and not is_bad_image(img["src"]):
         return fix_url(img["src"], base)
 
-    # srcset
     img = card.find("img", srcset=True)
     if img and img.get("srcset"):
         first = img["srcset"].split(",")[0].split()[0]
         if not is_bad_image(first):
             return fix_url(first, base)
 
-    # background-image
     divs = card.find_all("div", style=True)
     for d in divs:
         style = d.get("style", "")
@@ -101,24 +97,20 @@ def extract_image(card, base):
 # TITLE EXTRACTION
 # ------------------------------
 def extract_title(card, a):
-    # headings
     for tag in ["h1", "h2", "h3"]:
         h = card.find(tag)
         if h and h.get_text(strip=True):
             return h.get_text(strip=True)
 
-    # strong/bold
     for tag in ["strong", "b"]:
         h = card.find(tag)
         if h and h.get_text(strip=True):
             return h.get_text(strip=True)
 
-    # linktekst
     t = a.get_text(" ", strip=True)
     if t and len(t.split()) > 2:
         return t
 
-    # fallback
     txt = card.get_text(" ", strip=True)
     if txt and len(txt.split()) > 3:
         return txt[:120]
@@ -130,6 +122,33 @@ def extract_title(card, a):
 # ------------------------------
 def looks_like_listing(card_text):
     return bool(re.search(r"\d[\d\s\.]{3,}\s*€", card_text))
+
+# ------------------------------
+# CARD DETECTION (verbeterd)
+# ------------------------------
+def find_card_from_anchor(a):
+    """
+    Klim omhoog tot een 'echte' kaart:
+    - liefst <article>, <li>, <section>
+    - anders een grotere <div> met genoeg tekst
+    """
+    node = a
+    best_div = None
+
+    for _ in range(8):
+        if not node.parent:
+            break
+        node = node.parent
+
+        if node.name in ("article", "li", "section"):
+            return node
+
+        if node.name == "div":
+            text_len = len(node.get_text(" ", strip=True))
+            if text_len > 80:  # heuristiek: grotere container
+                best_div = node
+
+    return best_div or a.parent
 
 # ------------------------------
 # SCRAPE LIST PAGE
@@ -145,7 +164,6 @@ async def scrape_list_page(browser, config):
 
     await page.goto(config["url"], wait_until="domcontentloaded", timeout=25000)
 
-    # lazy-load scroll
     for _ in range(4):
         await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
         await asyncio.sleep(1)
@@ -161,7 +179,6 @@ async def scrape_list_page(browser, config):
         if pattern.search(href):
             anchors.append((a, fix_url(href, config["base"])))
 
-    # dedupe
     seen = set()
     unique = []
     for a, href in anchors:
@@ -171,15 +188,7 @@ async def scrape_list_page(browser, config):
 
     listings = []
     for a, href in unique:
-        # climb to card
-        card = a
-        for _ in range(6):
-            if not card.parent:
-                break
-            card = card.parent
-            if card.name in ("article", "li", "div", "section"):
-                break
-
+        card = find_card_from_anchor(a)
         card_text = card.get_text(" ", strip=True) if card else ""
 
         if not looks_like_listing(card_text):
