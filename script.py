@@ -4,7 +4,6 @@ import json
 from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
-
 # ─────────────────────────────────────────
 # CONFIGURATIE
 # ─────────────────────────────────────────
@@ -49,96 +48,95 @@ BATCH_SIZE = 3
 # HELPERS
 # ─────────────────────────────────────────
 
+def fix_url(url: str) -> str:
+    """Zorgt ervoor dat de URL eindigt op een slash als dat nodig is."""
+    parsed = urlparse(url)
+    # Alleen toevoegen als er geen extensie is (zoals .html of .php)
+    if not parsed.path.endswith('/') and not re.search(r'\.[a-z0-9]{2,4}$', parsed.path, re.I):
+        return url + '/'
+    return url
+
 def make_absolute(src: str, base_url: str) -> str:
-    if not src:
-        return "N/A"
-    if src.startswith("http"):
-        return src
-    if src.startswith("//"):
-        return "https:" + src
+    if not src: return "N/A"
+    if src.startswith("http"): return src
+    if src.startswith("//"): return "https:" + src
     if src.startswith("/"):
         parsed = urlparse(base_url)
         return f"{parsed.scheme}://{parsed.netloc}{src}"
     return base_url.rstrip("/") + "/" + src
 
-
 def extract_main_image(soup: BeautifulSoup, page_url: str) -> str:
-    # 1. og:image — meest betrouwbaar
+    # 1. Check og:image
     og = soup.find("meta", property="og:image")
     if og and og.get("content"):
         return make_absolute(og["content"], page_url)
 
-    # 2. Bekende gallery/slider containers
+    # 2. Uitgebreide lijst met selectors voor foto's (inclusief Franse thema's)
     for selector in [
-        "div.gallery", "div.slider", "div.carousel", "div.swiper",
-        "div.photos", "div.photo", "div.visuel", "div.main-photo",
-        "div.bien-photo", "div.property-image", "div.listing-image",
-        "figure", 'div[class*="photo"]', 'div[class*="slider"]',
-        'div[class*="gallery"]', 'div[class*="carousel"]',
+        "div.gallery", "div.slider", "div.carousel", "div.swiper-slide",
+        "div.photo", "div.visuel", "div.main-photo", "div.bien-photo",
+        "img.main-img", "img.property-image", "div.thumb", "figure img"
     ]:
-        container = soup.select_one(selector)
-        if container:
-            for img in container.find_all("img"):
-                src = img.get("src") or img.get("data-src") or img.get("data-lazy-src") or ""
-                if re.search(r"\.(jpg|jpeg|png|webp)", src, re.I):
-                    return make_absolute(src, page_url)
-
-    # 3. Eerste echte foto op de pagina
-    skip = {"logo", "icon", "sprite", "pixel", "tracking", "blank", "spacer", "avatar"}
-    for img in soup.find_all("img", src=True):
-        src = img["src"]
-        if any(s in src.lower() for s in skip):
-            continue
-        if re.search(r"\.(jpg|jpeg|png|webp)", src, re.I):
-            return make_absolute(src, page_url)
+        img = soup.select_one(selector)
+        if img:
+            # Check src, dan data-src (voor lazy loading)
+            src = img.get("src") or img.get("data-src") or img.get("data-lazy-src")
+            if src and re.search(r"\.(jpg|jpeg|png|webp)", src, re.I):
+                return make_absolute(src, page_url)
 
     return "N/A"
-
 
 # ─────────────────────────────────────────
 # DETAIL PAGINA
 # ─────────────────────────────────────────
 
 async def scrape_details(context, url: str, site_id: str) -> dict | None:
+    url = fix_url(url) # URL Fix toegepast
     try:
         page = await context.new_page()
-        await page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        await page.evaluate("window.scrollTo(0, 300)")
-        await asyncio.sleep(1)
+        # Gebruik networkidle om te zorgen dat scripts (en prijzen) geladen zijn
+        await page.goto(url, wait_until="networkidle", timeout=30000)
+        
+        # SCROLL ACTIE: Dit triggert lazy loading van foto's en prijzen
+        await page.evaluate("window.scrollTo(0, 500)")
+        await asyncio.sleep(1.5) # Wacht even op de render
 
         content = await page.content()
         await page.close()
 
         soup = BeautifulSoup(content, "html.parser")
-        text = soup.get_text(separator=" ", strip=True)
+        # Strip overtollige spaties voor betere regex match
+        text = " ".join(soup.get_text().split())
 
-        prijs  = re.search(r"(\d[\d\s.]*)\s?€", text)
+        # Verbeterde Prijs Regex: pakt "285 000 €", "285.000€" en "285000 €"
+        prijs = re.search(r"(\d[\d\s.,]*)\s?€", text)
+        
         binnen = re.search(r"(\d+)\s?m²?\s?habitable|surface\s?[:\-]\s?(\d+)\s?m²?|(\d+)\s?m²?\s?de\s?surface", text, re.I)
         buiten = re.search(r"terrain\s?[:\-]\s?(\d+[\s.]?\d*)\s?m²?|(\d+[\s.]?\d*)\s?m²?\s?de\s?terrain", text, re.I)
         kamers = re.search(r"(\d+)\s?chambre", text, re.I)
         nieuw  = bool(re.search(r"nouveau|nouveauté|new|récent|exclusivité", text, re.I))
 
+        # Titel/Plaatsbepaling
         og_title = soup.find("meta", property="og:title")
         h1 = soup.find("h1")
+        plaats = "Onbekend"
         if og_title and og_title.get("content"):
-            plaats = og_title["content"][:60]
+            plaats = og_title["content"][:80]
         elif h1:
-            plaats = h1.get_text(strip=True)[:60]
-        else:
-            plaats = "Onbekend"
+            plaats = h1.get_text(strip=True)[:80]
 
         foto = extract_main_image(soup, url)
 
         return {
-            "Bron":        site_id,
-            "Plaats":      plaats,
-            "Nieuw?":      "JA" if nieuw else "Nee",
-            "Prijs":       prijs.group(0).strip() if prijs else "N/A",
-            "m2 Binnen":   next((g for g in binnen.groups() if g), "N/A") if binnen else "N/A",
-            "m2 Buiten":   next((g for g in buiten.groups() if g), "N/A") if buiten else "N/A",
+            "Bron": site_id,
+            "Plaats": plaats,
+            "Nieuw?": "JA" if nieuw else "Nee",
+            "Prijs": prijs.group(0).replace(" ", "").strip() if prijs else "N/A",
+            "m2 Binnen": next((g for g in binnen.groups() if g), "N/A") if binnen else "N/A",
+            "m2 Buiten": next((g for g in buiten.groups() if g), "N/A") if buiten else "N/A",
             "Slaapkamers": kamers.group(1) if kamers else "N/A",
-            "Foto":        foto,
-            "URL":         url,
+            "Foto": foto,
+            "URL": url,
         }
 
     except Exception as e:
