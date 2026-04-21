@@ -1,7 +1,6 @@
 import asyncio
 import json
 import re
-import random
 from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 from playwright_stealth import stealth_async
@@ -397,7 +396,8 @@ def fix_url(url, base_url):
 async def goto_with_retry(page, url):
     for attempt in range(1, 4):
         try:
-            await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+            await page.goto(url, wait_until="domcontentloaded", timeout=25000)
+            await asyncio.sleep(2.5)  # wacht op JS-rendering
             return
         except Exception as e:
             print(f"  ! Retry {attempt}/3 voor hoofdpagina: {url}")
@@ -410,28 +410,36 @@ async def goto_with_retry(page, url):
 async def extract_listing_links(page, config):
     sel = config.get("selectors", {})
 
-    # Scroll om lazy-loaded content te activeren
-    await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-    await asyncio.sleep(1)
+    # 1. Wacht tot body bestaat
+    try:
+        await page.wait_for_selector("body", timeout=8000)
+    except:
+        pass
 
-    # 1. Custom listing container (meest betrouwbaar)
+    # 2. Lazy-load scroll in 4 stappen
+    for _ in range(4):
+        await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
+        await asyncio.sleep(1.2)
+
+    # 3. Custom listing containers
     if "listing_container" in sel:
         containers = await page.query_selector_all(sel["listing_container"])
-        links = []
+        if len(containers) > 0:
+            links = []
+            for c in containers:
+                try:
+                    a = await c.query_selector(sel.get("link", "a"))
+                    if a:
+                        href = await a.get_attribute("href")
+                        if href:
+                            links.append(fix_url(href, config["base"]))
+                except:
+                    continue
 
-        for c in containers:
-            try:
-                a = await c.query_selector(sel.get("link", "a"))
-                if a:
-                    href = await a.get_attribute("href")
-                    if href:
-                        links.append(fix_url(href, config["base"]))
-            except:
-                continue
+            if len(links) > 0:
+                return links[:MAX_LISTINGS_PER_SITE]
 
-        return links[:MAX_LISTINGS_PER_SITE]
-
-    # 2. Fallback: regex op alle <a> tags
+    # 4. Fallback: regex op alle <a> tags
     raw_links = await page.evaluate("""
         () => Array.from(document.querySelectorAll('a')).map(a => a.href)
     """)
@@ -465,11 +473,11 @@ async def scrape_details(browser, url, config):
 
     await stealth_async(page)
 
-    page.set_default_timeout(15000)
-    page.set_default_navigation_timeout(20000)
+    page.set_default_timeout(20000)
+    page.set_default_navigation_timeout(25000)
 
     try:
-        await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+        await page.goto(url, wait_until="domcontentloaded", timeout=25000)
         await page.evaluate("window.scrollTo(0, 400)")
         await asyncio.sleep(0.5)
 
@@ -537,7 +545,7 @@ async def scrape_detail_with_retry(browser, url, config):
         try:
             return await asyncio.wait_for(
                 scrape_details(browser, url, config),
-                timeout=25
+                timeout=35
             )
         except Exception as e:
             print(f"    ! Retry {attempt}/{MAX_RETRIES} voor {url}: {e}")
@@ -547,7 +555,7 @@ async def scrape_detail_with_retry(browser, url, config):
     return None
 
 # ─────────────────────────────────────────
-# SITE SCRAPER (parallel detail scraping)
+# SITE SCRAPER
 # ─────────────────────────────────────────
 async def scrape_site(browser, config):
     print(f"--- Start: {config['id']} ---")
@@ -555,8 +563,8 @@ async def scrape_site(browser, config):
     context = await browser.new_context()
     page = await context.new_page()
 
-    page.set_default_timeout(15000)
-    page.set_default_navigation_timeout(20000)
+    page.set_default_timeout(20000)
+    page.set_default_navigation_timeout(25000)
 
     results = []
 
@@ -586,7 +594,7 @@ async def scrape_site(browser, config):
     return results
 
 # ─────────────────────────────────────────
-# MAIN (parallel sites)
+# MAIN
 # ─────────────────────────────────────────
 async def main():
     async with async_playwright() as p:
