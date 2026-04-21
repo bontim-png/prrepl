@@ -11,46 +11,379 @@ from bs4 import BeautifulSoup
 # CONFIG
 # ─────────────────────────────────────────
 MAX_LISTINGS_PER_SITE = 8
-MAX_CONCURRENT_SITES = 6
+MAX_CONCURRENT_SITES = 2   # VEILIG voor GitHub Actions
 MAX_RETRIES = 3
 
-SCRAPER_CONFIG = [
-    {"id": "ladresse_tournon",    "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com",                          "pattern": r"/achat/"},
-    {"id": "beauxvillages",       "url": "https://beauxvillages.com/en/latest-properties?hotsheet=1",                              "base": "https://beauxvillages.com",                         "pattern": r"/property/"},
-    {"id": "lot_immoco",          "url": "https://www.lot-immoco.net/a-vendre/1",                                                  "base": "https://www.lot-immoco.net",                        "pattern": r"\.html$"},
-    {"id": "pouget",              "url": "https://www.agencespouget.com/vente/1",                                                  "base": "https://www.agencespouget.com",                     "pattern": r"/vente/"},
-    {"id": "human",               "url": "https://www.human-immobilier.fr/achat-maison-tarn-et-garonne?og=0&sort=date-desc",       "base": "https://www.human-immobilier.fr",                   "pattern": r"/annonce-"},
-    {"id": "letuc",               "url": "https://www.letuc.com/recherche/",                                                       "base": "https://www.letuc.com",                             "pattern": r"/t[0-9]+/"},
-    {"id": "nestenn",             "url": "https://immobilier-villeneuve-sur-lot.nestenn.com/achat-immobilier",                     "base": "https://immobilier-villeneuve-sur-lot.nestenn.com",  "pattern": r"ref-"},
-    {"id": "century21",           "url": "https://www.century21-bg-villeneuve.com/annonces/achat/",                                "base": "https://www.century21-bg-villeneuve.com",            "pattern": r"/detail/"},
-    {"id": "lot_et_garonne",      "url": "https://www.lot-et-garonne-immobilier.com/bien-a-acheter.html",                         "base": "https://www.lot-et-garonne-immobilier.com",          "pattern": r"\.html$"},
-    {"id": "valadie",             "url": "https://valadie-immobilier.com/fr/biens/a_vendre/1",                                    "base": "https://valadie-immobilier.com",                    "pattern": r"/fiche/"},
-    {"id": "villereal",           "url": "https://www.immobilier-villereal.com/fr/nos-biens-tous",                                 "base": "https://www.immobilier-villereal.com",               "pattern": r"/property/"},
-    {"id": "quercygascogne",      "url": "https://www.quercygascogne.fr/ventes/1",                                                 "base": "https://www.quercygascogne.fr",                     "pattern": r"/[0-9]+-"},
-    {"id": "xavier",              "url": "https://xavierimmobilier.fr/gb/15-properties-up-to-350000",                             "base": "https://xavierimmobilier.fr",                       "pattern": r"/[0-9]+-"},
-    {"id": "wheeler",             "url": "https://wheeler-property.com/for-sale/",                                                 "base": "https://wheeler-property.com",                      "pattern": r"/properties/"},
-    {"id": "mouly",               "url": "https://www.mouly-immobilier.com/recherche/",                                            "base": "https://www.mouly-immobilier.com",                  "pattern": r"/[0-9]+-"},
-    {"id": "soleil47",            "url": "https://www.soleil-immobilier-47.com/vente/1",                                          "base": "https://www.soleil-immobilier-47.com",              "pattern": r"/[0-9]+-"},
-    {"id": "marin",               "url": "https://www.immobilier-marin.com/vente/1",                                              "base": "https://www.immobilier-marin.com",                  "pattern": r"/[0-9]+-"},
-    {"id": "factor",              "url": "https://www.factorimmo.com/nouveautes/1",                                                "base": "https://www.factorimmo.com",                        "pattern": r"/[0-9]+-"},
-    {"id": "pousset",             "url": "https://www.immobilier-pousset.fr/vente/1",                                             "base": "https://www.immobilier-pousset.fr",                 "pattern": r"/vente/"},
-    {"id": "arobase",             "url": "https://www.arobaseimmobilier.fr/vente/1",                                              "base": "https://www.arobaseimmobilier.fr",                  "pattern": r"/[0-9]+-"},
-    {"id": "immo46",              "url": "https://www.immo46.com/fr/a-vendre",                                                    "base": "https://www.immo46.com",                            "pattern": r",P[0-9]"},
-    {"id": "pleinsud",            "url": "https://www.pleinsudimmo.fr/nos-biens-immobiliers",                                     "base": "https://www.pleinsudimmo.fr",                       "pattern": r"\.html$"},
-    {"id": "signature_agenaise",  "url": "https://www.la-signature-agenaise.fr/fr/vente?orderBy=2",                              "base": "https://www.la-signature-agenaise.fr",              "pattern": r"/fr/vente/"},
-    {"id": "maisondelimmobilier", "url": "https://www.maisondelimmobilier.com/catalog/advanced_search_result.php?C_28=Vente",     "base": "https://www.maisondelimmobilier.com",               "pattern": r"fiches"},
-    {"id": "guy_hoquet",          "url": "https://www.guy-hoquet.com/biens/result#1&f20=46_c2,47_c2,82_c2",                      "base": "https://www.guy-hoquet.com",                        "pattern": r"/bien/"},
-    {"id": "eleonor",             "url": "https://www.agence-eleonor.fr/fr/vente",                                                "base": "https://www.agence-eleonor.fr",                     "pattern": r"/fr/vente/"},
-    {"id": "ledil",               "url": "https://ledil.immo/recherche/tous-types/47+46+82?",                                     "base": "https://ledil.immo",                                "pattern": r"/bien/"},
-    {"id": "charles_loftie",      "url": "https://charles-loftie-immo.com/fr/recherche",                                         "base": "https://charles-loftie-immo.com",                   "pattern": r"/fr/selection"},
-    {"id": "prada_prestige",      "url": "https://prada-prestige-immo.fr/notre-selection",                                        "base": "https://prada-prestige-immo.fr",                    "pattern": r"detail"},
-    {"id": "orpi",                "url": "https://www.orpi.com/recherche/buy?sort=date-down",                                     "base": "https://www.orpi.com",                              "pattern": r"annonce-vente"},
-]
+# ← PLAATS HIER DE SCRAPER_CONFIG MET SELECTORS DIE IK JE GAF
 
+SCRAPER_CONFIG = [
+    {
+        "id": "ladresse_tournon",
+        "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc",
+        "base": "https://www.ladresse.com",
+        "pattern": r"/achat/",
+        "selectors": {
+            "listing_container": "div.property-item",
+            "link": "a.property-item__link",
+            "price": ".property-item__price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "beauxvillages",
+        "url": "https://beauxvillages.com/en/latest-properties?hotsheet=1",
+        "base": "https://beauxvillages.com",
+        "pattern": r"/property/",
+        "selectors": {
+            "listing_container": "div.hotsheet-item",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "lot_immoco",
+        "url": "https://www.lot-immoco.net/a-vendre/1",
+        "base": "https://www.lot-immoco.net",
+        "pattern": r"\.html$",
+        "selectors": {
+            "listing_container": "div.annonce",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "pouget",
+        "url": "https://www.agencespouget.com/vente/1",
+        "base": "https://www.agencespouget.com",
+        "pattern": r"/vente/",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "human",
+        "url": "https://www.human-immobilier.fr/achat-maison-tarn-et-garonne?og=0&sort=date-desc",
+        "base": "https://www.human-immobilier.fr",
+        "pattern": r"/annonce-",
+        "selectors": {
+            "listing_container": ".annonce",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "letuc",
+        "url": "https://www.letuc.com/recherche/",
+        "base": "https://www.letuc.com",
+        "pattern": r"/t[0-9]+/",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "nestenn",
+        "url": "https://immobilier-villeneuve-sur-lot.nestenn.com/achat-immobilier",
+        "base": "https://immobilier-villeneuve-sur-lot.nestenn.com",
+        "pattern": r"ref-",
+        "selectors": {
+            "listing_container": ".item",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "century21",
+        "url": "https://www.century21-bg-villeneuve.com/annonces/achat/",
+        "base": "https://www.century21-bg-villeneuve.com",
+        "pattern": r"/detail/",
+        "selectors": {
+            "listing_container": ".annonce",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "lot_et_garonne",
+        "url": "https://www.lot-et-garonne-immobilier.com/bien-a-acheter.html",
+        "base": "https://www.lot-et-garonne-immobilier.com",
+        "pattern": r"\.html$",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "valadie",
+        "url": "https://valadie-immobilier.com/fr/biens/a_vendre/1",
+        "base": "https://valadie-immobilier.com",
+        "pattern": r"/fiche/",
+        "selectors": {
+            "listing_container": ".property",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "villereal",
+        "url": "https://www.immobilier-villereal.com/fr/nos-biens-tous",
+        "base": "https://www.immobilier-villereal.com",
+        "pattern": r"/property/",
+        "selectors": {
+            "listing_container": ".property",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "quercygascogne",
+        "url": "https://www.quercygascogne.fr/ventes/1",
+        "base": "https://www.quercygascogne.fr",
+        "pattern": r"/[0-9]+-",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "xavier",
+        "url": "https://xavierimmobilier.fr/gb/15-properties-up-to-350000",
+        "base": "https://xavierimmobilier.fr",
+        "pattern": r"/[0-9]+-",
+        "selectors": {
+            "listing_container": ".product",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "wheeler",
+        "url": "https://wheeler-property.com/for-sale/",
+        "base": "https://wheeler-property.com",
+        "pattern": r"/properties/",
+        "selectors": {
+            "listing_container": ".property-card",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "mouly",
+        "url": "https://www.mouly-immobilier.com/recherche/",
+        "base": "https://www.mouly-immobilier.com",
+        "pattern": r"/[0-9]+-",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "soleil47",
+        "url": "https://www.soleil-immobilier-47.com/vente/1",
+        "base": "https://www.soleil-immobilier-47.com",
+        "pattern": r"/[0-9]+-",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "marin",
+        "url": "https://www.immobilier-marin.com/vente/1",
+        "base": "https://www.immobilier-marin.com",
+        "pattern": r"/[0-9]+-",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "factor",
+        "url": "https://www.factorimmo.com/nouveautes/1",
+        "base": "https://www.factorimmo.com",
+        "pattern": r"/[0-9]+-",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "pousset",
+        "url": "https://www.immobilier-pousset.fr/vente/1",
+        "base": "https://www.immobilier-pousset.fr",
+        "pattern": r"/vente/",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "arobase",
+        "url": "https://www.arobaseimmobilier.fr/vente/1",
+        "base": "https://www.arobaseimmobilier.fr",
+        "pattern": r"/[0-9]+-",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "immo46",
+        "url": "https://www.immo46.com/fr/a-vendre",
+        "base": "https://www.immo46.com",
+        "pattern": r",P[0-9]",
+        "selectors": {
+            "listing_container": ".property",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "pleinsud",
+        "url": "https://www.pleinsudimmo.fr/nos-biens-immobiliers",
+        "base": "https://www.pleinsudimmo.fr",
+        "pattern": r"\.html$",
+        "selectors": {
+            "listing_container": ".bien",
+            "link": "a",
+            "price": ".prix",
+            "image": "img"
+        }
+    },
+    {
+        "id": "signature_agenaise",
+        "url": "https://www.la-signature-agenaise.fr/fr/vente?orderBy=2",
+        "base": "https://www.la-signature-agenaise.fr",
+        "pattern": r"/fr/vente/",
+        "selectors": {
+            "listing_container": ".property",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "maisondelimmobilier",
+        "url": "https://www.maisondelimmobilier.com/catalog/advanced_search_result.php?C_28=Vente",
+        "base": "https://www.maisondelimmobilier.com",
+        "pattern": r"fiches",
+        "selectors": {
+            "listing_container": ".product",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "guy_hoquet",
+        "url": "https://www.guy-hoquet.com/biens/result#1&f20=46_c2,47_c2,82_c2",
+        "base": "https://www.guy-hoquet.com",
+        "pattern": r"/bien/",
+        "selectors": {
+            "listing_container": ".annonce",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "eleonor",
+        "url": "https://www.agence-eleonor.fr/fr/vente",
+        "base": "https://www.agence-eleonor.fr",
+        "pattern": r"/fr/vente/",
+        "selectors": {
+            "listing_container": ".property",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "ledil",
+        "url": "https://ledil.immo/recherche/tous-types/47+46+82?",
+        "base": "https://ledil.immo",
+        "pattern": r"/bien/",
+        "selectors": {
+            "listing_container": ".property",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "charles_loftie",
+        "url": "https://charles-loftie-immo.com/fr/recherche",
+        "base": "https://charles-loftie-immo.com",
+        "pattern": r"/fr/selection",
+        "selectors": {
+            "listing_container": ".property",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "prada_prestige",
+        "url": "https://prada-prestige-immo.fr/notre-selection",
+        "base": "https://prada-prestige-immo.fr",
+        "pattern": r"detail",
+        "selectors": {
+            "listing_container": ".property",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    },
+    {
+        "id": "orpi",
+        "url": "https://www.orpi.com/recherche/buy?sort=date-down",
+        "base": "https://www.orpi.com",
+        "pattern": r"annonce-vente",
+        "selectors": {
+            "listing_container": ".search-card",
+            "link": "a",
+            "price": ".price",
+            "image": "img"
+        }
+    }
+]
 # ─────────────────────────────────────────
 # URL FIX
 # ─────────────────────────────────────────
 def fix_url(url, base_url):
+    if not url:
+        return None
     if not url.startswith("http"):
         url = base_url.rstrip("/") + "/" + url.lstrip("/")
     parsed = urlparse(url)
@@ -59,14 +392,46 @@ def fix_url(url, base_url):
     return url
 
 # ─────────────────────────────────────────
+# HOOFDPAGINA RETRY
+# ─────────────────────────────────────────
+async def goto_with_retry(page, url):
+    for attempt in range(1, 4):
+        try:
+            await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+            return
+        except Exception as e:
+            print(f"  ! Retry {attempt}/3 voor hoofdpagina: {url}")
+            await asyncio.sleep(1.5 * attempt)
+    raise Exception(f"Hoofdpagina definitief mislukt: {url}")
+
+# ─────────────────────────────────────────
 # EXTRACT 8 NIEUWSTE LINKS (DOM-volgorde)
 # ─────────────────────────────────────────
 async def extract_listing_links(page, config):
+    sel = config.get("selectors", {})
+
     # Scroll om lazy-loaded content te activeren
     await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
     await asyncio.sleep(1)
 
-    # Alle links in DOM-volgorde
+    # 1. Custom listing container (meest betrouwbaar)
+    if "listing_container" in sel:
+        containers = await page.query_selector_all(sel["listing_container"])
+        links = []
+
+        for c in containers:
+            try:
+                a = await c.query_selector(sel.get("link", "a"))
+                if a:
+                    href = await a.get_attribute("href")
+                    if href:
+                        links.append(fix_url(href, config["base"]))
+            except:
+                continue
+
+        return links[:MAX_LISTINGS_PER_SITE]
+
+    # 2. Fallback: regex op alle <a> tags
     raw_links = await page.evaluate("""
         () => Array.from(document.querySelectorAll('a')).map(a => a.href)
     """)
@@ -82,16 +447,16 @@ async def extract_listing_links(page, config):
             seen.add(l)
             unique.append(l)
 
-    # Fix URLs
     fixed = [fix_url(l, config["base"]) for l in unique]
 
-    # Eerste 8 = nieuwste 8
     return fixed[:MAX_LISTINGS_PER_SITE]
 
 # ─────────────────────────────────────────
 # DETAIL SCRAPER (kern)
 # ─────────────────────────────────────────
-async def scrape_details(browser, url, site_id):
+async def scrape_details(browser, url, config):
+    sel = config.get("selectors", {})
+
     context = await browser.new_context(
         viewport={"width": 1280, "height": 800},
         user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
@@ -100,12 +465,11 @@ async def scrape_details(browser, url, site_id):
 
     await stealth_async(page)
 
-    page.set_default_timeout(6000)
-    page.set_default_navigation_timeout(8000)
+    page.set_default_timeout(15000)
+    page.set_default_navigation_timeout(20000)
 
     try:
-        await page.goto(url, wait_until="domcontentloaded")
-
+        await page.goto(url, wait_until="domcontentloaded", timeout=20000)
         await page.evaluate("window.scrollTo(0, 400)")
         await asyncio.sleep(0.5)
 
@@ -113,49 +477,47 @@ async def scrape_details(browser, url, site_id):
         soup = BeautifulSoup(content, "html.parser")
 
         # PRIJS
-        visible_text = await page.evaluate("() => document.body.innerText")
-        price_matches = re.findall(r"(\d[\d\s.]*)\s?€|€\s?(\d[\d\s.]*)", visible_text)
-
         prijs = "N/A"
-        if price_matches:
-            for m in price_matches:
-                found = m[0] or m[1]
-                clean = re.sub(r"[^\d]", "", found)
-                if clean and int(clean) > 1000:
-                    prijs = f"{found.strip()} €"
-                    break
+        if "price" in sel:
+            el = await page.query_selector(sel["price"])
+            if el:
+                prijs = (await el.inner_text()).strip()
+        else:
+            visible_text = await page.evaluate("() => document.body.innerText")
+            price_matches = re.findall(r"(\d[\d\s.]*)\s?€|€\s?(\d[\d\s.]*)", visible_text)
+            if price_matches:
+                for m in price_matches:
+                    found = m[0] or m[1]
+                    clean = re.sub(r"[^\d]", "", found)
+                    if clean and int(clean) > 1000:
+                        prijs = f"{found.strip()} €"
+                        break
 
         # FOTO
         foto = "N/A"
-        og = soup.find("meta", property="og:image")
-        if og and og.get("content"):
-            foto = og["content"]
+        if "image" in sel:
+            img = await page.query_selector(sel["image"])
+            if img:
+                src = await img.get_attribute("src")
+                if src:
+                    foto = fix_url(src, config["base"])
         else:
-            imgs = await page.query_selector_all("img")
-            max_area = 0
-            for img in imgs:
-                try:
-                    box = await img.bounding_box()
-                    if box:
-                        area = box["width"] * box["height"]
-                        src = await img.get_attribute("src")
-                        if area > max_area and src and "http" in src:
-                            max_area = area
-                            foto = src
-                except:
-                    pass
+            og = soup.find("meta", property="og:image")
+            if og and og.get("content"):
+                foto = og["content"]
 
         # PLAATS
         h1 = soup.find("h1")
         plaats = h1.get_text(strip=True)[:100] if h1 else "Onbekend"
 
         # M2
+        visible_text = await page.evaluate("() => document.body.innerText")
         m2_match = re.search(r"(\d+)\s?m²", visible_text)
         m2 = m2_match.group(1) if m2_match else "N/A"
 
         await context.close()
         return {
-            "Bron": site_id,
+            "Bron": config["id"],
             "Plaats": plaats,
             "Prijs": prijs,
             "m2 Binnen": m2,
@@ -170,12 +532,12 @@ async def scrape_details(browser, url, site_id):
 # ─────────────────────────────────────────
 # DETAIL SCRAPER MET RETRY
 # ─────────────────────────────────────────
-async def scrape_detail_with_retry(browser, url, site_id):
+async def scrape_detail_with_retry(browser, url, config):
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             return await asyncio.wait_for(
-                scrape_details(browser, url, site_id),
-                timeout=12
+                scrape_details(browser, url, config),
+                timeout=25
             )
         except Exception as e:
             print(f"    ! Retry {attempt}/{MAX_RETRIES} voor {url}: {e}")
@@ -193,26 +555,28 @@ async def scrape_site(browser, config):
     context = await browser.new_context()
     page = await context.new_page()
 
-    page.set_default_timeout(6000)
-    page.set_default_navigation_timeout(8000)
+    page.set_default_timeout(15000)
+    page.set_default_navigation_timeout(20000)
 
     results = []
 
     try:
-        await page.goto(config["url"], wait_until="domcontentloaded")
+        await goto_with_retry(page, config["url"])
 
         links = await extract_listing_links(page, config)
         print(f"  {config['id']}: {len(links)} nieuwste links gevonden")
 
         tasks = [
-            scrape_detail_with_retry(browser, link, config["id"])
+            scrape_detail_with_retry(browser, link, config)
             for link in links
         ]
 
-        detail_results = await asyncio.gather(*tasks)
+        detail_results = await asyncio.gather(*tasks, return_exceptions=True)
 
         for r in detail_results:
-            if r:
+            if isinstance(r, Exception):
+                print("    ! Detail fout:", r)
+            elif r:
                 results.append(r)
 
     except Exception as e:
@@ -241,7 +605,7 @@ async def main():
 
         flat = [item for sub in all_results for item in sub]
 
-        with open("data2.json", "w", encoding="utf-8") as f:
+        with open("data.json", "w", encoding="utf-8") as f:
             json.dump(flat, f, ensure_ascii=False, indent=2)
 
         print(f"\n✅ Klaar! Totaal {len(flat)} huizen gescraped.")
