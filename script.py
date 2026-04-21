@@ -32,24 +32,28 @@ SCRAPER_CONFIG = [
         "pattern": r"\.html$",
         "card_selector": "div.panel.panel-default",
     },
-    {
-        "id": "pouget",
-        "url": "https://www.agencespouget.com/vente/1",
-        "base": "https://www.agencespouget.com",
-        "pattern": r"/vente/",
-    },
+{
+    "id": "pouget",
+    "url": "...",
+    "base": "...",
+    "pattern": r"/vente/",
+    "card_selector": ".property, .item, article, .annonce",
+}
+
     {
         "id": "human",
         "url": "https://www.human-immobilier.fr/achat-maison-tarn-et-garonne?og=0&sort=date-desc",
         "base": "https://www.human-immobilier.fr",
         "pattern": r"/annonce-",
     },
-    {
-        "id": "letuc",
-        "url": "https://www.letuc.com/recherche/",
-        "base": "https://www.letuc.com",
-        "pattern": r"/t[0-9]+/",
-    },
+ {
+    "id": "letuc",
+    "url": "https://www.letuc.com/vente",
+    "base": "https://www.letuc.com",
+    "pattern": r"/vente/",
+    "card_selector": ".property, .item, article, .annonce",
+},
+
     {
         "id": "nestenn",
         "url": "https://immobilier-villeneuve-sur-lot.nestenn.com/achat-immobilier",
@@ -100,7 +104,8 @@ SCRAPER_CONFIG = [
         "url": "https://wheeler-property.com/for-sale/",
         "base": "https://wheeler-property.com",
         "pattern": r"/properties/",
-        "card_selector": "div.e-con-inner",
+        "card_selector": ".jet-listing-grid__item, .jet-listing-dynamic-link__link, article",
+
     },
     {
         "id": "mouly",
@@ -335,15 +340,37 @@ def parse_mouly(card, base):
     return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_wheeler(card, base):
+    # URL
     a = card.select_one("a.jet-listing-dynamic-link__link")
     url = fix_url(a["href"], base) if a else None
-    title_el = card.select_one(".wmc-listing-title .jet-listing-dynamic-link__label")
+
+    # Titel
+    title_el = card.select_one(".jet-listing-dynamic-link__label, h2, .title")
     titel = title_el.get_text(strip=True) if title_el else ""
+
+    # Prijs
     price_el = card.select_one(".jet-listing-dynamic-field__content")
-    prijs = price_el.get_text(" ", strip=True) if price_el else card.get_text(" ", strip=True)
+    prijs = price_el.get_text(" ", strip=True) if price_el else ""
+
+    # Foto
     img = card.select_one("img")
-    foto = fix_url(img["src"], base) if img else extract_image(card, base)
-    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
+    foto = None
+    if img:
+        foto = fix_url(
+            img.get("data-src")
+            or img.get("data-lazy-src")
+            or img.get("src")
+            or img.get("srcset", "").split(" ")[0],
+            base
+        )
+
+    return {
+        "Titel": titel,
+        "PrijsRaw": prijs,
+        "Foto": foto,
+        "URL": url,
+    }
+
 
 def parse_eleonor(card, base):
     a = card if card.name == "a" else card.find("a", href=True)
@@ -573,6 +600,87 @@ def parse_prada_prestige(card, base):
         "Foto": foto,
         "URL": url,
     }
+def parse_letuc(card, base):
+    # URL
+    a = card.find("a", href=True)
+    url = fix_url(a["href"], base) if a else None
+
+    # Titel
+    title_el = card.select_one("h2, .property-title, .title")
+    titel = title_el.get_text(strip=True) if title_el else ""
+
+    # PRIJS — Letuc heeft 3 varianten:
+    # 1) Koop: <span class="__price-value"> 249 000 € </span>
+    # 2) Huur: <span class="__price-value"> 650 € CC </span>
+    # 3) Referentie-ID: 115 553 335 (moet genegeerd worden)
+
+    prijs = ""
+
+    # 1) Koopprijs
+    price_el = card.select_one(".__price-value, .price-value")
+    if price_el:
+        raw = price_el.get_text(" ", strip=True)
+
+        # referentie-ID’s eruit filteren (te lang)
+        if len(raw.replace(" ", "")) > 9:
+            raw = ""
+
+        # huur uitsluiten (optioneel)
+        if any(x in raw.lower() for x in ["cc", "hc", "/mois", "mois"]):
+            raw = ""
+
+        prijs = raw
+
+    # Foto
+    img = card.select_one("img")
+    foto = None
+    if img:
+        foto = fix_url(
+            img.get("data-src")
+            or img.get("data-lazy-src")
+            or img.get("src")
+            or img.get("srcset", "").split(" ")[0],
+            base
+        )
+
+    return {
+        "Titel": titel,
+        "PrijsRaw": prijs,
+        "Foto": foto,
+        "URL": url,
+    }
+
+def parse_pouget(card, base):
+    # URL
+    a = card.find("a", href=True)
+    url = fix_url(a["href"], base) if a else None
+
+    # Titel
+    title_el = card.select_one("h2, .title, .property-title")
+    titel = title_el.get_text(strip=True) if title_el else ""
+
+    # Prijs
+    price_el = card.select_one(".price, .property-price, .item-price")
+    prijs = price_el.get_text(" ", strip=True) if price_el else ""
+
+    # Foto
+    img = card.select_one("img")
+    foto = None
+    if img:
+        foto = fix_url(
+            img.get("data-src")
+            or img.get("data-lazy-src")
+            or img.get("src")
+            or img.get("srcset", "").split(" ")[0],
+            base
+        )
+
+    return {
+        "Titel": titel,
+        "PrijsRaw": prijs,
+        "Foto": foto,
+        "URL": url,
+    }
 
 
 SITE_PARSERS = {
@@ -589,6 +697,8 @@ SITE_PARSERS = {
     "guy_hoquet": parse_guy_hoquet,
     "charles_loftie": parse_charles_loftie,
     "prada_prestige": parse_prada_prestige,
+    "letuc": parse_letuc,
+    "pouget": parse_pouget,
 
 }
 
@@ -657,12 +767,22 @@ def detect_place_from_text(text):
     return None
 
 def detect_place(url, title, text):
+    # -----------------------------------------
+    # SITE-SPECIFIEKE OVERRIDES
+    # -----------------------------------------
+    if url and "lot-immoco.net" in url:
+        return "Lot"
+
+    # -----------------------------------------
+    # GENERIEKE DETECTIE
+    # -----------------------------------------
     return (
         detect_place_from_url(url)
         or detect_place_from_title(title)
         or detect_place_from_text(text)
         or "Onbekend"
     )
+
 
 # ---------------------------------------------------------
 # PRIJS-DETECTIE
@@ -829,12 +949,24 @@ async def scrape_list_page(browser, config):
         if pattern.search(a["href"]):
             anchors.append((a, fix_url(a["href"], config["base"])))
 
+ # SPECIAL FIX: Wheeler duplicates cards in DOM
+if site_id == "wheeler":
     seen = set()
     unique = []
-    for a,href in anchors:
+    for a, href in anchors:
         if href not in seen:
             seen.add(href)
-            unique.append((a,href))
+            unique.append((a, href))
+    # limit to real cards (JetEngine repeats 6x)
+    unique = unique[:6]
+else:
+    seen = set()
+    unique = []
+    for a, href in anchors:
+        if href not in seen:
+            seen.add(href)
+            unique.append((a, href))
+
 
     listings = []
     parser = SITE_PARSERS.get(site_id)
@@ -859,12 +991,16 @@ async def scrape_list_page(browser, config):
             prijs_raw = text
             foto = extract_image(card, config["base"]) or "N/A"
             url = href
-
+         if any(x in prijs_raw.lower() for x in ["cc", "hc", "/mois", "mois", "€/mois"]):
+            continue
         prijs = extract_price(prijs_raw)
         m2_binnen, m2_buiten = extract_m2(text)
         slaapkamers = extract_bedrooms(text)
         nieuw = detect_new(text + " " + titel)
         plaats = detect_place(url, titel, text)
+        # FILTER: huur uitsluiten
+    
+       
 
         listings.append({
             "Bron": site_id,
