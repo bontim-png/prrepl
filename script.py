@@ -1,7 +1,7 @@
 import asyncio
 import json
 import re
-from playwright.async_api import async_playwright
+from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeoutError
 from bs4 import BeautifulSoup
 
 MAX_LISTINGS_PER_SITE = 8
@@ -93,7 +93,6 @@ SCRAPER_CONFIG = [
         "url": "https://wheeler-property.com/for-sale/",
         "base": "https://wheeler-property.com",
         "pattern": r"/properties/",
-        # Elementor listing: we pakken de hele e-con-inner als card
         "card_selector": "div.e-con-inner",
     },
     {
@@ -101,7 +100,6 @@ SCRAPER_CONFIG = [
         "url": "https://www.mouly-immobilier.com/recherche/",
         "base": "https://www.mouly-immobilier.com",
         "pattern": r"/[0-9]+-",
-        # Mouly listing: article.property-listing-v2__container
         "card_selector": "article.property-listing-v2__container",
     },
     {
@@ -168,7 +166,6 @@ SCRAPER_CONFIG = [
         "id": "eleonor",
         "url": "https://www.agence-eleonor.fr/fr/vente",
         "base": "https://www.agence-eleonor.fr",
-        # belangrijk: hun detail-URL's zijn /fr/propriete/...
         "pattern": r"/fr/propriete/",
     },
     {
@@ -212,16 +209,25 @@ def fix_url(url, base):
 
 
 # ---------------------------------------------------------
-# PRICE EXTRACTION
+# PRICE EXTRACTION (verbeterd)
 # ---------------------------------------------------------
 def extract_price(text):
     if not text:
         return "N/A"
-    # pakt: 385,000 € / 1 490 000 € / 129 000 € / 552.500 €
+    # pakt alle stukken met "€"
     matches = re.findall(r"([\d\.\,\s ]+)\s*€", text)
     if not matches:
         return "N/A"
-    return matches[-1].replace(" ", " ").strip() + " €"
+
+    raw = matches[-1]  # laatste prijsfragment
+    # Neem alleen de laatste ~12 chars om rare prefixes te strippen (2650115553 335 000 € -> 3 335 000)
+    raw = raw[-12:]
+    # Hou alleen cijfers, spaties, punt, komma, smalle spatie
+    raw = re.sub(r"[^\d\.\,\s ]", "", raw)
+    raw = re.sub(r"\s+", " ", raw).strip()
+    if not raw:
+        return "N/A"
+    return raw + " €"
 
 
 # ---------------------------------------------------------
@@ -234,20 +240,24 @@ def is_bad_image(src):
 
 
 def extract_image(card, base):
+    # data-src
     img = card.find("img", attrs={"data-src": True})
     if img and img.get("data-src") and not is_bad_image(img["data-src"]):
         return fix_url(img["data-src"], base)
 
+    # src
     img = card.find("img", src=True)
     if img and img.get("src") and not is_bad_image(img["src"]):
         return fix_url(img["src"], base)
 
+    # srcset
     img = card.find("img", srcset=True)
     if img and img.get("srcset"):
         first = img["srcset"].split(",")[0].split()[0]
         if not is_bad_image(first):
             return fix_url(first, base)
 
+    # background-image
     for d in card.find_all("div", style=True):
         m = re.search(r'url\((.*?)\)', d.get("style", ""))
         if m:
@@ -294,23 +304,26 @@ def looks_like_listing(text):
 # SITE-SPECIFIEKE PARSERS
 # ---------------------------------------------------------
 
-# --- LOT IMMOCO ---
 def parse_lot_immoco(card, base):
     a = card.select_one("h1 a")
     url = fix_url(a["href"], base) if a else None
-
     titel = a.get_text(strip=True) if a else "Onbekend"
 
-    price_el = card.select_one("span[itemprop='price']")
-    prijs = price_el.get("content") + " €" if price_el else "N/A"
+    # soms is itemprop=price netjes, maar we normaliseren toch via extract_price
+    price_el = card
+    prijs = extract_price(price_el.get_text(" ", strip=True))
 
     img = card.select_one("div.panel-heading img")
-    foto = fix_url(img["src"], base) if img else "N/A"
+    foto = fix_url(img["src"], base) if img else extract_image(card, base) or "N/A"
 
-    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+    return {
+        "Titel": titel,
+        "Prijs": prijs,
+        "Foto": foto,
+        "URL": url,
+    }
 
 
-# --- QUERCY GASC OGNE ---
 def parse_quercygascogne(card, base):
     a = card.select_one("a.property__link")
     url = fix_url(a["href"], base) if a else None
@@ -318,16 +331,19 @@ def parse_quercygascogne(card, base):
     title_el = card.select_one(".property__title h2 span")
     titel = title_el.get_text(strip=True) if title_el else "Onbekend"
 
-    price_el = card.select_one(".property__price span")
-    prijs = price_el.get_text(strip=True) if price_el else "N/A"
+    prijs = extract_price(card.get_text(" ", strip=True))
 
     img = card.select_one(".property__visual img")
-    foto = fix_url(img.get("data-src") or img.get("src"), base) if img else "N/A"
+    foto = fix_url(img.get("data-src") or img.get("src"), base) if img else extract_image(card, base) or "N/A"
 
-    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+    return {
+        "Titel": titel,
+        "Prijs": prijs,
+        "Foto": foto,
+        "URL": url,
+    }
 
 
-# --- MOULY ---
 def parse_mouly(card, base):
     a = card.select_one("a.item__title")
     url = fix_url(a["href"], base) if a else None
@@ -335,16 +351,19 @@ def parse_mouly(card, base):
     title_el = card.select_one(".title__content-2")
     titel = title_el.get_text(strip=True) if title_el else "Onbekend"
 
-    price_el = card.select_one(".item__price .__price-value")
-    prijs = price_el.get_text(strip=True) if price_el else "N/A"
+    prijs = extract_price(card.get_text(" ", strip=True))
 
     img = card.select_one(".decorate__img")
-    foto = fix_url(img["src"], base) if img else "N/A"
+    foto = fix_url(img["src"], base) if img else extract_image(card, base) or "N/A"
 
-    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+    return {
+        "Titel": titel,
+        "Prijs": prijs,
+        "Foto": foto,
+        "URL": url,
+    }
 
 
-# --- WHEELER PROPERTY ---
 def parse_wheeler(card, base):
     a = card.select_one("a.jet-listing-dynamic-link__link")
     url = fix_url(a["href"], base) if a else None
@@ -352,26 +371,26 @@ def parse_wheeler(card, base):
     title_el = card.select_one(".wmc-listing-title .jet-listing-dynamic-link__label")
     titel = title_el.get_text(strip=True) if title_el else "Onbekend"
 
-    price_el = None
-    for el in card.select(".jet-listing-dynamic-field__content"):
-        if "€" in el.get_text():
-            price_el = el
-            break
-    prijs = extract_price(price_el.get_text(" ", strip=True)) if price_el else "N/A"
+    prijs = extract_price(card.get_text(" ", strip=True))
 
     img = card.select_one("img")
-    foto = fix_url(img["src"], base) if img else "N/A"
+    foto = fix_url(img["src"], base) if img else extract_image(card, base) or "N/A"
 
-    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+    return {
+        "Titel": titel,
+        "Prijs": prijs,
+        "Foto": foto,
+        "URL": url,
+    }
 
 
-# --- AGENCE ELEONOR ---
 def parse_eleonor(card, base):
+    # kaart is de <a class="container"> of een parent
     a = card if card.name == "a" else card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
 
     img = card.select_one("img.propertiesPicture")
-    foto = fix_url(img["src"], base) if img else "N/A"
+    foto = fix_url(img["src"], base) if img else extract_image(card, base) or "N/A"
 
     title_el = card.select_one(".title")
     subtitle_el = card.select_one(".subtitle")
@@ -386,14 +405,25 @@ def parse_eleonor(card, base):
     titel = titel.strip() if titel else "Onbekend"
 
     price_el = card.select_one(".price")
-    prijs = extract_price(price_el.get_text(" ", strip=True)) if price_el else "N/A"
+    prijs = extract_price(price_el.get_text(" ", strip=True) if price_el else card.get_text(" ", strip=True))
 
-    return {"Titel": titel, "Prijs": prijs, "Foto": foto, "URL": url}
+    # Plaats uit title (bijv. "Maison, Puy-l'Évêque")
+    plaats = "Onbekend"
+    if title_el:
+        t = title_el.get_text(" ", strip=True)
+        parts = [p.strip() for p in t.split(",") if p.strip()]
+        if len(parts) > 1:
+            plaats = parts[-1]
+
+    return {
+        "Titel": titel,
+        "Prijs": prijs,
+        "Foto": foto,
+        "URL": url,
+        "Plaats": plaats,
+    }
 
 
-# ---------------------------------------------------------
-# DISPATCHER
-# ---------------------------------------------------------
 SITE_PARSERS = {
     "lot_immoco": parse_lot_immoco,
     "quercygascogne": parse_quercygascogne,
@@ -413,21 +443,57 @@ def find_card_for_anchor(soup, a, config):
             if card.find("a", href=a.get("href")):
                 return card
 
+    # fallback: climb
     node = a
     for _ in range(8):
         if not node.parent:
             break
         node = node.parent
-        if node.name in ("article", "li", "section"):
+        if node.name in ("article", "li", "section", "div"):
             return node
     return a.parent
+
+
+# ---------------------------------------------------------
+# NORMALISATIE VAN EEN LISTING
+# ---------------------------------------------------------
+def normalize_listing(site_id, href, card, base, a):
+    text = card.get_text(" ", strip=True)
+
+    parser = SITE_PARSERS.get(site_id)
+    if parser:
+        parsed = parser(card, base)
+    else:
+        parsed = {
+            "Titel": extract_title(card, a),
+            "Prijs": extract_price(text),
+            "Foto": extract_image(card, base) or "N/A",
+            "URL": href,
+        }
+
+    # Defaults
+    listing = {
+        "Bron": site_id,
+        "Titel": parsed.get("Titel", "Onbekend"),
+        "Plaats": parsed.get("Plaats", "Onbekend"),
+        "Nieuw?": parsed.get("Nieuw?", "Nee"),
+        "Prijs": parsed.get("Prijs", "N/A"),
+        "m2 Binnen": parsed.get("m2 Binnen", "N/A"),
+        "m2 Buiten": parsed.get("m2 Buiten", "N/A"),
+        "Slaapkamers": parsed.get("Slaapkamers", "N/A"),
+        "URL": parsed.get("URL", href),
+        "Foto": parsed.get("Foto", extract_image(card, base) or "N/A"),
+    }
+
+    return listing
 
 
 # ---------------------------------------------------------
 # SCRAPE LIST PAGE
 # ---------------------------------------------------------
 async def scrape_list_page(browser, config):
-    print(f"--- Start: {config['id']} ---")
+    site_id = config["id"]
+    print(f"--- Start: {site_id} ---")
 
     context = await browser.new_context(
         viewport={"width": 1400, "height": 900},
@@ -436,17 +502,15 @@ async def scrape_list_page(browser, config):
     page = await context.new_page()
 
     try:
-        await page.goto(config["url"], wait_until="domcontentloaded", timeout=45000)
-    except Exception as e:
-        print(f"  {config['id']}: fout bij goto: {e}")
+        await page.goto(config["url"], wait_until="domcontentloaded", timeout=60000)
+    except PlaywrightTimeoutError:
+        print(f"  {site_id}: timeout bij goto, overslaan.")
         await context.close()
         return []
 
+    # simpele scroll om lazy‑load te triggeren
     for _ in range(4):
-        try:
-            await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
-        except Exception:
-            break
+        await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
         await asyncio.sleep(1)
 
     html = await page.content()
@@ -476,24 +540,13 @@ async def scrape_list_page(browser, config):
         if not looks_like_listing(text):
             continue
 
-        parser = SITE_PARSERS.get(config["id"])
-        if parser:
-            data = parser(card, config["base"])
-        else:
-            data = {
-                "Titel": extract_title(card, a),
-                "Prijs": extract_price(text),
-                "Foto": extract_image(card, config["base"]) or "N/A",
-                "URL": href,
-            }
-
-        data["Bron"] = config["id"]
-        listings.append(data)
+        listing = normalize_listing(site_id, href, card, config["base"], a)
+        listings.append(listing)
 
         if len(listings) >= MAX_LISTINGS_PER_SITE:
             break
 
-    print(f"  {config['id']}: {len(listings)} listings")
+    print(f"  {site_id}: {len(listings)} listings")
     await context.close()
     return listings
 
