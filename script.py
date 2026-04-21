@@ -17,14 +17,13 @@ SCRAPER_CONFIG = [
         "base": "https://www.ladresse.com",
         "pattern": r"/annonce/",
     },
-     {
+    {
         "id": "beauxvillages",
         "url": "https://beauxvillages.com/en/latest-properties?hotsheet=1",
         "base": "https://beauxvillages.com",
         "pattern": r"/property/",
         "card_selector": ".jet-listing-grid__item",
     },
-
     {
         "id": "lot_immoco",
         "url": "https://www.lot-immoco.net/a-vendre/1",
@@ -32,28 +31,26 @@ SCRAPER_CONFIG = [
         "pattern": r"\.html$",
         "card_selector": "div.panel.panel-default",
     },
-{
-    "id": "pouget",
-    "url": "...",
-    "base": "...",
-    "pattern": r"/vente/",
-    "card_selector": ".property, .item, article, .annonce",
-},
-
+    {
+        "id": "pouget",
+        "url": "...",
+        "base": "...",
+        "pattern": r"/vente/",
+        "card_selector": ".property, .item, article, .annonce",
+    },
     {
         "id": "human",
         "url": "https://www.human-immobilier.fr/achat-maison-tarn-et-garonne?og=0&sort=date-desc",
         "base": "https://www.human-immobilier.fr",
         "pattern": r"/annonce-",
     },
- {
-    "id": "letuc",
-    "url": "https://www.letuc.com/vente",
-    "base": "https://www.letuc.com",
-    "pattern": r"/vente/",
-    "card_selector": ".property, .item, article, .annonce",
-},
-
+    {
+        "id": "letuc",
+        "url": "https://www.letuc.com/vente",
+        "base": "https://www.letuc.com",
+        "pattern": r"/vente/",
+        "card_selector": ".property, .item, article, .annonce",
+    },
     {
         "id": "nestenn",
         "url": "https://immobilier-villeneuve-sur-lot.nestenn.com/achat-immobilier",
@@ -78,14 +75,13 @@ SCRAPER_CONFIG = [
         "base": "https://valadie-immobilier.com",
         "pattern": r"/fiche/",
     },
-      {
+    {
         "id": "villereal",
         "url": "https://www.immobilier-villereal.com/fr/nos-biens-tous",
         "base": "https://www.immobilier-villereal.com",
         "pattern": r"/fr/biens/",
         "card_selector": "article.property",
     },
-
     {
         "id": "quercygascogne",
         "url": "https://www.quercygascogne.fr/ventes/1",
@@ -105,7 +101,6 @@ SCRAPER_CONFIG = [
         "base": "https://wheeler-property.com",
         "pattern": r"/properties/",
         "card_selector": ".jet-listing-grid__item, .jet-listing-dynamic-link__link, article",
-
     },
     {
         "id": "mouly",
@@ -114,40 +109,39 @@ SCRAPER_CONFIG = [
         "pattern": r"/[0-9]+-",
         "card_selector": "article.property-listing-v2__container",
     },
- {
-    "id": "soleil47",
-    "url": "https://www.soleil-immobilier-47.com/vente/1",
-    "base": "https://www.soleil-immobilier-47.com",
-    "pattern": r"/[0-9]+-",
-    "card_selector": "article.property, .property-item",
-},
+    {
+        "id": "soleil47",
+        "url": "https://www.soleil-immobilier-47.com/vente/1",
+        "base": "https://www.soleil-immobilier-47.com",
+        "pattern": r"/[0-9]+-",
+        "card_selector": "article.property, .property-item",
+    },
     {
         "id": "marin",
         "url": "https://www.immobilier-marin.com/recherche/",
         "base": "https://www.immobilier-marin.com",
         "pattern": r"/[0-9]+-",
     },
- {
-    "id": "factor",
-    "url": "https://www.factorimmo.com/nouveautes/1",
-    "base": "https://www.factorimmo.com",
-    "pattern": r"/[0-9]+-",
-    "card_selector": ".property-item, .estate-item, article.property",
-},
+    {
+        "id": "factor",
+        "url": "https://www.factorimmo.com/nouveautes/1",
+        "base": "https://www.factorimmo.com",
+        "pattern": r"/[0-9]+-",
+        "card_selector": ".property-item, .estate-item, article.property",
+    },
     {
         "id": "pousset",
         "url": "https://www.immobilier-pousset.fr/vente/1",
         "base": "https://www.immobilier-pousset.fr",
         "pattern": r"/vente/",
     },
-  {
-    "id": "arobase",
-    "url": "https://www.arobaseimmobilier.fr/vente/1",
-    "base": "https://www.arobaseimmobilier.fr",
-    "pattern": r"/vente/",
-    "card_selector": "article.property, .property-item",
-},
-
+    {
+        "id": "arobase",
+        "url": "https://www.arobaseimmobilier.fr/vente/1",
+        "base": "https://www.arobaseimmobilier.fr",
+        "pattern": r"/vente/",
+        "card_selector": "article.property, .property-item",
+    },
     {
         "id": "immo46",
         "url": "https://www.immo46.com/fr/a-vendre",
@@ -172,14 +166,14 @@ SCRAPER_CONFIG = [
         "base": "https://www.maisondelimmobilier.com",
         "pattern": r"fiches",
     },
-  {
-    "id": "guy_hoquet",
-    "url": "https://www.guy-hoquet.com/biens/result#1&f20=46_c2,47_c2,82_c2",
-    "base": "https://www.guy-hoquet.com",
-    "pattern": r"/bien/",
-    "card_selector": ".gh-search-result-card",
-    "requires_js": True,
-},
+    {
+        "id": "guy_hoquet",
+        "url": "https://www.guy-hoquet.com/biens/result#1&f20=46_c2,47_c2,82_c2",
+        "base": "https://www.guy-hoquet.com",
+        "pattern": r"/bien/",
+        "card_selector": ".gh-search-result-card",
+        "requires_js": True,
+    },
     {
         "id": "eleonor",
         "url": "https://www.agence-eleonor.fr/fr/vente",
@@ -193,21 +187,19 @@ SCRAPER_CONFIG = [
         "pattern": r"/bien/",
     },
     {
-    "id": "charles_loftie",
-    "url": "https://charles-loftie-immo.com/fr/recherche",
-    "base": "https://charles-loftie-immo.com",
-    "pattern": r"/fr/biens/",
-    "card_selector": ".w-dyn-item, .listing-card, .property-card",
-},
-
-{
-    "id": "prada_prestige",
-    "url": "https://prada-prestige-immo.fr/notre-selection",
-    "base": "https://prada-prestige-immo.fr",
-    "pattern": r"/fr/vente/",
-    "card_selector": "article.property, .property-item",
-},
-
+        "id": "charles_loftie",
+        "url": "https://charles-loftie-immo.com/fr/recherche",
+        "base": "https://charles-loftie-immo.com",
+        "pattern": r"/fr/biens/",
+        "card_selector": ".w-dyn-item, .listing-card, .property-card",
+    },
+    {
+        "id": "prada_prestige",
+        "url": "https://prada-prestige-immo.fr/notre-selection",
+        "base": "https://prada-prestige-immo.fr",
+        "pattern": r"/fr/vente/",
+        "card_selector": "article.property, .property-item",
+    },
     {
         "id": "orpi",
         "url": "https://www.orpi.com/recherche/buy?sort=date-down",
@@ -238,24 +230,20 @@ def is_bad_image(src):
     return any(b in src for b in bad)
 
 def extract_image(card, base):
-    # data-src
     img = card.find("img", attrs={"data-src": True})
     if img and not is_bad_image(img["data-src"]):
         return fix_url(img["data-src"], base)
 
-    # src
     img = card.find("img", src=True)
     if img and not is_bad_image(img["src"]):
         return fix_url(img["src"], base)
 
-    # srcset
     img = card.find("img", srcset=True)
     if img:
         first = img["srcset"].split(",")[0].split()[0]
         if not is_bad_image(first):
             return fix_url(first, base)
 
-    # background-image
     for d in card.find_all("div", style=True):
         m = re.search(r'url\((.*?)\)', d.get("style", ""))
         if m:
@@ -340,19 +328,15 @@ def parse_mouly(card, base):
     return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_wheeler(card, base):
-    # URL
     a = card.select_one("a.jet-listing-dynamic-link__link")
     url = fix_url(a["href"], base) if a else None
 
-    # Titel
     title_el = card.select_one(".jet-listing-dynamic-link__label, h2, .title")
     titel = title_el.get_text(strip=True) if title_el else ""
 
-    # Prijs
     price_el = card.select_one(".jet-listing-dynamic-field__content")
     prijs = price_el.get_text(" ", strip=True) if price_el else ""
 
-    # Foto
     img = card.select_one("img")
     foto = None
     if img:
@@ -370,7 +354,6 @@ def parse_wheeler(card, base):
         "Foto": foto,
         "URL": url,
     }
-
 
 def parse_eleonor(card, base):
     a = card if card.name == "a" else card.find("a", href=True)
@@ -431,19 +414,15 @@ def parse_villereal(card, base):
     }
 
 def parse_soleil47(card, base):
-    # URL
     a = card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
 
-    # Titel
     title_el = card.select_one(".property__title h2, .property-title, h2")
     titel = title_el.get_text(strip=True) if title_el else ""
 
-    # Prijs
     price_el = card.select_one(".property__price span, .price, .property-price")
     prijs = price_el.get_text(" ", strip=True) if price_el else ""
 
-    # Foto
     img = card.select_one("img")
     foto = None
     if img:
@@ -460,19 +439,15 @@ def parse_soleil47(card, base):
     }
 
 def parse_factor(card, base):
-    # URL
     a = card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
 
-    # Titel
     title_el = card.select_one("h2.title, .property-title, h2")
     titel = title_el.get_text(strip=True) if title_el else ""
 
-    # Prijs
     price_el = card.select_one(".price, .property-price, .estate-price")
     prijs = price_el.get_text(" ", strip=True) if price_el else ""
 
-    # Foto
     img = card.select_one("img")
     foto = None
     if img:
@@ -489,19 +464,15 @@ def parse_factor(card, base):
     }
 
 def parse_arobase(card, base):
-    # URL
     a = card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
 
-    # Titel
     title_el = card.select_one("h2.title, .property-title, h2")
     titel = title_el.get_text(strip=True) if title_el else ""
 
-    # Prijs
     price_el = card.select_one(".price, .property-price")
     prijs = price_el.get_text(" ", strip=True) if price_el else ""
 
-    # Foto
     img = card.select_one("img")
     foto = None
     if img:
@@ -516,20 +487,17 @@ def parse_arobase(card, base):
         "Foto": foto,
         "URL": url,
     }
+
 def parse_guy_hoquet(card, base):
-    # URL
     a = card.select_one("a[href]")
     url = fix_url(a["href"], base) if a else None
 
-    # Titel
     title_el = card.select_one(".gh-title, h2, .title")
     titel = title_el.get_text(strip=True) if title_el else ""
 
-    # Prijs
     price_el = card.select_one(".gh-price, .price")
     prijs = price_el.get_text(" ", strip=True) if price_el else ""
 
-    # Foto
     img = card.select_one("img")
     foto = None
     if img:
@@ -544,20 +512,17 @@ def parse_guy_hoquet(card, base):
         "Foto": foto,
         "URL": url,
     }
+
 def parse_charles_loftie(card, base):
-    # URL
     a = card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
 
-    # Titel
     title_el = card.select_one(".listing-title, h3, .title")
     titel = title_el.get_text(strip=True) if title_el else ""
 
-    # Prijs
     price_el = card.select_one(".price, .listing-price")
     prijs = price_el.get_text(" ", strip=True) if price_el else ""
 
-    # Foto
     img = card.select_one("img")
     foto = None
     if img:
@@ -572,20 +537,17 @@ def parse_charles_loftie(card, base):
         "Foto": foto,
         "URL": url,
     }
+
 def parse_prada_prestige(card, base):
-    # URL
     a = card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
 
-    # Titel
     title_el = card.select_one(".property__title, h2, .title")
     titel = title_el.get_text(strip=True) if title_el else ""
 
-    # Prijs
     price_el = card.select_one(".property__price span, .price")
     prijs = price_el.get_text(" ", strip=True) if price_el else ""
 
-    # Foto
     img = card.select_one("img")
     foto = None
     if img:
@@ -600,38 +562,24 @@ def parse_prada_prestige(card, base):
         "Foto": foto,
         "URL": url,
     }
+
 def parse_letuc(card, base):
-    # URL
     a = card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
 
-    # Titel
     title_el = card.select_one("h2, .property-title, .title")
     titel = title_el.get_text(strip=True) if title_el else ""
 
-    # PRIJS — Letuc heeft 3 varianten:
-    # 1) Koop: <span class="__price-value"> 249 000 € </span>
-    # 2) Huur: <span class="__price-value"> 650 € CC </span>
-    # 3) Referentie-ID: 115 553 335 (moet genegeerd worden)
-
     prijs = ""
-
-    # 1) Koopprijs
     price_el = card.select_one(".__price-value, .price-value")
     if price_el:
         raw = price_el.get_text(" ", strip=True)
-
-        # referentie-ID’s eruit filteren (te lang)
         if len(raw.replace(" ", "")) > 9:
             raw = ""
-
-        # huur uitsluiten (optioneel)
         if any(x in raw.lower() for x in ["cc", "hc", "/mois", "mois"]):
             raw = ""
-
         prijs = raw
 
-    # Foto
     img = card.select_one("img")
     foto = None
     if img:
@@ -651,19 +599,15 @@ def parse_letuc(card, base):
     }
 
 def parse_pouget(card, base):
-    # URL
     a = card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
 
-    # Titel
     title_el = card.select_one("h2, .title, .property-title")
     titel = title_el.get_text(strip=True) if title_el else ""
 
-    # Prijs
     price_el = card.select_one(".price, .property-price, .item-price")
     prijs = price_el.get_text(" ", strip=True) if price_el else ""
 
-    # Foto
     img = card.select_one("img")
     foto = None
     if img:
@@ -682,7 +626,6 @@ def parse_pouget(card, base):
         "URL": url,
     }
 
-
 SITE_PARSERS = {
     "lot_immoco": parse_lot_immoco,
     "quercygascogne": parse_quercygascogne,
@@ -699,7 +642,6 @@ SITE_PARSERS = {
     "prada_prestige": parse_prada_prestige,
     "letuc": parse_letuc,
     "pouget": parse_pouget,
-
 }
 
 # ---------------------------------------------------------
@@ -767,22 +709,15 @@ def detect_place_from_text(text):
     return None
 
 def detect_place(url, title, text):
-    # -----------------------------------------
-    # SITE-SPECIFIEKE OVERRIDES
-    # -----------------------------------------
     if url and "lot-immoco.net" in url:
         return "Lot"
 
-    # -----------------------------------------
-    # GENERIEKE DETECTIE
-    # -----------------------------------------
     return (
         detect_place_from_url(url)
         or detect_place_from_title(title)
         or detect_place_from_text(text)
         or "Onbekend"
     )
-
 
 # ---------------------------------------------------------
 # PRIJS-DETECTIE
@@ -886,7 +821,6 @@ async def scrape_list_page(browser, config):
     )
     page = await context.new_page()
 
-    # SAFE GOTO
     try:
         await page.goto(config["url"], wait_until="networkidle", timeout=60000)
     except:
@@ -894,11 +828,10 @@ async def scrape_list_page(browser, config):
         await context.close()
         return []
 
-     # ---------------------------------------------------------
+    # ---------------------------------------------------------
     # SCROLL STRATEGY
     # ---------------------------------------------------------
     if site_id == "beauxvillages":
-        # infinite scroll until no new items
         last_height = 0
         for _ in range(12):
             try:
@@ -912,7 +845,6 @@ async def scrape_list_page(browser, config):
                 break
 
     elif config.get("requires_js"):
-        # wait for JS-rendered cards
         try:
             await page.wait_for_selector(config["card_selector"], timeout=20000)
         except:
@@ -920,7 +852,6 @@ async def scrape_list_page(browser, config):
             await context.close()
             return []
 
-        # infinite scroll until no new cards appear
         last_count = 0
         for _ in range(12):
             cards = await page.query_selector_all(config["card_selector"])
@@ -931,7 +862,6 @@ async def scrape_list_page(browser, config):
             await asyncio.sleep(1.2)
 
     else:
-        # normal scroll for static sites
         for _ in range(4):
             try:
                 await page.mouse.wheel(0, 2000)
@@ -998,7 +928,6 @@ async def scrape_list_page(browser, config):
             foto = extract_image(card, config["base"]) or "N/A"
             url = href
 
-        # FILTER: huur uitsluiten
         if any(x in prijs_raw.lower() for x in ["cc", "hc", "/mois", "mois", "€/mois"]):
             continue
 
@@ -1026,9 +955,6 @@ async def scrape_list_page(browser, config):
     print(f"{site_id}: {len(listings)} listings")
     await context.close()
     return listings
-
-
-
 
 # ---------------------------------------------------------
 # MAIN
