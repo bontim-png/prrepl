@@ -1,8 +1,10 @@
 import asyncio
-import re
 import json
+import re
+import random
 from urllib.parse import urlparse
 from playwright.async_api import async_playwright
+from playwright_stealth import stealth_async
 from bs4 import BeautifulSoup
 # ─────────────────────────────────────────
 # CONFIGURATIE
@@ -40,196 +42,145 @@ SCRAPER_CONFIG = [
     {"id": "orpi",                "url": "https://www.orpi.com/recherche/buy?sort=date-down",                                     "base": "https://www.orpi.com",                              "pattern": r"annonce-vente"},
 ]
 
-MAX_LISTINGS_PER_SITE = 10
-BATCH_SIZE = 3
+MAX_LISTINGS_PER_SITE = 8
 
-
-# ─────────────────────────────────────────
-# HELPERS
-# ─────────────────────────────────────────
-
-def fix_url(url: str) -> str:
-    """Zorgt ervoor dat de URL eindigt op een slash als dat nodig is."""
+def fix_url(url, base_url):
+    """Corrigeert URLs en voegt trailing slash toe waar nodig."""
+    if not url.startswith('http'):
+        url = base_url.rstrip('/') + '/' + url.lstrip('/')
     parsed = urlparse(url)
-    # Alleen toevoegen als er geen extensie is (zoals .html of .php)
     if not parsed.path.endswith('/') and not re.search(r'\.[a-z0-9]{2,4}$', parsed.path, re.I):
-        return url + '/'
+        url += '/'
     return url
 
-def make_absolute(src: str, base_url: str) -> str:
-    if not src: return "N/A"
-    if src.startswith("http"): return src
-    if src.startswith("//"): return "https:" + src
-    if src.startswith("/"):
-        parsed = urlparse(base_url)
-        return f"{parsed.scheme}://{parsed.netloc}{src}"
-    return base_url.rstrip("/") + "/" + src
-
-def extract_main_image(soup: BeautifulSoup, page_url: str) -> str:
-    # 1. Check og:image
-    og = soup.find("meta", property="og:image")
-    if og and og.get("content"):
-        return make_absolute(og["content"], page_url)
-
-    # 2. Uitgebreide lijst met selectors voor foto's (inclusief Franse thema's)
-    for selector in [
-        "div.gallery", "div.slider", "div.carousel", "div.swiper-slide",
-        "div.photo", "div.visuel", "div.main-photo", "div.bien-photo",
-        "img.main-img", "img.property-image", "div.thumb", "figure img"
-    ]:
-        img = soup.select_one(selector)
-        if img:
-            # Check src, dan data-src (voor lazy loading)
-            src = img.get("src") or img.get("data-src") or img.get("data-lazy-src")
-            if src and re.search(r"\.(jpg|jpeg|png|webp)", src, re.I):
-                return make_absolute(src, page_url)
-
-    return "N/A"
-
-# ─────────────────────────────────────────
-# DETAIL PAGINA
-# ─────────────────────────────────────────
-
-async def scrape_details(context, url: str, site_id: str) -> dict | None:
-    url = fix_url(url) # URL Fix toegepast
-    try:
-        page = await context.new_page()
-        # Gebruik networkidle om te zorgen dat scripts (en prijzen) geladen zijn
-        await page.goto(url, wait_until="networkidle", timeout=30000)
-        
-        # SCROLL ACTIE: Dit triggert lazy loading van foto's en prijzen
-        await page.evaluate("window.scrollTo(0, 500)")
-        await asyncio.sleep(1.5) # Wacht even op de render
-
-        content = await page.content()
-        await page.close()
-
-        soup = BeautifulSoup(content, "html.parser")
-        # Strip overtollige spaties voor betere regex match
-        text = " ".join(soup.get_text().split())
-
-        # Verbeterde Prijs Regex: pakt "285 000 €", "285.000€" en "285000 €"
-        prijs = re.search(r"(\d[\d\s.,]*)\s?€", text)
-        
-        binnen = re.search(r"(\d+)\s?m²?\s?habitable|surface\s?[:\-]\s?(\d+)\s?m²?|(\d+)\s?m²?\s?de\s?surface", text, re.I)
-        buiten = re.search(r"terrain\s?[:\-]\s?(\d+[\s.]?\d*)\s?m²?|(\d+[\s.]?\d*)\s?m²?\s?de\s?terrain", text, re.I)
-        kamers = re.search(r"(\d+)\s?chambre", text, re.I)
-        nieuw  = bool(re.search(r"nouveau|nouveauté|new|récent|exclusivité", text, re.I))
-
-        # Titel/Plaatsbepaling
-        og_title = soup.find("meta", property="og:title")
-        h1 = soup.find("h1")
-        plaats = "Onbekend"
-        if og_title and og_title.get("content"):
-            plaats = og_title["content"][:80]
-        elif h1:
-            plaats = h1.get_text(strip=True)[:80]
-
-        foto = extract_main_image(soup, url)
-
-        return {
-            "Bron": site_id,
-            "Plaats": plaats,
-            "Nieuw?": "JA" if nieuw else "Nee",
-            "Prijs": prijs.group(0).replace(" ", "").strip() if prijs else "N/A",
-            "m2 Binnen": next((g for g in binnen.groups() if g), "N/A") if binnen else "N/A",
-            "m2 Buiten": next((g for g in buiten.groups() if g), "N/A") if buiten else "N/A",
-            "Slaapkamers": kamers.group(1) if kamers else "N/A",
-            "Foto": foto,
-            "URL": url,
-        }
-
-    except Exception as e:
-        print(f"  ✗ Detail-fout ({site_id} | {url}): {e}")
-        return None
-
-
-# ─────────────────────────────────────────
-# LIJSTPAGINA
-# ─────────────────────────────────────────
-
-async def scrape_site(browser, config: dict) -> list:
-    site_id = config["id"]
+async def scrape_details(browser, url, site_id):
+    """Haalt details op met focus op unieke data per pagina."""
     context = await browser.new_context(
-        user_agent=(
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/124.0.0.0 Safari/537.36"
-        )
+        viewport={'width': 1280, 'height': 800},
+        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     )
     page = await context.new_page()
-    listings = []
-
+    await stealth_async(page)
+    
     try:
-        print(f"▶ {site_id}...")
-        await page.goto(config["url"], wait_until="networkidle", timeout=60000)
-        await page.evaluate("window.scrollTo(0, document.body.scrollHeight / 2)")
+        # Wacht tot de pagina echt geladen is
+        await page.goto(url, wait_until="networkidle", timeout=60000)
+        
+        # Scroll om lazy-loaded images en prijzen te triggeren
+        await page.evaluate("window.scrollTo(0, 400)")
         await asyncio.sleep(2)
 
         content = await page.content()
         soup = BeautifulSoup(content, "html.parser")
+        
+        # 1. PRIJS EXTRACTIE (Zoekt specifiek naar bedragen bij € teken)
+        # We halen eerst alle tekst op en schonen die op
+        visible_text = await page.evaluate("() => document.body.innerText")
+        # Regex die kijkt naar getallen voor of na een € teken, rekening houdend met Franse notatie (spaties)
+        price_matches = re.findall(r"(\d[\d\s.]*)\s?€|€\s?(\d[\d\s.]*)", visible_text)
+        
+        prijs = "N/A"
+        if price_matches:
+            # Pak de eerste match die niet nul is en langer dan 3 tekens (voorkom 'm2' verwarring)
+            for m in price_matches:
+                found = m[0] or m[1]
+                clean_p = re.sub(r'[^\d]', '', found)
+                if clean_p and int(clean_p) > 1000:
+                    prijs = f"{found.strip()} €"
+                    break
 
-        seen = set()
-        link_urls = []
-        for a in soup.find_all("a", href=True):
-            href = a["href"]
-            if not re.search(config["pattern"], href, re.I):
-                continue
-            full = href if href.startswith("http") else config["base"] + href
-            full = full.rstrip("/")
-            if full not in seen:
-                seen.add(full)
-                link_urls.append(full)
+        # 2. FOTO EXTRACTIE (Gebruik metadata voor de beste kwaliteit)
+        foto = "N/A"
+        og_image = soup.find("meta", property="og:image")
+        if og_image and og_image.get("content"):
+            foto = og_image["content"]
+        else:
+            # Fallback: Zoek de grootste img tag
+            imgs = await page.query_selector_all("img")
+            max_area = 0
+            for img in imgs:
+                try:
+                    box = await img.bounding_box()
+                    if box:
+                        area = box['width'] * box['height']
+                        src = await img.get_attribute("src")
+                        if area > max_area and src and "http" in src and "logo" not in src.lower():
+                            max_area = area
+                            foto = src
+                except: continue
 
-        print(f"  → {len(link_urls)} links, bezoek max {MAX_LISTINGS_PER_SITE}...")
+        # 3. PLAATS & INFO
+        h1 = soup.find("h1")
+        plaats = h1.get_text(strip=True)[:100] if h1 else "Onbekend"
+        
+        m2_match = re.search(r"(\d+)\s?m²", visible_text)
+        m2 = m2_match.group(1) if m2_match else "N/A"
 
-        for url in link_urls[:MAX_LISTINGS_PER_SITE]:
-            detail = await scrape_details(context, url, site_id)
-            if detail:
-                listings.append(detail)
-
-        print(f"  ✓ {len(listings)} listings opgeslagen")
-
-    except Exception as e:
-        print(f"  ✗ Fout bij {site_id}: {e}")
-
-    finally:
-        await page.close()
         await context.close()
-
-    return listings
-
-
-# ─────────────────────────────────────────
-# MAIN
-# ─────────────────────────────────────────
+        return {
+            "Bron": site_id,
+            "Plaats": plaats,
+            "Prijs": prijs,
+            "m2 Binnen": m2,
+            "Foto": foto,
+            "URL": url
+        }
+    except Exception as e:
+        print(f"  ! Fout bij detail {url}: {e}")
+        await context.close()
+        return None
 
 async def main():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(
-            headless=True,
-            args=["--no-sandbox", "--disable-dev-shm-usage"]
-        )
+        # Launch browser met extra argumenten tegen detectie
+        browser = await p.chromium.launch(headless=True, args=["--no-sandbox"])
         all_data = []
 
-        for i in range(0, len(SCRAPER_CONFIG), BATCH_SIZE):
-            batch = SCRAPER_CONFIG[i:i + BATCH_SIZE]
-            tasks = [scrape_site(browser, cfg) for cfg in batch]
-            results = await asyncio.gather(*tasks, return_exceptions=True)
-            for res in results:
-                if isinstance(res, list):
-                    all_data.extend(res)
-                else:
-                    print(f"  ⚠ Batch-fout: {res}")
+        for config in SCRAPER_CONFIG:
+            print(f"--- Scraper start: {config['id']} ---")
+            context = await browser.new_context()
+            page = await context.new_page()
+            await stealth_async(page)
+            
+            try:
+                await page.goto(config['url'], wait_until="networkidle", timeout=60000)
+                
+                # Haal links op via de browser context (betrouwbaarder dan BS4 voor links)
+                links = await page.evaluate(f"""(pattern) => {{
+                    const regex = new RegExp(pattern, 'i');
+                    return Array.from(document.querySelectorAll('a'))
+                        .map(a => a.href)
+                        .filter(href => regex.test(href));
+                }}""", config['pattern'])
+                
+                # Unieke URLs en fix format
+                unique_links = []
+                for l in links:
+                    fixed = fix_url(l, config['base'])
+                    if fixed not in unique_links:
+                        unique_links.append(fixed)
+                
+                print(f"  Gevonden: {len(unique_links)} potentiële links. Bezoeken van top {MAX_LISTINGS_PER_SITE}...")
+                
+                for link in unique_links[:MAX_LISTINGS_PER_SITE]:
+                    result = await scrape_details(browser, link, config['id'])
+                    if result:
+                        all_data.append(result)
+                        print(f"    + {result['Prijs']} | {result['Plaats'][:30]}...")
 
-        await browser.close()
+            except Exception as e:
+                print(f"  ! Fout bij hoofdpagina {config['id']}: {e}")
+            
+            await context.close()
+            # Korte pauze tussen sites om IP-blokkades te voorkomen
+            await asyncio.sleep(random.uniform(2, 5))
 
+        # Opslaan naar JSON
         with open("data.json", "w", encoding="utf-8") as f:
             json.dump(all_data, f, ensure_ascii=False, indent=2)
-
-        foto_count = sum(1 for d in all_data if d.get("Foto") != "N/A")
-        print(f"\n✅ Klaar! {len(all_data)} listings | {foto_count} foto's → data.json")
-
+        
+        await browser.close()
+        print(f"\n✅ Klaar! Totaal {len(all_data)} huizen gescraped.")
 
 if __name__ == "__main__":
     asyncio.run(main())
