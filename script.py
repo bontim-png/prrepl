@@ -1019,9 +1019,10 @@ else:
 
 
 
-    print(f"{site_id}: {len(listings)} listings")
-    await context.close()
-    return listings
+        print(f"{site_id}: {len(listings)} listings")
+        await context.close()
+        return listings
+
 
 # ---------------------------------------------------------
 # MAIN
