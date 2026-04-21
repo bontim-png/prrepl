@@ -2,6 +2,7 @@ import asyncio
 import json
 import re
 import random
+import setuptools
 from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 from playwright_stealth import stealth_async
