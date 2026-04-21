@@ -894,7 +894,7 @@ async def scrape_list_page(browser, config):
         await context.close()
         return []
 
-   # SCROLL STRATEGY
+     # SCROLL STRATEGY
     if site_id == "beauxvillages":
         # infinite scroll until no new items
         last_height = 0
@@ -937,8 +937,6 @@ async def scrape_list_page(browser, config):
             except:
                 break
 
-
-
     html = await page.content()
     soup = BeautifulSoup(html, "html.parser")
 
@@ -949,26 +947,25 @@ async def scrape_list_page(browser, config):
         if pattern.search(a["href"]):
             anchors.append((a, fix_url(a["href"], config["base"])))
 
- # SPECIAL FIX: Wheeler duplicates cards in DOM
-if site_id == "wheeler":
-    seen = set()
-    unique = []
-    for a, href in anchors:
-        if href not in seen:
-            seen.add(href)
-            unique.append((a, href))
-    # limit to real cards (JetEngine repeats 6x)
-    unique = unique[:6]
-else:
-    seen = set()
-    unique = []
-    for a, href in anchors:
-        if href not in seen:
-            seen.add(href)
-            unique.append((a, href))
+    # SPECIAL FIX: Wheeler duplicates cards in DOM
+    if site_id == "wheeler":
+        seen = set()
+        unique = []
+        for a, href in anchors:
+            if href not in seen:
+                seen.add(href)
+                unique.append((a, href))
+        # limit to real cards (JetEngine repeats 6x)
+        unique = unique[:6]
+    else:
+        seen = set()
+        unique = []
+        for a, href in anchors:
+            if href not in seen:
+                seen.add(href)
+                unique.append((a, href))
 
-
-        listings = []
+    listings = []
     parser = SITE_PARSERS.get(site_id)
 
     for a, href in unique:
@@ -1017,11 +1014,10 @@ else:
         if len(listings) >= MAX_LISTINGS_PER_SITE:
             break
 
+    print(f"{site_id}: {len(listings)} listings")
+    await context.close()
+    return listings
 
-
-        print(f"{site_id}: {len(listings)} listings")
-        await context.close()
-        return listings
 
 
 # ---------------------------------------------------------
