@@ -3,11 +3,11 @@ name: 🏠 Vastgoed Scraper
 on:
   schedule:
     - cron: '0 7 * * *'   # Elke dag om 07:00 UTC (09:00 NL zomertijd)
-  workflow_dispatch:        # Ook handmatig te starten via GitHub UI
+  workflow_dispatch:        # Handmatig starten via GitHub UI
 
 permissions:
   contents: write
-  
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -23,13 +23,12 @@ jobs:
           cache: 'pip'
 
       - name: 📦 Dependencies installeren
-        run: | python -m pip install --upgrade pip setuptools
+        run: |
+          python -m pip install --upgrade pip setuptools
           pip install -r requirements.txt
 
       - name: 🎭 Playwright browsers installeren
         run: |
-          # --with-deps faalt op Ubuntu 24 vanwege hernoemde packages
-          # We installeren de dependencies handmatig met de juiste namen
           sudo apt-get update -qq
           sudo apt-get install -y \
             libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
