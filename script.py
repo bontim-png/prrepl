@@ -41,95 +41,105 @@ SCRAPER_CONFIG = [
     {"id": "orpi",                "url": "https://www.orpi.com/recherche/buy?sort=date-down",                                     "base": "https://www.orpi.com",                              "pattern": r"annonce-vente"},
 ]
 
-def fix_url(url, base_url):
+def fix_url(url, base):
     if not url:
         return None
     if not url.startswith("http"):
-        url = base_url.rstrip("/") + "/" + url.lstrip("/")
+        return base.rstrip("/") + "/" + url.lstrip("/")
     return url
 
-# -------------------------------------------------------------
+# ------------------------------
 # PRICE EXTRACTION (beste versie)
-# -------------------------------------------------------------
-def extract_price(text: str) -> str:
+# ------------------------------
+def extract_price(text):
     if not text:
         return "N/A"
     matches = re.findall(r"(\d[\d\s\.]{3,})\s*€", text)
     if not matches:
-        matches = re.findall(r"€\s*(\d[\d\s\.]{3,})", text)
-    if not matches:
         return "N/A"
-    return f"{matches[-1].strip()} €"   # laatste bedrag is echte prijs
+    return f"{matches[-1].strip()} €"
 
-# -------------------------------------------------------------
-# IMAGE FILTERING (voorkomt logo’s/icons)
-# -------------------------------------------------------------
-def is_bad_image(src: str) -> bool:
+# ------------------------------
+# IMAGE FILTERING
+# ------------------------------
+def is_bad_image(src):
     src = src.lower()
-    bad = [
-        "logo", "icon", "icons", "svg", "placeholder",
-        "sprite", "loader", "blank", "ondulation"
-    ]
+    bad = ["logo", "icon", "svg", "placeholder", "sprite", "loader", "blank", "ondulation"]
     return any(b in src for b in bad)
 
-def extract_image(card, base_url):
-    # 1. data-src
+def extract_image(card, base):
+    # data-src
     img = card.find("img", attrs={"data-src": True})
     if img and img.get("data-src") and not is_bad_image(img["data-src"]):
-        return fix_url(img["data-src"], base_url)
+        return fix_url(img["data-src"], base)
 
-    # 2. src
+    # src
     img = card.find("img", src=True)
     if img and img.get("src") and not is_bad_image(img["src"]):
-        return fix_url(img["src"], base_url)
+        return fix_url(img["src"], base)
 
-    # 3. srcset
+    # srcset
     img = card.find("img", srcset=True)
     if img and img.get("srcset"):
         first = img["srcset"].split(",")[0].split()[0]
         if not is_bad_image(first):
-            return fix_url(first, base_url)
+            return fix_url(first, base)
+
+    # background-image
+    divs = card.find_all("div", style=True)
+    for d in divs:
+        style = d.get("style", "")
+        m = re.search(r'url\((.*?)\)', style)
+        if m:
+            src = m.group(1).strip('"\'')
+            if not is_bad_image(src):
+                return fix_url(src, base)
 
     return None
 
-# -------------------------------------------------------------
+# ------------------------------
 # TITLE EXTRACTION
-# -------------------------------------------------------------
+# ------------------------------
 def extract_title(card, a):
-    # 1. headings
+    # headings
     for tag in ["h1", "h2", "h3"]:
         h = card.find(tag)
         if h and h.get_text(strip=True):
             return h.get_text(strip=True)
 
-    # 2. linktekst
+    # strong/bold
+    for tag in ["strong", "b"]:
+        h = card.find(tag)
+        if h and h.get_text(strip=True):
+            return h.get_text(strip=True)
+
+    # linktekst
     t = a.get_text(" ", strip=True)
     if t and len(t.split()) > 2:
         return t
 
-    # 3. fallback: cardtekst
-    card_text = card.get_text(" ", strip=True)
-    if card_text and len(card_text.split()) > 3:
-        return card_text[:120]
+    # fallback
+    txt = card.get_text(" ", strip=True)
+    if txt and len(txt.split()) > 3:
+        return txt[:120]
 
     return "Onbekend"
 
-# -------------------------------------------------------------
+# ------------------------------
 # LISTING VALIDATION
-# -------------------------------------------------------------
-def looks_like_listing(card_text: str) -> bool:
-    # moet een prijs bevatten
+# ------------------------------
+def looks_like_listing(card_text):
     return bool(re.search(r"\d[\d\s\.]{3,}\s*€", card_text))
 
-# -------------------------------------------------------------
+# ------------------------------
 # SCRAPE LIST PAGE
-# -------------------------------------------------------------
+# ------------------------------
 async def scrape_list_page(browser, config):
     print(f"--- Start: {config['id']} ---")
 
     context = await browser.new_context(
         viewport={"width": 1280, "height": 800},
-        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36"
+        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     )
     page = await context.new_page()
 
@@ -138,7 +148,7 @@ async def scrape_list_page(browser, config):
     # lazy-load scroll
     for _ in range(4):
         await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
-        await asyncio.sleep(1.0)
+        await asyncio.sleep(1)
 
     html = await page.content()
     soup = BeautifulSoup(html, "html.parser")
@@ -161,18 +171,17 @@ async def scrape_list_page(browser, config):
 
     listings = []
     for a, href in unique:
-        # klim naar card
+        # climb to card
         card = a
-        for _ in range(4):
+        for _ in range(6):
             if not card.parent:
                 break
             card = card.parent
             if card.name in ("article", "li", "div", "section"):
                 break
 
-        card_text = card.get_text(" ", strip=True) if card else a.get_text(" ", strip=True)
+        card_text = card.get_text(" ", strip=True) if card else ""
 
-        # skip menu/CTA
         if not looks_like_listing(card_text):
             continue
 
@@ -195,9 +204,9 @@ async def scrape_list_page(browser, config):
     await context.close()
     return listings
 
-# -------------------------------------------------------------
+# ------------------------------
 # MAIN
-# -------------------------------------------------------------
+# ------------------------------
 async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch(
