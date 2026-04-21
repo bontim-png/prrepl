@@ -5,7 +5,7 @@ from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 
 MAX_LISTINGS_PER_SITE = 6
-MAX_CONCURRENT_SITES = 3
+MAX_CONCURRENT_SITES = 1
 
 # ---------------------------------------------------------
 # CONFIG
