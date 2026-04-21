@@ -110,7 +110,7 @@ SCRAPER_CONFIG = [
     },
     {
         "id": "marin",
-        "url": "https://www.immobilier-marin.com/vente/1",
+        "url": "https://www.immobilier-marin.com/recherche/",
         "base": "https://www.immobilier-marin.com",
         "pattern": r"/[0-9]+-",
     },
@@ -167,7 +167,6 @@ SCRAPER_CONFIG = [
         "url": "https://www.agence-eleonor.fr/fr/vente",
         "base": "https://www.agence-eleonor.fr",
         "pattern": r"/fr/vente/",
-        "card_selector": "a.container",
     },
     {
         "id": "ledil",
@@ -208,37 +207,6 @@ def fix_url(url, base):
         return base.rstrip("/") + "/" + url.lstrip("/")
     return url
 
-
-# ---------------------------------------------------------
-# PRICE EXTRACTION
-# ---------------------------------------------------------
-def extract_price(text):
-    if not text:
-        return "N/A"
-    # haal alle prijsfragmenten met € eruit
-    matches = re.findall(r"([\d\.\,\s ]+)\s*€", text)
-    if not matches:
-        return "N/A"
-    raw = matches[-1]
-    # verwijder rare leading blokken zoals "2650115553 335 000"
-    # pak laatste blok met minimaal 3 cijfers
-    parts = re.split(r"\s+", raw.replace(" ", " ").strip())
-    candidate = None
-    for p in reversed(parts):
-        digits = re.sub(r"[^\d]", "", p)
-        if len(digits) >= 3:
-            candidate = p
-            break
-    if not candidate:
-        candidate = raw.replace(" ", " ").strip()
-    # vervang komma door spatie als duizendtallen, punt door spatie
-    candidate = candidate.replace(" ", " ")
-    candidate = candidate.replace(".", " ")
-    candidate = candidate.replace(",", " ")
-    candidate = re.sub(r"\s+", " ", candidate).strip()
-    return candidate + " €"
-
-
 # ---------------------------------------------------------
 # IMAGE FILTERING
 # ---------------------------------------------------------
@@ -247,26 +215,21 @@ def is_bad_image(src):
     bad = ["logo", "icon", "svg", "placeholder", "sprite", "loader", "blank"]
     return any(b in src for b in bad)
 
-
 def extract_image(card, base):
-    # data-src
     img = card.find("img", attrs={"data-src": True})
     if img and img.get("data-src") and not is_bad_image(img["data-src"]):
         return fix_url(img["data-src"], base)
 
-    # src
     img = card.find("img", src=True)
     if img and img.get("src") and not is_bad_image(img["src"]):
         return fix_url(img["src"], base)
 
-    # srcset
     img = card.find("img", srcset=True)
     if img and img.get("srcset"):
         first = img["srcset"].split(",")[0].split()[0]
         if not is_bad_image(first):
             return fix_url(first, base)
 
-    # background-image
     for d in card.find_all("div", style=True):
         m = re.search(r'url\((.*?)\)', d.get("style", ""))
         if m:
@@ -276,9 +239,8 @@ def extract_image(card, base):
 
     return None
 
-
 # ---------------------------------------------------------
-# GENERIC TITLE (alleen intern, voor plaats-detectie)
+# GENERIC TITLE (alleen nog nodig voor Plaats-fallback)
 # ---------------------------------------------------------
 def extract_title(card, a):
     for tag in ["h1", "h2", "h3"]:
@@ -297,243 +259,78 @@ def extract_title(card, a):
 
     txt = card.get_text(" ", strip=True)
     if txt and len(txt.split()) > 3:
-        return txt[:200]
+        return txt[:120]
 
     return ""
-
 
 # ---------------------------------------------------------
 # LISTING VALIDATION
 # ---------------------------------------------------------
 def looks_like_listing(text):
-    return bool(re.search(r"[\d\.\,\s ]+€", text))
-
-
-# ---------------------------------------------------------
-# DETECT "NIEUW?"
-# ---------------------------------------------------------
-def detect_nieuw(text):
-    if not text:
-        return "Nee"
-    t = text.lower()
-    keywords = [
-        "nouveau", "nouveauté", "exclusif", "exclusivité",
-        "new", "new listing", "just listed", "recently added",
-        "nieuw", "net binnen", "pas toegevoegd",
-        "juste arrivé", "fresh on the market",
-    ]
-    return "Ja" if any(k in t for k in keywords) else "Nee"
-
+    return bool(re.search(r"[\d\.\,\s ]+€", text)) or "chambre" in text.lower() or "pièce" in text.lower()
 
 # ---------------------------------------------------------
-# DETECT PLAATS
+# SITE-SPECIFIEKE PARSERS (zoals je al had)
 # ---------------------------------------------------------
-def detect_place_from_title_or_text(text):
-    if not text:
-        return "Onbekend"
-
-    # simpele heuristiek: zoek iets als "Maison, Puy-l'Évêque"
-    m = re.search(r",\s*([^,–\-|]+)$", text.strip())
-    if m:
-        plaats = m.group(1).strip()
-        if 2 <= len(plaats) <= 60:
-            return plaats
-
-    # zoek hoofdletter-woorden met streepjes (Montaigu-de-Quercy)
-    m = re.search(r"\b([A-ZÉÈÎÏÂÀÇ][\w\'\-éèêëàâîïôöùûüç]+(?:-[A-ZÉÈÎÏÂÀÇ][\w\'\-éèêëàâîïôöùûüç]+)*)", text)
-    if m:
-        return m.group(1).strip()
-
-    return "Onbekend"
-
-
-def detect_place_from_url(url):
-    if not url:
-        return None
-    # pak laatste segment dat geen id is
-    path = url.split("?")[0]
-    parts = [p for p in path.split("/") if p]
-    if not parts:
-        return None
-    # neem laatste niet-numerieke slug
-    for p in reversed(parts):
-        if not re.fullmatch(r"\d+", p):
-            slug = p
-            break
-    else:
-        return None
-    slug = slug.replace("-", " ")
-    slug = re.sub(r"\d+", "", slug).strip()
-    if not slug:
-        return None
-    # capitalise eerste letter van elk woord
-    return " ".join(w.capitalize() for w in slug.split())
-
-
-# ---------------------------------------------------------
-# DETECT M2 / SLAAPKAMERS
-# ---------------------------------------------------------
-def detect_m2_binnen(text):
-    if not text:
-        return "N/A"
-    # zoek iets als "90 m²", "105 m2"
-    m = re.search(r"(\d{2,4})\s*(m²|m2|sqm)", text, re.I)
-    if m:
-        return m.group(1)
-    # fallback: "surface habitable 120 m²"
-    m = re.search(r"surface.*?(\d{2,4})\s*(m²|m2|sqm)", text, re.I)
-    if m:
-        return m.group(1)
-    return "N/A"
-
-
-def detect_m2_buiten(text):
-    if not text:
-        return "N/A"
-    # zoek naar terrain / land / plot
-    m = re.search(r"(terrain|land|plot|jardin|parcelle)[^0-9]{0,20}(\d{3,6})\s*(m²|m2)", text, re.I)
-    if m:
-        return m.group(2)
-    return "N/A"
-
-
-def detect_slaapkamers(text):
-    if not text:
-        return "N/A"
-    # 3 chambres, 4 ch, 5 bedrooms, 2 bed
-    m = re.search(r"(\d+)\s*(chambres|chambre|ch\b)", text, re.I)
-    if m:
-        return m.group(1)
-    m = re.search(r"(\d+)\s*(bedrooms|bedroom|bed\b)", text, re.I)
-    if m:
-        return m.group(1)
-    return "N/A"
-
-
-# ---------------------------------------------------------
-# SITE-SPECIFIEKE PARSERS (geven ruwe data terug)
-# ---------------------------------------------------------
-
 def parse_lot_immoco(card, base):
     a = card.select_one("h1 a")
     url = fix_url(a["href"], base) if a else None
-
     titel = a.get_text(strip=True) if a else ""
     price_el = card.select_one("span[itemprop='price']")
-    prijs_text = price_el.get("content") + " €" if price_el else card.get_text(" ", strip=True)
-
+    prijs = price_el.get("content") + " €" if price_el else "N/A"
     img = card.select_one("div.panel-heading img")
-    foto = fix_url(img["src"], base) if img else extract_image(card, base)
-
-    text = card.get_text(" ", strip=True)
-    return {
-        "url": url,
-        "title": titel,
-        "text": text,
-        "price_text": prijs_text,
-        "photo": foto,
-    }
-
+    foto = fix_url(img["src"], base) if img else "N/A"
+    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_quercygascogne(card, base):
     a = card.select_one("a.property__link")
     url = fix_url(a["href"], base) if a else None
-
     title_el = card.select_one(".property__title h2 span")
     titel = title_el.get_text(strip=True) if title_el else ""
-
     price_el = card.select_one(".property__price span")
-    prijs_text = price_el.get_text(strip=True) if price_el else card.get_text(" ", strip=True)
-
+    prijs = price_el.get_text(strip=True) if price_el else "N/A"
     img = card.select_one(".property__visual img")
-    foto = fix_url(img.get("data-src") or img.get("src"), base) if img else extract_image(card, base)
-
-    text = card.get_text(" ", strip=True)
-    return {
-        "url": url,
-        "title": titel,
-        "text": text,
-        "price_text": prijs_text,
-        "photo": foto,
-    }
-
+    foto = fix_url(img.get("data-src") or img.get("src"), base) if img else "N/A"
+    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_mouly(card, base):
     a = card.select_one("a.item__title")
     url = fix_url(a["href"], base) if a else None
-
     title_el = card.select_one(".title__content-2")
     titel = title_el.get_text(strip=True) if title_el else ""
-
     price_el = card.select_one(".item__price .__price-value")
-    prijs_text = price_el.get_text(strip=True) if price_el else card.get_text(" ", strip=True)
-
+    prijs = price_el.get_text(strip=True) if price_el else "N/A"
     img = card.select_one(".decorate__img")
-    foto = fix_url(img["src"], base) if img else extract_image(card, base)
-
-    text = card.get_text(" ", strip=True)
-    return {
-        "url": url,
-        "title": titel,
-        "text": text,
-        "price_text": prijs_text,
-        "photo": foto,
-    }
-
+    foto = fix_url(img["src"], base) if img else "N/A"
+    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_wheeler(card, base):
     a = card.select_one("a.jet-listing-dynamic-link__link")
     url = fix_url(a["href"], base) if a else None
-
     title_el = card.select_one(".wmc-listing-title .jet-listing-dynamic-link__label")
     titel = title_el.get_text(strip=True) if title_el else ""
-
     price_el = card.select_one(".jet-listing-dynamic-field__content")
-    prijs_text = price_el.get_text(" ", strip=True) if price_el else card.get_text(" ", strip=True)
-
+    prijs = price_el.get_text(" ", strip=True) if price_el else "N/A"
     img = card.select_one("img")
-    foto = fix_url(img["src"], base) if img else extract_image(card, base)
-
-    text = card.get_text(" ", strip=True)
-    return {
-        "url": url,
-        "title": titel,
-        "text": text,
-        "price_text": prijs_text,
-        "photo": foto,
-    }
-
+    foto = fix_url(img["src"], base) if img else "N/A"
+    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 def parse_eleonor(card, base):
     a = card if card.name == "a" else card.find("a", href=True)
     url = fix_url(a["href"], base) if a else None
-
     img = card.select_one("img.propertiesPicture")
-    foto = fix_url(img["src"], base) if img else extract_image(card, base)
-
+    foto = fix_url(img["src"], base) if img else "N/A"
     title_el = card.select_one(".title")
     subtitle_el = card.select_one(".subtitle")
-
     titel = ""
     if title_el:
         titel += title_el.get_text(" ", strip=True)
     if subtitle_el:
-        if titel:
-            titel += " – "
-        titel += subtitle_el.get_text(" ", strip=True)
-
+        titel += " – " + subtitle_el.get_text(" ", strip=True)
+    titel = titel.strip()
     price_el = card.select_one(".price")
-    prijs_text = price_el.get_text(" ", strip=True) if price_el else card.get_text(" ", strip=True)
-
-    text = card.get_text(" ", strip=True)
-    return {
-        "url": url,
-        "title": titel,
-        "text": text,
-        "price_text": prijs_text,
-        "photo": foto,
-    }
-
+    prijs = price_el.get_text(" ", strip=True) if price_el else "N/A"
+    return {"Titel": titel, "PrijsRaw": prijs, "Foto": foto, "URL": url}
 
 SITE_PARSERS = {
     "lot_immoco": parse_lot_immoco,
@@ -543,6 +340,161 @@ SITE_PARSERS = {
     "eleonor": parse_eleonor,
 }
 
+# ---------------------------------------------------------
+# PLAATS-DETECTIE
+# ---------------------------------------------------------
+FORBIDDEN_PLACE_WORDS = {
+    "maison", "appartement", "immeuble", "terrain", "propriete", "propriété",
+    "villa", "ensemble", "magnifique", "charmante", "charmant", "belle", "grand",
+    "estimation", "country", "propriete", "propriété", "chateau", "château",
+    "exclusif", "exclusifs", "exclusivité", "exclusivite",
+    "garage", "jardin", "piscine", "dependances", "dépendances", "vue", "boisé",
+    "boise", "maisonnette", "studio"
+}
+
+def normalize_word(w: str) -> str:
+    w = w.strip(" ,.;:!?\t\n").lower()
+    w = w.replace("’", "'")
+    w = w.replace("é", "e").replace("è", "e").replace("ê", "e")
+    w = w.replace("à", "a").replace("â", "a")
+    w = w.replace("ô", "o").replace("ù", "u").replace("û", "u")
+    return w
+
+def is_valid_place_word(w: str) -> bool:
+    if not w:
+        return False
+    w_norm = normalize_word(w)
+    if not w_norm:
+        return False
+    if w_norm in FORBIDDEN_PLACE_WORDS:
+        return False
+    if any(c.isdigit() for c in w_norm):
+        return False
+    if len(w_norm) < 3:
+        return False
+    return True
+
+def format_place(words):
+    return " ".join(w.capitalize() for w in words)
+
+def detect_place_from_url(url: str | None) -> str | None:
+    if not url:
+        return None
+    parts = url.split("/")
+    for p in reversed(parts):
+        if "-" in p and not p.isdigit():
+            raw = p.split("-")
+            words = [w for w in raw if is_valid_place_word(w)]
+            if words:
+                return format_place(words)
+    return None
+
+def detect_place_from_title(title: str | None) -> str | None:
+    if not title:
+        return None
+    parts = re.split(r"[,\-–|/]", title)
+    for p in parts:
+        words = [w for w in p.split() if is_valid_place_word(w)]
+        if words:
+            return format_place(words)
+    return None
+
+def detect_place_from_text(text: str | None) -> str | None:
+    if not text:
+        return None
+    words = [w for w in text.split() if is_valid_place_word(w)]
+    if words:
+        return words[0].capitalize()
+    return None
+
+def detect_place(url, title, text):
+    return (
+        detect_place_from_url(url)
+        or detect_place_from_title(title)
+        or detect_place_from_text(text)
+        or "Onbekend"
+    )
+
+# ---------------------------------------------------------
+# PRIJS-DETECTIE
+# ---------------------------------------------------------
+def extract_price(text: str | None) -> str:
+    if not text:
+        return "N/A"
+    # alle getallen gevolgd door €
+    matches = re.findall(r"(\d[\d\s \.]*\d)\s*€", text)
+    if not matches:
+        return "N/A"
+    # neem de EERSTE (niet de laatste) om "000 €" te vermijden
+    price = matches[0]
+    price = price.replace(" ", " ").replace(" ", "").replace(".", "")
+    # herformat: 285000 -> "285 000 €"
+    try:
+        n = int(price)
+        return f"{n:,}".replace(",", " ") + " €"
+    except ValueError:
+        return matches[0].strip() + " €"
+
+# ---------------------------------------------------------
+# m2 BINNEN / BUITEN
+# ---------------------------------------------------------
+OUTSIDE_HINTS = ["terrain", "jardin", "parcelle", "parc", "land", "plot", "boise", "boisé", "hectares", "ha"]
+
+def extract_m2(text: str | None):
+    if not text:
+        return ("N/A", "N/A")
+    tokens = text.split()
+    inside = None
+    outside = None
+
+    for i, tok in enumerate(tokens):
+        m = re.match(r"(\d+)\s*(m²|m2)", tok.replace("mÂ²", "m²"))
+        if not m:
+            # soms "197.00" en dan "m²" apart
+            if i + 1 < len(tokens) and re.match(r"m²|m2", tokens[i + 1]):
+                m = re.match(r"(\d+)", tok)
+            else:
+                continue
+        if not m:
+            continue
+        val = m.group(1)
+        # context: woorden ervoor
+        window_start = max(0, i - 5)
+        context = " ".join(tokens[window_start:i]).lower()
+        is_outside = any(h in context for h in OUTSIDE_HINTS)
+        if is_outside:
+            if outside is None:
+                outside = val
+        else:
+            if inside is None:
+                inside = val
+
+    return (inside or "N/A", outside or "N/A")
+
+# ---------------------------------------------------------
+# SLAAPKAMERS
+# ---------------------------------------------------------
+def extract_bedrooms(text: str | None) -> str:
+    if not text:
+        return "N/A"
+    m = re.search(r"(\d+)\s*(chambres?|ch\.|chb|bedrooms?|bed)", text, re.I)
+    if m:
+        return m.group(1)
+    return "N/A"
+
+# ---------------------------------------------------------
+# NIEUW?
+# ---------------------------------------------------------
+def detect_new(text: str | None) -> str:
+    if not text:
+        return "Nee"
+    t = text.lower()
+    if any(w in t for w in ["nouveaute", "nouveauté", "new", "recent", "récent"]):
+        return "Ja"
+    if "exclusiv" in t:
+        # jij mag dit aanpassen naar wens; nu telt exclusif als "nieuw"
+        return "Ja"
+    return "Nee"
 
 # ---------------------------------------------------------
 # CARD DETECTION
@@ -554,7 +506,6 @@ def find_card_for_anchor(soup, a, config):
             if card.find("a", href=a.get("href")):
                 return card
 
-    # fallback: climb
     node = a
     for _ in range(8):
         if not node.parent:
@@ -563,49 +514,6 @@ def find_card_for_anchor(soup, a, config):
         if node.name in ("article", "li", "section", "div"):
             return node
     return a.parent
-
-
-# ---------------------------------------------------------
-# NORMALISATIE NAAR JOUW STRUCTUUR
-# ---------------------------------------------------------
-def normalize_listing(site_id, raw):
-    url = raw.get("url")
-    title = raw.get("title") or ""
-    text = raw.get("text") or ""
-    price_text = raw.get("price_text") or text
-    photo = raw.get("photo")
-
-    full_text = " ".join([title, text]).strip()
-
-    prijs = extract_price(price_text)
-    nieuw = detect_nieuw(full_text)
-
-    plaats = detect_place_from_title_or_text(title)
-    if plaats == "Onbekend":
-        from_text = detect_place_from_title_or_text(text)
-        if from_text != "Onbekend":
-            plaats = from_text
-    if plaats == "Onbekend":
-        from_url = detect_place_from_url(url)
-        if from_url:
-            plaats = from_url
-
-    m2_binnen = detect_m2_binnen(full_text)
-    m2_buiten = detect_m2_buiten(full_text)
-    slaapkamers = detect_slaapkamers(full_text)
-
-    return {
-        "Bron": site_id,
-        "Plaats": plaats,
-        "Nieuw?": nieuw,
-        "Prijs": prijs,
-        "m2 Binnen": m2_binnen,
-        "m2 Buiten": m2_buiten,
-        "Slaapkamers": slaapkamers,
-        "URL": url or "",
-        "Foto": photo or "N/A",
-    }
-
 
 # ---------------------------------------------------------
 # SCRAPE LIST PAGE
@@ -616,33 +524,23 @@ async def scrape_list_page(browser, config):
 
     context = await browser.new_context(
         viewport={"width": 1400, "height": 900},
-        user_agent="Mozilla/5.0",
+        user_agent="Mozilla/5.0"
     )
     page = await context.new_page()
 
-    try:
-        await page.goto(config["url"], wait_until="domcontentloaded", timeout=30000)
-    except Exception as e:
-        print(f"  {site_id}: goto failed: {e}")
-        await context.close()
-        return []
+    await page.goto(config["url"], wait_until="domcontentloaded", timeout=30000)
 
-    # probeer rustig te scrollen, maar breek bij navigatie
+    # veilige scroll: navigation changes → try/except
     for _ in range(4):
         try:
-            await page.mouse.wheel(0, 2000)
+            await page.evaluate("window.scrollBy(0, document.body.scrollHeight)")
             await asyncio.sleep(1)
         except Exception:
             break
 
-    try:
-        html = await page.content()
-    except Exception as e:
-        print(f"  {site_id}: content failed: {e}")
-        await context.close()
-        return []
-
+    html = await page.content()
     soup = BeautifulSoup(html, "html.parser")
+
     pattern = re.compile(config["pattern"], re.I)
 
     anchors = []
@@ -658,8 +556,6 @@ async def scrape_list_page(browser, config):
             unique.append((a, href))
 
     listings = []
-    parser = SITE_PARSERS.get(site_id)
-
     for a, href in unique:
         card = find_card_for_anchor(soup, a, config)
         if not card:
@@ -669,30 +565,45 @@ async def scrape_list_page(browser, config):
         if not looks_like_listing(text):
             continue
 
+        parser = SITE_PARSERS.get(site_id)
         if parser:
-            raw = parser(card, config["base"])
+            parsed = parser(card, config["base"])
+            titel = parsed.get("Titel", "") or ""
+            prijs_raw = parsed.get("PrijsRaw", "") or text
+            foto = parsed.get("Foto") or extract_image(card, config["base"]) or "N/A"
+            url = parsed.get("URL") or href
         else:
-            title = extract_title(card, a)
+            titel = extract_title(card, a)
+            prijs_raw = text
             foto = extract_image(card, config["base"]) or "N/A"
-            raw = {
-                "url": href,
-                "title": title,
-                "text": text,
-                "price_text": text,
-                "photo": foto,
-            }
+            url = href
 
-        raw["url"] = raw.get("url") or href
-        normalized = normalize_listing(site_id, raw)
-        listings.append(normalized)
+        prijs = extract_price(prijs_raw or text)
+        m2_binnen, m2_buiten = extract_m2(text)
+        slaapkamers = extract_bedrooms(text)
+        nieuw = detect_new(text + " " + titel)
 
+        plaats = detect_place(url, titel, text)
+
+        data = {
+            "Bron": site_id,
+            "Plaats": plaats,
+            "Nieuw?": nieuw,
+            "Prijs": prijs,
+            "m2 Binnen": m2_binnen,
+            "m2 Buiten": m2_buiten,
+            "Slaapkamers": slaapkamers,
+            "URL": url,
+            "Foto": foto,
+        }
+
+        listings.append(data)
         if len(listings) >= MAX_LISTINGS_PER_SITE:
             break
 
     print(f"  {site_id}: {len(listings)} listings")
     await context.close()
     return listings
-
 
 # ---------------------------------------------------------
 # MAIN
@@ -716,7 +627,6 @@ async def main():
         print(f"\n✅ Klaar! {len(flat)} panden gescraped.")
 
         await browser.close()
-
 
 if __name__ == "__main__":
     asyncio.run(main())
