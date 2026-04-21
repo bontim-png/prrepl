@@ -2,7 +2,6 @@ import asyncio
 import json
 import re
 import random
-import setuptools
 from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 from playwright_stealth import stealth_async
@@ -45,75 +44,81 @@ SCRAPER_CONFIG = [
 
 MAX_LISTINGS_PER_SITE = 8
 
+# ─────────────────────────────────────────
+# URL FIX
+# ─────────────────────────────────────────
 def fix_url(url, base_url):
-    """Corrigeert URLs en voegt trailing slash toe waar nodig."""
-    if not url.startswith('http'):
-        url = base_url.rstrip('/') + '/' + url.lstrip('/')
+    if not url.startswith("http"):
+        url = base_url.rstrip("/") + "/" + url.lstrip("/")
     parsed = urlparse(url)
-    if not parsed.path.endswith('/') and not re.search(r'\.[a-z0-9]{2,4}$', parsed.path, re.I):
-        url += '/'
+    if not parsed.path.endswith("/") and not re.search(r"\.[a-z0-9]{2,4}$", parsed.path, re.I):
+        url += "/"
     return url
 
+# ─────────────────────────────────────────
+# DETAIL SCRAPER
+# ─────────────────────────────────────────
 async def scrape_details(browser, url, site_id):
-    """Haalt details op met focus op unieke data per pagina."""
     context = await browser.new_context(
-        viewport={'width': 1280, 'height': 800},
+        viewport={"width": 1280, "height": 800},
         user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     )
     page = await context.new_page()
+
+    # Stealth alleen op detailpagina’s
     await stealth_async(page)
-    
+
+    # Timeouts
+    page.set_default_timeout(8000)
+    page.set_default_navigation_timeout(12000)
+
     try:
-        # Wacht tot de pagina echt geladen is
-        await page.goto(url, wait_until="networkidle", timeout=60000)
-        
-        # Scroll om lazy-loaded images en prijzen te triggeren
+        await page.goto(url, wait_until="domcontentloaded", timeout=15000)
+
         await page.evaluate("window.scrollTo(0, 400)")
-        await asyncio.sleep(2)
+        await asyncio.sleep(1)
 
         content = await page.content()
         soup = BeautifulSoup(content, "html.parser")
-        
-        # 1. PRIJS EXTRACTIE (Zoekt specifiek naar bedragen bij € teken)
-        # We halen eerst alle tekst op en schonen die op
+
+        # PRIJS
         visible_text = await page.evaluate("() => document.body.innerText")
-        # Regex die kijkt naar getallen voor of na een € teken, rekening houdend met Franse notatie (spaties)
         price_matches = re.findall(r"(\d[\d\s.]*)\s?€|€\s?(\d[\d\s.]*)", visible_text)
-        
+
         prijs = "N/A"
         if price_matches:
-            # Pak de eerste match die niet nul is en langer dan 3 tekens (voorkom 'm2' verwarring)
             for m in price_matches:
                 found = m[0] or m[1]
-                clean_p = re.sub(r'[^\d]', '', found)
-                if clean_p and int(clean_p) > 1000:
+                clean = re.sub(r"[^\d]", "", found)
+                if clean and int(clean) > 1000:
                     prijs = f"{found.strip()} €"
                     break
 
-        # 2. FOTO EXTRACTIE (Gebruik metadata voor de beste kwaliteit)
+        # FOTO
         foto = "N/A"
-        og_image = soup.find("meta", property="og:image")
-        if og_image and og_image.get("content"):
-            foto = og_image["content"]
+        og = soup.find("meta", property="og:image")
+        if og and og.get("content"):
+            foto = og["content"]
         else:
-            # Fallback: Zoek de grootste img tag
             imgs = await page.query_selector_all("img")
             max_area = 0
             for img in imgs:
                 try:
                     box = await img.bounding_box()
                     if box:
-                        area = box['width'] * box['height']
+                        area = box["width"] * box["height"]
                         src = await img.get_attribute("src")
-                        if area > max_area and src and "http" in src and "logo" not in src.lower():
+                        if area > max_area and src and "http" in src:
                             max_area = area
                             foto = src
-                except: continue
+                except:
+                    pass
 
-        # 3. PLAATS & INFO
+        # PLAATS
         h1 = soup.find("h1")
         plaats = h1.get_text(strip=True)[:100] if h1 else "Onbekend"
-        
+
+        # M2
         m2_match = re.search(r"(\d+)\s?m²", visible_text)
         m2 = m2_match.group(1) if m2_match else "N/A"
 
@@ -126,60 +131,71 @@ async def scrape_details(browser, url, site_id):
             "Foto": foto,
             "URL": url
         }
+
     except Exception as e:
-        print(f"  ! Fout bij detail {url}: {e}")
+        print(f"  ! Detail fout {url}: {e}")
         await context.close()
         return None
 
+# ─────────────────────────────────────────
+# MAIN SCRAPER
+# ─────────────────────────────────────────
 async def main():
     async with async_playwright() as p:
-        # Launch browser met extra argumenten tegen detectie
-        browser = await p.chromium.launch(headless=True, args=["--no-sandbox"])
+        browser = await p.chromium.launch(
+            headless=True,
+            args=["--no-sandbox", "--disable-dev-shm-usage"]
+        )
+
         all_data = []
 
         for config in SCRAPER_CONFIG:
             print(f"--- Scraper start: {config['id']} ---")
+
             context = await browser.new_context()
             page = await context.new_page()
-            await stealth_async(page)
-            
+
+            # Timeouts
+            page.set_default_timeout(8000)
+            page.set_default_navigation_timeout(12000)
+
             try:
-                await page.goto(config['url'], wait_until="networkidle", timeout=60000)
-                
-                # Haal links op via de browser context (betrouwbaarder dan BS4 voor links)
-                links = await page.evaluate(f"""(pattern) => {{
-                    const regex = new RegExp(pattern, 'i');
-                    return Array.from(document.querySelectorAll('a'))
-                        .map(a => a.href)
-                        .filter(href => regex.test(href));
-                }}""", config['pattern'])
-                
-                # Unieke URLs en fix format
-                unique_links = []
-                for l in links:
-                    fixed = fix_url(l, config['base'])
-                    if fixed not in unique_links:
-                        unique_links.append(fixed)
-                
-                print(f"  Gevonden: {len(unique_links)} potentiële links. Bezoeken van top {MAX_LISTINGS_PER_SITE}...")
-                
+                await page.goto(config["url"], wait_until="domcontentloaded", timeout=15000)
+
+                links = await page.evaluate(f"""
+                    (pattern) => {{
+                        const regex = new RegExp(pattern, 'i');
+                        return Array.from(document.querySelectorAll('a'))
+                            .map(a => a.href)
+                            .filter(h => regex.test(h));
+                    }}
+                """, config["pattern"])
+
+                unique_links = list({fix_url(l, config["base"]) for l in links})
+
+                print(f"  Gevonden: {len(unique_links)} links. Scrapen top {MAX_LISTINGS_PER_SITE}...")
+
                 for link in unique_links[:MAX_LISTINGS_PER_SITE]:
-                    result = await scrape_details(browser, link, config['id'])
-                    if result:
-                        all_data.append(result)
-                        print(f"    + {result['Prijs']} | {result['Plaats'][:30]}...")
+                    try:
+                        result = await asyncio.wait_for(
+                            scrape_details(browser, link, config["id"]),
+                            timeout=20
+                        )
+                        if result:
+                            all_data.append(result)
+                            print(f"    + {result['Prijs']} | {result['Plaats'][:30]}...")
+                    except asyncio.TimeoutError:
+                        print(f"    ! Timeout detailpagina: {link}")
 
             except Exception as e:
-                print(f"  ! Fout bij hoofdpagina {config['id']}: {e}")
-            
-            await context.close()
-            # Korte pauze tussen sites om IP-blokkades te voorkomen
-            await asyncio.sleep(random.uniform(2, 5))
+                print(f"  ! Hoofdpagina fout {config['id']}: {e}")
 
-        # Opslaan naar JSON
+            await context.close()
+            await asyncio.sleep(random.uniform(1, 3))
+
         with open("data.json", "w", encoding="utf-8") as f:
             json.dump(all_data, f, ensure_ascii=False, indent=2)
-        
+
         await browser.close()
         print(f"\n✅ Klaar! Totaal {len(all_data)} huizen gescraped.")
 
