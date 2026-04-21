@@ -6,9 +6,14 @@ from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 from playwright_stealth import stealth_async
 from bs4 import BeautifulSoup
+
 # ─────────────────────────────────────────
-# CONFIGURATIE
+# CONFIG
 # ─────────────────────────────────────────
+MAX_LISTINGS_PER_SITE = 8
+MAX_CONCURRENT_SITES = 6
+MAX_RETRIES = 3
+
 SCRAPER_CONFIG = [
     {"id": "ladresse_tournon",    "url": "https://www.ladresse.com/agence/l-adresse-tournon-d-agenais/266/acheter?sort=date-desc", "base": "https://www.ladresse.com",                          "pattern": r"/achat/"},
     {"id": "beauxvillages",       "url": "https://beauxvillages.com/en/latest-properties?hotsheet=1",                              "base": "https://beauxvillages.com",                         "pattern": r"/property/"},
@@ -42,8 +47,6 @@ SCRAPER_CONFIG = [
     {"id": "orpi",                "url": "https://www.orpi.com/recherche/buy?sort=date-down",                                     "base": "https://www.orpi.com",                              "pattern": r"annonce-vente"},
 ]
 
-MAX_LISTINGS_PER_SITE = 8
-
 # ─────────────────────────────────────────
 # URL FIX
 # ─────────────────────────────────────────
@@ -56,7 +59,37 @@ def fix_url(url, base_url):
     return url
 
 # ─────────────────────────────────────────
-# DETAIL SCRAPER
+# EXTRACT 8 NIEUWSTE LINKS (DOM-volgorde)
+# ─────────────────────────────────────────
+async def extract_listing_links(page, config):
+    # Scroll om lazy-loaded content te activeren
+    await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+    await asyncio.sleep(1)
+
+    # Alle links in DOM-volgorde
+    raw_links = await page.evaluate("""
+        () => Array.from(document.querySelectorAll('a')).map(a => a.href)
+    """)
+
+    pattern = re.compile(config["pattern"], re.I)
+    filtered = [l for l in raw_links if pattern.search(l)]
+
+    # Deduplicate while preserving order
+    seen = set()
+    unique = []
+    for l in filtered:
+        if l not in seen:
+            seen.add(l)
+            unique.append(l)
+
+    # Fix URLs
+    fixed = [fix_url(l, config["base"]) for l in unique]
+
+    # Eerste 8 = nieuwste 8
+    return fixed[:MAX_LISTINGS_PER_SITE]
+
+# ─────────────────────────────────────────
+# DETAIL SCRAPER (kern)
 # ─────────────────────────────────────────
 async def scrape_details(browser, url, site_id):
     context = await browser.new_context(
@@ -65,18 +98,16 @@ async def scrape_details(browser, url, site_id):
     )
     page = await context.new_page()
 
-    # Stealth alleen op detailpagina’s
     await stealth_async(page)
 
-    # Timeouts
-    page.set_default_timeout(8000)
-    page.set_default_navigation_timeout(12000)
+    page.set_default_timeout(6000)
+    page.set_default_navigation_timeout(8000)
 
     try:
-        await page.goto(url, wait_until="domcontentloaded", timeout=15000)
+        await page.goto(url, wait_until="domcontentloaded")
 
         await page.evaluate("window.scrollTo(0, 400)")
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.5)
 
         content = await page.content()
         soup = BeautifulSoup(content, "html.parser")
@@ -133,12 +164,65 @@ async def scrape_details(browser, url, site_id):
         }
 
     except Exception as e:
-        print(f"  ! Detail fout {url}: {e}")
         await context.close()
-        return None
+        raise e
 
 # ─────────────────────────────────────────
-# MAIN SCRAPER
+# DETAIL SCRAPER MET RETRY
+# ─────────────────────────────────────────
+async def scrape_detail_with_retry(browser, url, site_id):
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            return await asyncio.wait_for(
+                scrape_details(browser, url, site_id),
+                timeout=12
+            )
+        except Exception as e:
+            print(f"    ! Retry {attempt}/{MAX_RETRIES} voor {url}: {e}")
+            await asyncio.sleep(1.5 * attempt)
+
+    print(f"    ✖ Definitief mislukt: {url}")
+    return None
+
+# ─────────────────────────────────────────
+# SITE SCRAPER (parallel detail scraping)
+# ─────────────────────────────────────────
+async def scrape_site(browser, config):
+    print(f"--- Start: {config['id']} ---")
+
+    context = await browser.new_context()
+    page = await context.new_page()
+
+    page.set_default_timeout(6000)
+    page.set_default_navigation_timeout(8000)
+
+    results = []
+
+    try:
+        await page.goto(config["url"], wait_until="domcontentloaded")
+
+        links = await extract_listing_links(page, config)
+        print(f"  {config['id']}: {len(links)} nieuwste links gevonden")
+
+        tasks = [
+            scrape_detail_with_retry(browser, link, config["id"])
+            for link in links
+        ]
+
+        detail_results = await asyncio.gather(*tasks)
+
+        for r in detail_results:
+            if r:
+                results.append(r)
+
+    except Exception as e:
+        print(f"  ! Fout bij {config['id']}: {e}")
+
+    await context.close()
+    return results
+
+# ─────────────────────────────────────────
+# MAIN (parallel sites)
 # ─────────────────────────────────────────
 async def main():
     async with async_playwright() as p:
@@ -147,57 +231,22 @@ async def main():
             args=["--no-sandbox", "--disable-dev-shm-usage"]
         )
 
-        all_data = []
+        semaphore = asyncio.Semaphore(MAX_CONCURRENT_SITES)
 
-        for config in SCRAPER_CONFIG:
-            print(f"--- Scraper start: {config['id']} ---")
+        async def sem_task(config):
+            async with semaphore:
+                return await scrape_site(browser, config)
 
-            context = await browser.new_context()
-            page = await context.new_page()
+        all_results = await asyncio.gather(*[sem_task(c) for c in SCRAPER_CONFIG])
 
-            # Timeouts
-            page.set_default_timeout(8000)
-            page.set_default_navigation_timeout(12000)
-
-            try:
-                await page.goto(config["url"], wait_until="domcontentloaded", timeout=15000)
-
-                links = await page.evaluate(f"""
-                    (pattern) => {{
-                        const regex = new RegExp(pattern, 'i');
-                        return Array.from(document.querySelectorAll('a'))
-                            .map(a => a.href)
-                            .filter(h => regex.test(h));
-                    }}
-                """, config["pattern"])
-
-                unique_links = list({fix_url(l, config["base"]) for l in links})
-
-                print(f"  Gevonden: {len(unique_links)} links. Scrapen top {MAX_LISTINGS_PER_SITE}...")
-
-                for link in unique_links[:MAX_LISTINGS_PER_SITE]:
-                    try:
-                        result = await asyncio.wait_for(
-                            scrape_details(browser, link, config["id"]),
-                            timeout=20
-                        )
-                        if result:
-                            all_data.append(result)
-                            print(f"    + {result['Prijs']} | {result['Plaats'][:30]}...")
-                    except asyncio.TimeoutError:
-                        print(f"    ! Timeout detailpagina: {link}")
-
-            except Exception as e:
-                print(f"  ! Hoofdpagina fout {config['id']}: {e}")
-
-            await context.close()
-            await asyncio.sleep(random.uniform(1, 3))
+        flat = [item for sub in all_results for item in sub]
 
         with open("data.json", "w", encoding="utf-8") as f:
-            json.dump(all_data, f, ensure_ascii=False, indent=2)
+            json.dump(flat, f, ensure_ascii=False, indent=2)
+
+        print(f"\n✅ Klaar! Totaal {len(flat)} huizen gescraped.")
 
         await browser.close()
-        print(f"\n✅ Klaar! Totaal {len(all_data)} huizen gescraped.")
 
 if __name__ == "__main__":
     asyncio.run(main())
