@@ -775,47 +775,47 @@ async def scrape_list_page(browser, config):
         return []
 
    # SCROLL STRATEGY
-if site_id == "beauxvillages":
-    # infinite scroll until no new items
-    last_height = 0
-    for _ in range(12):
-        try:
-            await page.mouse.wheel(0, 3000)
-            await asyncio.sleep(1.5)
-            new_height = await page.evaluate("document.body.scrollHeight")
-            if new_height == last_height:
+    if site_id == "beauxvillages":
+        # infinite scroll until no new items
+        last_height = 0
+        for _ in range(12):
+            try:
+                await page.mouse.wheel(0, 3000)
+                await asyncio.sleep(1.5)
+                new_height = await page.evaluate("document.body.scrollHeight")
+                if new_height == last_height:
+                    break
+                last_height = new_height
+            except:
                 break
-            last_height = new_height
-        except:
-            break
-else:
-    # normal scroll for all other sites
-   if config.get("requires_js"):
-    # wait for React to render
-    try:
-        await page.wait_for_selector(config["card_selector"], timeout=20000)
-    except:
-        print(f"{site_id}: no cards rendered")
-        await context.close()
-        return []
 
-    # infinite scroll until no new cards
-    last_count = 0
-    for _ in range(12):
-        cards = await page.query_selector_all(config["card_selector"])
-        if len(cards) == last_count:
-            break
-        last_count = len(cards)
-        await page.mouse.wheel(0, 3000)
-        await asyncio.sleep(1.2)
-else:
-    # normal scroll
-    for _ in range(4):
+    elif config.get("requires_js"):
+        # wait for JS-rendered cards
         try:
-            await page.mouse.wheel(0, 2000)
-            await asyncio.sleep(1)
+            await page.wait_for_selector(config["card_selector"], timeout=20000)
         except:
-            break
+            print(f"{site_id}: no cards rendered")
+            await context.close()
+            return []
+
+        # infinite scroll until no new cards appear
+        last_count = 0
+        for _ in range(12):
+            cards = await page.query_selector_all(config["card_selector"])
+            if len(cards) == last_count:
+                break
+            last_count = len(cards)
+            await page.mouse.wheel(0, 3000)
+            await asyncio.sleep(1.2)
+
+    else:
+        # normal scroll for static sites
+        for _ in range(4):
+            try:
+                await page.mouse.wheel(0, 2000)
+                await asyncio.sleep(1)
+            except:
+                break
 
 
 
