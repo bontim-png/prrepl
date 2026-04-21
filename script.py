@@ -38,7 +38,7 @@ SCRAPER_CONFIG = [
     "base": "...",
     "pattern": r"/vente/",
     "card_selector": ".property, .item, article, .annonce",
-}
+},
 
     {
         "id": "human",
