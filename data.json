@@ -403,17 +403,6 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.agencespouget.com/vente/17-puy-l-eveque/maison-de-village/7169-maison-de-village-a-renover-fort-potentiel",
-    "Foto": "https://www.agencespouget.com/images/logo-modal.png"
-  },
-  {
-    "Bron": "pouget",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
     "URL": "https://www.agencespouget.com/vente/386-cancon/appartement/t5/7167-maison-familiale-a-cancon/",
     "Foto": "https://www.agencespouget.com/images/logo-modal.png"
   },
@@ -437,6 +426,17 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.agencespouget.com/vente/17-puy-l-eveque/appartement/t2/7164-appartement-t2-renove/",
+    "Foto": "https://www.agencespouget.com/images/logo-modal.png"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/3271-pays-de-belves/maison-de-village/7163-maison-en-pierre-avec-dependance-et-vue-sur-belves-perigord-noir",
     "Foto": "https://www.agencespouget.com/images/logo-modal.png"
   },
   {
@@ -1983,6 +1983,17 @@
     "Bron": "immo46",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "154.012 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,local-batiment-commercial-de-350m-avec-activite-barsnacking,P4997V",
+    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b2664500-r6186.jpg?emptyCache"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "85.600 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -2076,17 +2087,6 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.immo46.comachat,maison-maison-de-village-proche-prayssac-avec-piscine,P5103P",
-    "Foto": "https://www.immo46.com/images/logo.png"
-  },
-  {
-    "Bron": "immo46",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "88.810 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.immo46.comachat,maison-maison-de-village-a-renover-avec-jardinet-et-garage,P4637V",
     "Foto": "https://www.immo46.com/images/logo.png"
   },
   {
@@ -2428,7 +2428,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://ledil.immo/bien/fonds-de-commerce/agen-47000/9177",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9177/ChatGPT%20Image%2017%20avr.%202026%2C%2011_52_46-69e202ff59b5d.png"
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9177/ChatGPT%20Image%2022%20avr.%202026%2C%2010_39_37-69e8898615c88.png"
   },
   {
     "Bron": "ledil",
@@ -2548,8 +2548,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-lille-59000-ab060ffd-4935-4a86-a5f4-928f6eb428d1/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-montivilliers-76290-76718617-1bd9-4f5d-866d-0aa6888c1bd6/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   },
   {
     "Bron": "orpi",
@@ -2559,8 +2559,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-lille-59000-ab060ffd-4935-4a86-a5f4-928f6eb428d1/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-montivilliers-76290-76718617-1bd9-4f5d-866d-0aa6888c1bd6/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   },
   {
     "Bron": "orpi",
@@ -2570,8 +2570,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-etaux-74800-746a03d0-f403-488c-ad4a-bbf544f3a203/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-rogny-les-sept-ecluses-89220-ed3c47c4-aa13-4c29-a11e-c3a558dfc49c/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   },
   {
     "Bron": "orpi",
@@ -2581,8 +2581,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-etaux-74800-746a03d0-f403-488c-ad4a-bbf544f3a203/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-rogny-les-sept-ecluses-89220-ed3c47c4-aa13-4c29-a11e-c3a558dfc49c/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   },
   {
     "Bron": "orpi",
@@ -2592,8 +2592,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-terrain-saubion-40230-fff7c4eb-5b50-4b59-af3a-102aa28567d9/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-triel-sur-seine-78510-dfebd1cf-e33a-4c5a-a062-2d1e98fcda65/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   },
   {
     "Bron": "orpi",
@@ -2603,8 +2603,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-terrain-saubion-40230-fff7c4eb-5b50-4b59-af3a-102aa28567d9/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-triel-sur-seine-78510-dfebd1cf-e33a-4c5a-a062-2d1e98fcda65/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   },
   {
     "Bron": "orpi",
@@ -2614,8 +2614,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-brignoles-83170-d1d410e8-dc31-417a-a687-15734e09d291/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-chatelaillon-plage-17340-cbe2ac43-9fde-41df-afb9-16e1a3e25d59/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   },
   {
     "Bron": "orpi",
@@ -2625,8 +2625,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-brignoles-83170-d1d410e8-dc31-417a-a687-15734e09d291/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-chatelaillon-plage-17340-cbe2ac43-9fde-41df-afb9-16e1a3e25d59/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   },
   {
     "Bron": "orpi",
@@ -2636,8 +2636,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t5-lyon-9-69009-e933dea7-89fd-40f9-92e0-91d2b589b212/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t6-abeilhan-34290-1b37918d-b72c-4a62-be7b-0b5b3b9ebe88/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   },
   {
     "Bron": "orpi",
@@ -2647,7 +2647,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t5-lyon-9-69009-e933dea7-89fd-40f9-92e0-91d2b589b212/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/ab060ffd-4935-4a86-a5f4-928f6eb428d1--bab92e97-0adf-438e-8cd1-bac7425e2f90.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d4e120713e2f705973a0f517911f7379475c0bfc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t6-abeilhan-34290-1b37918d-b72c-4a62-be7b-0b5b3b9ebe88/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/76718617-1bd9-4f5d-866d-0aa6888c1bd6--e193c979-2628-4c0b-85ca-0d2caa64ffd1.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ab3a341f4a81151f9d7d9057aa096eca77820efd"
   }
 ]
