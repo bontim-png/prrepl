@@ -602,7 +602,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/15443305174/",
-    "Foto": "https://www.century21-bg-villeneuve.com/theme/v6/images/the-page/the-page-title/century21_acheter.jpg"
+    "Foto": "https://www.century21-bg-villeneuve.com/imagesBien/s3/202/3157/c21_202_3157_12637_8_E49FC7A9-9967-4ADF-A859-0545D09228A6.jpg"
   },
   {
     "Bron": "century21",
@@ -2317,6 +2317,17 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-9-pieces-lalinde-24150,VM14188",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM14188/maison-ancienne-9-pieces-lalinde-24150-1775807175-VM14188_36_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "280 900 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
     "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-5-pieces-mauzac-et-grand-castang-24150,VM17669",
     "Foto": "https://img.netty.immo/product/company53706zgl/VM17669/maison-ancienne-5-pieces-mauzac-et-grand-castang-24150-1777037184-VM17669_31_l.jpg"
   },
@@ -2407,17 +2418,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-5-pieces-dordogne-24,VM16522",
     "Foto": "https://img.netty.immo/product/company53706zgl/VM16522/maison-traditionnelle-5-pieces-dordogne-24-1759189804-VM16522_1_l.jpg"
-  },
-  {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "250 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-individuelle-6-pieces-lauzun-47410,VM17514",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17514/maison-individuelle-6-pieces-lauzun-47410-1776843094-VM17514_36_l.jpg"
   },
   {
     "Bron": "ledil",
@@ -2548,8 +2548,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-prades-salars-12290-4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t5-le-havre-76600-aeee9d7f-659c-4cd9-973c-88712cfdf0ea/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   },
   {
     "Bron": "orpi",
@@ -2559,8 +2559,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-prades-salars-12290-4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t5-le-havre-76600-aeee9d7f-659c-4cd9-973c-88712cfdf0ea/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   },
   {
     "Bron": "orpi",
@@ -2570,8 +2570,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-saosnes-72600-265b56b1-607c-414d-92cc-7203fe6bd2a7/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-le-havre-76600-486fc035-8350-4441-98ad-4d86cafc78c8/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   },
   {
     "Bron": "orpi",
@@ -2581,8 +2581,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-saosnes-72600-265b56b1-607c-414d-92cc-7203fe6bd2a7/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-le-havre-76600-486fc035-8350-4441-98ad-4d86cafc78c8/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   },
   {
     "Bron": "orpi",
@@ -2592,8 +2592,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-reims-51100-a2f23691-24dc-40ef-8202-bc935422256f/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-le-havre-76600-3cdaa315-7103-458a-b5cb-59c83a45d153/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   },
   {
     "Bron": "orpi",
@@ -2603,8 +2603,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-reims-51100-a2f23691-24dc-40ef-8202-bc935422256f/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-le-havre-76600-3cdaa315-7103-458a-b5cb-59c83a45d153/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   },
   {
     "Bron": "orpi",
@@ -2614,8 +2614,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-saint-cyprien-66750-0748d233-c69a-44e2-84b7-3b2728a3c05a/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-chaville-92370-5988a775-ea51-41a5-99bf-5e4894e22ae6/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   },
   {
     "Bron": "orpi",
@@ -2625,8 +2625,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-saint-cyprien-66750-0748d233-c69a-44e2-84b7-3b2728a3c05a/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-chaville-92370-5988a775-ea51-41a5-99bf-5e4894e22ae6/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   },
   {
     "Bron": "orpi",
@@ -2636,8 +2636,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-reims-51100-8bb4dfb0-bcd2-4964-a8ff-403aa0776b32/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-le-chateau-d-oleron-17480-f45cb6e4-2501-407f-89de-711b33a7e17b/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   },
   {
     "Bron": "orpi",
@@ -2647,7 +2647,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-reims-51100-8bb4dfb0-bcd2-4964-a8ff-403aa0776b32/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4c2f4fb0-5597-4707-bac0-4e3b24f3ac2f--0ef98c9b-faef-4c19-bfe7-751a48fca952.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=90aede0f323b1988683495188af78c0ca9f6adf3"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-le-chateau-d-oleron-17480-f45cb6e4-2501-407f-89de-711b33a7e17b/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/aeee9d7f-659c-4cd9-973c-88712cfdf0ea--1f7f6d35-7475-4204-8f32-7042cda22872.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=ef63fa5371333286fc18fa832119dba6b7b3ece1"
   }
 ]
