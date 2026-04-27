@@ -447,7 +447,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/location/31-haute-garonne/3684-cintegabelle/1-maison/t4/18382-cintegabelle-maison-4-pieces-80-m/",
+    "URL": "https://www.letuc.com/location/31-haute-garonne/3684-cintegabelle/2-appartement/t4/18382-cintegabelle-31550-appartement-4-pieces-80-m/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -458,7 +458,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/location/31-haute-garonne/3684-cintegabelle/1-maison/t4/18382-cintegabelle-maison-4-pieces-80-m/",
+    "URL": "https://www.letuc.com/location/31-haute-garonne/3684-cintegabelle/2-appartement/t4/18382-cintegabelle-31550-appartement-4-pieces-80-m/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -602,7 +602,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/15443305174/",
-    "Foto": "https://www.century21-bg-villeneuve.com/imagesBien/s3/202/3157/c21_202_3157_12637_8_E49FC7A9-9967-4ADF-A859-0545D09228A6.jpg"
+    "Foto": "https://www.century21-bg-villeneuve.com/theme/v6/images/the-page/the-page-title/century21_acheter.jpg"
   },
   {
     "Bron": "century21",
@@ -773,12 +773,23 @@
     "Bron": "valadie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "436 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8873",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9262/semi_Maison_Monflanquin_8873_209681.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "124 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://valadie-immobilier.com/fr/biens/fiche/8875",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9266/semi_Maison_Monflanquin_8875_209833.jpg"
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9266/semi_Maison_Monflanquin_8875_209878.jpg"
   },
   {
     "Bron": "valadie",
@@ -867,17 +878,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://valadie-immobilier.com/fr/biens/fiche/8816",
     "Foto": "https://valadie-immobilier.com/uploads/bien/9225/semi_Maison_Savignac-sur-Leyze_8816_208363.jpg"
-  },
-  {
-    "Bron": "valadie",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "381 600 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8837",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9240/semi_Maison_Castillonnes_8837_209256.jpg"
   },
   {
     "Bron": "villereal",
@@ -1983,12 +1983,23 @@
     "Bron": "immo46",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "268.500 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-de-plain-pied-avec-studio-independant-et-piscine,P4895M",
+    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b2568036-r8067.jpg?emptyCache"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "448.000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.immo46.comachat,maison-maison-de-village-proche-prayssac-avec-piscine,P5103P",
-    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b2480760-r8244.jpg?emptyCache"
+    "Foto": "https://www.immo46.com/images/logo.png"
   },
   {
     "Bron": "immo46",
@@ -1999,7 +2010,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.immo46.comachat,terrain-terrain-a-batir-de-1628m,P4669V",
-    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b2501589-r7230.jpg?emptyCache"
+    "Foto": "https://www.immo46.com/images/logo.png"
   },
   {
     "Bron": "immo46",
@@ -2010,17 +2021,6 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.immo46.comachat,terrain-terrain-a-batir,P5112P",
-    "Foto": "https://www.immo46.com/images/logo.png"
-  },
-  {
-    "Bron": "immo46",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "159.000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.immo46.comachat,maison-charmante-maison-de-village-dans-un-havre-de-paix,P5109V",
     "Foto": "https://www.immo46.com/images/logo.png"
   },
   {
@@ -2060,17 +2060,6 @@
     "Bron": "immo46",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "268.500 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.immo46.comachat,maison-maison-de-plain-pied-avec-studio-independant-et-piscine,P4895M",
-    "Foto": "https://www.immo46.com/images/logo.png"
-  },
-  {
-    "Bron": "immo46",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
     "Prijs": "339.200 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -2087,6 +2076,17 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.immo46.comachat,local-batiment-commercial-de-350m-avec-activite-barsnacking,P4997V",
+    "Foto": "https://www.immo46.com/images/logo.png"
+  },
+  {
+    "Bron": "immo46",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "85.600 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immo46.comachat,maison-maison-4-chambres-en-pierre-avec-agrandissement,P4932V",
     "Foto": "https://www.immo46.com/images/logo.png"
   },
   {
@@ -2548,8 +2548,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-poisy-74330-3b3b27a6-aab6-4be4-ae59-efa989ac3f91/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-brando-20222-5bf3bbbc-503b-46e6-9821-0d0d904f3339/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   },
   {
     "Bron": "orpi",
@@ -2559,8 +2559,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-poisy-74330-3b3b27a6-aab6-4be4-ae59-efa989ac3f91/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-brando-20222-5bf3bbbc-503b-46e6-9821-0d0d904f3339/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   },
   {
     "Bron": "orpi",
@@ -2570,8 +2570,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-mandelieu-la-napoule-06210-71068094-3ce7-4087-a479-363cb27b7516/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-saint-savinien-17350-42b013fb-5e71-4d93-9b8a-43c7885b42ef/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   },
   {
     "Bron": "orpi",
@@ -2581,8 +2581,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-mandelieu-la-napoule-06210-71068094-3ce7-4087-a479-363cb27b7516/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-saint-savinien-17350-42b013fb-5e71-4d93-9b8a-43c7885b42ef/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   },
   {
     "Bron": "orpi",
@@ -2592,8 +2592,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t6-lagny-sur-marne-77400-ff0483bd-dfb1-453a-866a-43b8b9248429/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-bernay-27300-dca90577-e4d8-4a91-9bba-785079a99313/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   },
   {
     "Bron": "orpi",
@@ -2603,8 +2603,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t6-lagny-sur-marne-77400-ff0483bd-dfb1-453a-866a-43b8b9248429/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-bernay-27300-dca90577-e4d8-4a91-9bba-785079a99313/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   },
   {
     "Bron": "orpi",
@@ -2614,8 +2614,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t6-la-rochelle-17000-6355d4f2-b60d-4744-9610-fc8c7b9bb4a0/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-menneval-27300-3234896a-5352-4886-b3c1-b8ced8a080d2/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   },
   {
     "Bron": "orpi",
@@ -2625,8 +2625,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t6-la-rochelle-17000-6355d4f2-b60d-4744-9610-fc8c7b9bb4a0/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-menneval-27300-3234896a-5352-4886-b3c1-b8ced8a080d2/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   },
   {
     "Bron": "orpi",
@@ -2636,8 +2636,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-lagny-sur-marne-77400-d8a7aa3a-38df-4065-bbf5-2df82708add5/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-ormes-45140-8f4f9368-83f8-4c6a-a525-ac4f998c7964/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   },
   {
     "Bron": "orpi",
@@ -2647,7 +2647,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-lagny-sur-marne-77400-d8a7aa3a-38df-4065-bbf5-2df82708add5/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/3b3b27a6-aab6-4be4-ae59-efa989ac3f91--f7689c40-b706-4555-b79f-ee046e5c6054.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=73f6872b07857684479f4af8887ed5c1ec05ef03"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-ormes-45140-8f4f9368-83f8-4c6a-a525-ac4f998c7964/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5bf3bbbc-503b-46e6-9821-0d0d904f3339--34a645c4-3d11-47d7-ab34-19621cb60f58.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a3fca27ee30237810a49d72b66cdbe98742265"
   }
 ]
