@@ -773,6 +773,28 @@
     "Bron": "valadie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "165 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8865",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9260/semi_Maison_Monflanquin_8865_209769.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "499 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8877",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9268/semi_Maison_Sarlat-la-Caneda_8877_210177.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "399 500 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -839,17 +861,6 @@
     "Bron": "valadie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "124 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8875",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9266/semi_Maison_Monflanquin_8875_209878.jpg"
-  },
-  {
-    "Bron": "valadie",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
     "Prijs": "144 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -867,17 +878,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://valadie-immobilier.com/fr/biens/fiche/8874",
     "Foto": "https://valadie-immobilier.com/uploads/bien/9265/semi_Maison_Beaumontois_en_Perigord_8874_209754.jpg"
-  },
-  {
-    "Bron": "valadie",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "129 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8870",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9263/semi_Maison_issigeac_8870_209656.jpg"
   },
   {
     "Bron": "villereal",
@@ -2313,6 +2313,17 @@
     "Bron": "eleonor",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "197 690 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-6-pieces-beaumontois-en-perigord-24440,VM17569",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17569/maison-ancienne-6-pieces-beaumontois-en-perigord-24440-1773407742-VM17569_35_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "307 400 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -2357,7 +2368,7 @@
     "Bron": "eleonor",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "24560 307 400 €",
+    "Prijs": "24560 197 690 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
@@ -2409,15 +2420,15 @@
     "Foto": "https://img.netty.immo/product/company53706zgl/VM16522/maison-traditionnelle-5-pieces-dordogne-24-1759189804-VM16522_1_l.jpg"
   },
   {
-    "Bron": "eleonor",
+    "Bron": "ledil",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "140 000 €",
+    "Prijs": "500 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-5-pieces-montignac-toupinerie-47350,VM17472",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17472/maison-ancienne-5-pieces-montignac-toupinerie-47350-1772445966-VM17472_35_l.jpg"
+    "URL": "https://ledil.immo/bien/fonds-de-commerce/le-temple-sur-lot-47110/9199",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9199/WhatsApp%20Image%202026-04-27%20at%2021.16.1665-69f132c3019e9.jpg"
   },
   {
     "Bron": "ledil",
@@ -2440,17 +2451,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://ledil.immo/bien/maison/marmande-47200/9186",
     "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9186/Avendremarmande-LamotheSarah3-69ea4cd16d6ef.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/samazan-47250/9181",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9181/Avendre-Samazan-Pierre-SarahLamothe-69f120c075e85.png"
   },
   {
     "Bron": "ledil",
@@ -2548,8 +2548,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-uzes-30700-99a9ce97-17a0-476b-84f6-f57f316f0090/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-gallardon-28320-25b33899-5078-4745-ab97-03fa455475a9/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   },
   {
     "Bron": "orpi",
@@ -2559,8 +2559,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-uzes-30700-99a9ce97-17a0-476b-84f6-f57f316f0090/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-gallardon-28320-25b33899-5078-4745-ab97-03fa455475a9/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   },
   {
     "Bron": "orpi",
@@ -2570,8 +2570,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-la-colle-sur-loup-06480-993ade17-6ca8-43d4-8c1c-80d00b3854fe/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-mouscardes-40290-5a0ee5a0-3704-46c1-a32c-7f5fee30ff74/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   },
   {
     "Bron": "orpi",
@@ -2581,8 +2581,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-la-colle-sur-loup-06480-993ade17-6ca8-43d4-8c1c-80d00b3854fe/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-mouscardes-40290-5a0ee5a0-3704-46c1-a32c-7f5fee30ff74/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   },
   {
     "Bron": "orpi",
@@ -2592,8 +2592,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t9-aspres-sur-buech-05140-e2fb8e8f-fc45-488f-971b-ce48efc5a6ed/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t8-dax-40100-34676bad-b922-4fb2-ba43-debc69959636/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   },
   {
     "Bron": "orpi",
@@ -2603,8 +2603,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t9-aspres-sur-buech-05140-e2fb8e8f-fc45-488f-971b-ce48efc5a6ed/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t8-dax-40100-34676bad-b922-4fb2-ba43-debc69959636/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   },
   {
     "Bron": "orpi",
@@ -2614,8 +2614,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-saint-paul-97434-f8b81ca1-9a0c-4ec0-ab98-1470508a4df1/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-saint-ouen-93400-71de9004-a54d-45af-a72c-5b612cc416ed/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   },
   {
     "Bron": "orpi",
@@ -2625,8 +2625,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-saint-paul-97434-f8b81ca1-9a0c-4ec0-ab98-1470508a4df1/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-saint-ouen-93400-71de9004-a54d-45af-a72c-5b612cc416ed/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   },
   {
     "Bron": "orpi",
@@ -2636,8 +2636,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-saint-paul-97434-7c057fdc-5747-408e-9819-148b25049b75/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-dax-40100-df12ab67-c389-4a20-b265-41a882f5f6bd/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   },
   {
     "Bron": "orpi",
@@ -2647,7 +2647,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-saint-paul-97434-7c057fdc-5747-408e-9819-148b25049b75/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/99a9ce97-17a0-476b-84f6-f57f316f0090--61b4a012-dfcb-44e8-bdf1-8c6d26ec968d.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=39ff6dcfe3952924dcef84cfe438a14e60bcaef5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-dax-40100-df12ab67-c389-4a20-b265-41a882f5f6bd/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/25b33899-5078-4745-ab97-03fa455475a9--a24db6f3-7201-48ff-ad91-e92131e2fbf2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=bad4a32ca010475ae36d556f514e48d41b3abb12"
   }
 ]
