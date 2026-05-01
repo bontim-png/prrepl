@@ -602,7 +602,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.century21-bg-villeneuve.com/trouver_logement/detail/9302262913/",
-    "Foto": "https://www.century21-bg-villeneuve.com/theme/v6/images/the-page/the-page-title/century21_acheter.jpg"
+    "Foto": "https://www.century21-bg-villeneuve.com/imagesBien/s3/202/3157/c21_202_3157_10696_8_ABEDDF3A-4B84-4959-BB75-3214649E3292.jpg"
   },
   {
     "Bron": "century21",
@@ -773,6 +773,17 @@
     "Bron": "valadie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "187 250 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8867",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9165/semi_Maison_Villefranche-du-Perigord_8867_209639.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "165 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -867,17 +878,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://valadie-immobilier.com/fr/biens/fiche/8876",
     "Foto": "https://valadie-immobilier.com/uploads/bien/9267/semi_Maison_Monflanquin_8876_209903.jpg"
-  },
-  {
-    "Bron": "valadie",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "599 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8874",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9265/semi_Maison_Beaumontois_en_Perigord_8874_209754.jpg"
   },
   {
     "Bron": "villereal",
@@ -2548,8 +2548,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t5-sathonay-camp-69580-4f633c7c-a116-4ac9-a635-1f7a4e4474a1/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-lyon-3-69003-63f5b6d8-8969-4611-90e6-e3c17822b4af/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   },
   {
     "Bron": "orpi",
@@ -2559,8 +2559,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t5-sathonay-camp-69580-4f633c7c-a116-4ac9-a635-1f7a4e4474a1/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-lyon-3-69003-63f5b6d8-8969-4611-90e6-e3c17822b4af/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   },
   {
     "Bron": "orpi",
@@ -2570,8 +2570,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-yerville-76760-f47f7152-0479-4cf6-811c-aa49ff77b31e/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-lyon-8-69008-c9986c39-c203-4d0d-8ae8-916bebd5249b/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   },
   {
     "Bron": "orpi",
@@ -2581,8 +2581,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-yerville-76760-f47f7152-0479-4cf6-811c-aa49ff77b31e/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-lyon-8-69008-c9986c39-c203-4d0d-8ae8-916bebd5249b/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   },
   {
     "Bron": "orpi",
@@ -2592,8 +2592,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-riedisheim-68400-e8deea30-048c-4467-9c12-9f1382e8f040/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-lyon-3-69003-bbb07329-3e12-4e04-963a-3fe5668c77ae/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   },
   {
     "Bron": "orpi",
@@ -2603,8 +2603,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-riedisheim-68400-e8deea30-048c-4467-9c12-9f1382e8f040/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-lyon-3-69003-bbb07329-3e12-4e04-963a-3fe5668c77ae/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   },
   {
     "Bron": "orpi",
@@ -2614,8 +2614,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-tassin-la-demi-lune-69160-d254e898-6181-47ab-9b85-131ef5d14d9e/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-lyon-3-69003-57de536a-cb27-4cd3-8d42-11d58efeabb0/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   },
   {
     "Bron": "orpi",
@@ -2625,8 +2625,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-tassin-la-demi-lune-69160-d254e898-6181-47ab-9b85-131ef5d14d9e/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-lyon-3-69003-57de536a-cb27-4cd3-8d42-11d58efeabb0/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   },
   {
     "Bron": "orpi",
@@ -2636,8 +2636,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-ravenoville-50480-cb564629-6da9-45c9-bdf8-f4165c70cc55/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-outreau-62230-162d77c6-8699-4819-aa41-ac6e8a90246a/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   },
   {
     "Bron": "orpi",
@@ -2647,7 +2647,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-ravenoville-50480-cb564629-6da9-45c9-bdf8-f4165c70cc55/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/4f633c7c-a116-4ac9-a635-1f7a4e4474a1--cd1d23ed-fb9c-450e-ba5a-c45e7cc3347c.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=1a8ecc8f1487a3d7a3590fe32bc9038a0b79ee8b"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-outreau-62230-162d77c6-8699-4819-aa41-ac6e8a90246a/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/63f5b6d8-8969-4611-90e6-e3c17822b4af--d59893cf-9d72-4107-aad6-b087ee68b21f.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=d0d3f0b18eadb271c7b89c2f502221abc4a093ec"
   }
 ]
