@@ -403,6 +403,17 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/988-grives/maison/t6/7189-longere-de-caractere-avec-parc-arbore-pays-de-belves-perigord-noir/",
+    "Foto": "https://www.agencespouget.com/images/logo-modal.png"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
     "URL": "https://www.agencespouget.com/vente/24-villeneuve-sur-lot/maison/t9/7187-maison-bourgeoise-214-m2-en-coeur-de-ville-avec-piscine-et-jardin-magnifique-de-1300-m2-garage-cave-et-appre/",
     "Foto": "https://www.agencespouget.com/images/logo-modal.png"
   },
@@ -426,17 +437,6 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.agencespouget.com/vente/7-duravel/terrain-a-batir/7184-terrain-a-batir-cadre-ideal-pour-votre-futur-projet",
-    "Foto": "https://www.agencespouget.com/images/logo-modal.png"
-  },
-  {
-    "Bron": "pouget",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agencespouget.com/vente/3-monsempron-libos/terrain/7181-parcelle-de-bois-en-campagne-monsempron-libos",
     "Foto": "https://www.agencespouget.com/images/logo-modal.png"
   },
   {
@@ -2163,18 +2163,18 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.pleinsudimmo.fr/detail/au-coeur-du-perigord-dans-un-hameau-authentique-a-15-min-d-hautefort-authentique-propriete-de-caractere-avec-piscine-6504783.html",
-    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6504783p1969f30b7de6ecf.jpg"
+    "URL": "https://www.pleinsudimmo.fr/detail/entre-sarlat-et-montignac-maison-contemporaine-en-parfait-etat-situee-au-calme-avec-jolie-vue-sur-la-campagne-6504822.html",
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6504822p3569f30bdd84e78.jpg"
   },
   {
     "Bron": "pleinsud",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "398 000 €",
+    "Prijs": "371 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.pleinsudimmo.fr/detail/au-coeur-du-perigord-dans-un-hameau-authentique-a-15-min-d-hautefort-authentique-propriete-de-caractere-avec-piscine-6504783.html",
+    "URL": "https://www.pleinsudimmo.fr/detail/entre-sarlat-et-montignac-maison-contemporaine-en-parfait-etat-situee-au-calme-avec-jolie-vue-sur-la-campagne-6504822.html",
     "Foto": "https://www.pleinsudimmo.fr/wp-content/themes/pleinsudimmo/img/logo-agence-plein-sud-immo-mobile.png"
   },
   {
@@ -2324,6 +2324,39 @@
     "Bron": "eleonor",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "945 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-11-pieces-fouleix-24380,VM17310",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17310/maison-ancienne-11-pieces-fouleix-24380-1763653815-VM17310_19_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "598 500 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-6-pieces-beaumontois-en-perigord-24440,VM17358",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17358/maison-ancienne-6-pieces-beaumontois-en-perigord-24440-1776177123-VM17358_29_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "472 500 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-9-pieces-monflanquin-47150,VM17663",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17663/maison-ancienne-9-pieces-monflanquin-47150-1776778962-VM17663_3_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "233 200 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -2387,149 +2420,6 @@
     "Foto": "https://img.netty.immo/product/company53706zgl/VM17521/maison-maison-de-campagne-14-pieces-pays-de-belves-24170-1771334932-VM17521_1_l.jpg"
   },
   {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "330 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-contemporaine-4-pieces-saint-vincent-de-cosse-24220,VM17200",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17200/maison-contemporaine-4-pieces-saint-vincent-de-cosse-24220-1759782276-VM17200_6_l.jpg"
-  },
-  {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "472 500 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-9-pieces-monflanquin-47150,VM17663",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17663/maison-ancienne-9-pieces-monflanquin-47150-1776778962-VM17663_3_l.jpg"
-  },
-  {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "299 600 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-6-pieces-villereal-47210,VM17247",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17247/maison-ancienne-6-pieces-villereal-47210-1771924302-VM17247_35_l.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/moissac-82200/9215",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9215/Offre%20valid%C3%A9e%20%2813%29-69fc9d2c04b2f.png"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/foulayronnes-47510/9211",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9211/maison-69f9b3ccc0a3a.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/duravel-46700/9210",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9210/20260430_144553-69f8b385c5529.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "500 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/pompiey-47230/9207",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9207/20260427_155544-69f60fcce7441.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/villereal-47210/9201",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9201/porte%20d%27entre%CC%81e-69f900868afbe.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "500 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/agen-47000/9200",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9200/20260427_143152-69f1c9f5d864e.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "500 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/fonds-de-commerce/le-temple-sur-lot-47110/9199",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9199/WhatsApp%20Image%202026-04-27%20at%2021.16.1665-69f132c3019e9.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/vares-47400/9194",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9194/avendre-vares-sarahlamothe.12-69efd1ec32800.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/marmande-47200/9186",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9186/Avendremarmande-LamotheSarah3-69ea4cd16d6ef.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/le-temple-sur-lot-47110/9183",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9183/IMG_20260421_161028-69e7b84188cb3.jpg"
-  },
-  {
     "Bron": "charles_loftie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
@@ -2548,8 +2438,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-reims-51100-6e44823c-b6d1-4a5b-b3e9-54186ac2886e/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-stationnement-paris-19-75019-5ad89edd-de1d-4f5f-9bf3-162a04e136b0/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   },
   {
     "Bron": "orpi",
@@ -2559,8 +2449,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-reims-51100-6e44823c-b6d1-4a5b-b3e9-54186ac2886e/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-stationnement-paris-19-75019-5ad89edd-de1d-4f5f-9bf3-162a04e136b0/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   },
   {
     "Bron": "orpi",
@@ -2570,8 +2460,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-reims-51100-1bbfd68d-891c-4520-8183-cff6a74eea0f/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-paris-14-75014-f854104d-c344-455c-a9d1-af8ba114f251/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   },
   {
     "Bron": "orpi",
@@ -2581,8 +2471,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-reims-51100-1bbfd68d-891c-4520-8183-cff6a74eea0f/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-paris-14-75014-f854104d-c344-455c-a9d1-af8ba114f251/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   },
   {
     "Bron": "orpi",
@@ -2592,8 +2482,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-reims-51100-3abfdae1-74ac-454f-8b0a-27b4e9307de2/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-chamigny-77260-ce338bd9-c609-4fa4-9c3e-b2a80eaf2d10/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   },
   {
     "Bron": "orpi",
@@ -2603,8 +2493,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-reims-51100-3abfdae1-74ac-454f-8b0a-27b4e9307de2/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-chamigny-77260-ce338bd9-c609-4fa4-9c3e-b2a80eaf2d10/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   },
   {
     "Bron": "orpi",
@@ -2614,8 +2504,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-porto-vecchio-20137-634b872f-b089-4435-8ef2-8b4a237eb493/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-14-75014-3a470092-8133-4865-be83-958454a45ed3/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   },
   {
     "Bron": "orpi",
@@ -2625,8 +2515,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-porto-vecchio-20137-634b872f-b089-4435-8ef2-8b4a237eb493/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-14-75014-3a470092-8133-4865-be83-958454a45ed3/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   },
   {
     "Bron": "orpi",
@@ -2636,8 +2526,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-figari-20114-418f1d9e-279c-4358-9f4f-dedfab5a76dc/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-lorient-56100-fc7b87ad-f81b-4b61-8ab4-c1c26f008c03/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   },
   {
     "Bron": "orpi",
@@ -2647,7 +2537,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-figari-20114-418f1d9e-279c-4358-9f4f-dedfab5a76dc/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/6e44823c-b6d1-4a5b-b3e9-54186ac2886e--b781fb34-4241-47f1-9733-35270fbdab78.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dc25eef0d404df18ef236be7a9af3a87c93c77fb"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-lorient-56100-fc7b87ad-f81b-4b61-8ab4-c1c26f008c03/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5ad89edd-de1d-4f5f-9bf3-162a04e136b0--f942989e-6b04-42d8-abcf-349e11850374.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=72f133542da9406f1a015f01f24038732218204e"
   }
 ]
