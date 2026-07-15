@@ -293,17 +293,6 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.agencespouget.com/vente/48-villefranche-du-perigord/maison-de-village/7245-maison-de-village-en-pierre-avec-grand-garage-villefranche-du-perigord",
-    "Foto": "https://www.agencespouget.com/images/logo-modal.png"
-  },
-  {
-    "Bron": "pouget",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
     "URL": "https://www.agencespouget.com/vente/198-castillonnes/maison-de-village/7244-maison-de-village-de-caractere-avec-jardin-piscine-et-gite-independant",
     "Foto": "https://www.agencespouget.com/images/logo-modal.png"
   },
@@ -327,6 +316,17 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.agencespouget.com/vente/1065-monplaisant/maison/t4/7235-maison-individuelle-avec-parc-arbore-et-vue-sur-la-campagne-a-moins-de-10-minutes-a-pied-du-centre-medieval/",
+    "Foto": "https://www.agencespouget.com/images/logo-modal.png"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/25-touzac/propriete/t6/7234-propriete-corps-de-ferme-avec-dependances-sur-6-180-m-de-terrain/",
     "Foto": "https://www.agencespouget.com/images/logo-modal.png"
   },
   {
@@ -553,6 +553,17 @@
     "Bron": "valadie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "171 200 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9093",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9416/semi_Maison_Saint-Cyprien_9093_215876.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "238 500 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -602,7 +613,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://valadie-immobilier.com/fr/biens/fiche/9078",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9404/semi_Maison_Sarlat-la-Caneda_9078_215723.jpg"
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9404/semi_Maison_Sarlat-la-Caneda_9078_215758.jpg"
   },
   {
     "Bron": "valadie",
@@ -647,17 +658,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://valadie-immobilier.com/fr/biens/fiche/9060",
     "Foto": "https://valadie-immobilier.com/uploads/bien/9387/semi_Maison_Villereal_9060_215496.jpg"
-  },
-  {
-    "Bron": "valadie",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "945 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9076",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9402/semi_Maison_issigeac_9076_215580.jpg"
   },
   {
     "Bron": "villereal",
@@ -997,6 +997,28 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/country-house-with-garden-5/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2023/03/Logo-Wheeler-Property-650x175-1.png"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/country-house-with-garden-5/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/07/aerial-3-wmc755.jpg"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
     "URL": "https://wheeler-property.com/properties/country-property-with-organic-fruit-farm/",
     "Foto": "https://wheeler-property.com/wp-content/uploads/2023/03/Logo-Wheeler-Property-650x175-1.png"
   },
@@ -1078,28 +1100,6 @@
     "Foto": "https://wheeler-property.com/wp-content/uploads/2026/07/Front-main-WMC757.jpg"
   },
   {
-    "Bron": "wheeler",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://wheeler-property.com/properties/village-house-with-garden-28/",
-    "Foto": "https://wheeler-property.com/wp-content/uploads/2023/03/Logo-Wheeler-Property-650x175-1.png"
-  },
-  {
-    "Bron": "wheeler",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://wheeler-property.com/properties/village-house-with-garden-28/",
-    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/07/front-2-wmc759.jpg"
-  },
-  {
     "Bron": "mouly",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
@@ -1169,28 +1169,6 @@
     "Bron": "mouly",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "330 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.mouly-immobilier.com/vente/46-lot/74-le-montat/1-maison/t6/2382-maison-familiale-avec-piscine-grand-terrain-et-dependances-a-15min-de-cahors/",
-    "Foto": "https://www.mouly-immobilier.com/girma-mouly.staticlbi.com/original/images/logoSite.png"
-  },
-  {
-    "Bron": "mouly",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.mouly-immobilier.com/vente/46-lot/74-le-montat/1-maison/t6/2382-maison-familiale-avec-piscine-grand-terrain-et-dependances-a-15min-de-cahors/",
-    "Foto": "https://www.mouly-immobilier.com/girma-mouly.staticlbi.com/original/images/logoSite.png"
-  },
-  {
-    "Bron": "mouly",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
     "Prijs": "615 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -1207,6 +1185,28 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.mouly-immobilier.com/location/46-lot/1-cahors/2-appartement/t3/1405-appartement-t3-avec-cave-balcon-et-garage/",
+    "Foto": "https://www.mouly-immobilier.com/girma-mouly.staticlbi.com/original/images/logoSite.png"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "570 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/location/46-lot/1-cahors/2-appartement/t2/2380-grand-t2-rue-du-portail-alban-cahors/",
+    "Foto": "https://www.mouly-immobilier.com/girma-mouly.staticlbi.com/original/images/logoSite.png"
+  },
+  {
+    "Bron": "mouly",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.mouly-immobilier.com/location/46-lot/1-cahors/2-appartement/t2/2380-grand-t2-rue-du-portail-alban-cahors/",
     "Foto": "https://www.mouly-immobilier.com/girma-mouly.staticlbi.com/original/images/logoSite.png"
   },
   {
@@ -1873,6 +1873,17 @@
     "Bron": "signature_agenaise",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "149 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-5-pieces-nerac-47600,VM2003",
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM2003/maison-5-pieces-nerac-47600-1784022228-VM2003_29_l.jpg"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "125 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -1969,15 +1980,26 @@
     "Foto": "https://img.netty.immo/productcw/company55406bzw/4/VM1923/maison-contemporaine-5-pieces-montlaur-31450-1780320320-VM1923_7_l.jpg"
   },
   {
-    "Bron": "signature_agenaise",
+    "Bron": "eleonor",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "319 000 €",
+    "Prijs": "65 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-6-pieces-lacepede-47360,VM1983",
-    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1983/maison-6-pieces-lacepede-47360-1783075525-VM1983_1_l.jpg"
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-7-pieces-lot-et-garonne-47,VM16826",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM16826/maison-traditionnelle-7-pieces-lot-et-garonne-47-1759191939-VM16826_18_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "69 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-3-pieces-villereal-47210,VM15466",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM15466/maison-traditionnelle-3-pieces-villereal-47210-1759748267-VM15466_14_l.jpg"
   },
   {
     "Bron": "eleonor",
@@ -2066,28 +2088,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-9-pieces-le-bugue-24260,VM17814",
     "Foto": "https://img.netty.immo/product/company53706zgl/VM17814/maison-ancienne-9-pieces-le-bugue-24260-1783263656-VM17814_33_l.jpg"
-  },
-  {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "196 100 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-contemporaine-4-pieces-lavalade-24540,VM17675",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17675/maison-contemporaine-4-pieces-lavalade-24540-1782374801-VM17675_19_l.jpg"
-  },
-  {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "315 650 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-6-pieces-issigeac-24560,VM17821",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17821/maison-ancienne-6-pieces-issigeac-24560-1783603599-VM17821_19_l.jpg"
   },
   {
     "Bron": "ledil",
@@ -2218,8 +2218,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-terrain-aussonne-31840-fc5d2052-bd78-4cb1-b460-a494383f64d5/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-montauban-82000-eddcb4bd-29ca-4b00-af17-2d2656bbe058/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   },
   {
     "Bron": "orpi",
@@ -2229,8 +2229,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-terrain-aussonne-31840-fc5d2052-bd78-4cb1-b460-a494383f64d5/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-montauban-82000-eddcb4bd-29ca-4b00-af17-2d2656bbe058/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   },
   {
     "Bron": "orpi",
@@ -2240,8 +2240,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-terrain-colomiers-31770-f65eb35e-f554-49a8-bbd4-122bf2c41b58/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-braine-02220-41fe62c8-97c7-4be2-9682-8fe10abb41fe/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   },
   {
     "Bron": "orpi",
@@ -2251,8 +2251,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-terrain-colomiers-31770-f65eb35e-f554-49a8-bbd4-122bf2c41b58/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-braine-02220-41fe62c8-97c7-4be2-9682-8fe10abb41fe/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   },
   {
     "Bron": "orpi",
@@ -2262,8 +2262,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-terrain-aussonne-31840-0b183500-7103-40bc-80f9-07d947b45a6f/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-mornay-sur-allier-18600-04c76077-fcab-4b6e-8f87-f9d537b69c8b/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   },
   {
     "Bron": "orpi",
@@ -2273,8 +2273,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-terrain-aussonne-31840-0b183500-7103-40bc-80f9-07d947b45a6f/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-mornay-sur-allier-18600-04c76077-fcab-4b6e-8f87-f9d537b69c8b/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   },
   {
     "Bron": "orpi",
@@ -2284,8 +2284,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-stationnement-toulouse-31500-2da8e5e5-6ed0-47e3-a75e-23bcc90eaad3/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t7-longueval-barbonval-02160-f4506575-2bf6-4f58-aa23-268a7a8d425b/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   },
   {
     "Bron": "orpi",
@@ -2295,8 +2295,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-stationnement-toulouse-31500-2da8e5e5-6ed0-47e3-a75e-23bcc90eaad3/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t7-longueval-barbonval-02160-f4506575-2bf6-4f58-aa23-268a7a8d425b/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   },
   {
     "Bron": "orpi",
@@ -2306,8 +2306,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-toulouse-31500-a4dfb5fd-d7ee-4a11-91db-61f2571d394d/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-hauconcourt-57280-5cd3988c-faf6-4e3f-9acc-90e8bed00547/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   },
   {
     "Bron": "orpi",
@@ -2317,7 +2317,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-toulouse-31500-a4dfb5fd-d7ee-4a11-91db-61f2571d394d/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/fc5d2052-bd78-4cb1-b460-a494383f64d5--a57b1771-b283-4148-95c5-43f092f4f5aa.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=5d9c66e8fe9f1b6bd05e654e4a612b8495642dcd"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-hauconcourt-57280-5cd3988c-faf6-4e3f-9acc-90e8bed00547/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/eddcb4bd-29ca-4b00-af17-2d2656bbe058--fb9dcadb-4f22-42dd-af6b-fd89f6ecdf05.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=d5b20fadf9f8fbc02490acfef32ad9a3b3256097"
   }
 ]
