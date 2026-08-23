@@ -355,6 +355,28 @@
     "Bron": "letuc",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "168.000€",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/18-cher/8192-st-maur/1-maison/t3/19128-saint-maur-propriete-de-charme-sur-un-terrain-de-5623-m-avec-belle-vue-et-details-authentiques/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/18-cher/8192-st-maur/1-maison/t3/19128-saint-maur-propriete-de-charme-sur-un-terrain-de-5623-m-avec-belle-vue-et-details-authentiques/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "119 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -415,28 +437,6 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.letuc.com/vente/17-charente-maritime/4256-la-rochelle/1-maison/t5/19113-maison-ancienne-en-pierre-en-bon-etat-general-de-90-m2-sur-un-terrain-clos-de-148-m2-5-mn-de-la-gare-et-du-v/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "550€",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/31-haute-garonne/4075-eaunes/2-appartement/t2/19108-eaunes-appartement-2-pieces-50-m-grande-surface/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/31-haute-garonne/4075-eaunes/2-appartement/t2/19108-eaunes-appartement-2-pieces-50-m-grande-surface/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -1856,7 +1856,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.pleinsudimmo.fr/detail/secteur-parc-naturel-des-causses-charme-et-spacieux-espaces-habitables-pour-cette-ancienne-grange-restauree-avec-piscine-6505203.html",
-    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/02iferg6505203p6075908vrrxt.jpg"
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/02iferg6505203p6075915txfmr.jpg"
   },
   {
     "Bron": "pleinsud",
@@ -2218,8 +2218,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-courcelles-les-lens-62970-b896c9af-ce78-485d-9da9-55390a460ba9/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-douai-59500-5410c92c-a819-47bc-b157-93500ca07a40/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   },
   {
     "Bron": "orpi",
@@ -2229,8 +2229,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-courcelles-les-lens-62970-b896c9af-ce78-485d-9da9-55390a460ba9/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-douai-59500-5410c92c-a819-47bc-b157-93500ca07a40/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   },
   {
     "Bron": "orpi",
@@ -2240,8 +2240,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-voiron-38500-b883e968-78b6-48b2-aa5c-b0b7aec5a053/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-mons-83440-239d96b0-5863-4e81-94b0-43a7cbab95a2/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   },
   {
     "Bron": "orpi",
@@ -2251,8 +2251,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-voiron-38500-b883e968-78b6-48b2-aa5c-b0b7aec5a053/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-mons-83440-239d96b0-5863-4e81-94b0-43a7cbab95a2/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   },
   {
     "Bron": "orpi",
@@ -2262,8 +2262,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-saint-julien-39320-7feb4ee8-4d6b-4acb-ba2a-937626040dac/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-les-andelys-27700-4bd2d1f9-262e-4cb0-ab67-9db5d299aea9/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   },
   {
     "Bron": "orpi",
@@ -2273,8 +2273,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-saint-julien-39320-7feb4ee8-4d6b-4acb-ba2a-937626040dac/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-les-andelys-27700-4bd2d1f9-262e-4cb0-ab67-9db5d299aea9/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   },
   {
     "Bron": "orpi",
@@ -2284,8 +2284,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-longvic-21600-1f826c45-819f-48ef-91e1-c8cc54417dc3/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-18-75018-963f3a67-979d-40d9-8eb0-b2b92e34af80/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   },
   {
     "Bron": "orpi",
@@ -2295,8 +2295,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-longvic-21600-1f826c45-819f-48ef-91e1-c8cc54417dc3/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-18-75018-963f3a67-979d-40d9-8eb0-b2b92e34af80/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   },
   {
     "Bron": "orpi",
@@ -2306,8 +2306,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t7-le-bois-plage-en-re-17580-97e9ec9d-d96f-4065-9c72-9f9d032c3adb/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-19-75019-5ad18088-474b-4e5a-a59c-afb8b4c3653c/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   },
   {
     "Bron": "orpi",
@@ -2317,7 +2317,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t7-le-bois-plage-en-re-17580-97e9ec9d-d96f-4065-9c72-9f9d032c3adb/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b896c9af-ce78-485d-9da9-55390a460ba9--8811283e-f399-4c46-918f-e311b0408949.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=2faef8c745fcd5da906c7dab7f9d2af4ee2924f7"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-19-75019-5ad18088-474b-4e5a-a59c-afb8b4c3653c/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
   }
 ]
