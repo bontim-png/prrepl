@@ -403,7 +403,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/location/31-haute-garonne/3929-auterive/2-appartement/t4/19111-auterive-appartement-4-pieces-99-m/",
+    "URL": "https://www.letuc.com/location/31-haute-garonne/3929-auterive/2-appartement/t4/19111-auterive-appartement-4-pieces-99-m-avec-jardin/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -414,7 +414,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/location/31-haute-garonne/3929-auterive/2-appartement/t4/19111-auterive-appartement-4-pieces-99-m/",
+    "URL": "https://www.letuc.com/location/31-haute-garonne/3929-auterive/2-appartement/t4/19111-auterive-appartement-4-pieces-99-m-avec-jardin/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -553,6 +553,39 @@
     "Bron": "valadie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "67 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9184",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9470/semi_Maison_Biron_9184_218723.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "392 200 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8528",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9054/semi_Maison_Eymet_8528_203452.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "461 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9176",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9466/semi_Maison_Villereal_9176_218682.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "35 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -625,39 +658,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://valadie-immobilier.com/fr/biens/fiche/8742",
     "Foto": "https://valadie-immobilier.com/uploads/bien/9172/semi_Maison_Saint-Martin-le-Redon_8742_206596.jpg"
-  },
-  {
-    "Bron": "valadie",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "199 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9165",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9459/semi_Maison_Villereal_9165_218148.jpg"
-  },
-  {
-    "Bron": "valadie",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "790 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9161",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9454/semi_Maison_Villereal_9161_218126.jpg"
-  },
-  {
-    "Bron": "valadie",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "325 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9149",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9449/semi_Maison_Eymet_9149_218349.jpg"
   },
   {
     "Bron": "villereal",
@@ -1811,28 +1811,6 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.pleinsudimmo.fr/detail/propriete-de-charme-en-perigord-noir-avec-gites-tennis-bassin-et-parc-arbore-sur-environ-2-hectares-6505187.html",
-    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6505187p726a7b225e9297e.jpg"
-  },
-  {
-    "Bron": "pleinsud",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "720 800 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.pleinsudimmo.fr/detail/propriete-de-charme-en-perigord-noir-avec-gites-tennis-bassin-et-parc-arbore-sur-environ-2-hectares-6505187.html",
-    "Foto": "https://www.pleinsudimmo.fr/wp-content/themes/pleinsudimmo/img/logo-agence-plein-sud-immo-mobile.png"
-  },
-  {
-    "Bron": "pleinsud",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
     "URL": "https://www.pleinsudimmo.fr/detail/sur-les-hauteurs-entre-les-eyzies-plazac-et-rouffignac-ensemble-comprenant-une-maison-de-plain-pied-et-un-petit-chalet-sur-pres-de-6000-m-de-terrain-6505142.html",
     "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6505142p66a82d9d96ad1e.jpg"
   },
@@ -1845,6 +1823,28 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.pleinsudimmo.fr/detail/sur-les-hauteurs-entre-les-eyzies-plazac-et-rouffignac-ensemble-comprenant-une-maison-de-plain-pied-et-un-petit-chalet-sur-pres-de-6000-m-de-terrain-6505142.html",
+    "Foto": "https://www.pleinsudimmo.fr/wp-content/themes/pleinsudimmo/img/logo-agence-plein-sud-immo-mobile.png"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/propriete-de-charme-en-perigord-noir-avec-gites-tennis-bassin-et-parc-arbore-sur-environ-2-hectares-6505187.html",
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6505187p726a7b225e9297e.jpg"
+  },
+  {
+    "Bron": "pleinsud",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "720 800 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.pleinsudimmo.fr/detail/propriete-de-charme-en-perigord-noir-avec-gites-tennis-bassin-et-parc-arbore-sur-environ-2-hectares-6505187.html",
     "Foto": "https://www.pleinsudimmo.fr/wp-content/themes/pleinsudimmo/img/logo-agence-plein-sud-immo-mobile.png"
   },
   {
@@ -1983,7 +1983,18 @@
     "Bron": "eleonor",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "795 000 €",
+    "Prijs": "572 250 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-villa-10-pieces-villeneuve-sur-lot-47300,VM17774",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17774/maison-villa-10-pieces-villeneuve-sur-lot-47300-1782907089-VM17774_85_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "572 250 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
@@ -2079,17 +2090,6 @@
     "Foto": "https://img.netty.immo/product/company53706zgl/VM17875/maison-maison-de-campagne-10-pieces-plaisance-24560-1786953322-VM17875_2_l.jpg"
   },
   {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "220 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-10-pieces-la-sauvetat-du-dropt-47800,VM14424",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM14424/maison-traditionnelle-10-pieces-la-sauvetat-du-dropt-47800-1787058388-VM14424_15_l.jpg"
-  },
-  {
     "Bron": "ledil",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
@@ -2099,17 +2099,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://ledil.immo/bien/maison/reaup-lisse-47170/9410",
     "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9410/Corps%20de%20ferme%20%C3%A0%20vendre%2047170%20M%C3%A9zin%20%285%29-6a7ee252d8af4.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/loubes-bernac-47120/9408",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9408/facade%20arriere%20bis-6a84113d475d9.jpg"
   },
   {
     "Bron": "ledil",
@@ -2200,6 +2189,17 @@
     "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9369/1565101359335319704-6a686afba8235.jpg"
   },
   {
+    "Bron": "ledil",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://ledil.immo/bien/maison/lafrancaise-82130/9365",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9365/Offre%20valid%C3%A9e%20%2819%29-6a5a766023f7d.png"
+  },
+  {
     "Bron": "charles_loftie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
@@ -2218,8 +2218,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-douai-59500-5410c92c-a819-47bc-b157-93500ca07a40/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-lyon-3-69003-b762c349-b05e-4eab-b66a-84609b832368/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   },
   {
     "Bron": "orpi",
@@ -2229,8 +2229,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-douai-59500-5410c92c-a819-47bc-b157-93500ca07a40/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-lyon-3-69003-b762c349-b05e-4eab-b66a-84609b832368/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   },
   {
     "Bron": "orpi",
@@ -2240,8 +2240,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-mons-83440-239d96b0-5863-4e81-94b0-43a7cbab95a2/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-brest-29200-ebdb9d97-7725-41bd-bb0f-45d5a66eb121/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   },
   {
     "Bron": "orpi",
@@ -2251,8 +2251,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-mons-83440-239d96b0-5863-4e81-94b0-43a7cbab95a2/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-brest-29200-ebdb9d97-7725-41bd-bb0f-45d5a66eb121/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   },
   {
     "Bron": "orpi",
@@ -2262,8 +2262,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-les-andelys-27700-4bd2d1f9-262e-4cb0-ab67-9db5d299aea9/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-toulon-83200-856438c4-f8b2-4f47-8ca1-9d6d218026aa/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   },
   {
     "Bron": "orpi",
@@ -2273,8 +2273,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-les-andelys-27700-4bd2d1f9-262e-4cb0-ab67-9db5d299aea9/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t4-toulon-83200-856438c4-f8b2-4f47-8ca1-9d6d218026aa/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   },
   {
     "Bron": "orpi",
@@ -2284,8 +2284,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-18-75018-963f3a67-979d-40d9-8eb0-b2b92e34af80/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-colomars-06670-c7a6a72c-6c11-4c3b-b2a8-6d9f9e5548ef/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   },
   {
     "Bron": "orpi",
@@ -2295,8 +2295,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-18-75018-963f3a67-979d-40d9-8eb0-b2b92e34af80/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-colomars-06670-c7a6a72c-6c11-4c3b-b2a8-6d9f9e5548ef/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   },
   {
     "Bron": "orpi",
@@ -2306,8 +2306,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-19-75019-5ad18088-474b-4e5a-a59c-afb8b4c3653c/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-la-tremblade-17390-08957b65-726c-4999-bd35-aa2b056f86ad/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   },
   {
     "Bron": "orpi",
@@ -2317,7 +2317,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-paris-19-75019-5ad18088-474b-4e5a-a59c-afb8b4c3653c/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/5410c92c-a819-47bc-b157-93500ca07a40--9259b944-d7a8-4a03-863e-8d5ab0195f2b.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a5da9a0b08050699603f6f6a6f63d74920da6365"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-la-tremblade-17390-08957b65-726c-4999-bd35-aa2b056f86ad/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b762c349-b05e-4eab-b66a-84609b832368--755e05a3-6771-4af4-92ea-6a1e55cc6726.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dbd5feebdc1a29efe265ab82f7ac5131336807c0"
   }
 ]
