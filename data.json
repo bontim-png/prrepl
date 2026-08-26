@@ -47,17 +47,6 @@
     "Bron": "ladresse_tournon",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "254 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.ladresse.com/annonce/achat/maison/monsempron-libos-47500/12998969",
-    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/2/9/9/8/9/6/9/12998969a.jpg?version=1782226561"
-  },
-  {
-    "Bron": "ladresse_tournon",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
     "Prijs": "233 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -108,6 +97,17 @@
     "Slaapkamers": "N/A",
     "URL": "https://www.ladresse.com/annonce/achat/maison/montayral-47500/13340605",
     "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/3/3/4/0/6/0/5/13340605a.jpg?version=1778494518"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "378 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/sauveterre-la-lemance-47500/13516651",
+    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/3/5/1/6/6/5/1/13516651a.jpg?version=1773042310"
   },
   {
     "Bron": "lot_immoco",
@@ -333,6 +333,72 @@
     "Bron": "letuc",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "230€",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/2a-corse-du-sud/1110-porticcio/2-appartement/t1/19140-porticcio-studio-vue-mer-dernier-etage/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/2a-corse-du-sud/1110-porticcio/2-appartement/t1/19140-porticcio-studio-vue-mer-dernier-etage/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "102438 176 500 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/15-cantal/3700-aurillac/1-maison/t4/19139-aurillac-maison-en-pierre/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/15-cantal/3700-aurillac/1-maison/t4/19139-aurillac-maison-en-pierre/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "102440 171 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/15-cantal/9473-sansac-de-marmiesse/1-maison/t4/19138-maison-de-plain-pied-neuve-2025/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/15-cantal/9473-sansac-de-marmiesse/1-maison/t4/19138-maison-de-plain-pied-neuve-2025/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "193 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -371,72 +437,6 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.letuc.com/vente/17-charente-maritime/1772-st-hilaire-de-villefranche/22-propriete/t9/19125-charmante-charentaise-avec-piscine/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "168.000€",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/18-cher/8192-st-maur/1-maison/t3/19128-saint-maur-propriete-de-charme-sur-un-terrain-de-5623-m-avec-belle-vue-et-details-authentiques/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/18-cher/8192-st-maur/1-maison/t3/19128-saint-maur-propriete-de-charme-sur-un-terrain-de-5623-m-avec-belle-vue-et-details-authentiques/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "119 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/17-charente-maritime/6813-poursay-garnaud/22-propriete/t6/19115-propriete-charentaise-a-renover/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/17-charente-maritime/6813-poursay-garnaud/22-propriete/t6/19115-propriete-charentaise-a-renover/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "554 985 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/location/31-haute-garonne/3929-auterive/2-appartement/t4/19111-auterive-appartement-4-pieces-99-m-avec-jardin/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/location/31-haute-garonne/3929-auterive/2-appartement/t4/19111-auterive-appartement-4-pieces-99-m-avec-jardin/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -553,6 +553,28 @@
     "Bron": "valadie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "614 250 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9188",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9473/semi_Maison_Sarlat-la-Caneda_9188_218890.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "549 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9107",
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9414/semi_Maison_Villereal_9107_216398.jpg"
+  },
+  {
+    "Bron": "valadie",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "381 600 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -569,7 +591,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://valadie-immobilier.com/fr/biens/fiche/9184",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9470/semi_Maison_Biron_9184_218723.jpg"
+    "Foto": "https://valadie-immobilier.com/uploads/bien/9470/semi_Maison_Biron_9184_218815.jpg"
   },
   {
     "Bron": "valadie",
@@ -638,26 +660,114 @@
     "Foto": "https://valadie-immobilier.com/uploads/bien/9329/semi_Maison_Sarlat-la-Caneda_8970_218412.jpg"
   },
   {
-    "Bron": "valadie",
+    "Bron": "villereal",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "233 200 €",
+    "Prijs": "N/A",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/9160",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9457/semi_Maison_Castillonnes_9160_218064.jpg"
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/258-Maison-en-pierre-avec-Gîte-sur-6-hectares-Villeréal",
+    "Foto": "https://media.immo-facile.com/office/sud-perigord/catalog/images/pr_p/2/8/1/8/5/1/1/4/28185114a.jpg"
   },
   {
-    "Bron": "valadie",
+    "Bron": "villereal",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "98 000 €",
+    "Prijs": "N/A",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://valadie-immobilier.com/fr/biens/fiche/8742",
-    "Foto": "https://valadie-immobilier.com/uploads/bien/9172/semi_Maison_Saint-Martin-le-Redon_8742_206596.jpg"
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/258-Maison-en-pierre-avec-Gîte-sur-6-hectares-Villeréal",
+    "Foto": "https://www.facebook.com/tr?id=298842227635040&ev=PageView\n\n&noscript=1"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/952-Ancien-Presbytère-du-18e-siècle-avec-piscine-et-dépendances",
+    "Foto": "https://media.immo-facile.com/office/sud-perigord/catalog/images/pr_p/5/7/6/9/1/2/9/0/57691290a.jpg"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/952-Ancien-Presbytère-du-18e-siècle-avec-piscine-et-dépendances",
+    "Foto": "https://www.facebook.com/tr?id=298842227635040&ev=PageView\n\n&noscript=1"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1000-Maison-en-pierre-rénovée-proche-de-Villeréal",
+    "Foto": "https://media.immo-facile.com/office/sud-perigord/catalog/images/pr_p/5/8/7/5/0/7/3/0/58750730a.jpg"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1000-Maison-en-pierre-rénovée-proche-de-Villeréal",
+    "Foto": "https://www.facebook.com/tr?id=298842227635040&ev=PageView\n\n&noscript=1"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1048-Maison-en-pierre-avec-jardin-secteur-Cancon",
+    "Foto": "https://media.immo-facile.com/office/sud-perigord/catalog/images/pr_p/5/8/8/0/9/0/1/2/58809012a.jpg"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1048-Maison-en-pierre-avec-jardin-secteur-Cancon",
+    "Foto": "https://www.facebook.com/tr?id=298842227635040&ev=PageView\n\n&noscript=1"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1125-Ensemble-en-pierre-avec--tres-bon-rapport-locatif",
+    "Foto": "https://media.immo-facile.com/office/sud-perigord/catalog/images/pr_p/6/0/5/6/4/1/4/0/60564140a.jpg"
+  },
+  {
+    "Bron": "villereal",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.immobilier-villereal.com/fr/nos-biens-tous/property/1125-Ensemble-en-pierre-avec--tres-bon-rapport-locatif",
+    "Foto": "https://www.facebook.com/tr?id=298842227635040&ev=PageView\n\n&noscript=1"
   },
   {
     "Bron": "quercygascogne",
@@ -887,6 +997,50 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/country-property-with-annexe-pool-outbuildings-and-land/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2023/03/Logo-Wheeler-Property-650x175-1.png"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/country-property-with-annexe-pool-outbuildings-and-land/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/03/outside-1-wmc694.jpg"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/village-house-with-roof-terrace/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2023/03/Logo-Wheeler-Property-650x175-1.png"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://wheeler-property.com/properties/village-house-with-roof-terrace/",
+    "Foto": "https://wheeler-property.com/wp-content/uploads/2023/05/Bedroom-4-WMC239.jpg"
+  },
+  {
+    "Bron": "wheeler",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
     "URL": "https://wheeler-property.com/properties/chateau-5/",
     "Foto": "https://wheeler-property.com/wp-content/uploads/2023/03/Logo-Wheeler-Property-650x175-1.png"
   },
@@ -944,50 +1098,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://wheeler-property.com/properties/chateau-estate-2/",
     "Foto": "https://wheeler-property.com/wp-content/uploads/2026/08/Aerial-WMC682.jpg"
-  },
-  {
-    "Bron": "wheeler",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://wheeler-property.com/properties/chateau-6/",
-    "Foto": "https://wheeler-property.com/wp-content/uploads/2023/03/Logo-Wheeler-Property-650x175-1.png"
-  },
-  {
-    "Bron": "wheeler",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://wheeler-property.com/properties/chateau-6/",
-    "Foto": "https://wheeler-property.com/wp-content/uploads/2026/05/Drone-2-WMC687.jpg"
-  },
-  {
-    "Bron": "wheeler",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://wheeler-property.com/properties/village-house-with-pool-and-garden-2/",
-    "Foto": "https://wheeler-property.com/wp-content/uploads/2023/03/Logo-Wheeler-Property-650x175-1.png"
-  },
-  {
-    "Bron": "wheeler",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "800 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://wheeler-property.com/properties/village-house-with-pool-and-garden-2/",
-    "Foto": "https://wheeler-property.com/wp-content/uploads/2025/10/pool-4-wmc646.jpg"
   },
   {
     "Bron": "mouly",
@@ -1763,6 +1873,17 @@
     "Bron": "signature_agenaise",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "242 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-individuelle-4-pieces-revel-31250,VM1596",
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/4/VM1596/maison-individuelle-4-pieces-revel-31250-1787731962-VM1596_17_l.jpg"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "40 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -1859,26 +1980,48 @@
     "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1684/maison-mitoyenne-1-cote-4-pieces-astaffort-47220-1786717300-VM1684_20_l.jpg"
   },
   {
-    "Bron": "signature_agenaise",
+    "Bron": "eleonor",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "199 000 €",
+    "Prijs": "549 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-traditionnelle-5-pieces-estillac-47310,VM1819",
-    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1819/maison-traditionnelle-5-pieces-estillac-47310-1778408982-VM1819_1_l.jpg"
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-10-pieces-villereal-47210,VM17608",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17608/maison-ancienne-10-pieces-villereal-47210-1787731703-VM17608_13_l.jpg"
   },
   {
     "Bron": "eleonor",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "572 250 €",
+    "Prijs": "85 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-4-pieces-lalinde-24150,VM15174",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM15174/maison-ancienne-4-pieces-lalinde-24150-1787669554-VM15174_41_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "240 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-6-pieces-lot-et-garonne-47,VM16214",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM16214/maison-traditionnelle-6-pieces-lot-et-garonne-47-1787659638-VM16214_48_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "199 020 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.agence-eleonor.fr/fr/vente/maison-chalet-4-pieces-vergt-de-biron-24540,VM17871",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17871/maison-chalet-4-pieces-vergt-de-biron-24540-1786459408-VM17871_1_l.jpg"
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17871/maison-chalet-4-pieces-vergt-de-biron-24540-1786459408-VM17871_7_l.jpg"
   },
   {
     "Bron": "eleonor",
@@ -1895,7 +2038,7 @@
     "Bron": "eleonor",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "572 250 €",
+    "Prijs": "549 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
@@ -1947,37 +2090,26 @@
     "Foto": "https://img.netty.immo/product/company53706zgl/VM16304/maison-traditionnelle-6-pieces-le-fleix-24130-1787215521-VM16304_18_l.jpg"
   },
   {
-    "Bron": "eleonor",
+    "Bron": "ledil",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "67 000 €",
+    "Prijs": "300 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-chalet-2-pieces-saint-cyprien-24220,VM17216",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17216/maison-chalet-2-pieces-saint-cyprien-24220-1760095011-VM17216_2_l.jpg"
+    "URL": "https://ledil.immo/bien/maison/moncrabeau-47600/9422",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9422/IMG_7334-6a8e9d8ca3c11.jpg"
   },
   {
-    "Bron": "eleonor",
+    "Bron": "ledil",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "97 200 €",
+    "Prijs": "000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-maison-de-campagne-13-pieces-montignac-de-lauzun-47800,VM17278",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17278/maison-maison-de-campagne-13-pieces-montignac-de-lauzun-47800-1787574435-VM17278_59_l.jpg"
-  },
-  {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "375 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-5-pieces-plaisance-24560,VM17881",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17881/maison-ancienne-5-pieces-plaisance-24560-1787062062-VM17881_39_l.jpg"
+    "URL": "https://ledil.immo/bien/fonds-de-commerce/dunes-82340/9421",
+    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9421/fullsizeoutput_4553-6a8d99c73f1d2.jpg"
   },
   {
     "Bron": "ledil",
@@ -2068,28 +2200,6 @@
     "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9370/Villa%20piscine%20grand%20garage%20lot%20et%20garonne%20penne%20d%27agenais%20%2849%29-6a5e2da93ccb9.jpg"
   },
   {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "500 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/nerac-47600/9369",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9369/1565101359335319704-6a686afba8235.jpg"
-  },
-  {
-    "Bron": "ledil",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://ledil.immo/bien/maison/lafrancaise-82130/9365",
-    "Foto": "https://enterprise1.ledil.immo/system/files/styles/bien_teaser/private/uploads/bien/field_photos_visibles/9365/Offre%20valid%C3%A9e%20%2819%29-6a5a766023f7d.png"
-  },
-  {
     "Bron": "charles_loftie",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
@@ -2108,8 +2218,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-sauvian-34410-16c360fa-7355-45fc-919f-854b31ac6b0a/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-toulouse-31000-281f8891-4f7e-472a-a21b-0d0cd4ed89b4/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   },
   {
     "Bron": "orpi",
@@ -2119,8 +2229,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-sauvian-34410-16c360fa-7355-45fc-919f-854b31ac6b0a/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-toulouse-31000-281f8891-4f7e-472a-a21b-0d0cd4ed89b4/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   },
   {
     "Bron": "orpi",
@@ -2130,8 +2240,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-uzein-64230-3765a5d8-838d-4a12-8502-5a0ba46f33ac/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-limoges-87100-1f0e805a-70cc-4855-b889-be097555470f/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   },
   {
     "Bron": "orpi",
@@ -2141,8 +2251,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-uzein-64230-3765a5d8-838d-4a12-8502-5a0ba46f33ac/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-limoges-87100-1f0e805a-70cc-4855-b889-be097555470f/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   },
   {
     "Bron": "orpi",
@@ -2152,8 +2262,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-lille-59000-3f5ddfe3-0b23-4e96-a3bc-e6d965b8a814/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-prades-d-aubrac-12470-aef5c79a-6dc6-4173-9388-52efc5b76e95/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   },
   {
     "Bron": "orpi",
@@ -2163,8 +2273,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-lille-59000-3f5ddfe3-0b23-4e96-a3bc-e6d965b8a814/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-prades-d-aubrac-12470-aef5c79a-6dc6-4173-9388-52efc5b76e95/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   },
   {
     "Bron": "orpi",
@@ -2174,8 +2284,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-les-andelys-27700-1e5a66fa-c766-4437-a559-afbf44eb9d59/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-weyersheim-67720-a2b5e5ad-22f5-42dd-9c4b-fb906bfbda65/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   },
   {
     "Bron": "orpi",
@@ -2185,8 +2295,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-les-andelys-27700-1e5a66fa-c766-4437-a559-afbf44eb9d59/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-weyersheim-67720-a2b5e5ad-22f5-42dd-9c4b-fb906bfbda65/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   },
   {
     "Bron": "orpi",
@@ -2196,8 +2306,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-angouleme-16000-e8b600e1-8632-43f5-84c4-a81b9f6adf01/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-weyersheim-67720-69876e23-7cda-49fb-adeb-888cbf1bc9be/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   },
   {
     "Bron": "orpi",
@@ -2207,7 +2317,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-angouleme-16000-e8b600e1-8632-43f5-84c4-a81b9f6adf01/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/16c360fa-7355-45fc-919f-854b31ac6b0a--9fe89e5d-73db-4708-9a0e-0cd028a39b01.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=17cbe43924123cd77f807da184ddee350b5ae9fc"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-weyersheim-67720-69876e23-7cda-49fb-adeb-888cbf1bc9be/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/281f8891-4f7e-472a-a21b-0d0cd4ed89b4--f2cb8532-a9f1-4514-becd-309ddf9a1583.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=04673a37d0c8f734469d502e732e5af03434e44c"
   }
 ]
