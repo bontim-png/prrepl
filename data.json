@@ -333,6 +333,28 @@
     "Bron": "letuc",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "3550118649 275 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/17-charente-maritime/3668-barzan/1-maison/t8/19156-maison-8-pieces-surface-de-197-m2-dependances-situee-sur-la-commune-de-barzan/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/17-charente-maritime/3668-barzan/1-maison/t8/19156-maison-8-pieces-surface-de-197-m2-dependances-situee-sur-la-commune-de-barzan/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "1140118547 279 500 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -399,7 +421,7 @@
     "Bron": "letuc",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "102440 171 000 €",
+    "Prijs": "102440 169 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
@@ -415,28 +437,6 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.letuc.com/vente/15-cantal/9473-sansac-de-marmiesse/1-maison/t4/19138-maison-de-plain-pied-neuve-2025/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "193 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/17-charente-maritime/7410-st-pardoult/22-propriete/t8/19134-logis-ancienne-seigneurie/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/17-charente-maritime/7410-st-pardoult/22-propriete/t8/19134-logis-ancienne-seigneurie/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -865,7 +865,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.quercygascogne.fr/vente/-/201-roquecor/-maison-de-village/2387-maison-de-caractere-a-roquecor/",
+    "URL": "https://www.quercygascogne.fr/vente/-/201-roquecor/-maison-de-village/2387-maison-de-caractere-avec-jardin-roquecor/",
     "Foto": "https://www.quercygascogne.fr/images/logoSite.png"
   },
   {
@@ -876,7 +876,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.quercygascogne.fr/vente/-/201-roquecor/-maison-de-village/2387-maison-de-caractere-a-roquecor/",
+    "URL": "https://www.quercygascogne.fr/vente/-/201-roquecor/-maison-de-village/2387-maison-de-caractere-avec-jardin-roquecor/",
     "Foto": "https://www.quercygascogne.fr/images/logoSite.png"
   },
   {
@@ -1983,6 +1983,17 @@
     "Bron": "eleonor",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "181 900 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-plain-pied-3-pieces-la-force-24130,VM17449",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17449/maison-plain-pied-3-pieces-la-force-24130-1779285126-VM17449_5_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "124 200 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -2077,17 +2088,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://www.agence-eleonor.fr/fr/vente/maison-chalet-4-pieces-vergt-de-biron-24540,VM17871",
     "Foto": "https://img.netty.immo/product/company53706zgl/VM17871/maison-chalet-4-pieces-vergt-de-biron-24540-1786459408-VM17871_7_l.jpg"
-  },
-  {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "572 250 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-villa-10-pieces-villeneuve-sur-lot-47300,VM17774",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17774/maison-villa-10-pieces-villeneuve-sur-lot-47300-1782907089-VM17774_85_l.jpg"
   },
   {
     "Bron": "ledil",
@@ -2218,8 +2218,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-esbly-77450-70b4c4c9-759f-4107-a724-d2e1d66142b1/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t6-montreuil-sur-breche-60480-b7b3cded-d507-4620-8efa-134749ebb88d/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   },
   {
     "Bron": "orpi",
@@ -2229,8 +2229,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-esbly-77450-70b4c4c9-759f-4107-a724-d2e1d66142b1/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t6-montreuil-sur-breche-60480-b7b3cded-d507-4620-8efa-134749ebb88d/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   },
   {
     "Bron": "orpi",
@@ -2240,8 +2240,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-cugnaux-31270-7ee4fdc6-23c9-4c37-847d-aeede190821d/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t8-saint-witz-95470-b8a76325-d281-46b1-8314-d4999fadca7f/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   },
   {
     "Bron": "orpi",
@@ -2251,8 +2251,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-cugnaux-31270-7ee4fdc6-23c9-4c37-847d-aeede190821d/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t8-saint-witz-95470-b8a76325-d281-46b1-8314-d4999fadca7f/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   },
   {
     "Bron": "orpi",
@@ -2262,8 +2262,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-stationnement-amiens-80000-54dead7b-b4ca-4adc-b230-f4098009efa1/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-tinqueux-51430-c8835875-5a80-45c1-9e80-87801db0b4b9/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   },
   {
     "Bron": "orpi",
@@ -2273,8 +2273,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-stationnement-amiens-80000-54dead7b-b4ca-4adc-b230-f4098009efa1/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-tinqueux-51430-c8835875-5a80-45c1-9e80-87801db0b4b9/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   },
   {
     "Bron": "orpi",
@@ -2284,8 +2284,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-castanet-tolosan-31320-9b3d3145-749d-41fb-b537-fd900020937c/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-marseille-12-13012-178ba3b3-3be2-481d-9795-a3947b6d52a5/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   },
   {
     "Bron": "orpi",
@@ -2295,8 +2295,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-castanet-tolosan-31320-9b3d3145-749d-41fb-b537-fd900020937c/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-marseille-12-13012-178ba3b3-3be2-481d-9795-a3947b6d52a5/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   },
   {
     "Bron": "orpi",
@@ -2306,8 +2306,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-baie-mahault-97122-067116f9-50eb-4681-a21f-07e467664fac/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-bourgoin-jallieu-38300-cd5f74e9-8548-4ab4-a984-07c72041c0e1/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   },
   {
     "Bron": "orpi",
@@ -2317,7 +2317,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-baie-mahault-97122-067116f9-50eb-4681-a21f-07e467664fac/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/70b4c4c9-759f-4107-a724-d2e1d66142b1--5f4c77d0-566e-4996-bfaf-cb37055aeee3.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=dcfd4f1feb8cb9a7bdb0ce5bff2a701a05b696d5"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t1-bourgoin-jallieu-38300-cd5f74e9-8548-4ab4-a984-07c72041c0e1/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/b7b3cded-d507-4620-8efa-134749ebb88d--71c7bbe5-aabc-4cee-82d4-10b59c2823fc.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=00a160900854f5541abfda7288fa104813339380"
   }
 ]
