@@ -333,6 +333,28 @@
     "Bron": "letuc",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "559 124 900 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/31-haute-garonne/6180-aucamville/2-appartement/t2/19224-aucamville-appartement-2-pieces-43-m/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/31-haute-garonne/6180-aucamville/2-appartement/t2/19224-aucamville-appartement-2-pieces-43-m/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "3873 900 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -415,28 +437,6 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.letuc.com/vente/2a-corse-du-sud/1132-bastelicaccia/1-maison/t4/19210-maison-recente-t4-avec-garage-bastelicaccia-106-m/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "198 220 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/33-gironde/1624-st-yzan-de-soudiac/1-maison/t4/19205-st-yzan-maison-3-chambres-avec-garage/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/33-gironde/1624-st-yzan-de-soudiac/1-maison/t4/19205-st-yzan-maison-3-chambres-avec-garage/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -1873,6 +1873,17 @@
     "Bron": "signature_agenaise",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "81 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-individuelle-4-pieces-laugnac-47360,VM2105",
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM2105/maison-individuelle-4-pieces-laugnac-47360-1789249700-VM2105_4_l.jpg"
+  },
+  {
+    "Bron": "signature_agenaise",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "240 000 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -1967,17 +1978,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-7-pieces-boe-47550,VM1856",
     "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1856/maison-7-pieces-boe-47550-1778142918-VM1856_18_l.jpg"
-  },
-  {
-    "Bron": "signature_agenaise",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "199 900 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-individuelle-5-pieces-agen-47000,VM2036",
-    "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM2036/maison-individuelle-5-pieces-agen-47000-1787212721-VM2036_6_l.jpg"
   },
   {
     "Bron": "eleonor",
@@ -2218,8 +2218,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-berck-62600-299aa302-adf0-4689-943b-069623092187/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t10-huez-38750-349b2a3c-8df7-4a51-aa1e-7c3a16042250/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   },
   {
     "Bron": "orpi",
@@ -2229,8 +2229,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-berck-62600-299aa302-adf0-4689-943b-069623092187/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t10-huez-38750-349b2a3c-8df7-4a51-aa1e-7c3a16042250/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   },
   {
     "Bron": "orpi",
@@ -2240,8 +2240,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-limoux-11300-c74ddaf4-93f4-49aa-94d3-8cc9413c0c87/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-montelimar-26200-583fa3b9-ee50-4d35-bc19-97fd9ea91a2c/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   },
   {
     "Bron": "orpi",
@@ -2251,8 +2251,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-limoux-11300-c74ddaf4-93f4-49aa-94d3-8cc9413c0c87/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-montelimar-26200-583fa3b9-ee50-4d35-bc19-97fd9ea91a2c/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   },
   {
     "Bron": "orpi",
@@ -2262,8 +2262,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-reyrieux-01600-9b8979a4-75f2-4e8d-9559-2efa86a11873/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-argenteuil-95100-ca7c2aa1-f815-4dc1-9de6-d5a104bc68bf/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   },
   {
     "Bron": "orpi",
@@ -2273,8 +2273,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-reyrieux-01600-9b8979a4-75f2-4e8d-9559-2efa86a11873/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t3-argenteuil-95100-ca7c2aa1-f815-4dc1-9de6-d5a104bc68bf/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   },
   {
     "Bron": "orpi",
@@ -2284,8 +2284,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-perpignan-66100-1c4299fb-68dd-4a9a-87c0-d96c36d3878b/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-anglet-64600-d01799d8-13be-41d7-b4f1-0429ffbc8e78/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   },
   {
     "Bron": "orpi",
@@ -2295,8 +2295,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-perpignan-66100-1c4299fb-68dd-4a9a-87c0-d96c36d3878b/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t5-anglet-64600-d01799d8-13be-41d7-b4f1-0429ffbc8e78/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   },
   {
     "Bron": "orpi",
@@ -2306,8 +2306,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-bussy-saint-georges-77600-58e4a2c3-36d6-4453-85f0-2c284f22c3da/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-nice-06000-32fdac56-9808-4540-aca8-f3507836c398/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   },
   {
     "Bron": "orpi",
@@ -2317,7 +2317,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-bussy-saint-georges-77600-58e4a2c3-36d6-4453-85f0-2c284f22c3da/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/299aa302-adf0-4689-943b-069623092187--803cfe17-7af3-4590-95e5-35b026097361.jpeg?p=estate-result-item&ci_url_encoded=1&ci_sign=32d024dc78b137343b410d7840e8ed0a94f1367b"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-nice-06000-32fdac56-9808-4540-aca8-f3507836c398/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/349b2a3c-8df7-4a51-aa1e-7c3a16042250--f88758ec-f118-44c3-9c07-b0bd06a42d68.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=9dcd1be928af4eb46b766d839e94d727e5be1303"
   }
 ]
