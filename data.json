@@ -293,6 +293,17 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
+    "URL": "https://www.agencespouget.com/vente/1095-lanquais/maison/t6/7311-authentique-maison-perigourdine-entre-lalinde-et-bergerac/",
+    "Foto": "https://www.agencespouget.com/images/logo-modal.png"
+  },
+  {
+    "Bron": "pouget",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
     "URL": "https://www.agencespouget.com/vente/198-castillonnes/maison-de-village/7308-charmante-maison-de-village-entierement-renovee-le-parfait-equilibre-entre-cachet-et-modernite-avec-possibil",
     "Foto": "https://www.agencespouget.com/images/logo-modal.png"
   },
@@ -319,15 +330,26 @@
     "Foto": "https://www.agencespouget.com/images/logo-modal.png"
   },
   {
-    "Bron": "pouget",
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "14050119573 832 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/2a-corse-du-sud/1085-ajaccio/2-appartement/t4/19438-sanguinaires-t4-avec-110m-de-terrasse-vue-mer-imprenable/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
     "Prijs": "N/A",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.agencespouget.com/vente/198-castillonnes/immeuble/7297-immeuble-de-caractere-avec-potentiel-d-amenagement-au-coeur-du-village",
-    "Foto": "https://www.agencespouget.com/images/logo-modal.png"
+    "URL": "https://www.letuc.com/vente/2a-corse-du-sud/1085-ajaccio/2-appartement/t4/19438-sanguinaires-t4-avec-110m-de-terrasse-vue-mer-imprenable/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
     "Bron": "letuc",
@@ -415,28 +437,6 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.letuc.com/vente/62-pas-de-calais/1742-anzin-st-aubin/1-maison/t8/19428-pavillon-residentiel-prestige/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "14050119526 1 198 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/2a-corse-du-sud/1338-afa/25-villa/t5/19431-villa-f5/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/vente/2a-corse-du-sud/1338-afa/25-villa/t5/19431-villa-f5/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -1855,18 +1855,18 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.pleinsudimmo.fr/detail/dans-un-cadre-exceptionnel-propriete-de-caractere-composee-d-une-maison-principale-de-344-m-habitables-un-gite-des-dependances-d-une-piscine-et-4-ha-de-terrain-6505279.html",
-    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6505279p26ab54bd38e4f6.jpg"
+    "URL": "https://www.pleinsudimmo.fr/detail/en-perigord-noir-dans-la-region-de-salignac-ancienne-grange-entierement-renovee-avec-gite-et-terrain-6505320.html",
+    "Foto": "https://cdn.label-pierres.jriou.fr/bien/photo/06gildc6505320p226ab54630af035.jpg"
   },
   {
     "Bron": "pleinsud",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "614 800 €",
+    "Prijs": "238 500 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.pleinsudimmo.fr/detail/dans-un-cadre-exceptionnel-propriete-de-caractere-composee-d-une-maison-principale-de-344-m-habitables-un-gite-des-dependances-d-une-piscine-et-4-ha-de-terrain-6505279.html",
+    "URL": "https://www.pleinsudimmo.fr/detail/en-perigord-noir-dans-la-region-de-salignac-ancienne-grange-entierement-renovee-avec-gite-et-terrain-6505320.html",
     "Foto": "https://www.pleinsudimmo.fr/wp-content/themes/pleinsudimmo/img/logo-agence-plein-sud-immo-mobile.png"
   },
   {
@@ -2218,8 +2218,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-la-ferte-milon-02460-d376d67f-ff3f-4788-8fe6-5e6b742d0f34/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t7-sarry-51520-06a197fe-6363-4b17-91ec-2f4304f772df/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   },
   {
     "Bron": "orpi",
@@ -2229,8 +2229,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t3-la-ferte-milon-02460-d376d67f-ff3f-4788-8fe6-5e6b742d0f34/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t7-sarry-51520-06a197fe-6363-4b17-91ec-2f4304f772df/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   },
   {
     "Bron": "orpi",
@@ -2240,8 +2240,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t6-saint-jouin-bruneval-76280-68d44815-0db7-41dc-8716-47571d4c6344/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t7-chalons-en-champagne-51000-4e9135bd-afbf-42d5-a579-ea35b53e7e16/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   },
   {
     "Bron": "orpi",
@@ -2251,8 +2251,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t6-saint-jouin-bruneval-76280-68d44815-0db7-41dc-8716-47571d4c6344/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t7-chalons-en-champagne-51000-4e9135bd-afbf-42d5-a579-ea35b53e7e16/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   },
   {
     "Bron": "orpi",
@@ -2262,8 +2262,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t6-saint-michel-sur-orge-91240-f765b7c9-54a5-4fc4-aee3-c9ac8f81593f/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-terrain-fagnieres-51510-074c34bd-7636-4127-b433-4c13c0072258/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   },
   {
     "Bron": "orpi",
@@ -2273,8 +2273,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t6-saint-michel-sur-orge-91240-f765b7c9-54a5-4fc4-aee3-c9ac8f81593f/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-terrain-fagnieres-51510-074c34bd-7636-4127-b433-4c13c0072258/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   },
   {
     "Bron": "orpi",
@@ -2284,8 +2284,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-saugnac-et-cambran-40180-967fe392-3c0a-4696-ae1b-1a0353c301de/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-terrain-fagnieres-51510-769f04b2-091b-4177-8540-b88b01ebe6aa/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   },
   {
     "Bron": "orpi",
@@ -2295,8 +2295,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-saugnac-et-cambran-40180-967fe392-3c0a-4696-ae1b-1a0353c301de/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-terrain-fagnieres-51510-769f04b2-091b-4177-8540-b88b01ebe6aa/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   },
   {
     "Bron": "orpi",
@@ -2306,8 +2306,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-le-plessis-robinson-92350-9e2745ad-ca08-4d3c-a1f5-656369cfe073/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-ajaccio-20090-b502d070-e492-4cfa-bab6-de16471ccb7b/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   },
   {
     "Bron": "orpi",
@@ -2317,7 +2317,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t2-le-plessis-robinson-92350-9e2745ad-ca08-4d3c-a1f5-656369cfe073/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/d376d67f-ff3f-4788-8fe6-5e6b742d0f34--934a4ce7-c18b-47b4-8b48-a47d3274637e.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=b5a83ed9a908067f856e5cd29fe40310b45e38a7"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t3-ajaccio-20090-b502d070-e492-4cfa-bab6-de16471ccb7b/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/06a197fe-6363-4b17-91ec-2f4304f772df--1c651bab-1e5f-4147-a8d9-418c2f7879ab.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=da0a7b6fa1915ed2341b3ce4738d242db8d62f84"
   }
 ]
