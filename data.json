@@ -36,17 +36,6 @@
     "Bron": "ladresse_tournon",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
-    "Prijs": "215 000 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.ladresse.com/annonce/achat/maison/montaigu-de-quercy-82150/13012071",
-    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/3/0/1/2/0/7/1/13012071a.jpg?version=1742248209"
-  },
-  {
-    "Bron": "ladresse_tournon",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
     "Prijs": "191 400 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -108,6 +97,17 @@
     "Slaapkamers": "N/A",
     "URL": "https://www.ladresse.com/annonce/achat/maison/saint-vite-47500/13561499",
     "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/3/5/6/1/4/9/9/13561499a.jpg?version=1790667030"
+  },
+  {
+    "Bron": "ladresse_tournon",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "138 900 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.ladresse.com/annonce/achat/maison/dausse-47140/13576413",
+    "Foto": "https://admin.exceladresse.com/office7/ladres_1908260916/catalog/images/pr_p/1/3/5/7/6/4/1/3/13576413a.jpg?version=1742381334"
   },
   {
     "Bron": "lot_immoco",
@@ -333,6 +333,28 @@
     "Bron": "letuc",
     "Plaats": "Onbekend",
     "Nieuw?": "Nee",
+    "Prijs": "160119783 230 000 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/06-alpes-maritimes/559-grasse/2-appartement/t3/19474-grasse-exclusif-rare-sur-le-marche-appartement-2-3-pieces-avec-jardin-et-vue-mer/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "N/A",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.letuc.com/vente/06-alpes-maritimes/559-grasse/2-appartement/t3/19474-grasse-exclusif-rare-sur-le-marche-appartement-2-3-pieces-avec-jardin-et-vue-mer/",
+    "Foto": "https://www.letuc.com/images/logoSite.png"
+  },
+  {
+    "Bron": "letuc",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
     "Prijs": "394 €",
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
@@ -382,28 +404,6 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.letuc.com/vente/2a-corse-du-sud/1085-ajaccio/22-propriete/t13/19458-sanguinaires-propriete-composee-de-2-villas-en-bord-de-mer-prestige/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "540119659 440 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/location/31-haute-garonne/3929-auterive/2-appartement/t2/19457-auterive-appartement-t1-bis-40-m-climatisation/",
-    "Foto": "https://www.letuc.com/images/logoSite.png"
-  },
-  {
-    "Bron": "letuc",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "N/A",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.letuc.com/location/31-haute-garonne/3929-auterive/2-appartement/t2/19457-auterive-appartement-t1-bis-40-m-climatisation/",
     "Foto": "https://www.letuc.com/images/logoSite.png"
   },
   {
@@ -1625,7 +1625,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.immo46.comachat,maison-maison-4-chambres-avec-garage-sur-1-900m-de-terrain-avec-piscine,P5230T",
-    "Foto": "https://p-wm.alveen.com/800/3158/1258/c1069-b3521537-r3968.jpg?emptyCache"
+    "Foto": "https://www.immo46.com/images/logo.png"
   },
   {
     "Bron": "immo46",
@@ -1878,7 +1878,7 @@
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
     "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-traditionnelle-10-pieces-villeneuve-tolosane-31270,VM2143",
-    "Foto": "https://img.netty.immo/productcw/company55406bzw/4/VM2143/maison-traditionnelle-10-pieces-villeneuve-tolosane-31270-1791553626-VM2143_18_l.jpg"
+    "Foto": "https://img.netty.immo/productcw/company55406bzw/4/VM2143/maison-traditionnelle-10-pieces-villeneuve-tolosane-31270-1791643981-VM2143_19_l.jpg"
   },
   {
     "Bron": "signature_agenaise",
@@ -1945,6 +1945,17 @@
     "Slaapkamers": "N/A",
     "URL": "https://www.la-signature-agenaise.fr/fr/vente/maison-individuelle-6-pieces-colayrac-saint-cirq-47450,VM1913",
     "Foto": "https://img.netty.immo/productcw/company55406bzw/2/VM1913/maison-individuelle-6-pieces-colayrac-saint-cirq-47450-1790000478-VM1913_35_l.jpg"
+  },
+  {
+    "Bron": "eleonor",
+    "Plaats": "Onbekend",
+    "Nieuw?": "Nee",
+    "Prijs": "80 250 €",
+    "m2 Binnen": "N/A",
+    "m2 Buiten": "N/A",
+    "Slaapkamers": "N/A",
+    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-traditionnelle-4-pieces-issigeac-24560,VM17014",
+    "Foto": "https://img.netty.immo/product/company53706zgl/VM17014/maison-traditionnelle-4-pieces-issigeac-24560-1759193371-VM17014_1_l.jpg"
   },
   {
     "Bron": "eleonor",
@@ -2044,17 +2055,6 @@
     "Slaapkamers": "N/A",
     "URL": "https://www.agence-eleonor.fr/fr/vente/maison-ancienne-8-pieces-massugas-33790,VM17885",
     "Foto": "https://img.netty.immo/product/company53706zgl/VM17885/maison-ancienne-8-pieces-massugas-33790-1786961691-VM17885_68_l.jpg"
-  },
-  {
-    "Bron": "eleonor",
-    "Plaats": "Onbekend",
-    "Nieuw?": "Nee",
-    "Prijs": "272 850 €",
-    "m2 Binnen": "N/A",
-    "m2 Buiten": "N/A",
-    "Slaapkamers": "N/A",
-    "URL": "https://www.agence-eleonor.fr/fr/vente/maison-plain-pied-5-pieces-puysserampion-47800,VM17722",
-    "Foto": "https://img.netty.immo/product/company53706zgl/VM17722/maison-plain-pied-5-pieces-puysserampion-47800-1789472796-VM17722_40_l.jpg"
   },
   {
     "Bron": "ledil",
@@ -2185,8 +2185,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-suresnes-92150-e5d94be0-f8e2-41b6-a19f-537b908450d8/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-cucq-62780-0f9922df-aea4-4fc3-b365-95e92db9d62f/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   },
   {
     "Bron": "orpi",
@@ -2196,8 +2196,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-suresnes-92150-e5d94be0-f8e2-41b6-a19f-537b908450d8/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-cucq-62780-0f9922df-aea4-4fc3-b365-95e92db9d62f/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   },
   {
     "Bron": "orpi",
@@ -2207,8 +2207,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-gidy-45520-0fe811ac-9e10-4756-9571-2aaf4fd608c9/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-villeparisis-77270-5b01aa3d-a12b-4ce7-88b8-db6ce04519c3/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   },
   {
     "Bron": "orpi",
@@ -2218,8 +2218,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-gidy-45520-0fe811ac-9e10-4756-9571-2aaf4fd608c9/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-villeparisis-77270-5b01aa3d-a12b-4ce7-88b8-db6ce04519c3/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   },
   {
     "Bron": "orpi",
@@ -2229,8 +2229,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-la-ferriere-bochard-61420-ed9e4310-3782-45c7-b519-25612eb541ba/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-reims-51100-f28389b4-74f2-456a-b5a3-a99ab0782936/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   },
   {
     "Bron": "orpi",
@@ -2240,8 +2240,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t5-la-ferriere-bochard-61420-ed9e4310-3782-45c7-b519-25612eb541ba/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t4-reims-51100-f28389b4-74f2-456a-b5a3-a99ab0782936/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   },
   {
     "Bron": "orpi",
@@ -2251,8 +2251,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-boulogne-sur-mer-62200-3bd35b11-df56-4256-91f0-8295937acb77/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t6-tassin-la-demi-lune-69160-a9ff6f60-4b04-4ee7-aead-6d4cb35cd311/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   },
   {
     "Bron": "orpi",
@@ -2262,8 +2262,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-boulogne-sur-mer-62200-3bd35b11-df56-4256-91f0-8295937acb77/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-appartement-t6-tassin-la-demi-lune-69160-a9ff6f60-4b04-4ee7-aead-6d4cb35cd311/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   },
   {
     "Bron": "orpi",
@@ -2273,8 +2273,8 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-ingre-45140-8475c2cc-1ff9-4387-8427-9beed042f832/",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t6-fismes-51170-5a5ab165-8fb6-4c1a-8c49-f2c5f259b3f9/",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   },
   {
     "Bron": "orpi",
@@ -2284,7 +2284,7 @@
     "m2 Binnen": "N/A",
     "m2 Buiten": "N/A",
     "Slaapkamers": "N/A",
-    "URL": "https://www.orpi.com/annonce-vente-maison-t4-ingre-45140-8475c2cc-1ff9-4387-8427-9beed042f832/?contact=true",
-    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/e5d94be0-f8e2-41b6-a19f-537b908450d8--96abab3a-1e78-4421-96c0-ee6358386ed2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=c2357d9bf01d0e5e503fe9dddea9e576e59b05b0"
+    "URL": "https://www.orpi.com/annonce-vente-maison-t6-fismes-51170-5a5ab165-8fb6-4c1a-8c49-f2c5f259b3f9/?contact=true",
+    "Foto": "https://cutjhqvjma.cloudimg.io/_prod_/sweepbright-s3/0f9922df-aea4-4fc3-b365-95e92db9d62f--e073b130-355b-4da8-b8ed-d07a998de3a2.jpg?p=estate-result-item&ci_url_encoded=1&ci_sign=a0947c1cd1c530bf58662a50b4fe42230e1f3b37"
   }
 ]
