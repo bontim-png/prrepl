@@ -1,0 +1,30 @@
+name: Verstuur e-mail
+on:
+  workflow_dispatch:
+    inputs:
+      to:
+        description: 'Ontvanger'
+        required: true
+      subject:
+        description: 'Onderwerp'
+        required: true
+      body:
+        description: 'Bericht'
+        required: true
+
+jobs:
+  mail:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verstuur
+        env:
+          MAIL_USER: ${{ secrets.MAIL_USER }}
+          MAIL_PASS: ${{ secrets.MAIL_PASS }}
+          MAIL_TO: ${{ inputs.to }}
+          MAIL_SUBJECT: ${{ inputs.subject }}
+          MAIL_BODY: ${{ inputs.body }}
+        run: python mailer.py
