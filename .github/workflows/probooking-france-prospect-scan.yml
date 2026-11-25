@@ -1,0 +1,41 @@
+name: Pro-Booking France Prospect Scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Number of domains to scan (pilot: 10–15)
+        required: true
+        default: "10"
+      delay:
+        description: Minimum delay between requests in seconds
+        required: true
+        default: "2.5"
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install scanner dependencies
+        run: pip install -r tools/probooking-prospect-scanner/requirements.txt
+      - name: Run pilot scan
+        working-directory: tools/probooking-prospect-scanner
+        run: |
+          python scanner.py --input pilot_domains.csv --limit "${{ inputs.limit }}" --delay "${{ inputs.delay }}"
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: probooking-france-prospect-scan
+          path: |
+            tools/probooking-prospect-scanner/scanner_results.csv
+            tools/probooking-prospect-scanner/scanner_evidence.jsonl
+          if-no-files-found: error
+          retention-days: 30
