@@ -86,7 +86,7 @@ def main():
      v=v.strip(".,;:()[]{}<>").lower()
      if not v.endswith((".png",".jpg",".jpeg",".svg",".gif")):emails.setdefault(v,set()).add(final)
     for v in PHONE.findall(txt):phones.setdefault(re.sub(r"\s+"," ",v).strip(),set()).add(final)
-    for v in SIRET.findall(txt):sirets.setdefault(v,set()).add(final)
+    for v in SIRET.findall(txt):\n     if valid_siret(v):sirets.setdefault(v,set()).add(final)
     if len(seen)<x.max_pages:
      for link in soup.find_all("a",href=True):
       label=(link.get_text(" ",strip=True)+" "+link["href"]).lower()
