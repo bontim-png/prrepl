@@ -3,19 +3,19 @@ name: Pro-Booking France Prospect Scan
 'on':
   workflow_dispatch:
     inputs:
-      limit:
-        description: 'Number of domains to scan (maximum 100)'
-        type: number
-        required: true
-        default: 100
       delay:
-        description: 'Delay between requests in seconds'
+        description: 'Minimum delay between website requests in seconds'
         type: string
         required: true
         default: '2.5'
 
 permissions:
-  contents: read
+  contents: write
+  actions: write
+
+concurrency:
+  group: probooking-france-prospect-scan
+  cancel-in-progress: false
 
 jobs:
   scan:
@@ -24,24 +24,44 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref_name }}
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: '3.11'
       - name: Install scanner dependencies
         run: python -m pip install -r tools/probooking-prospect-scanner/requirements.txt
-      - name: Run prospect scan
+      - name: Process next batch of 100
+        id: batch
         working-directory: tools/probooking-prospect-scanner
         env:
-          SCAN_LIMIT: ${{ inputs.limit }}
-          SCAN_DELAY: ${{ inputs.delay }}
-        run: python scanner.py --input pilot_domains.csv --limit "$SCAN_LIMIT" --delay "$SCAN_DELAY"
-      - name: Upload results
+          SCAN_DELAY: ${{ inputs.delay || '2.5' }}
+        run: python run_batch.py
+      - name: Save progress and results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/probooking-prospect-scanner/scan_state.json tools/probooking-prospect-scanner/all_scanner_results.csv tools/probooking-prospect-scanner/all_scanner_evidence.jsonl
+          git commit -m "Save Pro-Booking prospect scan batch" || echo "No result changes to commit"
+          git push
+      - name: Automatically start the next batch
+        if: steps.batch.outputs.has_more == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          curl --fail-with-body -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/probooking-france-prospect-scan.yml/dispatches \
+            -d "{\"ref\":\"$REF_NAME\",\"inputs\":{\"delay\":\"2.5\"}}"
+      - name: Upload this batch as backup
         uses: actions/upload-artifact@v5
         with:
-          name: probooking-france-prospect-scan
+          name: probooking-france-batch-${{ github.run_number }}
           path: |
-            tools/probooking-prospect-scanner/scanner_results.csv
-            tools/probooking-prospect-scanner/scanner_evidence.jsonl
-          if-no-files-found: error
+            tools/probooking-prospect-scanner/_batch_results.csv
+            tools/probooking-prospect-scanner/_batch_evidence.jsonl
+          if-no-files-found: ignore
           retention-days: 30
