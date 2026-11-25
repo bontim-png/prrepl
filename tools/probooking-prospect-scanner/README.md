@@ -1,22 +1,33 @@
 # Pro-Booking France Prospect Scanner
 
-A cautious public-contact research scanner for accommodation operator websites.
+This folder contains a respectful public-page scanner for accommodation business contact details in France.
 
-## Pilot
-Run 10–20 domains first. It respects robots.txt (fails closed if robots cannot be retrieved), uses sequential requests and delays, stays on the supplied domain, and does not bypass CAPTCHA, login or access restrictions.
+## Queue and automatic batches
 
-## Local run
-Python 3.10+:
-```bash
-pip install -r requirements.txt
-# Replace the User-Agent contact placeholder in scanner.py with a monitored business email.
-python scanner.py --input pilot_domains.csv --limit 20 --delay 2.5
-```
+1. Upload the prepared `domain_queue.csv` into this folder in the repository.
+2. Confirm `scan_state.json` has `next_index: 0`.
+3. Merge this branch/PR into `main` (or run the workflow on this feature branch).
+4. In GitHub Actions, run **Pro-Booking France Prospect Scan** once.
+5. The workflow processes the next 100 domains, saves cumulative results and progress, then dispatches itself for the next batch. It repeats until the queue is exhausted.
+
+The current queue contains 3,184 unique website domains derived from the 4,631 A-priority accommodation records. Obvious social networks, OTAs and common booking-engine hosts were excluded. Multiple accommodation records sharing one domain are grouped together. This is a research queue, not 3,184 verified independent operators.
 
 ## Outputs
-- scanner_results.csv: one row per domain, with generic and named-looking emails separated.
-- scanner_evidence.jsonl: evidence URLs for each extracted value.
 
-Extracted emails are not deliverability-verified and public availability does not itself establish permission to market. Named/personal-looking addresses require separate legal review. SIRET strings are candidates, not validated identifiers. Confirm the operator behind each website before importing.
+- `all_scanner_results.csv`: cumulative one-row-per-domain output.
+- `all_scanner_evidence.jsonl`: evidence URLs for every extracted email, phone and SIRET candidate.
+- `scan_state.json`: durable cursor and remaining count.
+- Each run also uploads a batch backup artifact.
 
-GitHub Actions workflow is manual only and uploads results as a 30-day artifact; it does not write to the Pro-Booking database or send messages.
+## Safety and quality
+
+- Only publicly accessible pages are scanned.
+- Robots.txt restrictions are respected; no login, CAPTCHA, access-control or rate-limit bypass.
+- Mailboxes and phone numbers are not verified.
+- Email classifications are heuristic. Departmental, named/personal and third-party addresses must not automatically be treated as prospect contacts.
+- SIRET candidates pass a Luhn checksum only; legal entity matching remains a manual verification step.
+- The workflow uses a 2.5-second delay between requests and scans up to 8 pages per domain.
+
+## Restart / resume
+
+Progress is stored in `scan_state.json`. A new manual run resumes from `next_index`. To restart from the beginning, set `next_index` to 0 and clear the cumulative result files.
