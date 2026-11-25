@@ -74,7 +74,7 @@ def main():
  a.add_argument("--limit",type=int,default=100);a.add_argument("--delay",type=float,default=2.5);a.add_argument("--timeout",type=int,default=18);a.add_argument("--max-pages",type=int,default=8);a.add_argument("--max-bytes",type=int,default=1500000)
  x=a.parse_args()
  with open(x.input,encoding="utf-8-sig",newline="") as f:seeds=list(csv.DictReader(f))[:x.limit]
- fields=["domain","website","accommodation_count","accommodations_sample","communes_sample","departments","regions","categories_sample","emails_generic","emails_named_or_personal","emails_departmental","emails_third_party_or_other","phones_public","siret_candidates","operator_name_candidate","pages_scanned","scan_status","scan_timestamp_utc","notes"]
+ fields=["domain","website","accommodation_count","accommodations_sample","communes_sample","departments_sample","regions_sample","categories_sample","emails_generic","emails_named_or_personal","emails_departmental","emails_third_party_or_other","phones_public","siret_candidates","operator_name_candidate","pages_scanned","scan_status","scan_timestamp_utc","notes"]
  s=requests.Session();s.headers.update({"User-Agent":UA,"Accept":"text/html,application/xhtml+xml"})
  with open(x.output,"w",encoding="utf-8-sig",newline="") as out,open(x.evidence,"w",encoding="utf-8") as ev:
   w=csv.DictWriter(out,fieldnames=fields);w.writeheader()
