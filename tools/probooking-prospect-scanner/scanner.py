@@ -6,13 +6,15 @@ from urllib.parse import urljoin,urlparse,urldefrag
 from urllib.robotparser import RobotFileParser
 import requests
 from bs4 import BeautifulSoup
+
 UA="ProBookingProspectResearch/1.0 (+contact: replace-with-your-business-email)"
 HINTS=("contact","nous-contacter","contactez","mentions-legales","qui-sommes-nous","a-propos","about","equipe","team","cgv","legal","impressum")
 SKIP=("facebook.com","instagram.com","youtube.com","tiktok.com","pinterest.","linkedin.com","booking.com","airbnb.","abritel.","tripadvisor.","gites.fr","gites-de-france","google.","wikipedia.org")
-EMAIL=re.compile(r"(?i)(?<![\\w.+-])([A-Z0-9._%+-]{1,64}@[A-Z0-9.-]+\\.[A-Z]{2,24})(?![\\w.-])")
-PHONE=re.compile(r"(?<!\\w)(?:\\+33|0033|0)[ .()\\-]?[1-9](?:[ .()\\-]?\\d{2}){4}(?!\\w)")
-SIRET=re.compile(r"(?<!\\d)(\\d{14})(?!\\d)")
+EMAIL=re.compile(r"(?i)(?<![\w.+-])([A-Z0-9._%+-]{1,64}@[A-Z0-9.-]+\.[A-Z]{2,24})(?![\w.-])")
+PHONE=re.compile(r"(?<!\w)(?:\+33|0033|0)[ .()\-]?[1-9](?:[ .()\-]?\d{2}){4}(?!\w)")
+SIRET=re.compile(r"(?<!\d)(\d{14})(?!\d)")
 GENERIC=("contact","info","bonjour","accueil","reservation","reservations","booking","office","secretariat","commercial","location","hello","admin","direction","reception","camping","gite","domain","domaine","chateau","hotel")
+
 def norm(u):
  u=(u or "").strip()
  if not u:return ""
@@ -63,8 +65,7 @@ def main():
    rp=robots(s,start,x.timeout);q=[start];seen=set();emails={};phones={};sirets={};titles=[];blocked=False
    while q and len(seen)<x.max_pages:
     u,_=urldefrag(q.pop(0))
-    if u in seen:continue
-    if not allowed(host(u),base) or any(z in host(u) for z in SKIP):continue
+    if u in seen or not allowed(host(u),base) or any(z in host(u) for z in SKIP):continue
     if not rp.can_fetch(UA,u):
      if u==start:blocked=True
      continue
@@ -84,7 +85,7 @@ def main():
     for v in EMAIL.findall(txt):
      v=v.strip(".,;:()[]{}<>").lower()
      if not v.endswith((".png",".jpg",".jpeg",".svg",".gif")):emails.setdefault(v,set()).add(final)
-    for v in PHONE.findall(txt):phones.setdefault(re.sub(r"\\s+"," ",v).strip(),set()).add(final)
+    for v in PHONE.findall(txt):phones.setdefault(re.sub(r"\s+"," ",v).strip(),set()).add(final)
     for v in SIRET.findall(txt):sirets.setdefault(v,set()).add(final)
     if len(seen)<x.max_pages:
      for link in soup.find_all("a",href=True):
@@ -99,7 +100,7 @@ def main():
    row.update({"emails_generic":" | ".join(gen),"emails_named_or_personal":" | ".join(named),"phones_public":" | ".join(sorted(phones)),"siret_candidates":" | ".join(sorted(sirets)),"operator_name_candidate":titles[0] if titles else "","pages_scanned":len(seen),"scan_status":"robots_blocked" if blocked and not seen else ("scanned" if seen else "no_pages_scanned"),"notes":"Public-page evidence only; not mailbox verification. SIRET values are candidates. Named addresses require legal review."})
    w.writerow(row);out.flush()
    for typ,vals in (("email",emails),("phone",phones),("siret_candidate",sirets)):
-    for v,urls in vals.items():ev.write(json.dumps({"domain":base,"type":typ,"value":v,"evidence_urls":sorted(urls)},ensure_ascii=False)+"\\n")
+    for v,urls in vals.items():ev.write(json.dumps({"domain":base,"type":typ,"value":v,"evidence_urls":sorted(urls)},ensure_ascii=False)+"\n")
    print(f"[{i}/{len(seeds)}] {base}: {row['scan_status']}, {len(emails)} emails, {len(seen)} pages",flush=True);time.sleep(x.delay)
  print("Scan complete")
 if __name__=="__main__":main()
