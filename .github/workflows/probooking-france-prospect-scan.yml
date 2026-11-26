@@ -38,11 +38,14 @@ jobs:
         env:
           SCAN_DELAY: ${{ inputs.delay || '2.5' }}
         run: python run_batch.py
+      - name: Build merged and deduplicated master file
+        working-directory: tools/probooking-prospect-scanner
+        run: python merge_results.py
       - name: Save progress and results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tools/probooking-prospect-scanner/scan_state.json tools/probooking-prospect-scanner/all_scanner_results.csv tools/probooking-prospect-scanner/all_scanner_evidence.jsonl
+          git add tools/probooking-prospect-scanner/scan_state.json tools/probooking-prospect-scanner/all_scanner_results.csv tools/probooking-prospect-scanner/all_scanner_evidence.jsonl tools/probooking-prospect-scanner/all_scanner_results_merged.csv
           git commit -m "Save Pro-Booking prospect scan batch" || echo "No result changes to commit"
           git push
       - name: Automatically start the next batch
