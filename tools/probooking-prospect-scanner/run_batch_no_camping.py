@@ -14,7 +14,7 @@ if not fields or not rows: raise SystemExit("Non-camping queue is empty or inval
 state=json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {"next_index":0}
 start=max(0,int(state.get("next_index",0)))
 if start>=len(rows):
-    with open(os.environ["GITHUB_OUTPUT"],"a") as o:o.write("has_more=false\\n")
+    with open(os.environ["GITHUB_OUTPUT"],"a") as o:o.write("has_more=false\n")
     raise SystemExit(0)
 batch=rows[start:start+BATCH]
 batchfile=ROOT/"_current_batch_no_camping.csv"
@@ -41,10 +41,10 @@ if tmpevidence.exists():
     with tmpevidence.open(encoding="utf-8") as src,EVIDENCE.open("a",encoding="utf-8") as dst:
         for line in src:
             line=line.strip()
-            if line and line not in known_ev:dst.write(line+"\\n");known_ev.add(line)
+            if line and line not in known_ev:dst.write(line+"\n");known_ev.add(line)
 next_i=start+len(batch)
 newstate={"next_index":next_i,"total":len(rows),"completed":next_i,"remaining":len(rows)-next_i}
-tmp=STATE.with_suffix(".tmp");tmp.write_text(json.dumps(newstate,indent=2)+"\\n",encoding="utf-8");tmp.replace(STATE)
+tmp=STATE.with_suffix(".tmp");tmp.write_text(json.dumps(newstate,indent=2)+"\n",encoding="utf-8");tmp.replace(STATE)
 more=next_i<len(rows)
-with open(os.environ["GITHUB_OUTPUT"],"a") as o:o.write(f"has_more={'true' if more else 'false'}\\n")
+with open(os.environ["GITHUB_OUTPUT"],"a") as o:o.write(f"has_more={'true' if more else 'false'}\n")
 print(f"Non-camping scan: {next_i}/{len(rows)}; {newstate['remaining']} remaining")
