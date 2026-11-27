@@ -67,20 +67,18 @@ def fetch(s,u,t,m):
     if n>m:break
     chunks.append(c)
    raw = b"".join(chunks)
-   # Some sites send an invalid charset (including the literal string "None").
-   # Validate it before decoding so one malformed header cannot stop a whole batch.
+   # Decode the bytes already collected from the streamed response.
+   # Do not use Response.apparent_encoding here: requests tries to read
+   # response.content, which is unavailable after iter_content() consumed it.
    encoding = (r.encoding or "").strip()
    if not encoding or encoding.lower() in {"none", "null"}:
-    encoding = r.apparent_encoding or "utf-8"
+    encoding = "utf-8"
    try:
     import codecs
     codecs.lookup(encoding)
    except (LookupError, TypeError):
     encoding = "utf-8"
-   try:
-    decoded = raw.decode(encoding, errors="replace")
-   except (LookupError, TypeError):
-    decoded = raw.decode("utf-8", errors="replace")
+   decoded = raw.decode(encoding, errors="replace")
    return decoded,r.url
  except requests.RequestException:return None,u
 def main():
