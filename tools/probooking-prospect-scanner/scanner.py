@@ -66,7 +66,22 @@ def fetch(s,u,t,m):
     n+=len(c)
     if n>m:break
     chunks.append(c)
-   return b"".join(chunks).decode(r.encoding or "utf-8",errors="replace"),r.url
+   raw = b"".join(chunks)
+   # Some sites send an invalid charset (including the literal string "None").
+   # Validate it before decoding so one malformed header cannot stop a whole batch.
+   encoding = (r.encoding or "").strip()
+   if not encoding or encoding.lower() in {"none", "null"}:
+    encoding = r.apparent_encoding or "utf-8"
+   try:
+    import codecs
+    codecs.lookup(encoding)
+   except (LookupError, TypeError):
+    encoding = "utf-8"
+   try:
+    decoded = raw.decode(encoding, errors="replace")
+   except (LookupError, TypeError):
+    decoded = raw.decode("utf-8", errors="replace")
+   return decoded,r.url
  except requests.RequestException:return None,u
 def main():
  a=argparse.ArgumentParser()
