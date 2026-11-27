@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           ref: ${{ github.ref_name }}
+          fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
@@ -47,6 +48,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add tools/probooking-prospect-scanner/scan_state.json tools/probooking-prospect-scanner/all_scanner_results.csv tools/probooking-prospect-scanner/all_scanner_evidence.jsonl tools/probooking-prospect-scanner/all_scanner_results_merged.csv
           git commit -m "Save Pro-Booking prospect scan batch" || echo "No result changes to commit"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
       - name: Automatically start the next batch
         if: steps.batch.outputs.has_more == 'true'
